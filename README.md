@@ -1,6 +1,7 @@
 ## my path to a self education in computer science
 
 [Khan Academy](#khan-academy)
+
 [Open Source Society University](#ossu)
 
 
