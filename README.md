@@ -2,6 +2,8 @@
 #### About
 ###### Update 2/24/2023
 here I'll be posting my achivements and course completions to retrospective and self reflection 
+###### Update 3/20/2023
+have had some hard time with rotating shapes, now work with congruence and thinkin in parallel why triangle angles add up to 180
 
 
 [Khan Academy](#khan-academy)[^1]
@@ -12,9 +14,9 @@ here I'll be posting my achivements and course completions to retrospective and 
 ### Khan Academy
 ##### Algebra 1 
 ![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
-> It took me a long time to finish this, I am very proud of myself, the hardest units were with the cartesian plane, inverse functions and quadratics
+
 ##### High School Geometry 
-![](https://progress-bar.dev/19/?scale=100&title=&width=90&color=babaca&suffix=%)
+![](https://progress-bar.dev/28/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 
 ### OSSU
