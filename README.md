@@ -7,6 +7,7 @@ have had some hard time with rotating shapes, now work with congruence and think
 ###### Update 7/6/2023
 finally understood why triangle inner angles sum up to 180 degrees, well so simple if to imagine a square it has four angles each 90 degrees, so 90 * 4, 360/2, you get a triangle :)
 also my unit with congurence on khan academy is almost finished, unit test and i'll go up, so only up for me, go go go :)
+
 [Khan Academy](#khan-academy)[^1]
 
 [Open Source Society University](#ossu)[^2]
