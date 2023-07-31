@@ -2,16 +2,15 @@
 #### About
 Here I'll be posting my achivements and course completions to retrospective and self reflection 
 
-
-
 ###### Update 3/20/2023
-Have had some hard time with rotating shapes, now work with congruence and thinkin in parallel why triangle angles add up to 180
+rotating shapes
+congruence
 ###### Update 7/6/2023
-Finally understood why triangle inner angles sum up to 180 degrees, well so simple if to imagine a square it has four angles each 90 degrees, so 90 * 4, 360/2, you get a triangle :)
-Also my unit with congurence on khan academy is almost finished, unit test and i'll go up, so only up for me, go go go :)
+triangle inner angles sum to 180 degrees
 ###### Update 7/31/2023
-Almost finished in depth unit with similarity, there was a lot of proportion and ratios, but it was easy for me because i've done this in my Algebra 1 course, so
-i'll keep it up, only up!:)
+in depth unit with similarity
+a lot of proportion and ratios
+Pythagorean theorem proof using similarity and two areas 
 
 [Khan Academy](#khan-academy)[^1]
 
