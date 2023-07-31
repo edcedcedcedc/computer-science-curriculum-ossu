@@ -3,14 +3,14 @@
 Here I'll be posting my achivements and course completions to retrospective and self reflection 
 
 ###### Update 3/20/2023
-rotating shapes
-congruence
+rotating shapes;
+congruence;
 ###### Update 7/6/2023
-triangle inner angles sum to 180 degrees
+triangle inner angles sum to 180 degrees;
 ###### Update 7/31/2023
-in depth unit with similarity
-a lot of proportion and ratios
-Pythagorean theorem proof using similarity and two areas 
+in depth unit with similarity;
+a lot of proportion and ratios;
+Pythagorean theorem proof using similarity and two areas;
 
 [Khan Academy](#khan-academy)[^1]
 
