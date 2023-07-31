@@ -8,8 +8,7 @@ congruence;
 ###### Update 7/6/2023
 triangle inner angles sum to 180 degrees;
 ###### Update 7/31/2023
-in depth unit with similarity;
-a lot of proportion and ratios;
+similarity;
 Pythagorean theorem proof using similarity and two areas;
 
 [Khan Academy](#khan-academy)[^1]
