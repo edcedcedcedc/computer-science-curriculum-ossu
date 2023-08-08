@@ -2,6 +2,8 @@
 #### About
 Here I'll be posting my achivements and course completions to retrospective and self reflection 
 
+###### Update 2/10/2023
+khan academy algebra 1 done 
 ###### Update 3/20/2023
 rotating shapes;
 congruence;
