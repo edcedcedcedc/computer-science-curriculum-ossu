@@ -14,7 +14,7 @@ triangle inner angles sum to 180 degrees;
 similarity;
 Pythagorean theorem proof using similarity and two areas;
 ###### Update 8/19/2023
-Trigonometric ratios 
+Trigonometric ratios;
 
 [Khan Academy](#khan-academy)[^1]
 
