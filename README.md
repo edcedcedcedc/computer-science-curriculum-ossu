@@ -28,7 +28,7 @@ Analytic geometry;
 ![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ##### High School Geometry 
-![](https://progress-bar.dev/54/?scale=100&title=&width=90&color=babaca&suffix=%)
+![](https://progress-bar.dev/58/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 
 ### OSSU
