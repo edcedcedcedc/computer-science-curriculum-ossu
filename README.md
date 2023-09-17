@@ -17,6 +17,8 @@ Pythagorean theorem proof using similarity and two areas;
 Trigonometric ratios;
 ###### Update 8/29/2023
 Analytic geometry;
+###### Update 8/29/2023
+Conic sections;
 
 [Khan Academy](#khan-academy)[^1]
 
@@ -28,7 +30,7 @@ Analytic geometry;
 ![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ##### High School Geometry 
-![](https://progress-bar.dev/58/?scale=100&title=&width=90&color=babaca&suffix=%)
+![](https://progress-bar.dev/65/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 
 ### OSSU
