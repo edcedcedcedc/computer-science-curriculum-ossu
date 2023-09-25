@@ -19,6 +19,8 @@ Trigonometric ratios;
 Analytic geometry;
 ###### Update 9/17/2023
 Conic sections;
+###### Update 9/25/2023
+Conic sections - equations, expanded equations of a circle 
 
 [Khan Academy](#khan-academy)[^1]
 
@@ -30,7 +32,7 @@ Conic sections;
 ![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ##### High School Geometry 
-![](https://progress-bar.dev/65/?scale=100&title=&width=90&color=babaca&suffix=%)
+![](https://progress-bar.dev/71/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 
 ### OSSU
