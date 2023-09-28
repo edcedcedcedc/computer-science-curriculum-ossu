@@ -20,7 +20,7 @@ Analytic geometry;
 ###### Update 9/17/2023
 Conic sections;
 ###### Update 9/25/2023
-Conic sections - equations, expanded equations of a circle 
+Expanded equations of a circle 
 ###### Update 9/28/2023
 Circles 
 
