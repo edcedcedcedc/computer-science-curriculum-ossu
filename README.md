@@ -21,6 +21,8 @@ Analytic geometry;
 Conic sections;
 ###### Update 9/25/2023
 Conic sections - equations, expanded equations of a circle 
+###### Update 9/28/2023
+Circles 
 
 [Khan Academy](#khan-academy)[^1]
 
@@ -32,7 +34,7 @@ Conic sections - equations, expanded equations of a circle
 ![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ##### High School Geometry 
-![](https://progress-bar.dev/71/?scale=100&title=&width=90&color=babaca&suffix=%)
+![](https://progress-bar.dev/75/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 
 ### OSSU
