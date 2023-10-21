@@ -1,52 +1,60 @@
-#### About
-Here I'll be posting my achivements and course completions to retrospective and self reflection 
+# About
+Here, I'll be posting my achievements and course completions for retrospective and self-reflection. My goal is to earn a BS in Computer Science independently with [Khan Academy](#KhanAcademy) and OSS University, which match the curricular standards of the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
-###### Update 2/10/2023
-khan academy algebra 1 done 
-###### Update 3/20/2023
-khan academy high school geometry in process;
-rotating shapes;
-congruence;
-###### Update 7/6/2023
-triangle inner angles sum to 180 degrees;
-###### Update 7/31/2023
-similarity;
-Pythagorean theorem proof using similarity and two areas;
-###### Update 8/19/2023
-Trigonometric ratios;
-###### Update 8/29/2023
-Analytic geometry;
-###### Update 9/17/2023
-Conic sections;
-###### Update 9/25/2023
-Expanded equations of a circle 
-###### Update 9/28/2023
-Circles
-###### Update 10/20/2023
-Solid Geometry 
-###### Update 10/21/2023
-Learning in parallel, algebra 2 and hs geometry; algebra 2 average rate of change
+## Updates
 
-[Khan Academy](#khan-academy)[^1]
+### 2/10/2023
+- Khan Academy Algebra 1 completed.
 
-[Open Source Society University](#ossu)[^2]
+### 3/20/2023
+- Khan Academy High School Geometry in progress.
+- Topics:
+  - Rotating shapes
+  - Congruence
 
+### 7/6/2023
+- Learned that triangle inner angles sum to 180 degrees.
 
-### Khan Academy
-##### Algebra 1 
-![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
+### 7/31/2023
+- Topics:
+  - Similarity
+  - Pythagorean theorem proof using similarity and two areas.
 
-##### Algebra 2 
-![](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
+### 8/19/2023
+- Learned about Trigonometric ratios.
 
-##### High School Geometry 
-![](https://progress-bar.dev/84/?scale=100&title=&width=90&color=babaca&suffix=%)
+### 8/29/2023
+- Studied Analytic geometry.
 
+### 9/17/2023
+- Covered Conic sections.
 
-### OSSU
+### 9/25/2023
+- Expanded equations of a circle.
+
+### 9/28/2023
+- Delved into Circles.
+
+### 10/20/2023
+- Exploring Solid Geometry.
+
+### 10/21/2023
+- Learning in parallel: Algebra 2 and High School Geometry.
+- Algebra 2 topic: Average rate of change.
 
 
 
+## Khan Academy Progress
+- **Algebra 1**
+  ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
-[^1]: [Khan Academy](https://www.khanacademy.org/profile/me/courses)
-[^2]: [Open Source Society University](https://github.com/ossu/computer-science)
+- **Algebra 2**
+  ![Algebra 2 Progress](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
+
+- **High School Geometry**
+  ![High School Geometry Progress](https://progress-bar.dev/84/?scale=100&title=&width=90&color=babaca&suffix=%)
+
+
+  ## Resources
+- <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
+- [Open Source Society University](https://github.com/ossu/computer-science)
