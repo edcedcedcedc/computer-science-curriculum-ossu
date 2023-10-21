@@ -1,5 +1,5 @@
 # About
-Here, I'll be posting my achievements and course completions for retrospective and self-reflection. My goal is to earn a BS in Computer Science independently with [Khan Academy](#KhanAcademy) and OSS University, which match the curricular standards of the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
+Here, I'll be posting my achievements and course completions for retrospective and self-reflection. My goal is to compelete the Bachelor's Degree in Computer Science curriculum independently with [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU), which match the standards of the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
 ## Updates
 
@@ -57,4 +57,4 @@ Here, I'll be posting my achievements and course completions for retrospective a
 
   ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
-- [Open Source Society University](https://github.com/ossu/computer-science)
+- <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
