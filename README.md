@@ -1,4 +1,3 @@
-## My path to a self education in computer science
 #### About
 Here I'll be posting my achivements and course completions to retrospective and self reflection 
 
@@ -25,6 +24,8 @@ Expanded equations of a circle
 Circles
 ###### Update 10/20/2023
 Solid Geometry 
+###### Update 10/21/2023
+Learning in parallel, algebra 2 and hs geometry; algebra 2 average rate of change
 
 [Khan Academy](#khan-academy)[^1]
 
@@ -34,6 +35,9 @@ Solid Geometry
 ### Khan Academy
 ##### Algebra 1 
 ![](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
+
+##### Algebra 2 
+![](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ##### High School Geometry 
 ![](https://progress-bar.dev/84/?scale=100&title=&width=90&color=babaca&suffix=%)
