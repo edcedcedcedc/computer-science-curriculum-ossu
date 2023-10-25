@@ -43,7 +43,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
 - Algebra 2 topic: Average rate of change.
 
 ### 10/26/2023
-- Hs Geometry Unit test try, almost finished the course.
+- Hs Geometry done :)
   
 
 
@@ -52,7 +52,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Algebra 2 Progress](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
