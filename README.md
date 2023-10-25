@@ -42,6 +42,9 @@ Here, I'll be posting my achievements and course completions for retrospection a
 - Learning in parallel: Algebra 2 and High School Geometry.
 - Algebra 2 topic: Average rate of change.
 
+### 10/26/2023
+- Hs Geometry Unit test try, almost finished the course.
+  
 
 
 ## Khan Academy Progress
@@ -52,7 +55,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
   ![Algebra 2 Progress](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
-  ![High School Geometry Progress](https://progress-bar.dev/84/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 
   ## Resources
