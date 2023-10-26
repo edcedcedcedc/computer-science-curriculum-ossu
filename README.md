@@ -44,6 +44,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
 
 ### 10/26/2023
 - Hs Geometry done :)
+- Taking Trigonometry concurently with Algebra 2
   
 
 
@@ -57,6 +58,8 @@ Here, I'll be posting my achievements and course completions for retrospection a
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
+- **Trigonometry**
+  ![High School Geometry Progress](https://progress-bar.dev/18/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
