@@ -39,13 +39,17 @@ Here, I'll be posting my achievements and course completions for retrospection a
 - Exploring Solid Geometry.
 
 ### 10/21/2023
-- Learning in parallel: Algebra 2 and High School Geometry.
-- Algebra 2 topic: Average rate of change.
+- High School Geometry concurently with Algebra 2
+- Average rate of change.
 
 ### 10/26/2023
-- Hs Geometry done :)
-- Taking Trigonometry concurently with Algebra 2
-  
+- High School Geometry done :)
+- Trigonometry concurently with Algebra 2
+- Complex numbers
+- Polynomial arithmetic
+
+### 10/27/2023
+- Polynomial factorization
 
 
 ## Khan Academy Progress
@@ -53,7 +57,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Algebra 2 Progress](https://progress-bar.dev/23/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
