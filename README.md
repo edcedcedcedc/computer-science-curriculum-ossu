@@ -51,19 +51,22 @@ Here, I'll be posting my achievements and course completions for retrospection a
 ### 10/27/2023
 - Polynomial factorization
 
+### 11/08/2023
+- Polynomial Division done;
+- new unit Polynomial graphs 
 
 ## Khan Academy Progress
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/23/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Algebra 2 Progress](https://progress-bar.dev/35/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Trigonometry**
-  ![High School Geometry Progress](https://progress-bar.dev/18/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![High School Geometry Progress](https://progress-bar.dev/31/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
