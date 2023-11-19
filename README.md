@@ -53,14 +53,23 @@ Here, I'll be posting my achievements and course completions for retrospection a
 
 ### 11/08/2023
 - Polynomial Division done;
-- new unit Polynomial graphs 
+- new unit Polynomial graphs
+  
+### 11/17/2023
+ - Polynomial graphs done;
+ - Rational exponents done;
+   
+### 11/19/2023
+ - Exponential models;
+   
+   
 
 ## Khan Academy Progress
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/35/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Algebra 2 Progress](https://progress-bar.dev/48/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
