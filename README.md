@@ -74,7 +74,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
-- **Trigonometry**
+- **Introduction to Trigonometry**
   ![High School Geometry Progress](https://progress-bar.dev/31/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
