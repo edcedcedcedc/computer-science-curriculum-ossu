@@ -61,7 +61,7 @@ Here, I'll be posting my achievements and course completions for retrospection a
    
 ### 11/19/2023
  - Exponential models;
- - 
+   
 ### 11/30/2023
  - Trigonometric functions done;   
    
