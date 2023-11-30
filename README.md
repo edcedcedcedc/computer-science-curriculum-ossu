@@ -61,7 +61,9 @@ Here, I'll be posting my achievements and course completions for retrospection a
    
 ### 11/19/2023
  - Exponential models;
-   
+ - 
+### 11/30/2023
+ - Trigonometric functions done;   
    
 
 ## Khan Academy Progress
@@ -69,13 +71,13 @@ Here, I'll be posting my achievements and course completions for retrospection a
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/48/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Algebra 2 Progress](https://progress-bar.dev/59/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Introduction to Trigonometry**
-  ![High School Geometry Progress](https://progress-bar.dev/31/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![High School Geometry Progress](https://progress-bar.dev/68/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
