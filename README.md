@@ -66,7 +66,8 @@ Here, I'll be posting my achievements and course completions for retrospection a
  - Trigonometric functions done;   
    
 ### 12/11/2023
- - Algebra 2, Exponential Models done; Logarithms done ; New unit transformation of functions
+ - Algebra 2: Exponential Models done; Logarithms done ; New unit transformation of functions
+ - Trigonometry: new unit Non right triangles trigonometry 
     
 ## Khan Academy Progress
 - **Algebra 1**
