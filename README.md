@@ -65,13 +65,15 @@ Here, I'll be posting my achievements and course completions for retrospection a
 ### 11/30/2023
  - Trigonometric functions done;   
    
-
+### 12/11/2023
+ - Algebra 2, Exponential Models done; Logarithms done ; New unit transformation of functions
+    
 ## Khan Academy Progress
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/59/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Algebra 2 Progress](https://progress-bar.dev/70/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
