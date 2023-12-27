@@ -70,7 +70,12 @@ Here, I'll be posting my achievements and course completions for retrospection a
  - Trigonometry: new unit Non right triangles trigonometry
    
 ### 12/11/2023
- - Transformations of functions done; new unit equations 
+ - Transformations of functions done; new unit equations
+   
+### 12/27/2023
+ - quadratic, cubic equations and system equations, graphs done
+   
+   
     
 ## Khan Academy Progress
 - **Algebra 1**
