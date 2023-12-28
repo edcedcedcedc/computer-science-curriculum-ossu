@@ -75,7 +75,8 @@ Here, I'll be posting my achievements and course completions for retrospection a
 ### 12/27/2023
  - quadratic, cubic equations and system equations, graphs done
    
-   
+### 12/28/2023
+ - modeling with function combinations 
     
 ## Khan Academy Progress
 - **Algebra 1**
