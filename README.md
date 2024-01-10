@@ -1,5 +1,5 @@
 # About
-Here, I'll be sharing my accomplishments and completed courses as a way of looking back and reflecting on my progress. My aim is to independently get educated in Computer Science for free using resources from [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU) which is aligned with the standards outlined in the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+Here, I'll be sharing my accomplishments and completed courses as a way of looking back and reflecting on my progress. My aim is to independently get educated in Computer Science for free using resources from [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU) The last is aligned with the standards outlined in the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
 
 
 ## Updates
