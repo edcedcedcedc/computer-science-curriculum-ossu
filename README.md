@@ -92,7 +92,7 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
 - **High School Geometry**
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
-- **Introduction to Trigonometry**
+- **Trigonometry**
   ![High School Geometry Progress](https://progress-bar.dev/68/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
