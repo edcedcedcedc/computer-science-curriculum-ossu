@@ -81,6 +81,8 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
 
 ### 01/09/2024
  - modeling done
+### 01/15/2024
+ - Algebra 2 done
     
 ## Khan Academy Progress
 - **Algebra 1**
