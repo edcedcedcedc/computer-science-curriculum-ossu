@@ -83,7 +83,10 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
  - modeling done
 ### 01/15/2024
  - Algebra 2 done
-    
+
+### 01/21/2024
+ - Trigonometry non right triangles; sine law, sine law proof, cosine law, cosine law proof done;
+
 ## Khan Academy Progress
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
@@ -95,7 +98,7 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Trigonometry**
-  ![High School Geometry Progress](https://progress-bar.dev/68/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![High School Geometry Progress](https://progress-bar.dev/73/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
