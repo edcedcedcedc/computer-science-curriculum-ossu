@@ -86,6 +86,10 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
 
 ### 01/21/2024
  - Trigonometry non right triangles; sine law, sine law proof, cosine law, cosine law proof done;
+### 02/04/2024 Achieved First Milestone 🎉
+Completed Algebra 1, Algebra 2, High School Geometry, and Trigonometry courses – prerequisites for OSSU. Ready for the next challenge! 🚀
+
+
 
 ## Khan Academy Progress
 - **Algebra 1**
@@ -98,7 +102,7 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
   ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Trigonometry**
-  ![High School Geometry Progress](https://progress-bar.dev/73/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
