@@ -88,7 +88,7 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
  - Trigonometry non right triangles; sine law, sine law proof, cosine law, cosine law proof done;
    
 ### 02/04/2024 Achieved First Milestone 🎉
- - Completed Algebra 1, Algebra 2, High School Geometry, and Trigonometry courses – prerequisites for OSSU. Ready for the next challenge! 🚀
+ - Completed Algebra 1, Algebra 2, High School Geometry, and Trigonometry courses – prerequisites for OSSU. Ready for the next challenge!
    
 ### 02/06/2024 
  - Python for Everybody - OSSU, Pre Calculus - Khan Academy 
