@@ -93,6 +93,9 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
 ### 02/06/2024 
  - Python for Everybody - OSSU, Pre Calculus - Khan Academy 
 
+### 02/13/2024 
+ - Python for Everybody - loops iterations; Pre Calculus - complex numbers 
+   
 ## Khan Academy Progress
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
@@ -107,11 +110,11 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/15/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/22/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 - **Python for Everybody**
-  ![Python for Everybody Progress](https://progress-bar.dev/23/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Python for Everybody Progress](https://progress-bar.dev/35/?scale=100&title=&width=90&color=babaca&suffix=%)
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
