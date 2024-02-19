@@ -1,5 +1,6 @@
 # About
-Here, I'll be sharing my accomplishments and completed courses as a way of looking back and reflecting on my progress. My aim is to independently get educated in Computer Science for free and get myself an emulation of BCS using resources from [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU) which is aligned with the standards outlined in the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+Here I'll be sharing my accomplishments and completed courses as a way of looking back and reflecting on my progress. My aim is to independently get educated in Computer Science for free and get myself an emulation of BCS using resources from [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU) which is aligned with the standards outlined in the [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+
 
 
 ## Updates
@@ -94,7 +95,10 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
  - Python for Everybody - OSSU, Pre Calculus - Khan Academy 
 
 ### 02/13/2024 
- - Python for Everybody - loops iterations; Pre Calculus - complex numbers 
+ - Python for Everybody - loops iterations; Pre Calculus - complex numbers
+   
+### 02/19/2024 
+ - Python for Everybody - dictionares; Pre Calculus - dividing multiplying complex numbers  
    
 ## Khan Academy Progress
 - **Algebra 1**
@@ -110,11 +114,11 @@ Here, I'll be sharing my accomplishments and completed courses as a way of looki
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/22/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/31/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 - **Python for Everybody**
-  ![Python for Everybody Progress](https://progress-bar.dev/35/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Python for Everybody Progress](https://progress-bar.dev/52/?scale=100&title=&width=90&color=babaca&suffix=%)
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
