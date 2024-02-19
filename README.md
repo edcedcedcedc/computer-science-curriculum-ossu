@@ -100,7 +100,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 02/19/2024 
  - Python for Everybody - dictionares; Pre Calculus - dividing multiplying complex numbers  
    
-## Khan Academy Progress
+## Khan Academy
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
 
