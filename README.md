@@ -98,7 +98,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
  - Python for Everybody - loops iterations; Pre Calculus - complex numbers
    
 ### 02/19/2024 
- - Python for Everybody - dictionares; Pre Calculus - dividing multiplying complex numbers  
+ - Python for Everybody - dictionares; Pre Calculus - dividing multiplying complex numbers
+   
+### 02/21/2024 
+ -  Pre Calculus - rational functions  
    
 ## Khan Academy
 - **Algebra 1**
@@ -114,7 +117,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/31/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/39/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 - **Python for Everybody**
