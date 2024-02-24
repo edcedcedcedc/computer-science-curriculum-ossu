@@ -101,7 +101,9 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
  - Python for Everybody - dictionares; Pre Calculus - dividing multiplying complex numbers
    
 ### 02/21/2024 
- -  Pre Calculus - rational functions  
+ -  Pre Calculus - rational functions
+### 02/25/2024 
+ -  Pre Calculus - rational word problems, PY4E done, 12 units out of 17, because others are optional so looking forward for CS50P:rocket:
    
 ## Khan Academy
 - **Algebra 1**
@@ -121,7 +123,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ## OSSU
 - **Python for Everybody**
-  ![Python for Everybody Progress](https://progress-bar.dev/52/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
