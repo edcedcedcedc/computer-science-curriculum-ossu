@@ -104,6 +104,8 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
  -  Pre Calculus - rational functions
 ### 02/25/2024 
  -  Pre Calculus - rational word problems, PY4E done, 12 units out of 17, because others are optional so looking forward for CS50P :rocket:
+### 02/26/2024 
+ -  CS50P unit 1 functions 
    
 ## Khan Academy
 - **Algebra 1**
@@ -122,8 +124,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![Pre Calculus Progress](https://progress-bar.dev/39/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
+  #### INTRO TO CS
 - **Python for Everybody**
   ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
+- **CS50P**
+  ![CS50P](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%)
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
