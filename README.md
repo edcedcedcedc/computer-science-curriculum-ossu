@@ -105,7 +105,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 02/25/2024 
  -  Pre Calculus - rational word problems, PY4E done, 12 units out of 17, because others are optional so looking forward for CS50P :rocket:
 ### 02/26/2024 
- -  CS50P unit 1 functions 
+ -  CS50P unit 0 functions 
    
 ## Khan Academy
 - **Algebra 1**
