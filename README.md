@@ -140,6 +140,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - CS50P unit 0 functions
 
+### 02/27/2024
+
+- CS50P unit 0 done
+
 ## Khan Academy
 
 - **Algebra 1**
