@@ -144,6 +144,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - CS50P unit 0 done
 
+### 02/27/2024
+
+- rational functions done, starting conic sections
+
 ## Khan Academy
 
 - **Algebra 1**
@@ -159,7 +163,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/39/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 
