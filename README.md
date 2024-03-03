@@ -172,7 +172,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - **Python for Everybody**
   ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
 - **CS50P**
-  ![CS50P](https://progress-bar.dev/22/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![CS50P](https://progress-bar.dev/30/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 
