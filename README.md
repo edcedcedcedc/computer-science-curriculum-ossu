@@ -148,6 +148,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - rational functions done, starting conic sections
 
+### 03/05/2024
+
+- precalculus conic sections 55%, cs50p 4 unit done - exceptions
+
 ## Khan Academy
 
 - **Algebra 1**
@@ -172,7 +176,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - **Python for Everybody**
   ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
 - **CS50P**
-  ![CS50P](https://progress-bar.dev/30/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![CS50P](https://progress-bar.dev/40/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 
