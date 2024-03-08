@@ -1,6 +1,4 @@
-import datetime
-
-MONTHS  = [
+MONTHS = [
     "January",
     "February",
     "March",
@@ -12,15 +10,15 @@ MONTHS  = [
     "September",
     "October",
     "November",
-    "December"
+    "December",
 ]
 
 MONTH = 12
 DAY = 31
 YEAR = 2024
-COMMA = ','
-SLASH = '/'
-WHITE_SPACE = ' '
+COMMA = ","
+SLASH = "/"
+WHITE_SPACE = " "
 
 
 """ 
@@ -47,54 +45,57 @@ WHITE_SPACE = ' '
 
  """
 
+
 def main():
     while True:
         param = input("Date:").strip()
         try:
             if not COMMA in param and WHITE_SPACE in param:
-                raise ValueError 
+                raise ValueError
             if COMMA in param and WHITE_SPACE in param:
                 param = param.split(WHITE_SPACE)
                 for i in range(len(param)):
                     if COMMA in param[i]:
-                        param[i] = param[i].split(',')[0]      
-                m,d,y = param
+                        param[i] = param[i].split(",")[0]
+                m, d, y = param
                 if m.isdigit():
                     raise ValueError
             else:
-                param = param.split('/')
-                m,d,y = param
+                param = param.split("/")
+                m, d, y = param
                 if not m.isdigit():
                     raise ValueError
                 elif int(d) > 31:
                     raise ValueError
         except ValueError:
-            pass 
+            pass
         else:
             b = is_v(param)
             if not b:
                 continue
-            else:      
-                m,d,y = b
-                print("{}-{:02}-{:02}".format(int(y),int(m),int(d)))
+            else:
+                m, d, y = b
+                print("{}-{:02}-{:02}".format(int(y), int(m), int(d)))
                 break
 
+
 def is_v(param):
-    m,d,y = param
+    m, d, y = param
 
     def ___(param):
         for i in range(len(MONTHS)):
             if MONTHS[i] == param:
-                return str(i + 1)  
-              
+                return str(i + 1)
+
     if m.isdigit():
         m = int(m)
         d = int(d)
         y = int(y)
         if m <= 12 or m in MONTHS:
             if d <= DAY and y <= YEAR:
-                return (m,d,y)
-            else: return False
+                return (m, d, y)
+            else:
+                return False
         else:
             return False
     else:
@@ -102,13 +103,11 @@ def is_v(param):
         d = int(d)
         if m in MONTHS:
             if d <= DAY and y <= YEAR:
-                return (___(m),d,y)
-            else: return False
+                return (___(m), d, y)
+            else:
+                return False
         else:
             return False
-                
+
+
 main()
-
-
-
-

@@ -1,7 +1,7 @@
 while True:
     try:
         x, y = input("Fraction:").split("/")
-        i = int(x)/int(y)
+        i = int(x) / int(y)
     except (ValueError, ZeroDivisionError, IndexError):
         pass
     else:

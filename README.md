@@ -152,6 +152,14 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - precalculus conic sections 55%, cs50p 4 unit done - exceptions
 
+### 03/06/2024
+
+- precalculus conic sections done, cs50p 5 unit in progress
+
+### 03/08/2024
+
+- precalculus vectors, cs50p 5 unit done - libraries, 6 in progress
+
 ## Khan Academy
 
 - **Algebra 1**
@@ -167,7 +175,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/55/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/62/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 
@@ -176,7 +184,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - **Python for Everybody**
   ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
 - **CS50P**
-  ![CS50P](https://progress-bar.dev/40/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![CS50P](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 
