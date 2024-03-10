@@ -158,7 +158,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 03/08/2024
 
-- precalculus vectors, cs50p 5 unit done - libraries, 6 in progress
+- precalculus vectors, cs50p 5 unit done - libraries, unit 6 - in progress
+
+### 03/10/2024
+
+- precalculus vectors, unit 6 test - done
 
 ## Khan Academy
 
@@ -184,7 +188,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - **Python for Everybody**
   ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
 - **CS50P**
-  ![CS50P](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![CS50P](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## Resources
 
