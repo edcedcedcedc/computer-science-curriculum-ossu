@@ -162,9 +162,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 03/10/2024
 
-- precalculus vectors, unit 6 test - done
+- precalculus vectors, cs50p unit 6 unit tests - done, started high school physics, unit 1, one dimensional motion
 
 ## Khan Academy
+
+### Prerequisites
 
 - **Algebra 1**
   ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
@@ -179,7 +181,12 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/62/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/65/?scale=100&title=&width=90&color=babaca&suffix=%)
+
+  #### Electives
+
+- **High School Physics**
+  ![Pre Calculus Progress](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 
