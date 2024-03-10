@@ -183,7 +183,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - **Pre Calculus**
   ![Pre Calculus Progress](https://progress-bar.dev/65/?scale=100&title=&width=90&color=babaca&suffix=%)
 
-  #### Electives
+### Electives
 
 - **High School Physics**
   ![Pre Calculus Progress](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
