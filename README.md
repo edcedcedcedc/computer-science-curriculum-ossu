@@ -191,12 +191,17 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ## OSSU
 
 #### INTRO TO CS
+*Topics Covered*:
+`simple programs`
+`simple data structures`
+| Course              | Progress             | Starting Date   | Completion Date | Proof |
+|---------------------|----------------------|-----------------|-----------------|------------|
+|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)               | 02.02.24             |04.03.24|[Py4e](./PY4E/) |
 
-- **Python for Everybody**
-  ![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)
-- **CS50P**
-  ![CS50P](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%)
-
+| Course              | Progress             | Starting Date   | Completion Date | Proof | Final Project|
+|---------------------|----------------------|-----------------|-----------------|------------|--------|
+|CS50p | ![CS50P](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24             |08.04.24|[cs50p](./cs50p/) |-|
+ 
 ## Resources
 
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
