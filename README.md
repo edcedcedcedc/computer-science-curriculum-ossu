@@ -164,6 +164,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - precalculus vectors, cs50p unit 6 unit tests - done, started high school physics, unit 1, one dimensional motion
 
+### 03/15/2024
+
+- precalculus matrixes, cs50p skipped the i/o unit moved to the regexp unit done about 50%
+- high school physics one dimentional motion unit about 50% done
 
 ## Khan Academy
 
@@ -182,24 +186,25 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/65/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/71/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ### Electives
 
 - **High School Physics**
-  ![Pre Calculus Progress](https://progress-bar.dev/3/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/5/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 
 #### INTRO TO CS
-*Topics Covered*:
+
+_Topics Covered_:
 `simple programs`
 `simple data structures`
-| Course              | Progress             | Starting Date   | Completion Date | Proof |Final Project|
+| Course | Progress | Starting Date | Completion Date | Proof |Final Project|
 :-- | :--: | :--: | :--: | :--:|:--:|
-|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%)               | 02.02.24             |04.03.24|[Py4e](./PY4E/) |-|
-|CS50p | ![CS50P](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24             |08.04.24|[cs50p](./cs50p/) |-|
- 
+|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|[Py4e](./PY4E/) |-|
+|CS50p | ![CS50P](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|[cs50p](./cs50p/) |-|
+
 ## Resources
 
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
