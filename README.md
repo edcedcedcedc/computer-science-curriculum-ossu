@@ -169,6 +169,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - precalculus matrixes, cs50p skipped the i/o unit moved to the regexp unit done about 50%
 - high school physics one dimentional motion unit about 50% done
 
+### 03/17/2024
+
+- cs50p done; besides unit 6 and 8, they were irrelevant for me.
+
 ## Khan Academy
 
 ### Prerequisites
@@ -200,10 +204,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 _Topics Covered_:
 `simple programs`
 `simple data structures`
-| Course | Progress | Starting Date | Completion Date | Proof |Final Project|
-:-- | :--: | :--: | :--: | :--:|:--:|
-|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|[Py4e](./PY4E/) |-|
-|CS50p | ![CS50P](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|[cs50p](./cs50p/) |-|
+| Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|-|[Py4e](./PY4E/) |-|
+|CS50p |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|03.17.2024|[cs50p](./cs50p/) |-|
 
 ## Resources
 
