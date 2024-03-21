@@ -173,7 +173,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - cs50p done; besides unit 6 and 8, they were irrelevant for me.
 
-### 03/2/2024
+### 03/22/2024
 
 - dropped khan academy high school physics, seems useless without calculus..
 
