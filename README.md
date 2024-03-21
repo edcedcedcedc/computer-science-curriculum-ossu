@@ -162,16 +162,20 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 10/03/2024
 
-- precalculus vectors, cs50p unit 6 unit tests - done, started high school physics, unit 1, one dimensional motion
+- precalculus vectors, cs50p unit 6 unit tests - done
 
 ### 03/15/2024
 
 - precalculus matrixes, cs50p skipped the i/o unit moved to the regexp unit done about 50%
-- high school physics one dimentional motion unit about 50% done
+- school physics, unit 1, one dimensional motion
 
 ### 03/17/2024
 
 - cs50p done; besides unit 6 and 8, they were irrelevant for me.
+
+### 03/2/2024
+
+- dropped khan academy high school physics, seems useless without calculus..
 
 ## Khan Academy
 
@@ -192,14 +196,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - **Pre Calculus**
   ![Pre Calculus Progress](https://progress-bar.dev/71/?scale=100&title=&width=90&color=babaca&suffix=%)
 
-### Electives
-
-- **High School Physics**
-  ![Pre Calculus Progress](https://progress-bar.dev/5/?scale=100&title=&width=90&color=babaca&suffix=%)
-
 ## OSSU
 
 #### INTRO TO CS
+
+### Introduction to Programming
 
 _Topics Covered_:
 `simple programs`
