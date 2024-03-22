@@ -207,9 +207,19 @@ _Topics Covered_:
 `simple data structures`
 | Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|-|[Py4e](./PY4E/) |-|
-|CS50p |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|03.17.2024|[cs50p](./cs50p/) |-|
+|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|-|[Py4e](./intro_to_programming/PY4E/) |-|
+|CS50p |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.2024|[cs50p](./intro_to_programming/cs50p/) |-|
 
+### Introduction to Computer Science
+
+_Topics Covered_:
+`computation`
+`imperative programming`
+`basic data structures and algorithms`
+`and more`
+| Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro_to_computer_science/mit6.0001/) |-|
 ## Resources
 
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
