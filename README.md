@@ -177,6 +177,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - dropped khan academy high school physics, seems useless without calculus..
 
+### 03/27/2024
+
+- mit 6.0001 week 1 in progress,
+- khan academy precalculus matrices done, starting probability and combinatorics unit
+
 ## Khan Academy
 
 ### Prerequisites
@@ -194,7 +199,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
   ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 - **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/71/?scale=100&title=&width=90&color=babaca&suffix=%)
+  ![Pre Calculus Progress](https://progress-bar.dev/81/?scale=100&title=&width=90&color=babaca&suffix=%)
 
 ## OSSU
 
@@ -219,7 +224,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/5/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ## Resources
 
