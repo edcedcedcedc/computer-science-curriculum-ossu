@@ -43,27 +43,17 @@ wrong goal!!!! READ THE PROBLEM CAREFULLY!!!!!!!
 
  """
 portion_down_payment = 0.25
-
 current_savings = 0
-
 r = 0.04
-
 months = 0
 
-annual_salary = 120000
-
-portion_saved = 0.10
-
-total_cost = 1000000
+annual_salary = int(input("Enter your starting annual salary: "))
+portion_saved = float(input("Enter the percentage of your salary to save, as decimal: "))
+total_cost = int(input("Enter the cost of your dream home: "))   
 
 while current_savings < (total_cost * portion_down_payment):
-
     current_savings = (current_savings + annual_salary/12 * portion_saved + 
-    
                        current_savings * r/12)
-    
-    print(current_savings)
-
     months += 1
 
 print(months)
