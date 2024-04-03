@@ -12,7 +12,6 @@ r - 4% annual return(each month an increase of 4% current_savings * (0.04/12 + 1
 annual_salary - salary 
 portion saved - x% from the monthly salary 
 
-
 strategy:
 at the end of each month savings are going to increase by 4%
 current savings * (0.04 + 1)/12
@@ -29,17 +28,13 @@ input total cost
 while loop current savings < 250000
 current savings = annual salary/12 + current savings * r/12
 
-
 implimentation:
-
 
 evaluation:
 0.1
 wrong goal!!!! READ THE PROBLEM CAREFULLY!!!!!!!
 0.2
-
-            1000 + 1000m * (0.04/12 + 1)
-
+1000 + 1000m * (0.04/12 + 1)
 
  """
 portion_down_payment = 0.25

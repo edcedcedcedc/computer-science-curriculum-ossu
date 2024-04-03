@@ -179,8 +179,13 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 03/27/2024
 
-- mit 6.0001 week 1 in progress,
+- mit 6.0001 week 1 in progress, ps1 released
 - khan academy precalculus matrices done, starting probability and combinatorics unit
+
+### 03/27/2024
+
+- mit 6.0001 week 2 in progress, ps1 done
+- precalculus probability and combinatorics in progress
 
 ## Khan Academy
 
@@ -224,7 +229,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/8/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/16/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ## Resources
 
