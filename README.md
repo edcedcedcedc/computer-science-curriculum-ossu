@@ -182,7 +182,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 6.0001 week 1 in progress, ps1 released
 - khan academy precalculus matrices done, starting probability and combinatorics unit
 
-### 03/27/2024
+### 04/03/2024
 
 - mit 6.0001 week 2 in progress, ps1 done
 - precalculus probability and combinatorics in progress
