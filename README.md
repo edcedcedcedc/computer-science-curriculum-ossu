@@ -51,7 +51,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 21/10/2023
 
-- High School Geometry concurently with Algebra 2
+- High School Geometry concurrently with Algebra 2
 - Average rate of change.
 
 ### 26/10/2023
@@ -187,38 +187,36 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 6.0001 week 2 in progress, ps1 done
 - precalculus probability and combinatorics in progress
 
-## Khan Academy
+### Khan Academy
 
-### Prerequisites
+#### Prerequisites 
 
-- **Algebra 1**
-  ![Algebra 1 Progress](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%)
-
-- **Algebra 2**
-  ![Algebra 2 Progress](https://progress-bar.dev/92/?scale=100&title=&width=90&color=babaca&suffix=%)
-
-- **High School Geometry**
-  ![High School Geometry Progress](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%)
-
-- **Trigonometry**
-  ![High School Geometry Progress](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%)
-
-- **Pre Calculus**
-  ![Pre Calculus Progress](https://progress-bar.dev/81/?scale=100&title=&width=90&color=babaca&suffix=%)
+_Topics Covered_:
+`high school geometry`
+`college algebra`
+`trigonometry`
+`precalculus`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Algebra 1 |![Algebra 1](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|
+|HS Geometry |![HS Geometry](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
+|Algebra 2 |![Algebra 2](https://progress-bar.dev/93/?scale=100&title=&width=90&color=babaca&suffix=%) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
+|Trigonometry |![Trigonometry](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
+|Precalculus |![Precalculus](https://progress-bar.dev/81/?scale=100&title=&width=90&color=babaca&suffix=%) | 21.02.24 |08.04.24|-|[precalc](./prerequisites/) |-|
 
 ## OSSU
 
-#### INTRO TO CS
+### INTRO TO CS
 
-### Introduction to Programming
+#### Introduction to Programming
 
 _Topics Covered_:
 `simple programs`
 `simple data structures`
-| Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|-|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
-|CS50p |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.2024|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
+|CS50p |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
 
 ### Introduction to Computer Science
 
@@ -227,7 +225,7 @@ _Topics Covered_:
 `imperative programming`
 `basic data structures and algorithms`
 `and more`
-| Course | Progress | Start Date | End Date |Actual End Date| Proof |Projects|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/16/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
