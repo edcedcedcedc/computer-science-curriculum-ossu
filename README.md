@@ -187,9 +187,9 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 6.0001 week 2 in progress, ps1 done
 - precalculus probability and combinatorics in progress
 
-### Khan Academy
+## Khan Academy
 
-#### Prerequisites 
+#### Prerequisites
 
 _Topics Covered_:
 `high school geometry`
