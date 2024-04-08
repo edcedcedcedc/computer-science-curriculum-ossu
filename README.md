@@ -164,30 +164,30 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - precalculus vectors, cs50p unit 6 unit tests - done
 
-### 03/15/2024
+### 15/03/2024
 
 - precalculus matrixes, cs50p skipped the i/o unit moved to the regexp unit done about 50%
 - school physics, unit 1, one dimensional motion
 
-### 03/17/2024
+### 17/03/2024
 
 - cs50p done; besides unit 6 and 8, they were irrelevant for me.
 
-### 03/22/2024
+### 22/03/2024
 
 - dropped khan academy high school physics, seems useless without calculus..
 
-### 03/27/2024
+### 27/03/2024
 
 - mit 6.0001 week 1 in progress, ps1 released
 - khan academy precalculus matrices done, starting probability and combinatorics unit
 
-### 04/03/2024
+### 03/04/2024
 
 - mit 6.0001 week 2 in progress, ps1 done
 - precalculus probability and combinatorics in progress
 
-### 08/03/2024
+### 08/04/2024
 
 - mit 6.0001 problem set 2 in progress, week 3 in progress
 - precalculus probability and combinatorics done, precalc done
