@@ -187,6 +187,12 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 6.0001 week 2 in progress, ps1 done
 - precalculus probability and combinatorics in progress
 
+### 08/03/2024
+
+- mit 6.0001 problem set 2 in progress, week 3 in progress
+- precalculus probability and combinatorics done, precalc done
+- mit's single variable calculus program began
+
 ## Khan Academy
 
 #### Prerequisites
@@ -202,7 +208,7 @@ _Topics Covered_:
 |HS Geometry |![HS Geometry](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
 |Algebra 2 |![Algebra 2](https://progress-bar.dev/93/?scale=100&title=&width=90&color=babaca&suffix=%) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
 |Trigonometry |![Trigonometry](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
-|Precalculus |![Precalculus](https://progress-bar.dev/81/?scale=100&title=&width=90&color=babaca&suffix=%) | 21.02.24 |08.04.24|-|[precalc](./prerequisites/) |-|
+|Precalculus |![Precalculus](https://progress-bar.dev/93/?scale=100&title=&width=90&color=babaca&suffix=%) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|
 
 ## OSSU
 
@@ -215,10 +221,10 @@ _Topics Covered_:
 `simple data structures`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
-|CS50p |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+|University of Michigan - Python for Everybody |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
+|Harvard University CS50p - Introduction to Programming |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
 
-### Introduction to Computer Science
+#### Introduction to Computer Science
 
 _Topics Covered_:
 `computation`
@@ -228,7 +234,25 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 6.0001 |![MIT6.0001](https://progress-bar.dev/16/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|MIT 6.0001 - Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/16/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+
+
+### CORE CS
+
+#### Core math
+
+**Topics covered**:
+`discrete mathematics`
+`mathematical proofs`
+`basic statistics`
+`O-notation`
+`discrete probability`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|MIT 18.01 2006 - Single Variable Calculus|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |31.07.24|-|[mit svc](./core-cs/core-math/MIT-18.01/) |-|
+
+
 
 ## Resources
 
