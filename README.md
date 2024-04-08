@@ -223,6 +223,7 @@ _Topics Covered_:
 _Topics Covered_:
 `computation`
 `imperative programming`
+`basic abstractions`
 `basic data structures and algorithms`
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
