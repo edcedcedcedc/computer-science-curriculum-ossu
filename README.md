@@ -189,9 +189,14 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 08/04/2024
 
-- mit 6.0001 problem set 2 in progress, week 3 in progress
+- mit 6.0001, problem set 2 in progress, week 3 in progress
 - precalculus probability and combinatorics done, precalc done
 - mit's single variable calculus program began
+
+### 11/04/2024
+
+- mit 6.0001 problem set 2 50% done, week 3 reading/lectures
+- changed mit single variable calculus estimation from 13 weeks to around 26 weeks, it includes calc 1a 1b and 1c combined together :(
 
 ## Khan Academy
 
@@ -236,7 +241,6 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |MIT 6.0001 - Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/16/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
-
 ### CORE CS
 
 #### Core math
@@ -250,9 +254,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01 2006 - Single Variable Calculus|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |31.07.24|-|[mit svc](./core-cs/core-math/MIT-18.01/) |-|
-
-
+|MIT 18.01 - Single Variable Calculus|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |8.10.24|-|[mit svc](./core-cs/core-math/MIT-18.01/) |-|
 
 ## Resources
 
