@@ -259,7 +259,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01 - Single Variable Calculus|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |8.10.24|-|[mit 18.01](./core-cs/core-math/MIT-18.01/) |-|
+|MIT 18.01 - Single Variable Calculus|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |8.10.24|-|[mit 18.01](./core-cs/core-math/mit-18.01/) |-|
 
 ## Resources
 
