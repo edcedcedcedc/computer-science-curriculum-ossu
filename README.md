@@ -203,6 +203,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 6.0001 problem set 2 75% done , week 3 reading 75% done/ lectures need to watch
 - calculus week 1 in progress, getting hands on derivatives today
 
+### 15/04/2024
+
+- dropping single variable calculus 18.01, way to fast paced, and too hard for me.
+- starting calculus mit 18.01.1x 1a differentiation
+
 ## Khan Academy
 
 #### Prerequisites
@@ -259,7 +264,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01 - Single Variable Calculus|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |8.10.24|-|[mit 18.01](./core-cs/core-math/mit-18.01/) |-|
+|MIT 18.01.1x|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 08.03.24 |8.10.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01/) |-|
 
 ## Resources
 
