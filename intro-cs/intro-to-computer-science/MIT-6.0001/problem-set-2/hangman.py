@@ -12,9 +12,7 @@
 import random
 import string
 import sys
-
-WORDLIST_FILENAME = "words.txt"
-
+import os
 
 def load_words():
     """
@@ -22,18 +20,18 @@ def load_words():
     Depending on the size of the word list, this function may
     take a while to finish.
     """
+   
     print("Loading word list from file...")
-    # inFile: file
+    path = f"{os.getcwd()}\\my-self-education-in-computer-science\\intro-cs\\intro-to-computer-science\\MIT-6.0001\\problem-set-2\\words.txt"
+
     try:
-        inFile = open(WORDLIST_FILENAME, "r")
-        # line: string
+        inFile = open('words.txt', "r")
         line = inFile.readline()
-        # wordlist: list of strings
         wordlist = line.split()
         print(len(wordlist), "words loaded.")
         return wordlist
-    except:
-        print("words not found...")
+    except Exception as message:
+        print("Words were not found...i.e",message)
         sys.exit()
 
 
@@ -240,7 +238,7 @@ def hangman(secret_word):
         letter = letter.lower()
 
         if not letter.isalpha():
-            if warnings is not 0:
+            if warnings != 0:
                 warnings -= 1
             else:
                 guesses -= 1
@@ -254,8 +252,8 @@ def hangman(secret_word):
                     is_letter_guessed(letter, letters)
                     and is_consonant(letter)
                     and letter not in secret_word
-                    and warnings is 0
-                ) or warnings is 0:
+                    and warnings == 0
+                ) or warnings == 0:
                     guesses -= 1
                 else:
                     warnings -= 1
@@ -293,16 +291,20 @@ def hangman(secret_word):
 
 def match_with_gaps(my_word, other_word):
     """
-    my_word: string with _ characters, current guess of secret word
+    my_word: string with _ characters, current guess of secret word, assume that "_ " contains no whitespace
     other_word: string, regular English word
     returns: boolean, True if all the actual letters of my_word match the
         corresponding letters of other_word, or the letter is the special symbol
         _ , and my_word and other_word are of the same length;
         False otherwise:
-    """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
+    """ 
+    if len(my_word) != len(other_word):
+        return False
+    else:
+        for i in range(len(my_word)):
+            if my_word[i] != other_word[i] and my_word[i] != '_':
+                return False
+        return True
 
 def show_possible_matches(my_word):
     """
@@ -312,11 +314,64 @@ def show_possible_matches(my_word):
              at which that letter occurs in the secret word are revealed.
              Therefore, the hidden letter(_ ) cannot be one of the letters in the word
              that has already been revealed.
-
+    
     """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    """ 
+    goal/understanding: 
+    0.1
+    match the guessed word with words in list return the possible matches 
+    strategy:
+    0.1
+    use bisection search to match them by length
+    use bisection to match by each letter len 
+    accumulate possibile words 
+    use enumeration search on possible words to get actual words
+    
+    """
+    all_words = wordlist[:]
+    my_word = "".join(my_word.split())
+    high = len(all_words)
+    low = 0
+    precision = list()
+    actual_words = list()
+    iterations = 0
 
+    while True:
+       
+        iterations += 1
+        average = int(abs(high + low)/2)
+        
+        if len(precision) >= int(len(my_word)/2):
+            possible_words = all_words[average - 200 :average + 200][:]
+
+            for i in range(len(possible_words)):
+                if match_with_gaps(my_word, possible_words[i]):
+                    actual_words.append(possible_words[i])
+
+            if len(actual_words) == 0:
+                print("No Matches Found...")
+            else:
+                print(actual_words)
+            break            
+        elif len(all_words[average]) > len(my_word):
+            high = average
+        elif len(all_words[average]) < len(my_word):
+            low = average
+        else:
+            word = all_words[average][:]
+
+            for i in range(len(my_word)):
+                print(my_word[i], word[i])
+                if my_word[i] < word[i] and my_word[i] != '_':
+                    high = average 
+                    break
+                elif my_word[i] > word[i] and my_word[i] != '_':
+                    low = average
+                    break
+                elif my_word[i] == word[i] and my_word[i] != '_':
+                    precision.append(word[i])  
+
+print(show_possible_matches("c_ _ l"))
 
 def hangman_with_hints(secret_word):
     """
@@ -357,12 +412,13 @@ def hangman_with_hints(secret_word):
 
 if __name__ == "__main__":
     # pass
+    
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
 
-    secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    """ secret_word = choose_word(wordlist)
+    hangman(secret_word) """
     #pass
 ###############
 

@@ -208,6 +208,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - dropping single variable calculus 18.01, way to fast paced, and too hard for me.
 - starting calculus mit 18.01.1x 1a differentiation
 
+### 17/04/2024
+
+- mit 18.01.1x calc 1a limits
+- mit 6.0001 ps2 80% done, ps3 in progress, reading in progress
+
 ## Khan Academy
 
 #### Prerequisites
@@ -249,7 +254,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 6.0001 - Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/45/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|MIT 6.0001 - Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
 
@@ -264,7 +269,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01/) |-|
+|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/2/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01/) |-|
 
 ## Resources
 
