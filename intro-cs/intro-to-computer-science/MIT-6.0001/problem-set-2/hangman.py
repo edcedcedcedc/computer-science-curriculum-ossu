@@ -170,9 +170,11 @@ def compute_score(guesses, secret_word):
 
 def hangman(secret_word):
     """
+    This is a combination of f hangman and f hangman with hints
     secret_word: string the secret word to guess,
     guesses: the user guessed letters,
-    returns: None
+    returns: None,
+    
     """
     guesses = 6
     warnings = 3
@@ -331,4 +333,4 @@ def possible_matches(my_word):
 if __name__ == "__main__":
     
     secret_word = choose_word(wordlist)
-    hangman("god")
+    hangman(secret_word)
