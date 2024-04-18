@@ -213,6 +213,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x calc 1a limits
 - mit 6.0001 ps2 80% done, ps3 in progress, reading in progress
 
+### 18/04/2024
+
+- mit 18.01.1x calc 1a limits
+- mit 6.0001 ps2 finally done
+
 ## Khan Academy
 
 #### Prerequisites
