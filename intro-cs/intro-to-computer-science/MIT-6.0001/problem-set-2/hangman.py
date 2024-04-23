@@ -6,7 +6,6 @@
 import random
 import string
 import sys
-import os
 
 def load_words():
     """
@@ -16,7 +15,6 @@ def load_words():
     """
    
     print("Loading word list from file...")
-    path = f"{os.getcwd()}\\my-self-education-in-computer-science\\intro-cs\\intro-to-computer-science\\MIT-6.0001\\problem-set-2\\words.txt"
 
     try:
         inFile = open('words.txt', "r")

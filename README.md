@@ -218,6 +218,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x calc 1a limits
 - mit 6.0001 ps2 finally done
 
+### 23/04/2024
+
+- mit 18.01.1x calc 1a Continuity/Discontinuity, IVT
+- mit 6.0001 ps3 in progress
+
 ## Khan Academy
 
 #### Prerequisites
