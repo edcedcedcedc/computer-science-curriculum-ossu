@@ -100,19 +100,21 @@ def get_word_score(word, n):
     n: int >= 0, the number of actual letters
     returns: int >= 0, product
     """
+    assert isinstance(word, str), f"{word} not a str"
+    assert isinstance(n, int) and n > 0, f"{n} not an int or {n} < 0"
+
     word = word.lower()
     first_component = 0
     for i in word:
-        for k,v in SCRABBLE_LETTER_VALUES.items():
+        for k, v in SCRABBLE_LETTER_VALUES.items():
             if k == i:
                 first_component += v
     second_component = 7 * len(word) - 3 * (n - len(word))
     if second_component < 0:
         second_component = 1
     return first_component * second_component
-#
-# Make sure you understand how this function works and what it does!
-#
+
+
 def display_hand(hand):
     """
     Displays the letters currently in the hand.
@@ -125,11 +127,10 @@ def display_hand(hand):
 
     hand: dictionary (string -> int)
     """
-
-    for letter in hand.keys():
-        for j in range(hand[letter]):
-            print(letter, end=" ")  # print all on the same line
-    print()  # print an empty line
+    for key in hand.keys():
+        for _ in range(hand[key]):
+            print(key, end=" ")
+    print()
 
 
 #
@@ -146,18 +147,19 @@ def deal_hand(n):
     letters and the values are the number of times the
     particular letter is repeated in that hand.
 
-    n: int >= 0
+    n: int > 0
     returns: dictionary (string -> int)
     """
+    assert n > 0, f"{n} <= 0"
 
     hand = {}
     num_vowels = int(math.ceil(n / 3))
 
-    for i in range(num_vowels):
+    for _ in range(num_vowels):
         x = random.choice(VOWELS)
         hand[x] = hand.get(x, 0) + 1
 
-    for i in range(num_vowels, n):
+    for _ in range(num_vowels, n):
         x = random.choice(CONSONANTS)
         hand[x] = hand.get(x, 0) + 1
 
@@ -169,12 +171,13 @@ def deal_hand(n):
 #
 def update_hand(hand, word):
     """
-    Does NOT assume that hand contains every letter in word at least as
-    many times as the letter appears in word. Letters in word that don't
-    appear in hand should be ignored. Letters that appear in word more times
-    than in hand should never result in a negative count; instead, set the
-    count in the returned hand to 0 (or remove the letter from the
-    dictionary, depending on how your code is structured).
+    * Do not assume that hand contains every letter in word at least as many times as the letter appears in word.
+      hand might contain undefined, 0,1,2 letters
+    * Letters in word that don't appear in hand should be ignored.
+
+    * Letters that appear in word more times than in hand should never result in a negative count;
+      instead, set the count in the returned hand to 0
+      (or remove the letter from the dictionary, depending on how your code is structured).
 
     Updates the hand: uses up the letters in the given word
     and returns the new hand, without those letters in it.
@@ -185,8 +188,19 @@ def update_hand(hand, word):
     hand: dictionary (string -> int)
     returns: dictionary (string -> int)
     """
+    assert isinstance(hand, dict), f"type of {hand} not dict"
+    assert isinstance(word, str), f"type of {word} not str"
 
-    pass  # TO DO... Remove this line when you implement this function
+    word = word.lower()
+    new_hand = hand.copy()
+
+    for i in range(len(word)):
+        for k, v in new_hand.items():
+            if k == word[i]:
+                new_hand[k] = v - 1
+                if new_hand[k] < 1:
+                    new_hand[k] = 0
+    return new_hand
 
 
 #
@@ -203,8 +217,40 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     returns: boolean
     """
+    """ 
+    goal/understanding: 
+    test if word is in wordlist and word consist entirely of letters in the hand
 
-    pass  # TO DO... Remove this line when you implement this function
+    strategy:
+    check if word in wordlist 
+    check if each letter of word is in hand
+    if letter of word in hand then decrement it 
+    
+    evaluation:
+
+    implimentation:
+    """
+    assert isinstance(word, str), f"{word} not a str"
+    assert isinstance(hand, dict), f"{hand} not a dict"
+    assert isinstance(word_list, list), f"{word_list} not a list"
+
+    word = word.lower()
+    new_hand = hand.copy()
+
+    if word in word_list:
+        for k in word:
+            try:
+                v = new_hand[k]
+            except:
+                pass
+            if k not in new_hand:
+                return False
+            elif k in new_hand and v < 1:
+                return False
+            else:
+                new_hand[k] = v - 1
+        return True
+    return False
 
 
 #
@@ -360,5 +406,5 @@ def play_game(word_list):
 # when the program is run directly, instead of through an import statement
 #
 if __name__ == "__main__":
-    """ word_list = load_words()
-    play_game(word_list) """
+    """word_list = load_words()
+    play_game(word_list)"""
