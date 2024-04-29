@@ -132,7 +132,6 @@ def display_hand(hand):
             print(key, end=" ")
     print()
 
-
 #
 # Make sure you understand how this function works and what it does!
 # You will need to modify this for Problem #4.
@@ -154,9 +153,12 @@ def deal_hand(n):
 
     hand = {}
     num_vowels = int(math.ceil(n / 3))
+    random_i = random.choice(range(num_vowels))
 
-    for _ in range(num_vowels):
+    for i in range(num_vowels):
         x = random.choice(VOWELS)
+        if random_i == i:
+            x = "*"
         hand[x] = hand.get(x, 0) + 1
 
     for _ in range(num_vowels, n):
@@ -169,6 +171,7 @@ def deal_hand(n):
 #
 # Problem #2: Update a hand by removing letters
 #
+
 def update_hand(hand, word):
     """
     * Do not assume that hand contains every letter in word at least as many times as the letter appears in word.
@@ -208,36 +211,29 @@ def update_hand(hand, word):
 #
 def is_valid_word(word, hand, word_list):
     """
+    * if word doesn't contain a wildcard,
     Returns True if word is in the word_list and is entirely
     composed of letters in the hand. Otherwise, returns False.
     Does not mutate hand or word_list.
+
+    * if word contains a wildcard,
+    Returns True if at least one valid word can be formed,
+    with the wildcard as a vowel
 
     word: string
     hand: dictionary (string -> int)
     word_list: list of lowercase strings
     returns: boolean
     """
-    """ 
-    goal/understanding: 
-    test if word is in wordlist and word consist entirely of letters in the hand
 
-    strategy:
-    check if word in wordlist 
-    check if each letter of word is in hand
-    if letter of word in hand then decrement it 
-    
-    evaluation:
-
-    implimentation:
-    """
     assert isinstance(word, str), f"{word} not a str"
     assert isinstance(hand, dict), f"{hand} not a dict"
     assert isinstance(word_list, list), f"{word_list} not a list"
 
     word = word.lower()
     new_hand = hand.copy()
-
-    if word in word_list:
+ 
+    if "*" not in word:
         for k in word:
             try:
                 v = new_hand[k]
@@ -249,9 +245,20 @@ def is_valid_word(word, hand, word_list):
                 return False
             else:
                 new_hand[k] = v - 1
-        return True
-    return False
-
+        if word in word_list:
+            return True
+    else:
+        for i in word:
+            if i not in hand:
+                return False
+            
+        for i in VOWELS:
+            for j in word:
+                if j == "*":
+                    if (lambda i: word.replace("*", i))(i) in word_list:
+                        return True
+                    break
+        return False   
 
 #
 # Problem #5: Playing a hand

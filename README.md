@@ -223,6 +223,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x calc 1a Continuity/Discontinuity, IVT
 - mit 6.0001 ps3 in progress
 
+### 29/04/2024
+
+- mit 18.01.1x calc 1a Derivates
+- mit 6.0001 ps3 4/6 done
+
 ## Khan Academy
 
 #### Prerequisites
@@ -279,7 +284,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/2/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
+|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/20/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
 
 ## Resources
 
