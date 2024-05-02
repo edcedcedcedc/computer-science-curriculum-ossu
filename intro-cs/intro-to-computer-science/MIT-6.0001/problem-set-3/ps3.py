@@ -325,7 +325,7 @@ def substitute_hand(hand, letter):
     assert isinstance(letter, str), f'{letter} is not str'
 
     vowels_consonants = list(VOWELS + CONSONANTS)
-    vowels_consonants.remove('l')
+    vowels_consonants.remove(letter)
     random.shuffle(vowels_consonants)
     r_letter = random.choice(vowels_consonants)
     new_hand = hand.copy()
@@ -335,10 +335,9 @@ def substitute_hand(hand, letter):
     else:
         for k in hand.keys(): 
             if k == letter:
-                v = new_hand.pop(k)
                 while r_letter in new_hand:
                     r_letter = random.choice(vowels_consonants)
-                new_hand[r_letter] = v
+                new_hand[r_letter] = new_hand.pop(k)
                 break
 
     return new_hand
