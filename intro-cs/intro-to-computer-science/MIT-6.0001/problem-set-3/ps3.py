@@ -9,7 +9,7 @@
 
 import math
 import random
-import string
+
 
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
@@ -287,11 +287,6 @@ def play_hand(hand, word_list):
             print("Total score: ", total_score) 
             break
 
-#
-# procedure you will use to substitute a letter in a hand
-#
-
-
 def substitute_hand(hand, letter):
     """
     Allow the user to replace all copies of one letter in the hand (chosen by user)
@@ -310,13 +305,45 @@ def substitute_hand(hand, letter):
     The new letter should not be 'h', 'e', 'l', or 'o' since those letters were
     already in the hand.
 
+    goal/understanding: substitute a letter in a dictionary with a random one 
+
+    strategy:
+    check if letter in hand 
+    if not in hand return the same one 
+    if not in hand 
+    choose a random letter from constants or vowels at random 
+
+    implimentation:
+
+    evaluation:
+
     hand: dictionary (string -> int)
     letter: string
     returns: dictionary (string -> int)
     """
+    assert isinstance(hand, dict), f'{hand} is not dict'
+    assert isinstance(letter, str), f'{letter} is not str'
 
-    pass  # TO DO... Remove this line when you implement this function
+    vowels_consonants = list(VOWELS + CONSONANTS)
+    vowels_consonants.remove('l')
+    random.shuffle(vowels_consonants)
+    r_letter = random.choice(vowels_consonants)
+    new_hand = hand.copy()
 
+    if letter not in hand:
+        return hand 
+    else:
+        for k in hand.keys(): 
+            if k == letter:
+                v = new_hand.pop(k)
+                while r_letter in new_hand:
+                    r_letter = random.choice(vowels_consonants)
+                new_hand[r_letter] = v
+                break
+
+    return new_hand
+
+print(substitute_hand({'h':1, 'e':1, 'l':2, 'o':1}, 'l'))
 
 def play_game(word_list):
     """
