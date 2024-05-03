@@ -5,11 +5,11 @@
 #
 # Name          : eurodollarclub
 # Collaborators : None
-# Time spent    : <total time>
+# Time spent    : 10+ hours
 
 import math
 import random
-
+import sys
 
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
@@ -267,8 +267,8 @@ def play_hand(hand, word_list):
 
     while True:
         if calculate_handlen(hand) < 1:
-            print(f"Run out of letters. Total score: {total_score}", "\n")
-            break
+            print(f"Run out of letters. Total score for this hand: {total_score}", "\n")
+            return total_score
 
         print("Current Hand:", end=" ")
         display_hand(hand)
@@ -284,8 +284,9 @@ def play_hand(hand, word_list):
                 hand = update_hand(hand, word)
                 print("This is not a valid word. Please choose another word.", "\n")
         else:
-            print("Total score: ", total_score) 
-            break
+            print("Total score for this hand ", total_score)
+            print('---------------')
+            return total_score 
 
 def substitute_hand(hand, letter):
     """
@@ -293,9 +294,6 @@ def substitute_hand(hand, letter):
     with a new letter chosen from the VOWELS and CONSONANTS at random. The new letter
     should be different from user's choice, and should not be any of the letters
     already in the hand.
-
-    If user provide a letter not in the hand, the hand should be the same.
-
     Has no side effects: does not mutate hand.
 
     For example:
@@ -304,18 +302,6 @@ def substitute_hand(hand, letter):
         {'h':1, 'e':1, 'o':1, 'x':2} -> if the new letter is 'x'
     The new letter should not be 'h', 'e', 'l', or 'o' since those letters were
     already in the hand.
-
-    goal/understanding: substitute a letter in a dictionary with a random one 
-
-    strategy:
-    check if letter in hand 
-    if not in hand return the same one 
-    if not in hand 
-    choose a random letter from constants or vowels at random 
-
-    implimentation:
-
-    evaluation:
 
     hand: dictionary (string -> int)
     letter: string
@@ -342,49 +328,38 @@ def substitute_hand(hand, letter):
 
     return new_hand
 
-print(substitute_hand({'h':1, 'e':1, 'l':2, 'o':1}, 'l'))
+def print_hand(hand):
+    print("Current Hand:", end=" ")
+    display_hand(hand)
 
 def play_game(word_list):
     """
     Allow the user to play a series of hands
-
-    * Asks the user to input a total number of hands
-
-    * Accumulates the score for each hand into a total score for the
-      entire series
-
-    * For each hand, before playing, ask the user if they want to substitute
-      one letter for another. If the user inputs 'yes', prompt them for their
-      desired letter. This can only be done once during the game. Once the
-      substitue option is used, the user should not be asked if they want to
-      substitute letters in the future.
-
-    * For each hand, ask the user if they would like to replay the hand.
-      If the user inputs 'yes', they will replay the hand and keep
-      the better of the two scores for that hand.  This can only be done once
-      during the game. Once the replay option is used, the user should not
-      be asked if they want to replay future hands. Replaying the hand does
-      not count as one of the total number of hands the user initially
-      wanted to play.
-
-            * Note: if you replay a hand, you do not get the option to substitute
-                    a letter - you must play whatever hand you just had.
-
-    * Returns the total score for the series of hands
-
     word_list: list of lowercase strings
     """
+    assert isinstance(word_list, list), f'{word_list} not list'
+    total_score_each_hand = 0
 
-    print(
-        "play_game not implemented."
-    )  # TO DO... Remove this line when you implement this function
+    total_number_hands = input("Enter total number of hands: ")
+    assert total_number_hands.isdigit(), f'NaN' 
+    
+    for _ in range(int(total_number_hands)):
+        random_int = random.randint(2,8)
+        current_hand = deal_hand(random_int)
+        print_hand(current_hand)
+
+        while input("Would you like to substitute a letter ? ") == 'yes':
+            substitute_letter = input("Which letter would you like to replace, y for yes n for no")
+            current_hand = substitute_hand(current_hand, substitute_letter)
+            print_hand(current_hand)
+        else:
+            print()
+            total_score_each_hand += play_hand(current_hand,word_list)
+        
+    print('Total score over all hands', total_score_each_hand)
 
 
-#
-# Build data structures used for entire session and play game
-# Do not remove the "if __name__ == '__main__':" line - this code is executed
-# when the program is run directly, instead of through an import statement
-#
 if __name__ == "__main__":
-    """word_list = load_words()
-    play_game(word_list)"""
+    word_list = load_words()
+    play_game(word_list)
+   

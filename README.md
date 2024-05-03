@@ -228,6 +228,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x calc 1a Derivates
 - mit 6.0001 ps3 4/6 done
 
+### 3/05/2024
+
+- mit ps3 DONE!
+
 ## Khan Academy
 
 #### Prerequisites
@@ -269,7 +273,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 6.0001 - Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|MIT 6.0001 - Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
 
