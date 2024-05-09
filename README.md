@@ -230,7 +230,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 3/05/2024
 
-- mit ps3 DONE!
+- mit 6.0001 ps3 done
+
+### 9/05/2024
+
+- mit 6.0001 ps3 update, reading next chapters, mit 18.01.1x midterm1, exercises, higher order derivatives
 
 ## Khan Academy
 

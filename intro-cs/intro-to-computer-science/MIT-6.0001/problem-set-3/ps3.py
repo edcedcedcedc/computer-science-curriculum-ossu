@@ -193,7 +193,7 @@ def is_valid_word(word, hand, word_list):
         for k in word:
             try:
                 v = new_hand[k]
-            except:
+            except(KeyError):
                 pass
             if k not in new_hand:
                 return False
