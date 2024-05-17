@@ -236,6 +236,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - mit 6.0001 ps3 update, reading next chapters, mit 18.01.1x midterm1, exercises, higher order derivatives
 
+### 17/05/2024
+
+- mit 6.0001 ps4 in progress, mit 18.01.1x unit 2 almost done, unit 3 in progress soon
+
 ## Khan Academy
 
 #### Prerequisites
