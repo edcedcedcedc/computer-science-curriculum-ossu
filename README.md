@@ -240,6 +240,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - mit 6.0001 ps4 in progress, mit 18.01.1x unit 2 almost done, unit 3 in progress soon
 
+### 26/05/2024
+
+- mit 6.0001 ps4-a done, mit 18.01.1x
+
 ## Khan Academy
 
 #### Prerequisites
