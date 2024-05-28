@@ -1,6 +1,6 @@
 # Problem Set 4B
-# Name: <your name here>
-# Collaborators:
+# Name: Eurodollarclub
+# Collaborators: None
 # Time Spent: x:xx
 
 import string
@@ -10,9 +10,7 @@ def load_words(file_name):
     '''
     file_name (string): the name of the file containing 
     the list of words to load    
-    
     Returns: a list of valid words. Words are strings of lowercase letters.
-    
     Depending on the size of the word list, this function may
     take a while to finish.
     '''
@@ -30,12 +28,9 @@ def is_word(word_list, word):
     '''
     Determines if word is a valid word, ignoring
     capitalization and punctuation
-
     word_list (list): list of words in the dictionary.
     word (string): a possible word.
-    
     Returns: True if word is in word_list, False otherwise
-
     Example:
     >>> is_word(word_list, 'bat') returns
     True
@@ -43,7 +38,7 @@ def is_word(word_list, word):
     False
     '''
     word = word.lower()
-    word = word.strip(" !@#$%^&*()-_+={}[]|\:;'<>?,./\"")
+    word = word.strip(r" !@#$%^&*()-_+={}[]|\:;'<>?,./\"")
     return word in word_list
 
 def get_story_string():
@@ -55,39 +50,34 @@ def get_story_string():
     f.close()
     return story
 
-### END HELPER CODE ###
-
 WORDLIST_FILENAME = 'words.txt'
 
 class Message(object):
     def __init__(self, text):
         '''
-        Initializes a Message object
-                
+        Initializes a Message object      
         text (string): the message's text
-
         a Message object has two attributes:
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        pass #delete this line and replace with your code here
+        self.message_text = text
+        self.valid_words = load_words('words.txt')
 
     def get_message_text(self):
         '''
         Used to safely access self.message_text outside of the class
-        
         Returns: self.message_text
         '''
-        pass #delete this line and replace with your code here
+        return self.message_text
 
     def get_valid_words(self):
         '''
         Used to safely access a copy of self.valid_words outside of the class.
         This helps you avoid accidentally mutating class attributes.
-        
         Returns: a COPY of self.valid_words
         '''
-        pass #delete this line and replace with your code here
+        return self.valid_words.copy()
 
     def build_shift_dict(self, shift):
         '''
@@ -96,14 +86,22 @@ class Message(object):
         character shifted down the alphabet by the input shift. The dictionary
         should have 52 keys of all the uppercase letters and all the lowercase
         letters only.        
-        
         shift (integer): the amount by which to shift every letter of the 
         alphabet. 0 <= shift < 26
-
         Returns: a dictionary mapping a letter (string) to 
                  another letter (string). 
         '''
-        pass #delete this line and replace with your code here
+        assert 0 <= shift < 26, f'0 <={shift}< 26'
+        letters_list_lowercase = list(string.ascii_lowercase)
+        letters_list_uppercase = list(string.ascii_uppercase)
+        shift_dict = dict()
+        for k in range(len(letters_list_lowercase)):
+            shift_k = k + shift
+            if shift_k > 25:
+                shift_k = abs(shift_k - 26)
+            shift_dict[letters_list_lowercase[k]] = letters_list_lowercase[shift_k]
+            shift_dict[letters_list_uppercase[k]] = letters_list_uppercase[shift_k]
+        return shift_dict
 
     def apply_shift(self, shift):
         '''
@@ -117,7 +115,19 @@ class Message(object):
         Returns: the message text (string) in which every character is shifted
              down the alphabet by the input shift
         '''
-        pass #delete this line and replace with your code here
+        shift_dict = message.build_shift_dict(shift)
+        encrypted_word = ""
+        for i in self.message_text:
+            for k,v in shift_dict.items():
+                if i == k:
+                    encrypted_word += v
+                elif i == " ":
+                    encrypted_word += " "
+                    break
+                          
+        return encrypted_word
+
+            
 
 class PlaintextMessage(Message):
     def __init__(self, text, shift):
@@ -173,7 +183,8 @@ class PlaintextMessage(Message):
         '''
         pass #delete this line and replace with your code here
 
-
+message = Message('a A a')
+print(message.apply_shift(1))
 class CiphertextMessage(Message):
     def __init__(self, text):
         '''

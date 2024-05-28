@@ -244,6 +244,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - mit 6.0001 ps4-a done, mit 18.01.1x
 
+### 27/05/2024
+
+- mit 6.0001 ps4-b in progress, mit 18.01.1x unit 3 differentiation in progress
+
 ## Khan Academy
 
 #### Prerequisites
