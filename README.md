@@ -255,7 +255,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 16/06/2024
 
 - mit 18.01.1x product rule done
-- 
+
 ### 22/06/2024
 
 - mit 18.01.1x quotient rule done, chain rule in progress
@@ -330,7 +330,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing-semester](./core-cs/core-tools/missing-semester/) |-|
+|MIT The Missing Semester |![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing-semester](./core-cs/core-tools/missing-semester/) |-|
 
 
 ## Resources
