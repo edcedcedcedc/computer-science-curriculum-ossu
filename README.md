@@ -255,7 +255,13 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 16/06/2024
 
 - mit 18.01.1x product rule done
+- 
+### 22/06/2024
 
+- mit 18.01.1x quotient rule done, chain rule in progress
+- the missing semester at mit week 1, lecture 1, the shell
+- mit 6.0001 reading on big o done, lectures done, ps5 in progress
+  
 ## Khan Academy
 
 #### Prerequisites
@@ -312,9 +318,21 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/25/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
+|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/45/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
+
+#### CS Tools
+
+**Topics covered**:
+`terminals and shell scripting`
+`vim`
+`command line environments`
+`version control`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|The Missing Semester |![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing-semester](./core-cs/core-tools/missing-semester/) |-|
+
 
 ## Resources
-
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
