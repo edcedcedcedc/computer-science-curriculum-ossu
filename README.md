@@ -330,7 +330,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT The Missing Semester |![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing](./core-cs/core-tools/missing) |-|
+|MIT The Missing Semester |![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing](./core-cs/core-tools/missing) |-|
 
 
 ## Resources
