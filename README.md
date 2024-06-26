@@ -210,7 +210,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 17/04/2024
 
-- mit 18.01.1x calc 1a limits
+- mit 18.01.1x calc 1a unit 0 limits
 - mit 6.0001 ps2 80% done, ps3 in progress, reading in progress
 
 ### 18/04/2024
@@ -225,7 +225,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 29/04/2024
 
-- mit 18.01.1x calc 1a Derivates
+- mit 18.01.1x calc 1a unit 1 Derivates
 - mit 6.0001 ps3 4/6 done
 
 ### 3/05/2024
@@ -238,7 +238,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 17/05/2024
 
-- mit 6.0001 ps4 in progress, mit 18.01.1x unit 2 almost done, unit 3 in progress soon
+- mit 6.0001 ps4 in progress, mit 18.01.1x unit 1 almost done, unit 2 in progress soon
 
 ### 26/05/2024
 
@@ -246,7 +246,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 27/05/2024
 
-- mit 6.0001 ps4-b in progress, mit 18.01.1x unit 3 differentiation in progress
+- mit 6.0001 ps4-b in progress, mit 18.01.1x unit 2 differentiation in progress
 
 ### 10/06/2024
 
@@ -261,7 +261,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x quotient rule done, chain rule in progress
 - the missing semester at mit week 1, lecture 1, the shell
 - mit 6.0001 reading on big o done, lectures done, ps5 in progress
-  
+
+### 26/06/2024
+
+- mit missing semester lesson 2, hw 2 in progress 
+
 ## Khan Academy
 
 #### Prerequisites
@@ -318,20 +322,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/45/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
-
-#### CS Tools
-
-**Topics covered**:
-`terminals and shell scripting`
-`vim`
-`command line environments`
-`version control`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|MIT The Missing Semester |![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing](./core-cs/core-tools/missing) |-|
-
+|MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/25/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
