@@ -324,6 +324,18 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |MIT 18.01.1x - 1A Differentiation|![](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
 
+#### CS Tools
+
+**Topics covered**:
+`terminals and shell scripting`
+`vim`
+`command line environments`
+`version control`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|MIT The Missing Semester |![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing](./core-cs/core-tools/missing) |-|
+
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
