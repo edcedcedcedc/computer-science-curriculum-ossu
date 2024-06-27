@@ -11,7 +11,7 @@ from project_util import translate_html
 from mtTkinter import *
 from datetime import datetime
 import re
-""" import pytz """
+import pytz
 
 
 #-----------------------------------------------------------------------
@@ -65,7 +65,7 @@ class NewsStory(object):
         self.pubdate = pubdate
     
     def get_guid(self):
-        return self.guid
+        return self.guid.lower
     
     def get_title(self):
         return self.title
@@ -118,22 +118,35 @@ class PhraseTrigger(Trigger):
     def is_phrase_in(self, text):
         text = text.lower()
         splitted_phrase = self.phrase.split(" ")
-        pattern = f"[\s{string.punctuation}]+"
+        pattern_1 = f"[\\s{string.punctuation}]+"
+        pattern_2 = f"[\\s{string.punctuation}]*\\b"
         phrase = ''
-        for i in splitted_phrase:
-            phrase += i.lower() + pattern
+        for i in range(len(splitted_phrase)):
+            if len(splitted_phrase) - 1 == i:
+                phrase += splitted_phrase[i].lower() + pattern_2
+            else:
+                phrase += splitted_phrase[i].lower() + pattern_1
         if re.search(phrase, text):
             return True
         else:
             return False
 
-class TitleTrigger(PhraseTrigger):
-    pass
-# Problem 3
-# TODO: TitleTrigger
+newPhraseTrigger = PhraseTrigger('purple cow')
+print(newPhraseTrigger.is_phrase_in('The purple cow is soft and cuddly.'))
 
+
+
+
+
+# Problem 3
+class TitleTrigger(PhraseTrigger):
+    def evaluate(self, story):
+        return self.is_phrase_in(story.get_title())
+    
 # Problem 4
-# TODO: DescriptionTrigger
+class DescriptionTrigger(PhraseTrigger):
+    def evaluate(self, story):
+        return self.is_phrase_in(story.get_description())
 
 # TIME TRIGGERS
 
@@ -275,6 +288,6 @@ if __name__ == '__main__':
     root.title("Some RSS parser")
     t = threading.Thread(target=main_thread, args=(root,))
     t.start()
-    root.mainloop() """
-    pass
+    root.mainloop()
+    """
 
