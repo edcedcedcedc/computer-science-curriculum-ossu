@@ -307,7 +307,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Computer Science|![MIT6.0001](https://progress-bar.dev/80/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/80/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
 
@@ -322,7 +322,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Calculus 1A Differentiation|![](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
+|Calculus 1A Differentiation |![](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
 
 #### CS Tools
 
@@ -334,7 +334,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester|![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+|The Missing Semester |![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
