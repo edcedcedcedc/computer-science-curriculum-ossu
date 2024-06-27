@@ -10,6 +10,7 @@ import threading
 from project_util import translate_html
 from mtTkinter import *
 from datetime import datetime
+import re
 """ import pytz """
 
 
@@ -82,32 +83,52 @@ class NewsStory(object):
 #======================
 # Triggers
 #======================
-
 class Trigger(object):
     def evaluate(self, story):
         """
         Returns True if an alert should be generated
         for the given news item, or False otherwise.
-        """
-        
+        """ 
         # DO NOT CHANGE THIS!
         raise NotImplementedError
 
 # PHRASE TRIGGERS
 
+""" 
+goal: 
+impliment phrase trigger abstract class for two other classes title and description trigger 
+
+strategy:
+creater an abstract class PhraseTrigger 
+inherit from other abstract class Trigger
+define constructor with self and phrase 
+is phrase - if the word in the text appears consecituvely and entirely
+implimentation:
+
+evaluation:
+0.1
+create an instance of phrase trigger with a phrase
+test it with the predicate method to see if phrase is in text 
+"""
 # Problem 2
 class PhraseTrigger(Trigger):
     def __init__(self, phrase):
-        self.phrase = phrase
-
+        self.phrase = phrase.lower()
+    
     def is_phrase_in(self, text):
-        self.phrase = self.phrase.lower()
         text = text.lower()
-        if self.phrase in text:
+        splitted_phrase = self.phrase.split(" ")
+        pattern = f"[\s{string.punctuation}]+"
+        phrase = ''
+        for i in splitted_phrase:
+            phrase += i.lower() + pattern
+        if re.search(phrase, text):
             return True
         else:
             return False
 
+class TitleTrigger(PhraseTrigger):
+    pass
 # Problem 3
 # TODO: TitleTrigger
 
@@ -250,9 +271,10 @@ def main_thread(master):
 
 
 if __name__ == '__main__':
-    root = Tk()
+    """ root = Tk()
     root.title("Some RSS parser")
     t = threading.Thread(target=main_thread, args=(root,))
     t.start()
-    root.mainloop()
+    root.mainloop() """
+    pass
 
