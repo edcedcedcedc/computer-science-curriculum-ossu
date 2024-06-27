@@ -65,7 +65,7 @@ class NewsStory(object):
         self.pubdate = pubdate
     
     def get_guid(self):
-        return self.guid.lower
+        return self.guid
     
     def get_title(self):
         return self.title
