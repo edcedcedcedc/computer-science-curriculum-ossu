@@ -294,8 +294,8 @@ _Topics Covered_:
 `simple data structures`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Programming 1|![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
-|Introduction to Programming 2|![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+|Introduction to Programming 1 |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
+|Introduction to Programming 2 |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
 
 #### Introduction to Computer Science
 
@@ -334,7 +334,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester|![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing](./core-cs/core-tools/missing) |-|
+|The Missing Semester|![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 6.06.22 |22.07.24|-|[missing](./core-cs/core-tools/mit-missing) |-|
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
