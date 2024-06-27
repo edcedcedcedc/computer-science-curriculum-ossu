@@ -334,7 +334,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester|![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[missing](./core-cs/core-tools/mit-missing) |-|
+|The Missing Semester|![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
