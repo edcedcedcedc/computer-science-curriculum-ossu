@@ -113,30 +113,27 @@ test it with the predicate method to see if phrase is in text
 # Problem 2
 class PhraseTrigger(Trigger):
     def __init__(self, phrase):
-        self.phrase = phrase.lower()
+        self.phrase = phrase
     
     def is_phrase_in(self, text):
+        """ 
+        Match the self.phrase with text; 
+        ex: self.phrase = 'microsoft office' text = 'microsoft!%@# office is very good'
+        return: boolean
+        """
         text = text.lower()
         splitted_phrase = self.phrase.split(" ")
-        pattern_1 = f"[\\s{string.punctuation}]+"
-        pattern_2 = f"[\\s{string.punctuation}]*\\b"
+        re_pattern = f"[\\s{string.punctuation}]"
         phrase = ''
         for i in range(len(splitted_phrase)):
             if len(splitted_phrase) - 1 == i:
-                phrase += splitted_phrase[i].lower() + pattern_2
+                phrase += splitted_phrase[i].lower() + re_pattern + "*\\b"
             else:
-                phrase += splitted_phrase[i].lower() + pattern_1
+                phrase += splitted_phrase[i].lower() + re_pattern + "+"
         if re.search(phrase, text):
             return True
         else:
             return False
-
-newPhraseTrigger = PhraseTrigger('purple cow')
-print(newPhraseTrigger.is_phrase_in('The purple cow is soft and cuddly.'))
-
-
-
-
 
 # Problem 3
 class TitleTrigger(PhraseTrigger):
