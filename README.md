@@ -266,6 +266,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - mit missing semester lesson 2, hw 2 in progress 
 
+### 26/06/2024
+- mit 6.0001 done!
+- mit 18.01.1x chain rule done  
+
 ## Khan Academy
 
 #### Prerequisites
@@ -310,6 +314,24 @@ _Topics Covered_:
 |Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
+
+#### Core programming
+**Topics covered**:
+`functional programming`
+`design for testing`
+`program requirements`
+`common design patterns`
+`unit testing`
+`object-oriented design`
+`static typing`
+`dynamic typing`
+`ML-family languages (via Standard ML)`
+`Lisp-family languages (via Racket, Scheme)`
+`Ruby`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Structure And Interpretation Of Computer Programs|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
 
 #### Core math
 
