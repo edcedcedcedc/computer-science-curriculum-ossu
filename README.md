@@ -307,7 +307,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/80/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|-|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
 
