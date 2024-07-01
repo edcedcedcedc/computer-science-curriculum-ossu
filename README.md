@@ -266,7 +266,7 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 - mit missing semester lesson 2, hw 2 in progress 
 
-### 26/06/2024
+### 02/07/2024
 - mit 6.0001 done!
 - mit 18.01.1x chain rule done  
 
