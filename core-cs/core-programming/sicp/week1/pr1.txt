@@ -1,0 +1,5 @@
+new-if is going to be evaluated in applicative order,
+this means that good-enough? is going to be evaluated, 
+guess evaluated and then sqrt-iter is going to call itself
+again and again and will never reach base case, even if 
+new-if has cond within itself.
