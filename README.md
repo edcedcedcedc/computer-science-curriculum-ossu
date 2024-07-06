@@ -270,6 +270,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 6.0001 done!
 - mit 18.01.1x chain rule done  
 
+### 06/07/2024
+- mit 18.01.1x implicit explicit differentiation
+- cs61a sicp week1 hw ready, lab in progress 
+
 ## Khan Academy
 
 #### Prerequisites
@@ -331,7 +335,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://progress-bar.dev/0/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
+|Structure And Interpretation Of Computer Programs|![](https://progress-bar.dev/6/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
 
 #### Core math
 
