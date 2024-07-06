@@ -1,0 +1,2 @@
+As a special form for efficiency and logical reasons, or this or that or that, why evaluating that if this is true 
+As an ordinary function 
