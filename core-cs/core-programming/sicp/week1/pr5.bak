@@ -16,6 +16,5 @@
       (se
        (ends-e(butlast snt))(helper(last snt)))))
 
-(trace ends-e)
 
 (ends-e '(please put the salami above the blue elephant))

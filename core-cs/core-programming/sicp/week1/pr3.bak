@@ -16,9 +16,7 @@
   (if (empty? lst)
       '()
       (se
-       (switch (butlast lst))
+       (switch (butlast lst)))
       (word? (last lst) lst))))
-
-(trace switch)
 
 (switch '(you told me that I should wake you up))
