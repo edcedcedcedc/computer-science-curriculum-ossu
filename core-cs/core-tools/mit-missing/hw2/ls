@@ -1,0 +1,7 @@
+total 12K
+drwxr-xr-x 2 ranog ranog 4.0K Jul  8 11:20 .
+drwxr-xr-x 3 ranog ranog 4.0K Jul  6 19:24 ..
+-rw-r--r-- 1 ranog ranog    0 Jul  8 11:20 ls
+-rwxr-xr-x 1 ranog ranog   51 Jul  6 19:36 marco.sh
+
+ls -lah

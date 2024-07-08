@@ -1,11 +1,15 @@
 #!/bin/bash
 
 marco()	{
-	echo $1
+	export current_dir=$(pwd)
 	}
 
-marco "$1"
+polo(){
+       cd $current_dir
+      }
 
+#extension
 
-
-
+adriano(){
+	cd -
+	}
