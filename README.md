@@ -274,6 +274,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x implicit explicit differentiation
 - cs61a sicp week1 hw ready, lab in progress 
 
+### 15/07/2024
+- mit 18.01.1x inverse functions almost done
+- cs61a sicp week2 hw in progress
+
 ## Khan Academy
 
 #### Prerequisites

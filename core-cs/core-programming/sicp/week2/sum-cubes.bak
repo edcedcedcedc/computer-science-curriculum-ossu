@@ -1,0 +1,15 @@
+#lang simply-scheme
+
+
+(define (inc n) (+ n 1))
+
+
+(define (cube x)
+  (* x x x))
+
+
+(define (sum-cubes term a next b)
+  (if (> a b)
+      0
+      (+ (term a)
+         (sum term (next a) b))))
