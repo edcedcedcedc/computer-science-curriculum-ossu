@@ -278,6 +278,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit 18.01.1x inverse functions almost done
 - cs61a sicp week2 hw in progress
 
+### 27/07/2024
+- mit 18.01.1x derivate a log or exponential function
+- mit missing semester lesson 2, hw 2 done
+- cs61a week2 hw done, week 3 lessons and reading in progress 
+
 ## Khan Academy
 
 #### Prerequisites
@@ -364,7 +369,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://progress-bar.dev/10/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+|The Missing Semester |![](https://progress-bar.dev/20/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
