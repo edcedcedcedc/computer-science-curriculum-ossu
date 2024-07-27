@@ -264,13 +264,98 @@
        (lambda (x) x)
        (lambda (x)(f ((repeated f (- n 1)) x)))))
 
-((repeated square 2)5)
+;((repeated square 2)5)
 
 (define (repeated1 f n v)
   (if (< n 1)
       v
       (f(repeated1 f (- n 1) v))))
 
-(repeated1 square 3 5)
+;(repeated1 square 3 5)
 
 
+;1.46 part 1
+;understanding/goal:
+;procedure iterative-improve
+;domain > functions > arg1 = good-enough, arg2 = improve-guess
+;range > functions > return procedure > arg1 = guess
+;action: keeps improving the guess the guess until is good enough
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+    guess
+    (sqrt-iter (improve guess x) x)))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define (new-sqrt x)
+  (sqrt-iter 1.0 x))
+
+;old iter improv version 
+;(define (new-iter-sqrt x)
+;  (define (iterative-improve good-enough? improve)
+;    (define (iter-improve guess x)
+;      (if (good-enough? guess x)
+;         guess
+;          (iter-improve (improve guess x) x)))
+;    iter-improve)
+; ((iterative-improve good-enough? improve)1.0 x))
+
+ (define (iterative-improve good-enough? improve)
+    (define (iter-improve guess)
+      (if (good-enough? guess)
+          guess
+          (iter-improve(improve guess))))
+   iter-improve)
+
+(define (new-iter-sqrt x)
+  (define (improve guess)
+    (average guess (/ x guess)))
+  (define (good-enough? guess)
+    (< (abs (- (square guess) x)) 0.001))
+  ((iterative-improve good-enough? improve)1.0))
+
+;(new-iter-sqrt 3)
+
+;evaluation:
+;lambda (guess)(iter-improve guess) == iter-improve 
+    
+;1.46 part 2
+
+(define tolerance1 0.00001)
+;(define (fixed-point f first-guess)
+;  (define (close-enough? v1 v2)
+;    (< (abs (- v1 v2))
+;       tolerance))
+;  (define (try guess)
+;    (let ((next (f guess)))
+;      (if (close-enough? guess next)
+;          next
+;          (try next))))
+;  (try first-guess))
+;
+;(define (heron-update x S)
+;  (average x (/ S x)))
+;(define (heron-sqrt S)
+;  (fixed-point1 (lambda (x)(heron-update x S)) 1.0))
+
+(define (new-fixed-point f)
+  (define (close-enough? v1 v2)
+    (< (abs (- v1 v2))
+       tolerance))
+  (define (iterative-improve good-enough? improve)
+    (define (iter-improve guess)
+    (if (good-enough? guess (improve guess))
+        (improve guess)
+        (iter-improve(improve guess))))
+    iter-improve)
+  ((iterative-improve close-enough? f)1.0))
+
+(define (new-heron-sqrt S)
+  (new-fixed-point (lambda(x)(improve x S))))
+
+(new-heron-sqrt 3)
