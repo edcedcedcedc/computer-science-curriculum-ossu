@@ -70,3 +70,13 @@ f
 
 ((t 1+)0)
 ((t (t 1+))0)
+
+
+
+
+;7 make tester
+
+(define (make-tester y)
+  (lambda (x)(if (equal? x y)#t #f)))
+
+((make-tester 'harry)'harry)

@@ -283,6 +283,9 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - mit missing semester lesson 2, hw 2 done
 - cs61a week2 hw done, week 3 lessons and reading in progress 
 
+### 29/07/2024
+- cs61a sicp week3, reading, project 1 in progress
+
 ## Khan Academy
 
 #### Prerequisites
