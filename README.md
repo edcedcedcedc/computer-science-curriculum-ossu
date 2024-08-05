@@ -286,6 +286,9 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 29/07/2024
 - cs61a sicp week3, reading, project 1 in progress
 
+### 5/08/2024
+- math 1a unit 2 differentiation done, moving to unit 3 approximations
+
 ## Khan Academy
 
 #### Prerequisites
@@ -360,7 +363,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Calculus 1A Differentiation |![](https://progress-bar.dev/50/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
+|Calculus 1A Differentiation |![](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
 
 #### CS Tools
 
