@@ -356,7 +356,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://progress-bar.dev/6/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
+|Structure And Interpretation Of Computer Programs|![](https://progress-bar.dev/20/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
 
 #### Core math
 
@@ -369,7 +369,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Calculus 1A Differentiation |![](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%) | 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x/) |-|
+|Calculus 1A Differentiation |![](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%)| 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x-khan-academy/) |-|
 
 #### CS Tools
 
