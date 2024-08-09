@@ -289,6 +289,9 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 5/08/2024
 - math 1a unit 2 differentiation done, moving to unit 3 approximations
 
+### 5/08/2024
+- math 1a unit 3 approximation - dropped linear approximation(useless), moved to quadratic approximations
+
 ## Khan Academy
 
 #### Prerequisites
