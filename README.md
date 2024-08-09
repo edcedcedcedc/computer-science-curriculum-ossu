@@ -291,6 +291,9 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 
 ### 5/08/2024
 - math 1a unit 3 approximation - dropped linear approximation(useless), moved to quadratic approximations
+  update(I am dropping mit calculus 1a unit 3 and unit 4 in favour of Khan Academy's unit 4, 5, 6 in differential calculus)
+  so
+- calculus 1a ka unit 4 applications of derivatives, meaning of the derivatives in context
 
 ## Khan Academy
 
