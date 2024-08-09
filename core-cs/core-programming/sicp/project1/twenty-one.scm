@@ -72,35 +72,32 @@
   (shuffle (make-ordered-deck) 52) )
 
 
-(define (card-value card)
-  (if (not (or(equal? card 'a)
-              (equal? card 'ad)))
-      10
-      11))
 
-(define (limit value)
-  (if (<= value 21)
-      value
-      (limit (abs (- value 10)))))
-    
 
 (define (best-total hand)
+  (define ace '(ah ac ad as))
+  (define picture '(a q j k))
+  (define (card-value card)
+    (if (member? card ace)
+         11
+        (if (member? card picture)
+            10
+            (first card))))
+  (define (limit value)
+    (if (<= value 21)
+        value
+        (limit (abs (- value 10)))))
   (if (empty? hand)
       0
       (limit(+(best-total (bf hand))(card-value (first hand))))))
 
-(best-total '(ad ad ad))
+(define (stop-at-17 customer-hand dealer-card)
+  (if (<(+(best-total customer-hand)
+          (best-total (se dealer-card))) 17)
+      #t
+      #f))
 
-
-
-
-
-
-
-
-
-
-
-
-
-;                                      32
+;(best-total '(ad 8s))
+;(best-total '(ad 8s 5h))
+(best-total '(a as as))
+;(stop-at-17 '(5s 4s) '4s)
