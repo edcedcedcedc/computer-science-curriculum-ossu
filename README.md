@@ -306,11 +306,11 @@ _Topics Covered_:
 `precalculus`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Algebra 1 |![Algebra 1](https://progress-bar.dev/97/?scale=100&title=&width=90&color=babaca&suffix=%) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|
-|HS Geometry |![HS Geometry](https://progress-bar.dev/94/?scale=100&title=&width=90&color=babaca&suffix=%) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
-|Algebra 2 |![Algebra 2](https://progress-bar.dev/93/?scale=100&title=&width=90&color=babaca&suffix=%) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
-|Trigonometry |![Trigonometry](https://progress-bar.dev/96/?scale=100&title=&width=90&color=babaca&suffix=%) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
-|Precalculus |![Precalculus](https://progress-bar.dev/93/?scale=100&title=&width=90&color=babaca&suffix=%) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|
+|Algebra 1 |![Algebra 1](https://geps.dev/progress/100) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|
+|HS Geometry |![HS Geometry](https://geps.dev/progress/94) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
+|Algebra 2 |![Algebra 2](https://geps.dev/progress/93) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
+|Trigonometry |![Trigonometry](https://geps.dev/progress/96) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
+|Precalculus |![Precalculus](https://geps.dev/progress/93) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|
 
 ## OSSU
 
@@ -323,8 +323,8 @@ _Topics Covered_:
 `simple data structures`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Programming 1 |![Python for Everybody Progress](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
-|Introduction to Programming 2 |![CS50P](https://progress-bar.dev/90/?scale=100&title=&width=90&color=babaca&suffix=%) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+|Introduction to Programming 1 |![Python for Everybody Progress](https://geps.dev/progress/100) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
+|Introduction to Programming 2 |![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
 
 #### Introduction to Computer Science
 
@@ -336,7 +336,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Computer Science |![MIT6.0001](https://progress-bar.dev/100/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+|Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
 
@@ -356,7 +356,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://progress-bar.dev/20/?scale=100&title=&width=90&color=babaca&suffix=%) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/20) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
 
 #### Core math
 
@@ -369,7 +369,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Calculus 1A Differentiation |![](https://progress-bar.dev/60/?scale=100&title=&width=90&color=babaca&suffix=%)| 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x-khan-academy/) |-|
+|Calculus 1A Differentiation |![](https://geps.dev/progress/60)| 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x-khan-academy/) |-|
 
 #### CS Tools
 
@@ -381,7 +381,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://progress-bar.dev/20/?scale=100&title=&width=90&color=babaca&suffix=%) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+|The Missing Semester |![](https://geps.dev/progress/20) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
