@@ -356,7 +356,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/20) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |-|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/20) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
 
 #### Core math
 

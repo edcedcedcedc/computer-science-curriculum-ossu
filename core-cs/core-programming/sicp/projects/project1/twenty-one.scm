@@ -73,16 +73,13 @@
 
 
 
-
+;problem 1 
 (define (best-total hand)
-  (define ace '(ah ac ad as))
-  (define picture '(a q j k))
+  (define picture-cards '(A J Q K))
   (define (card-value card)
-    (if (member? card ace)
+    (if (member? (first card) picture-cards)
          11
-        (if (member? card picture)
-            10
-            (first card))))
+         (first card)))
   (define (limit value)
     (if (<= value 21)
         value
@@ -91,13 +88,12 @@
       0
       (limit(+(best-total (bf hand))(card-value (first hand))))))
 
+;problem 2
 (define (stop-at-17 customer-hand dealer-card)
   (if (<(+(best-total customer-hand)
           (best-total (se dealer-card))) 17)
       #t
       #f))
 
-;(best-total '(ad 8s))
-;(best-total '(ad 8s 5h))
-(best-total '(a as as))
-;(stop-at-17 '(5s 4s) '4s)
+;problem 3 
+(twenty-one stop-at-17)
