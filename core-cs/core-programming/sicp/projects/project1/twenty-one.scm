@@ -90,10 +90,19 @@
 
 ;problem 2
 (define (stop-at-17 customer-hand dealer-card)
-  (if (<(+(best-total customer-hand)
-          (best-total (se dealer-card))) 17)
+  (if (<(best-total (se customer-hand dealer-card))17)
       #t
       #f))
 
-;problem 3 
+;problem 3
+(define (play-n strategy n)
+  (define (iter strategy n a)
+    (if (= n 0)
+        a
+        (iter strategy (- n 1)(+ a (twenty-one strategy)))))
+  (iter strategy n 0))
+      
+  
 (twenty-one stop-at-17)
+(play-n stop-at-17 100)
+        
