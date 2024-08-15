@@ -46,11 +46,22 @@
 ; (golden-ratio 10.0)
 
 ;1.37
+;about 11 recursive calls to get to 4 decimal places of the actual golden ratio 
 
-;(cont-frac (lambda (i) 1.0)
-;           (lambda (i) 1.0)
-;           k)
+;recursive definition
+(define (cont-frac-rec n d k)
+  (if (= k 0)
+      1.0
+      (/ (n k)(+ (d k) (cont-frac-rec n d (- k 1))))))
 
+;(trace cont-frac-rec)
+(cont-frac-rec (lambda(i)1.0)(lambda(i)1.0) 11)
 
+(define (cont-frac-iter n d k a)
+  (if (= k 0)
+      a
+      (cont-frac-iter n d (- k 1) (/ (n k)(+ (d k) a )))))
+
+(cont-frac-iter (lambda(i)1.0)(lambda(i)1.0) 11 1.0)
 
 
