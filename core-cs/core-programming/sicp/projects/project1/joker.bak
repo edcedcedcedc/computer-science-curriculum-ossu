@@ -223,4 +223,13 @@
 ;       #f)))
 
 
+;problem 10
+;Copy your Scheme file to a new file, named joker.scm, before you begin
+;this problem. We are going to change the rules by adding two jokers to the deck. A joker
+;can be worth any number of points from 1 to 11. Modify whatever has to be modified to
+;make this work. (The main point of this exercise is precisely for you to figure out which
+;procedures must be modified.) You will submit both this new file and the original,
+;nonjoker version for grading. You don’t have to worry about making strategies optimal; just
+;be sure nothing blows up and the hands are totalled correctly.
+
       

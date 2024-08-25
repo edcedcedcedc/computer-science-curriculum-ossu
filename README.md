@@ -287,13 +287,18 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - cs61a sicp week3, reading, project 1 in progress
 
 ### 5/08/2024
-- math 1a unit 2 differentiation done, moving to unit 3 approximations
+- calc 1a unit 2 differentiation done, moving to unit 3 approximations
 
 ### 5/08/2024
-- math 1a unit 3 approximation - dropped linear approximation(useless), moved to quadratic approximations
+- сalc 1a unit 3 approximation - dropped linear approximation(useless), moved to quadratic approximations
   update(I am dropping mit calculus 1a unit 3 and unit 4 in favour of Khan Academy's unit 4, 5, 6 in differential calculus)
   so
 - calculus 1a ka unit 4 applications of derivatives, meaning of the derivatives in context
+
+### 25/08/2024
+- math 1a unit4 applications 30% done 
+- cs61a/sicp week 3 project/hw done(to be honest that was hard)
+
 
 ## Khan Academy
 
@@ -356,7 +361,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/20) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/26) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
 
 #### Core math
 

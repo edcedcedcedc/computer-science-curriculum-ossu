@@ -58,7 +58,7 @@
 (define (make-ordered-deck)
   (define (make-suit s)
     (every (lambda (rank) (word rank s)) '(A 2 3 4 5 6 7 8 9 10 J Q K)) )
-  (se (make-suit 'H) (make-suit 'S) (make-suit 'D) (make-suit 'C)))
+  (se (make-suit 'H) (make-suit 'S) (make-suit 'D) (make-suit 'C) 'JOKER-BLACK 'JOKER-RED))
 
 (define (make-deck)
   (define (shuffle deck size)
@@ -76,8 +76,10 @@
 ;problem 1 
 (define (best-total hand)
   (define picture-cards '(A J Q K))
+  (defin jokers '(JOKER-RED JOKER-BLACK))
   (define (card-value card)
-    (if (member? (first card) picture-cards)
+    (if (or(member? (first card)picture-cards)
+           (member? (first card)jokers)) 
          11
          (first card)))
   (define (limit value)
@@ -221,6 +223,17 @@
 ;   (if (strategy (butlast customer-hand) dealer-card)
 ;       #t
 ;       #f)))
+
+
+;problem 10
+;Copy your Scheme file to a new file, named joker.scm, before you begin
+;this problem. We are going to change the rules by adding two jokers to the deck. A joker
+;can be worth any number of points from 1 to 11. Modify whatever has to be modified to
+;make this work. (The main point of this exercise is precisely for you to figure out which
+;procedures must be modified.) You will submit both this new file and the original,
+;nonjoker version for grading. You don’t have to worry about making strategies optimal; just
+;be sure nothing blows up and the hands are totalled correctly.
+
 
 
       
