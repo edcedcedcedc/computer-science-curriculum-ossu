@@ -76,7 +76,7 @@
 ;problem 1 
 (define (best-total hand)
   (define picture-cards '(A J Q K))
-  (defin jokers '(JOKER-RED JOKER-BLACK))
+  (define jokers '(JOKER-RED JOKER-BLACK))
   (define (card-value card)
     (if (or(member? (first card)picture-cards)
            (member? (first card)jokers)) 

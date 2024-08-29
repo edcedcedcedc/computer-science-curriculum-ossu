@@ -296,8 +296,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - calculus 1a ka unit 4 applications of derivatives, meaning of the derivatives in context
 
 ### 25/08/2024
-- math 1a unit4 applications 30% done 
+- calc 1a unit4 applications 30% done 
 - cs61a/sicp week 3 project/hw done(to be honest that was hard)
+- dropping missing-semester homework 3(vim), I feel that I don't need it at the moment, I know some basics, that's it.
+- missing semester lecture 4(data wrangling) in progress 
 
 
 ## Khan Academy
