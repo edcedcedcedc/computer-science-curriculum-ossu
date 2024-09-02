@@ -301,6 +301,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - dropping missing-semester homework 3(vim), I feel that I don't need it at the moment, I know some basics, that's it.
 - missing semester lecture 4(data wrangling) in progress 
 
+### 02/09/2024
+- calc 1a unit4 still in progress 
+- cs61a week 4 reading/lectures done, notes analysing done
+
+
 
 ## Khan Academy
 
