@@ -305,6 +305,8 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - calc 1a unit4 still in progress 
 - cs61a week 4 reading/lectures done, notes analysing done
 
+### 06/09/2024
+- cs61a week 4 done, week 5 in progress
 
 
 ## Khan Academy
