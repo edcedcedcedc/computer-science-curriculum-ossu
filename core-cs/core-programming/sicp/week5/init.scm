@@ -1,0 +1,283 @@
+#lang simply-scheme
+
+
+;(define x (cons (list 1 2) (list 3 4)))
+
+;(length x)
+
+(define (count-leaves x)
+  (cond ((null? x) 0)
+        ((not (pair? x)) 1)
+        (else (+ (count-leaves (car x))
+                 (count-leaves (cdr x))))))
+
+;(trace count-leaves)
+;(count-leaves x)
+
+;scale tree
+(define (scale-tree tree factor)
+  (cond ((null? tree) null)
+        ((not (pair? tree)) (* tree factor))
+        (else (cons (scale-tree (car tree) factor)
+                    (scale-tree (cdr tree) factor)))))
+
+;(scale-tree (list 1 (list 2 (list 3 4) 5) (list 6 7)) 10)
+;good way to think on trees is a sequence of subtrees
+
+(define (scale-tree1 tree factor)
+  (map (lambda (sub-tree)
+         (if (pair? sub-tree)
+             (scale-tree1 sub-tree factor)
+             (* sub-tree factor)))
+       tree))
+
+
+;conventional interfaces
+
+(define square
+  (lambda (x)
+    (* x x)))
+
+(define (sum-odd-squares tree)
+  (cond ((null? tree) 0)
+        ((not (pair? tree))
+         (if (odd? tree) (square tree) 0))
+        (else (+ (sum-odd-squares (car tree))
+                 (sum-odd-squares (cdr tree))))))
+
+
+;fib
+(define (fib n)
+  (cond ((= n 0) 0)
+        ((= n 1) 1)
+        (else (+ (fib (- n 1))
+                 (fib (- n 2))))))
+
+(define (even-fibs n)
+  (define (next k)
+    (if (> k n)
+        null
+        (let ((f (fib k)))
+          (if (even? f)
+              (cons f (next (+ k 1)))
+              (next (+ k 1))))))
+  (next 0))
+
+;(even-fibs 10)
+
+;signal flow for even-fibs
+
+;enumerate: integers
+;map: fib
+;filter: even?
+;accumulate: cons, '()
+
+;signal flow for sum-odd-squares
+
+;enumerate:tree-leaves
+;filter: odd?
+;map: square
+;accumulate:+, 0
+
+
+
+
+;filter
+(define (filter predicate sequence)
+  (cond ((null? sequence) null)
+        ((predicate (car sequence))
+         (cons (car sequence)
+               (filter predicate (cdr sequence))))
+        (else (filter predicate (cdr sequence)))))
+
+;self explanatory
+(define (accumulate op initial sequence)
+  (if (null? sequence)
+      initial
+      (op (car sequence)
+          (accumulate op initial (cdr sequence)))))
+
+;interval generator
+(define (enumerate-interval low high)
+  (if (> low high)
+      null
+      (cons low (enumerate-interval (+ low 1) high))))
+
+;tree flatter 1
+(define (enumerate-tree tree)
+  (cond ((null? tree) null)
+        ((not (pair? tree)) (list tree))
+        (else (append (enumerate-tree (car tree))
+                      (enumerate-tree (cdr tree))))))
+
+;tree flatter 2
+(define (flattree tree)
+  (cond
+    ((null? tree)'())
+    ((pair? tree)
+     (append
+      (flattree (car tree))
+      (flattree (cdr tree))))
+    (else
+     (list tree))))
+
+
+;reformulation of sum-squares-odd
+(define (sum-odd-squares1 tree)
+  (accumulate
+   + 0 (map square (filter odd? (enumerate-tree tree)))))
+
+;even fibs
+(define (even-fibs1 n)
+  (accumulate
+   cons
+   null
+   (filter even? (map fib (enumerate-interval 0 n)))))
+
+
+
+;2nd level nested mapping
+(define (example1 n)
+  (accumulate
+   append null (map (lambda (i)
+                     (map (lambda (j) (list i j))
+                          (enumerate-interval 1 (- i 1))))
+                    (enumerate-interval 1 n))))
+;(example1 10)
+
+(define example2
+  (lambda(n)
+    (map (lambda (i)
+           (map (lambda (j) (list i j))
+                (enumerate-interval 1 (- i 1))))
+         (enumerate-interval 1 n))))
+
+;(example2 10)
+
+
+
+;flatmap essentialy it works only for lists of lists 
+(define (flatmap proc seq)
+  (accumulate append null (map proc seq)))
+
+(define (flatmap1 proc seq)
+  (apply append (map proc seq)))
+
+
+;(accumulate + 0 (flattree (list 1 (list 1 2 (list 1 2 (list 1 2) 3)))))
+
+
+
+(define (permutations s)
+  (if (null? s)
+      (list null) 
+      (flatmap (lambda (x)
+                 (map (lambda (p) (cons x p))
+                      (permutations (remove x s))))
+               s)))
+
+(define (remove item sequence)
+  (filter (lambda (x) (not (= x item)))
+          sequence))
+
+;(trace permutations)
+
+;(permutations (list 1 2 3))
+
+
+;(define i (enumerate-interval 1 10))
+;(define j (enumerate-interval 1 10))
+
+;(define *ij
+;  (map (lambda (x)
+;         (map (lambda (y) y)j))i))
+
+;(flatmap (lambda (x)x) *ij)
+
+
+
+
+;mapping over trees
+
+(define make-tree cons)
+(define datum car)
+(define children cdr)
+
+
+(define Tree
+  (make-tree 'usa
+    (list (make-tree 'california '())
+          (make-tree 'newyork
+            (list (make-tree 'new-yor-city
+                   (list (make-tree 'a '())
+                         (make-tree 'b '())
+                         (make-tree 'c '())
+                         (make-tree 'd '()))))))))
+
+
+
+(define deeplist '(1 (2 (3))(2 3)))
+;example 1
+(define (treemap fn tree)
+  (make-tree (fn (datum tree))
+             (map (lambda (t) (treemap fn t))
+                  (children tree) )))
+
+;example 2
+(define (treemap1 fn tree)
+  (make-tree (fn (datum tree))
+             (forest-map fn (children tree))))
+
+(define (forest-map fn forest)
+  (if (null? forest)
+      '()
+      (cons (treemap1 fn (car forest))
+            (forest-map fn (cdr forest)))))
+
+
+;(treemap1 (lambda(x)(* x x)) Tree)
+
+
+
+;deepmap
+
+(define (deep-map fn lol)
+  (if (list? lol)
+      (map (lambda (element) (deep-map fn element))
+           lol)
+      (fn lol)))
+
+;(deep-map (lambda (x)(* x x)) deeplist)
+
+
+
+;tree traversal
+(define (depth-first-search tree)
+  (print (datum tree))
+  (newline)
+  (for-each depth-first-search (children tree)))
+
+;(depth-first-search Tree)
+
+
+
+(define (breadth-first-search tree)
+  (bfs-iter (list tree)))
+(define (bfs-iter queue)
+  (if (null? queue)
+      'done
+      (let ((task (car queue)))
+        (print (datum task))
+        (bfs-iter (append (cdr queue) (children task))))))
+
+(breadth-first-search Tree)
+
+
+
+
+
+
+
+
+
+

@@ -308,6 +308,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 ### 06/09/2024
 - cs61a week 4 done, week 5 in progress
 
+### 18/09/2024
+- cs61a week 5 reading/lectures(partially done), example interpreter in progress
+- calc 1a unit 4 applications of derivatives done, unit 5 analyzing functions in progress
+- missing semester hw4 ex2 in progress
 
 ## Khan Academy
 

@@ -56,6 +56,9 @@
        (map proc (cdr items)))))
 
 
+(map (lambda (x)(* x x)) (list 1 2 3))
+
+
 (define (new-scale-list items factor)
   (map (lambda (x) (* x factor))
        items))
