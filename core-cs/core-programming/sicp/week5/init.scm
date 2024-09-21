@@ -206,13 +206,14 @@
 
 (define Tree
   (make-tree 'usa
-    (list (make-tree 'california '())
-          (make-tree 'newyork
-            (list (make-tree 'new-yor-city
-                   (list (make-tree 'a '())
-                         (make-tree 'b '())
-                         (make-tree 'c '())
-                         (make-tree 'd '()))))))))
+             (list 
+                   (make-tree 'newyork
+                              (list (make-tree 'new-yor-city
+                                               (list (make-tree 'a '())
+                                                     (make-tree 'b '())
+                                                     (make-tree 'c '())
+                                                     (make-tree 'd '())))))
+                   (make-tree 'california (list (make-tree 'berkeley '((a)(b))))))))
 
 
 
@@ -266,13 +267,34 @@
 (define (bfs-iter queue)
   (if (null? queue)
       'done
-      (let ((task (car queue)))
+      (let ((task (car queue)))ё
         (print (datum task))
         (bfs-iter (append (cdr queue) (children task))))))
 
-(breadth-first-search Tree)
+;(breadth-first-search Tree)
 
 
+;find elements in a tree
+(define (find-place place tree)
+  (if (eq? place (datum tree))
+      (cons (datum tree) '())
+      (let ((try (find-forest place (children tree))))
+        (if (not (null? try))
+            (cons (datum tree) try)
+            '()))))
+
+(define (find-forest place forest)
+  (if (null? forest)
+      '()
+      (let ((try (find-place place (car forest))))
+        (if (not (null? try))
+            try
+            (find-forest place (cdr forest))))))
+
+
+
+
+(find-place 'berkeley Tree)
 
 
 
