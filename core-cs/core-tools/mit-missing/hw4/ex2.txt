@@ -1,0 +1,28 @@
+ex2
+strategy:
+grep ignore case extend regexp match
+grep regexp match
+sed pattern/replacement
+sort
+uniq -c to count occurences 
+sort again with -nr numerically in descendent order
+head -3 display the top 3
+wc -l count the combinations
+
+2.1
+grep -i -E '([^aA]*[aA]){3}' words
+2.2
+grep -v 's$
+2.3
+sed 's/.*\(..\)$/\1/'
+2.4
+sort
+2.5
+uniq -c
+2.6
+sort -nr 
+2.7
+head -3 
+2.8
+separately from 2.7
+wc -l
