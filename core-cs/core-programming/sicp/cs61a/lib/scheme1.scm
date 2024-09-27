@@ -1,3 +1,5 @@
+#lang simply-scheme
+
 ;; Simple evaluator for Scheme without DEFINE, using substitution model.
 ;; Version 1: Adds first-class primitive procedures to Scheme-0.
 
@@ -5,8 +7,8 @@
 
 (define (scheme-1)
   (display "Scheme-1: ")
-  (flush)
   (print (eval-1 (read)))
+  (newline)
   (scheme-1))
 
 ;; As in Scheme-0:
@@ -48,14 +50,14 @@
 
 (define (eval-1 exp)
   (cond ((constant? exp) exp)
-	((symbol? exp) (EVAL EXP))	; use underlying Scheme's EVAL
+	((symbol? exp) (eval exp))	; use underlying Scheme's EVAL
 	((quote-exp? exp) (cadr exp))
 	((if-exp? exp)
 	 (if (eval-1 (cadr exp))
 	     (eval-1 (caddr exp))
 	     (eval-1 (cadddr exp))))
 	((lambda-exp? exp) exp)
-	((pair? exp) (apply-1 (EVAL-1 (car exp))      ; eval the operator
+	((pair? exp) (apply-1 (eval-1 (car exp))      ; eval the operator
 			      (map eval-1 (cdr exp))))
 	(else (error "bad expr: " exp))))
 
@@ -72,8 +74,8 @@
 ;; These are handled as in Scheme-0.
 
 (define (apply-1 proc args)
-  (cond ((PROCEDURE? proc)	; use underlying Scheme's APPLY
-	 (apply PROC args))
+  (cond ((procedure? proc)	; use underlying Scheme's APPLY
+	 (apply proc args))
 	((lambda-exp? proc)
 	 (eval-1 (substitute (caddr proc)
 			     (cadr proc)
@@ -85,7 +87,7 @@
 ;; Some trivial helper procedures:
 
 (define (constant? exp)
-  (or (number? exp) (boolean? exp) (string? exp) (PROCEDURE? EXP)))
+  (or (number? exp) (boolean? exp) (string? exp) (procedure? exp)))
 
 (define (exp-checker type)
   (lambda (exp) (and (pair? exp) (eq? (car exp) type))))
@@ -123,7 +125,7 @@
 (define (maybe-quote value)
   (cond ((lambda-exp? value) value)
 	((constant? value) value)
-	((PROCEDURE? VALUE) VALUE)	; real Scheme primitive procedure
+	((procedure? value) value)	; real Scheme primitive procedure
 	(else (list 'quote value))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
