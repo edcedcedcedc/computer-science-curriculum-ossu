@@ -14,7 +14,7 @@
 
 ; Evaluate an expression:
 (define (calc-eval exp)
-  (cond ((number? exp) exp)
+  (cond ((or(word? exp)(number? exp)) exp)
 	((list? exp) (calc-apply (car exp) (map calc-eval (cdr exp))))
 	(else (error "Calc: bad expression:" exp))))
 
@@ -34,6 +34,10 @@
 	((eq? fn '/) (cond ((null? args) (error "Calc: no args to /"))
 			   ((= (length args) 1) (/ (car args)))
 			   (else (/ (car args) (new-accumulate * 1 (cdr args))))))
+        ((eq? fn 'first)(first (first args)))
+        ((eq? fn 'last) (last (first args)))
+        ((eq? fn 'butfirst)(butfirst (first args)))
+        ((eq? fn 'butlast)(butlast (first args)))
 	(else (error "Calc: bad operator:" fn))))
 
-(calc-eval (list '/ '2))
+
