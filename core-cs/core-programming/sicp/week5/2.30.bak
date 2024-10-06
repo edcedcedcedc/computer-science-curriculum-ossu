@@ -1,0 +1,30 @@
+#lang simply-scheme
+
+
+;understanding:
+;square a tree
+
+
+;strategy:
+;domain -> tree range -> tree
+;enumerate leafs
+;filter: list? null?
+;map square
+;accumulate append
+
+
+;implimentation
+(define (square x)
+  (* x x))
+
+(define (square-tree tree)
+  (сond
+   ((null? tree)null)
+   ((list? tree)
+    (append
+     (square-tree (car tree))
+     (square-tree (cdr tree))))
+   (else
+    (square tree))))
+
+(square-tree (list 1 (list 2 (list 2 3 list(1 2 3)))))

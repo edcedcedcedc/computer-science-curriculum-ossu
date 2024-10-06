@@ -156,17 +156,16 @@
 
 
 
-;flatmap essentialy it works only for lists of lists 
-(define (flatmap proc seq)
-  (accumulate append null (map proc seq)))
+
 
 (define (flatmap1 proc seq)
   (apply append (map proc seq)))
 
 
-;(accumulate + 0 (flattree (list 1 (list 1 2 (list 1 2 (list 1 2) 3)))))
 
-
+;flatmap essentialy it works only for lists of lists 
+(define (flatmap proc seq)
+  (accumulate append null (map proc seq)))
 
 (define (permutations s)
   (if (null? s)
@@ -180,9 +179,9 @@
   (filter (lambda (x) (not (= x item)))
           sequence))
 
-;(trace permutations)
+(trace permutations)
 
-;(permutations (list 1 2 3))
+(permutations (list 1 2 3))
 
 
 ;(define i (enumerate-interval 1 10))
@@ -267,7 +266,7 @@
 (define (bfs-iter queue)
   (if (null? queue)
       'done
-      (let ((task (car queue)))ё
+      (let ((task (car queue)))
         (print (datum task))
         (bfs-iter (append (cdr queue) (children task))))))
 
@@ -294,12 +293,9 @@
 
 
 
-(find-place 'berkeley Tree)
 
 
 
-
-
-
+(enumerate-tree (list 1 (list 1 2 3 (list 2 3 4 5))))
 
 

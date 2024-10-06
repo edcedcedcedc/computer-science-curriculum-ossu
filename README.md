@@ -313,6 +313,11 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - calc 1a unit 4 applications of derivatives done, unit 5 analyzing functions in progress
 - missing semester hw4 ex2 in progress
 
+### 06/10/2024
+- cs61a week 5 homework 90% done
+- calc 1a unit 5 around 80% done
+- missing semester homework 4 4/5 done
+
 ## Khan Academy
 
 #### Prerequisites
