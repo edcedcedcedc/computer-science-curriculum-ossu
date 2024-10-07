@@ -318,6 +318,10 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - calc 1a unit 5 around 80% done
 - missing semester homework 4 4/5 done
 
+### 07/10/2024
+- cs61a dropping project 2, moving to week 6
+-calc 1a analysing functions 90% done
+
 ## Khan Academy
 
 #### Prerequisites
