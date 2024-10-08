@@ -322,6 +322,12 @@ Here I'll be sharing my accomplishments and completed courses as a way of lookin
 - cs61a dropping project 2, moving to week 6
 -calc 1a analysing functions 90% done
 
+
+### 08/10/2024
+- sicp/cs61a week 6 reading/lectures
+-calc 1a optimization problems and unit 6 parametric equations, polar coordinates vector functions
+
+
 ## Khan Academy
 
 #### Prerequisites
