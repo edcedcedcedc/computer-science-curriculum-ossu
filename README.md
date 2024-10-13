@@ -1,6 +1,6 @@
 # About
 
-I will be sharing my courses to track and document my progress. This is a comprehensive computer science curriculum using resources from [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Khan Academy](#KhanAcademy) and [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
 
 ## Updates
 
@@ -347,26 +347,23 @@ _Topics Covered_:
 
 ## OSSU
 
-### INTRO TO CS
+### INTRO CS
 
-#### Introduction to Programming
+#### Introduction to Programming and Computer Science
 
 _Topics Covered_:
 `simple programs`
 `simple data structures`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Programming 1 |![Python for Everybody Progress](https://geps.dev/progress/100) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
-|Introduction to Programming 2 |![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
-
-#### Introduction to Computer Science
-
-_Topics Covered_:
 `computation`
 `imperative programming`
 `basic abstractions`
 `basic data structures and algorithms`
 `and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Programming Basics|![Python for Everybody Progress](https://geps.dev/progress/100) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
+|Programming Essentials|![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
@@ -402,7 +399,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Calculus 1A Differentiation |![](https://geps.dev/progress/83)| 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x-khan-academy/) |-|
+|Differential Calculus |![](https://geps.dev/progress/83)| 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x-khan-academy/) |-|
 
 #### CS Tools
 
