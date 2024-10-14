@@ -320,13 +320,16 @@ I will be sharing the courses taken to track and document my progress. This is a
 
 ### 07/10/2024
 - cs61a dropping project 2, moving to week 6
--calc 1a analysing functions 90% done
+- calc 1a analysing functions 90% done
 
 
 ### 08/10/2024
 - sicp/cs61a week 6 reading/lectures
--calc 1a optimization problems and unit 6 parametric equations, polar coordinates vector functions
+- calc 1a optimization problems and unit 6 parametric equations, polar coordinates vector functions
 
+### 08/10/2024
+- sicp week 6: labs 
+- integral calc unit 1: integrals
 
 ## Khan Academy
 
@@ -399,8 +402,9 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Differential Calculus |![](https://geps.dev/progress/83)| 15.04.24 |30.07.24|-|[mit 18.01.1x](./core-cs/core-math/mit-18.01.1x-khan-academy/) |-|
+|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[differential-calc](./core-cs/core-math/differential-calc/) |-|
 
+|Integral Calculus |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[integral-cal](./core-cs/core-math/integral-calc/) |-|
 #### CS Tools
 
 **Topics covered**:
