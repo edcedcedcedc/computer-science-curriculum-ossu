@@ -330,6 +330,7 @@ I will be sharing the courses taken to track and document my progress. This is a
 ### 08/10/2024
 - sicp week 6: labs 
 - integral calc unit 1: integrals
+- linear algebra unit 1: part 1/13
 
 ## Khan Academy
 
@@ -402,9 +403,10 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[differential-calc](./core-cs/core-math/differential-calc/) |-|
+|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
+|Integral Calculus |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
+|Linear Algebra |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[mit18.06sc](./core-cs/core-math/linear-algebra/) |-|
 
-|Integral Calculus |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[integral-cal](./core-cs/core-math/integral-calc/) |-|
 #### CS Tools
 
 **Topics covered**:
