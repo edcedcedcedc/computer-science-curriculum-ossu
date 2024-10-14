@@ -1,0 +1,15 @@
+understanding:
+fetch a url get any two numerical columns from the dataset 
+strategy:
+fetch url
+pipe it into pup'type operation'
+pipe into awk user regexp 'pattern action'
+tail it
+
+implimentation:
+curl -s https://stats.wikimedia.org/EN/TablesWikipediaZZ.htm | pup 'td text{}' | awk '/[0-9]/ {print -bash}'|tail -2
+
+evaluation:
+..
+
+

@@ -1,0 +1,12 @@
+awk -v total_lines=$(wc -l < ex4.2.txt) '
+{
+    if (total_lines % 2 == 0 && NR == int(total_lines / 2)) {
+        current_value = $0;
+        getline;               
+        next_value = $0;      
+        print "Median even:", (current_value + next_value) / 2;
+    }
+    else if (total_lines % 2 != 0 && NR == int(total_lines / 2) + 1) {
+        print "Median odd:", $0; 
+    }
+}' ex4.2.txt

@@ -1,0 +1,2 @@
+print the last three boot messages, filter timestamps, sort, uniq and count, filter lines that start with 3
+for i in {1..2}; do journalctl -b -$i|sed 's/.*:\s//';done|sort|uniq -c|sed 's/3.*//'

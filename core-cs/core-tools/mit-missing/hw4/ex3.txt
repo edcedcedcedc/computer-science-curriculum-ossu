@@ -1,0 +1,9 @@
+Explanation:
+Sed i.e stream editor doesn't edit files in place by default 
+so you cannot input.txt > input.txt, but also
+os when sees redirection of stream it creates a blank input.txt 
+before any operations on the actula input.txt before it to sed
+
+better to use 
+sed s/patters/substitution -i filename
+i - flag that stands for in place 
