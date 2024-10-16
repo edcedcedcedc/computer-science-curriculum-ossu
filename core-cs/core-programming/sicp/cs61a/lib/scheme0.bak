@@ -6,8 +6,8 @@
 
 (define (scheme-0)
   (display "Scheme-0: ")
+  (flush)
   (print (eval-0 (read)))
-  (newline)
   (scheme-0))
 
 ;; Two important procedures:

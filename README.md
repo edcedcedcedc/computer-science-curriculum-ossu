@@ -419,6 +419,16 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |The Missing Semester |![](https://geps.dev/progress/20) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
+### ADVANCED CS
+
+#### Advanced math
+
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Essence of Linear Algebra |![](https://geps.dev/progress/12)|-|-|
+|Linear Algebra |![](https://geps.dev/progress/2)| 14.10.24 |22.01.25|-|[mit18.06sc](./core-cs/core-math/linear-algebra/) |-|
+
+
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org/profile/me/courses)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>

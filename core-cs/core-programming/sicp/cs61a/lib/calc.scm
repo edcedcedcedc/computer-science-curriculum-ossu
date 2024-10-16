@@ -40,4 +40,4 @@
         ((eq? fn 'butlast)(butlast (first args)))
 	(else (error "Calc: bad operator:" fn))))
 
-
+(calc-eval '(+ 1 2))

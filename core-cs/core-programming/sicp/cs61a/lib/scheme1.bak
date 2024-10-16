@@ -48,16 +48,9 @@
 ;; the first argument to APPLY-1 will be an actual procedure (either an
 ;; STk procedure or a LAMBDA-expression representing a procedure).
 
-;understanding:
-;when calling the function with quote argument from the file
-;to the eval is passed not '+ but actual + function
-;but when called from the terminal with scheme-1 passing (+ 1 2)
-;converts the (proc value value) to '(+ 1 2) and everything works ok
-
-
 (define (eval-1 exp)
   (cond ((constant? exp) exp)
-	((symbol? exp)(eval exp))	; use underlying Scheme's EVAL
+	((symbol? exp) (eval exp))	; use underlying Scheme's EVAL
 	((quote-exp? exp) (cadr exp))
 	((if-exp? exp)
 	 (if (eval-1 (cadr exp))
@@ -148,7 +141,5 @@
 ;	      first
 ;	      '(the rain in spain))
 ; (t r i s)
-(trace eval-1)
-(define a 5)
-(define b a)
-(eval a)
+(define symbol '(+ 1 2))
+(eval-1 )
