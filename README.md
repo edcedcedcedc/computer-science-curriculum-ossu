@@ -375,6 +375,7 @@ _Topics Covered_:
 ### CORE CS
 
 #### Core programming
+
 **Topics covered**:
 `functional programming`
 `design for testing`
@@ -405,7 +406,6 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
 |Integral Calculus |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
-|Linear Algebra |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[mit18.06sc](./core-cs/core-math/linear-algebra/) |-|
 
 #### CS Tools
 
@@ -423,10 +423,16 @@ _Topics Covered_:
 
 #### Advanced math
 
+**Topics covered**:
+`vectors and vector space`
+`matrices`
+`linear independence`
+`dimensions`
+`and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Essence of Linear Algebra |![](https://geps.dev/progress/12)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/2)| 14.10.24 |22.01.25|-|[mit18.06sc](./core-cs/core-math/linear-algebra/) |-|
+|Linear Algebra |![](https://geps.dev/progress/2)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
 
 
 ## Resources

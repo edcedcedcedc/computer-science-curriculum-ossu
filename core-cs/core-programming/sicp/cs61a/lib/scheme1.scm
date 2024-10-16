@@ -48,7 +48,7 @@
 ;; the first argument to APPLY-1 will be an actual procedure (either an
 ;; STk procedure or a LAMBDA-expression representing a procedure).
 
-;understanding:
+;eval questions....:
 ;when calling the function with quote argument from the file
 ;to the eval is passed not '+ but actual + function
 ;but when called from the terminal with scheme-1 passing (+ 1 2)
@@ -63,6 +63,19 @@
 	 (if (eval-1 (cadr exp))
 	     (eval-1 (caddr exp))
 	     (eval-1 (cadddr exp))))
+        ((and-exp? exp)
+         ((lambda (f n)                     ; Outer lambda taking function f and input n
+            ((lambda (map)                   ; Create a recursive map function
+               (map map f n))                 ; Call the map function with itself, f, and n
+             (lambda (map f n)               ; Define the inner map function
+               (cond
+                 ((null? n) #t)              ; Base case: if n is empty, return #t
+                 ((not (f (car n))) #f)      ; If the first element of n is false, return #f
+                 (else                        ; Otherwise, recursively call map on the rest of n
+                  (map map f (cdr n)))))))  ; Call map with the rest of the elements
+          eval-1                             ; The function to apply (eval-1)
+          (cdr exp)))                       ; The expression list (cdr exp)
+
 	((lambda-exp? exp) exp)
 	((pair? exp) (apply-1 (eval-1 (car exp))      ; eval the operator
 			      (map eval-1 (cdr exp))))
@@ -97,11 +110,12 @@
   (or (number? exp) (boolean? exp) (string? exp) (procedure? exp)))
 
 (define (exp-checker type)
-  (lambda (exp) (and (pair? exp) (eq? (car exp) type))))
+  (lambda(exp)(and(pair? exp)(eq?(car exp)type))))
 
 (define quote-exp? (exp-checker 'quote))
 (define if-exp? (exp-checker 'if))
 (define lambda-exp? (exp-checker 'lambda))
+(define and-exp? (exp-checker 'and))
 
 
 ;; SUBSTITUTE substitutes actual arguments for *free* references to the
@@ -149,6 +163,4 @@
 ;	      '(the rain in spain))
 ; (t r i s)
 (trace eval-1)
-(define a 5)
-(define b a)
-(eval a)
+
