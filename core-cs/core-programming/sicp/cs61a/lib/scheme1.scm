@@ -64,18 +64,17 @@
 	     (eval-1 (caddr exp))
 	     (eval-1 (cadddr exp))))
         ((and-exp? exp)
-         ((lambda (f n)                     ; Outer lambda taking function f and input n
-            ((lambda (map)                   ; Create a recursive map function
-               (map map f n))                 ; Call the map function with itself, f, and n
-             (lambda (map f n)               ; Define the inner map function
-               (cond
-                 ((null? n) #t)              ; Base case: if n is empty, return #t
-                 ((not (f (car n))) #f)      ; If the first element of n is false, return #f
-                 (else                        ; Otherwise, recursively call map on the rest of n
-                  (map map f (cdr n)))))))  ; Call map with the rest of the elements
-          eval-1                             ; The function to apply (eval-1)
-          (cdr exp)))                       ; The expression list (cdr exp)
+         (define (new-and exp)
+           (cond
+             ((null? exp)#t)
+             ((not(eval-1(car exp)))#f)
+             (else
+              (new-and(cdr exp)))))
+         (new-and(cdr exp)))
 
+
+       
+        
 	((lambda-exp? exp) exp)
 	((pair? exp) (apply-1 (eval-1 (car exp))      ; eval the operator
 			      (map eval-1 (cdr exp))))
@@ -162,5 +161,18 @@
 ;	      first
 ;	      '(the rain in spain))
 ; (t r i s)
+
+; ;y combinator of the "and-exp" example
+;        ((lambda (f n)                     ; Outer lambda taking function f and input n
+;           ((lambda (map)                   ; Create a recursive map function
+;              (map map f n))                 ; Call the map function with itself, f, and n
+;            (lambda (map f n)               ; Define the inner map function
+;              (cond
+;                ((null? n) #t)              ; Base case: if n is empty, return #t
+;                ((not (f (car n))) #f)      ; If the first element of n is false, return #f
+;                (else                        ; Otherwise, recursively call map on the rest of n
+;                 (map map f (cdr n)))))))  ; Call map with the rest of the elements
+;         eval-1                             ; The function to apply (eval-1)
+;         (cdr exp))
 (trace eval-1)
 
