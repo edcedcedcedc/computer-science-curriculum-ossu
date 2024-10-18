@@ -1,0 +1,5 @@
+Ax=b difference matrix
+x=A^1b sum matrix is the inverse of the difference matrix
+
+example from calculus
+integration is the inverse of differentiation 

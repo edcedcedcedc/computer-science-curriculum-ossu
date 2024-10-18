@@ -71,10 +71,6 @@
              (else
               (new-and(cdr exp)))))
          (new-and(cdr exp)))
-
-
-       
-        
 	((lambda-exp? exp) exp)
 	((pair? exp) (apply-1 (eval-1 (car exp))      ; eval the operator
 			      (map eval-1 (cdr exp))))

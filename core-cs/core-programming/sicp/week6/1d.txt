@@ -1,0 +1,4 @@
+doesnt work with
+(map (lambda(x)(first x)) '(test test test))
+because it doesnt see the lambda as a procedure
+instead it purely decompose it and pass to eval-1
