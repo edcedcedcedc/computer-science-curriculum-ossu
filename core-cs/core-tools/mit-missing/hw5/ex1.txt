@@ -1,0 +1,1 @@
+pgrep 'process_name' then kpill 'process_name'
