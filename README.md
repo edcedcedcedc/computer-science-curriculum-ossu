@@ -332,6 +332,11 @@ I will be sharing the courses taken to track and document my progress. This is a
 - integral calc unit 1: integrals
 - linear algebra unit 1: part 1/13
 
+### 24/10/2024
+- sicp week 6: labs done, homework in progress 
+- integral calc unit 1: integrals in progress
+- linear algebra homework 1, a few exercises, unit 3-4
+
 ## Khan Academy
 
 #### Prerequisites

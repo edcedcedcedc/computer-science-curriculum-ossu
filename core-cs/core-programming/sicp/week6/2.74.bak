@@ -1,0 +1,22 @@
+#lang simply-scheme
+
+;understanding:
+;division - a set of records in a single file
+;records - info about employees', keyed on employees' names
+;record - more detailed info keyed on address and salary
+
+;a)
+;a0)get-record procedure
+;that retrieves a specified employee’s record from a
+;specified personnel file the procedure should be applicable to any division’s file
+;a1)Explain how the individual divisions’ files should be structured ?
+;a2)In particular,what type information must be supplied ?
+;
+;-------------------
+;a1) /division
+;            /records(name)
+;                   /record(address,salary)
+;
+;a2)
+;
+;
