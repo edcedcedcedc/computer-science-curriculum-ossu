@@ -337,6 +337,11 @@ I will be sharing the courses taken to track and document my progress. This is a
 - integral calc unit 1: integrals in progress
 - linear algebra homework 1, a few exercises, unit 3-4
 
+### 27/10/2024
+- linear algebra, week-1 homework done
+- mit missing, cli, git lectures done; reading pro-git on the side 
+- mit missing debugging and profiling in progress 
+
 ## Khan Academy
 
 #### Prerequisites
