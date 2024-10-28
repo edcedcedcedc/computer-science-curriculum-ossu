@@ -1,0 +1,5 @@
+#lang simply-scheme
+
+
+(define (dot-product row vector)
+  (apply + (map * row vector)))

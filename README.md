@@ -342,6 +342,9 @@ I will be sharing the courses taken to track and document my progress. This is a
 - mit missing, cli, git lectures done; reading pro-git on the side 
 - mit missing debugging and profiling in progress 
 
+### 28/10/2024
+- sicp week 6 done, week 7 in progress
+
 ## Khan Academy
 
 #### Prerequisites
@@ -401,7 +404,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/40) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/46) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
 
 #### Core math
 
@@ -427,7 +430,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://geps.dev/progress/50) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+|The Missing Semester |![](https://geps.dev/progress/70) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ### ADVANCED CS
 

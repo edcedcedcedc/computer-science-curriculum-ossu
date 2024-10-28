@@ -1,0 +1,3 @@
+#lang simply-scheme
+;apply generic is called twice
+;once it dispatch 'complex the other time 'rectangular and perform the operations

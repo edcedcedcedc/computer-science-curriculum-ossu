@@ -48,21 +48,14 @@
 ;; the first argument to APPLY-1 will be an actual procedure (either an
 ;; STk procedure or a LAMBDA-expression representing a procedure).
 
-;eval questions....:
-;when calling the function with quote argument from the file
-;to the eval is passed not '+ but actual + function
-;but when called from the terminal with scheme-1 passing (+ 1 2)
-;converts the (proc value value) to '(+ 1 2) and everything works ok
-
-
 (define (eval-1 exp)
   (cond ((constant? exp) exp)
-	((symbol? exp)(eval exp))	; use underlying Scheme's EVAL
-	((quote-exp? exp) (cadr exp))
-	((if-exp? exp)
-	 (if (eval-1 (cadr exp))
-	     (eval-1 (caddr exp))
-	     (eval-1 (cadddr exp))))
+        ((symbol? exp)(eval exp))	; use underlying Scheme's EVAL
+        ((quote-exp? exp) (cadr exp))
+        ((if-exp? exp)
+         (if (eval-1 (cadr exp))
+             (eval-1 (caddr exp))
+             (eval-1 (cadddr exp))))
         ((and-exp? exp)
          (define (new-and exp)
            (cond
@@ -71,10 +64,15 @@
              (else
               (new-and(cdr exp)))))
          (new-and(cdr exp)))
-	((lambda-exp? exp) exp)
-	((pair? exp) (apply-1 (eval-1 (car exp))      ; eval the operator
-			      (map eval-1 (cdr exp))))
-	(else (error "bad expr: " exp))))
+        ((lambda-exp? exp)exp)
+        ((let-exp? exp)
+         (eval-1 (substitute (car(cdaadr exp))
+                             '()
+                             '()
+                             '())))
+        ((pair? exp)(apply-1 (eval-1 (car exp))      ; eval the operator
+                             (map eval-1 (cdr exp))))
+        (else (error "bad expr: " exp))))
 
 
 ;; Comments on APPLY-1:
@@ -90,13 +88,13 @@
 
 (define (apply-1 proc args)
   (cond ((procedure? proc)	; use underlying Scheme's APPLY
-	 (apply proc args))
-	((lambda-exp? proc)
-	 (eval-1 (substitute (caddr proc)
-			     (cadr proc)
-			     args
-			     '())))
-	(else (error "bad proc: " proc))))
+         (apply proc args))
+        ((lambda-exp? proc)
+         (eval-1 (substitute (caddr proc)
+                             (cadr proc)
+                             args
+                             '())))
+        (else (error "bad proc: " proc))))
 
 
 ;; Some trivial helper procedures:
@@ -111,7 +109,7 @@
 (define if-exp? (exp-checker 'if))
 (define lambda-exp? (exp-checker 'lambda))
 (define and-exp? (exp-checker 'and))
-
+(define let-exp? (exp-checker 'let))
 
 ;; SUBSTITUTE substitutes actual arguments for *free* references to the
 ;; corresponding formal parameters.
@@ -170,5 +168,7 @@
 ;                 (map map f (cdr n)))))))  ; Call map with the rest of the elements
 ;         eval-1                             ; The function to apply (eval-1)
 ;         (cdr exp))
-(trace eval-1)
 
+(trace eval-1)
+(trace apply-1)
+(trace substitute)
