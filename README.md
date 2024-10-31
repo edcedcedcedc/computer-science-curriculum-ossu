@@ -344,6 +344,10 @@ I will be sharing the courses taken to track and document my progress. This is a
 
 ### 28/10/2024
 - sicp week 6 done, week 7 in progress
+### 31/10/2024
+- sicp dropped week 7, moving into week 8
+- linear algebra problem set 2 in progress
+- calc-1b integral quizz 4 in progress soon
 
 ## Khan Academy
 
