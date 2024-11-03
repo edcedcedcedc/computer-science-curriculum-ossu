@@ -1,0 +1,1 @@
+journalctl --since today |grep 'sudo'

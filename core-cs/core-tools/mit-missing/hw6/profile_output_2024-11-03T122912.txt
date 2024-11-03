@@ -1,0 +1,64 @@
+Timer unit: 1e-09 s
+
+Total time: 0.0520595 s
+File: /home/ranog/my-education-in-computer-science/core-cs/core-tools/mit-missing/hw6/sorts.py
+Function: quicksort at line 23
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    23                                           @profile
+    24                                           def quicksort(array):
+    25     33256    5283825.0    158.9     10.1      if len(array) <= 1:
+    26     17128    1611421.0     94.1      3.1          return array
+    27     16128    2027766.0    125.7      3.9      pivot = array[0]
+    28     16128   16377872.0   1015.5     31.5      left = [i for i in array[1:] if i < pivot]
+    29     16128   16631206.0   1031.2     31.9      right = [i for i in array[1:] if i >= pivot]
+    30     16128   10127441.0    627.9     19.5      return quicksort(left) + [pivot] + quicksort(right)
+
+Total time: 0.0940121 s
+File: /home/ranog/my-education-in-computer-science/core-cs/core-tools/mit-missing/hw6/sorts.py
+Function: quicksort_inplace at line 32
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    32                                           @profile
+    33                                           def quicksort_inplace(array, low=0, high=None):
+    34     33880    5802920.0    171.3      6.2      if len(array) <= 1:
+    35        46       4574.0     99.4      0.0          return array
+    36     33834    3970048.0    117.3      4.2      if high is None:
+    37       954     177817.0    186.4      0.2          high = len(array)-1
+    38     33834    4216977.0    124.6      4.5      if low >= high:
+    39     17394    1592395.0     91.5      1.7          return array
+    40                                           
+    41     16440    1935130.0    117.7      2.1      pivot = array[high]
+    42     16440    2169159.0    131.9      2.3      j = low-1
+    43    125731   15498408.0    123.3     16.5      for i in range(low, high):
+    44    109291   14637540.0    133.9     15.6          if array[i] <= pivot:
+    45     56364    6558099.0    116.4      7.0              j += 1
+    46     56364   11694067.0    207.5     12.4              array[i], array[j] = array[j], array[i]
+    47     16440    4209130.0    256.0      4.5      array[high], array[j+1] = array[j+1], array[high]
+    48     16440   10801569.0    657.0     11.5      quicksort_inplace(array, low, j)
+    49     16440    9392867.0    571.3     10.0      quicksort_inplace(array, j+2, high)
+    50     16440    1351413.0     82.2      1.4      return array
+
+Total time: 0.105924 s
+File: /home/ranog/my-education-in-computer-science/core-cs/core-tools/mit-missing/hw6/sorts.py
+Function: insertionsort at line 11
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    11                                           @profile
+    12                                           def insertionsort(array):
+    13                                           
+    14     26077    2940231.0    112.8      2.8      for i in range(len(array)):
+    15     25077    3213880.0    128.2      3.0          j = i-1
+    16     25077    2882431.0    114.9      2.7          v = array[i]
+    17    227757   38778511.0    170.3     36.6          while j >= 0 and v < array[j]:
+    18    202680   30851645.0    152.2     29.1              array[j+1] = array[j]
+    19    202680   22983013.0    113.4     21.7              j -= 1
+    20     25077    4158547.0    165.8      3.9          array[j+1] = v
+    21      1000     115389.0    115.4      0.1      return array
+
+  0.05 seconds - /home/ranog/my-education-in-computer-science/core-cs/core-tools/mit-missing/hw6/sorts.py:23 - quicksort
+  0.09 seconds - /home/ranog/my-education-in-computer-science/core-cs/core-tools/mit-missing/hw6/sorts.py:32 - quicksort_inplace
+  0.11 seconds - /home/ranog/my-education-in-computer-science/core-cs/core-tools/mit-missing/hw6/sorts.py:11 - insertionsort
