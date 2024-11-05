@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if git diff --cached --check; then
+	echo "Commit aborted due to whitespace errors."
+	exit 1
+else
+   echo "No whitespace errors detected."
+fi
+
