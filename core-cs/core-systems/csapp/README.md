@@ -10,6 +10,3 @@ Labs can be found on the [CS:APP Labs website](https://csapp.cs.cmu.edu/3e/labs.
 - [GDB Guide](https://beej.us/guide/bggdb/)
 - [UNIX FAQ](https://csapp.cs.cmu.edu/3e/unixfaq.html)
 - [C Tutorial Center](https://heather.cs.ucdavis.edu/matloff/public_html/unix.html)
-
-## (06/11/2024)
-Overall, the course seems very promising!
