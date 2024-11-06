@@ -1,8 +1,15 @@
-The course webpage https://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/schedule.html
-Labs might be found on csapp website https://csapp.cs.cmu.edu/3e/labs.html
-gdb guide https://beej.us/guide/bggdb/
-unix faq https://csapp.cs.cmu.edu/3e/unixfaq.html
-c tutorial center https://heather.cs.ucdavis.edu/matloff/public_html/unix.html
+# Course Resources
 
-06/11/2024:
-overall, the course seems very promising!
+## Course Webpage
+[CMU Course 15-213: Introduction to Computer Systems](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/schedule.html)
+
+## Labs
+Labs can be found on the [CS:APP Labs website](https://csapp.cs.cmu.edu/3e/labs.html).
+
+## Additional Resources
+- [GDB Guide](https://beej.us/guide/bggdb/)
+- [UNIX FAQ](https://csapp.cs.cmu.edu/3e/unixfaq.html)
+- [C Tutorial Center](https://heather.cs.ucdavis.edu/matloff/public_html/unix.html)
+
+## (06/11/2024)
+Overall, the course seems very promising!
