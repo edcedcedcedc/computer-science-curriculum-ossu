@@ -50,7 +50,7 @@
 ;3.4
 ;modify 3.3 so if accesed more then 7 times to invoke procedure call the cops
 
-(define (make-account-c password balance)
+(define (make-account-cops password balance)
   (let ((attempts 0))
     (define (withdraw amount)
       (if (>= balance amount)
@@ -67,7 +67,7 @@
             (begin
               (set! attempts (+ 1 attempts))
               (if (>= attempts 3)
-                  "call the cops"
+                  "Call the cops"
                   (list "Incorrect password" attempts)
                   )))))
     (define (dispatch . message)
@@ -77,4 +77,81 @@
         (else (error "Unknown request: MAKE-ACCOUNT"
                      message))))
     protected))
+
+
+
+
+
+;3.7
+;understanding
+;make-joint is to create additional access to the original account
+;using new password
+;by using new password you can map to the other name
+
+;(makejoint password-protected-acc defined-password new-password)
+
+;example
+;(define paul-acc
+;(make-joint peter-acc 'open-sesame 'rosebud))
+;will allow to use peter acc with paul's acc and password
+
+;strategy
+;validate the account
+;...rest
+
+
+(define (make-joint object password extended-password)
+  (define (dispatch . m)
+    (cond
+      ((or (eq? (car m) extended-password)
+           (eq? (car m) password))
+       (object password (cadr m)))
+      (else
+       (lambda(x)(begin
+                   "Incorrect password")))))
+  dispatch)
+
+;(define peter-acc (make-account 'pass123 100))
+;(define paul-acc (make-joint peter-acc 'pass123 'pass321))
+
+
+
+;3.8
+;understanding:
+;(+ (f 0)(f 1))
+
+;strategy:
+;state 0 and 0 -> -1
+;state 0 and 1 -> 1
+;state 1 and 0 -> 0
+;state 1 and 1 -> 1
+
+(define f
+  (let ((state -1))
+    (define (dispatch x)
+      (begin
+        (set! state (+ 1 state))
+        (cond
+          ((and(= state 0)(= x 0))-1)
+          ((and(= state 0)(= x 1)) 1)
+          ((and(= state 1)(= x 0)) 0)
+          ((and(= state 1)(= x 1)) 1)
+          ((> x 1)
+           "Domain must be [0,1]")
+          (else
+           (error "State out of range" state)))))
+    dispatch))
+    
+(define (g)
+  (let ((state 0))
+    (define (dispatch)
+      (begin
+        (set! state (+ 1 state))
+        state))
+    dispatch))
+
+;evaluation
+;((g 0)) new environment is created all the time
+;(define a (g 0)) you bind the environment to a
+;f instead is defined once, so it creates exactly one environment
 
