@@ -1,6 +1,110 @@
+![ci workflow](https://github.com/edcedcedcedc/computer-science-curriculum-ossu/actions/workflows/main.yml/badge.svg)
+
 # About
 
 I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+
+## Khan Academy
+
+#### Prerequisites
+
+_Topics Covered_:
+`high school geometry`
+`college algebra`
+`trigonometry`
+`precalculus`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Algebra 1 |![Algebra 1](https://geps.dev/progress/100) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|
+|HS Geometry |![HS Geometry](https://geps.dev/progress/94) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
+|Algebra 2 |![Algebra 2](https://geps.dev/progress/93) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
+|Trigonometry |![Trigonometry](https://geps.dev/progress/96) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
+|Precalculus |![Precalculus](https://geps.dev/progress/93) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|
+
+## OSSU
+
+### INTRO CS
+
+#### Introduction to Programming and Computer Science
+
+_Topics Covered_:
+`simple programs`
+`simple data structures`
+`computation`
+`imperative programming`
+`basic abstractions`
+`basic data structures and algorithms`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Programming Basics|![Python for Everybody Progress](https://geps.dev/progress/100) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
+|Programming Essentials|![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+
+### CORE CS
+
+#### Core programming
+
+**Topics covered**:
+`functional programming`
+`design for testing`
+`program requirements`
+`common design patterns`
+`unit testing`
+`object-oriented design`
+`static typing`
+`dynamic typing`
+`ML-family languages (via Standard ML)`
+`Lisp-family languages (via Racket, Scheme)`
+`Ruby`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/46) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
+
+#### Core math
+
+**Topics covered**:
+`discrete mathematics`
+`mathematical proofs`
+`basic statistics`
+`O-notation`
+`discrete probability`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
+|Integral Calculus |![](https://geps.dev/progress/20)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
+
+#### CS Tools
+
+**Topics covered**:
+`terminals and shell scripting`
+`vim`
+`command line environments`
+`version control`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|The Missing Semester |![](https://geps.dev/progress/70) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+
+### ADVANCED CS
+
+#### Advanced math
+
+**Topics covered**:
+`vectors and vector space`
+`matrices`
+`linear independence`
+`dimensions`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Essence of Linear Algebra |![](https://geps.dev/progress/45)|-|-|
+|Linear Algebra |![](https://geps.dev/progress/16)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
 
 ## Updates
 
@@ -348,109 +452,6 @@ I will be sharing the courses taken to track and document my progress. This is a
 - sicp dropped week 7, moving into week 8
 - linear algebra problem set 2 in progress
 - calc-1b integral quizz 4 in progress soon
-
-## Khan Academy
-
-#### Prerequisites
-
-_Topics Covered_:
-`high school geometry`
-`college algebra`
-`trigonometry`
-`precalculus`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Algebra 1 |![Algebra 1](https://geps.dev/progress/100) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|
-|HS Geometry |![HS Geometry](https://geps.dev/progress/94) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
-|Algebra 2 |![Algebra 2](https://geps.dev/progress/93) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
-|Trigonometry |![Trigonometry](https://geps.dev/progress/96) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
-|Precalculus |![Precalculus](https://geps.dev/progress/93) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|
-
-## OSSU
-
-### INTRO CS
-
-#### Introduction to Programming and Computer Science
-
-_Topics Covered_:
-`simple programs`
-`simple data structures`
-`computation`
-`imperative programming`
-`basic abstractions`
-`basic data structures and algorithms`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Programming Basics|![Python for Everybody Progress](https://geps.dev/progress/100) | 02.02.24 |04.03.24|04.03.24|[Py4e](./intro-cs/intro-to-programming/PY4E/) |-|
-|Programming Essentials|![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
-
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
-
-### CORE CS
-
-#### Core programming
-
-**Topics covered**:
-`functional programming`
-`design for testing`
-`program requirements`
-`common design patterns`
-`unit testing`
-`object-oriented design`
-`static typing`
-`dynamic typing`
-`ML-family languages (via Standard ML)`
-`Lisp-family languages (via Racket, Scheme)`
-`Ruby`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/46) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
-
-#### Core math
-
-**Topics covered**:
-`discrete mathematics`
-`mathematical proofs`
-`basic statistics`
-`O-notation`
-`discrete probability`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
-|Integral Calculus |![](https://geps.dev/progress/0)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
-
-#### CS Tools
-
-**Topics covered**:
-`terminals and shell scripting`
-`vim`
-`command line environments`
-`version control`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://geps.dev/progress/70) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
-
-### ADVANCED CS
-
-#### Advanced math
-
-**Topics covered**:
-`vectors and vector space`
-`matrices`
-`linear independence`
-`dimensions`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Essence of Linear Algebra |![](https://geps.dev/progress/45)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/16)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
-
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org)</a>
