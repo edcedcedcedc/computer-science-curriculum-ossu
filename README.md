@@ -218,7 +218,7 @@ _Topics Covered_:
 
 ### 04/02/2024 Achieved First Milestone 🎉
 
-- Completed Algebra 1, Algebra 2, High School Geometry, and Trigonometry courses – prerequisites for OSSU. Ready for the next challenge!
+- Completed Algebra 1, Algebra 2, High School Geometry, and Trigonometry courses – prerequisites for OSSU. Ready for the next challenge.
 
 ### 06/02/2024
 
@@ -310,7 +310,7 @@ _Topics Covered_:
 ### 15/04/2024
 
 - dropping single variable calculus 18.01, way to fast paced, and too hard for me.
-- starting calculus mit 18.01.1x 1a differentiation
+- starting calculus mit 18.01 1a differentiation
 
 ### 17/04/2024
 
@@ -354,7 +354,7 @@ _Topics Covered_:
 
 ### 10/06/2024
 
-- mit 6.0001 ps4 done!
+- mit 6.0001 ps4 done
 
 ### 16/06/2024
 
@@ -420,7 +420,7 @@ _Topics Covered_:
 ### 06/10/2024
 - cs61a week 5 homework 90% done
 - calc 1a unit 5 around 80% done
-- missing semester homework 4 4/5 done
+- missing semester homework 4, 4/5 done
 
 ### 07/10/2024
 - cs61a dropping project 2, moving to week 6
@@ -448,10 +448,16 @@ _Topics Covered_:
 
 ### 28/10/2024
 - sicp week 6 done, week 7 in progress
+
 ### 31/10/2024
-- sicp dropped week 7, moving into week 8
+- sicp dropped week 7(because oop was already in 6.0001), moving into week 8
 - linear algebra problem set 2 in progress
 - calc-1b integral quizz 4 in progress soon
+
+### 8/11/2024
+- sicp week 9 - mutable data
+- linear algebra problem set 3
+- missing semester - hw9
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org)</a>

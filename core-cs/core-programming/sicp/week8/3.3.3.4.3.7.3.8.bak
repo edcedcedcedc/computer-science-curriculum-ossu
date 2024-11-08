@@ -155,8 +155,3 @@
 ;(define a (g 0)) you bind the environment to a
 ;f instead is defined once, so it creates exactly one environment
 
-
-
-
-;
-
