@@ -465,6 +465,9 @@ _Topics Covered_:
 - sicp week 10 - client/server programming
 - missing semester - done
 
+### 16/11/2024
+- calc-1b unit 2 out of 5, diff equations next..
+
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org)</a>
 - <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>

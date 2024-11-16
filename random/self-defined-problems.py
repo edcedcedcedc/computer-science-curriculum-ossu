@@ -222,15 +222,72 @@ def problem6d():
                 min = diff    
         print(min)
 
-
-
 #problem7
-#find a value in hierarchical assoc 
-#think on dimensions of a hierachical structure 
-
-
-#problem8
 #bublesort please!!!
+#understanding:
+#1)goal,what I know, what I dont know, 
+#2)observation/breakdown/induce
+#3)loops/statements/varibles
+#3.1)how to start/ how in the middle, how to end
+
+#goal
+# to sort a list by swapping elements from left to right 
+
+#What I know:
+# list is one dimensional, n elements
+# I accept a list return a list
+# the left should always be lesser then right, it's ascending
+
+#what I don't know:
+#when the list is sorted ?
+#every left is smaller then the right, so when there are no swaps, the list is sorted
+#what type of a loop i need
+#all the variables for subprocesses
+
+#breakdown/observe/induce 
+#3 8 7 4 
+#3 > 8
+#8 > 7 swap
+#3 7 8 4
+#8 > 4 swap
+#3 7 4 8
+
+#loops/statements/variables/
+#a while loop
+#swap
+#i
+#i-end
+
+#strategy
+#variables, 
+    # i, swap, i-end
+#while loop
+    #on true
+#condition how to end 
+    # when swap is false
+#statements for sorting 
+    #left right, i, i + 1
+
+def problem7(n):
+    swap = False
+    i = 0
+    i_end = len(n) - 1
+    while True:
+        if i_end == i and not swap:
+            return n
+        elif i_end == i and swap:
+            i = 0
+            swap = False
+        else:
+            if n[i] > n[i + 1]:
+                swap = True
+                left, right= n[i], n[i + 1]
+                n[i + 1], n[i] = left, right
+            i += 1
+print(problem7([3,9,1,0,0,1,1]))
+        
+#best case O(n) worst case O(n^2)
+
 
 
 
