@@ -78,6 +78,7 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
 |Integral Calculus |![](https://geps.dev/progress/20)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
+|Math for CS|![](https://geps.dev/progress/0)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
 
 #### CS Tools
 
@@ -89,7 +90,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://geps.dev/progress/70) | 22.06.24 |22.07.24|-|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+|The Missing Semester |![](https://geps.dev/progress/100) | 22.06.24 |22.07.24|15.11.24|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ### ADVANCED CS
 
@@ -458,6 +459,11 @@ _Topics Covered_:
 - sicp week 9 - mutable data
 - linear algebra problem set 3
 - missing semester - hw9
+- starting math-for-cs
+
+### 15/11/2024
+- sicp week 10 - client/server programming
+- missing semester - done
 
 ## Resources
 - <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org)</a>

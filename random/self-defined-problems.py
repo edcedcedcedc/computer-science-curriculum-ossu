@@ -48,6 +48,55 @@ def sticker(para):
 #problem 4
 #write a permutation function using recursion 
 
+def problem4(s):
+    if len(s) == 1:
+        return [s]
+    permutations = []  
+    for i in range(len(s)):
+        diff = s[i+1:]+s[:i]
+        for j in problem4(diff):
+            permutations.append(s[i]+j)
+    return permutations
+        
+#problem 4a 
+#understanding:
+#write an iterative permutation function
+#domain string range list of strings ; subject 
+#ab -> a b -> b a
+#abc -> a bc -> a cb -> b ac -> b ca
+
+#strategy:
+
+def problem4a(s):
+    result = []
+    stack = [("", s)]
+    while stack:
+        perm, remaining = stack.pop()
+        if len(remaining) == 0:
+            result += perm
+        else:
+            for i in range(len(remaining)):
+                stack.append((perm + remaining[i], remaining[:i] + remaining[i+1:]))   
+    return result
+
+
+#problem 4.1
+#revese a string using a stack
+#understanding:
+#stack array
+#reversed string
+#base case: stack == 0 -> reversed
+#inductive case: reversed += stack.pop() -> reversed
+
+def problem41(init):
+    stack = []
+    reversd = ""
+    for char in init:
+        stack.append(char)
+    while stack:
+        reversd += stack.pop()
+    return reversd
+
 #problem 5
 #impliment memoization to problem 1
 
@@ -60,13 +109,13 @@ def sticker(para):
 #check the cache in fib memo each recursive call
 #on the return from the recursive call append to assoc 
 
-def fib_memo(n,cache,calls):
+def problem5(n,cache,calls):
     if n in cache:
         return cache[n]
     if n == 0 or n == 1:
         return n
     else:
-        result = fib_memo(n - 2, cache, calls + 1) + fib_memo(n - 1, cache, calls + 1)
+        result = problem5(n - 2, cache, calls + 1) + problem5(n - 1, cache, calls + 1)
         cache[n] = result
         return result
 
@@ -147,6 +196,7 @@ def problem6c():
         if adiff < mininum:
             mininum = adiff
     print(mininum)
+
 #problem 6d:
 #extend problme 6c with binary search and bonuses :)
 #
@@ -171,4 +221,16 @@ def problem6d():
             if diff < min:
                 min = diff    
         print(min)
-problem6d()
+
+
+
+#problem7
+#find a value in hierarchical assoc 
+#think on dimensions of a hierachical structure 
+
+
+#problem8
+#bublesort please!!!
+
+
+
