@@ -208,11 +208,10 @@ def problem6d():
         low = 1
         high = n
         min = float('inf')
-        sumt = n * (2 * k + (n - 1)) // 2
         while low <= high:
             mid = (low + high) // 2
             sum1 = mid * (2 * k + (mid - 1)) // 2
-            sum2 = sumt - sum1
+            sum2 = n * (2 * k + (n - 1)) // 2 - sum1
             if sum1 < sum2:
                 low = mid + 1
             else:
@@ -271,11 +270,11 @@ def problem6d():
 def problem7(n):
     swap = False
     i = 0
-    i_end = len(n) - 1
+    ult = len(n) - 1
     while True:
-        if i_end == i and not swap:
+        if ult == i and not swap:
             return n
-        elif i_end == i and swap:
+        elif ult == i and swap:
             i = 0
             swap = False
         else:
