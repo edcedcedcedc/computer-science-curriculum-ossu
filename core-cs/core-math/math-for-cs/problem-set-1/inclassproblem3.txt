@@ -1,0 +1,30 @@
+If we raise an irrational number to an irrational power, can the result be rational? 
+Show that it can, by considering sqrt(2)^sqrt(2) and arguing by cases
+
+Theorem. 
+sqrt(2)^sqrt(2) can have a rational result.
+
+Proof.
+The proof is by case analysis.
+We'll consider two possible scenarios.
+
+Case 1.
+Assume that sqrt(2)^sqrt(2) is rational i.e equal some m/n
+
+In this case theorem is instantly proved because this 
+was our initial assumption which satisfies the hypothesis
+
+Case 2.
+Assume that sqrt(2)^sqrt(2) is irrational
+sqrt(2)^sqrt(2) = i
+
+square both sides 
+sqrt(2)^2 = i^2
+
+i = 2
+
+Our assumtion was that it is irrational 
+but it is rational, this is a contradiction
+
+QED
+sqrt(2)^sqrt(2) indeed can be rational or irrational 

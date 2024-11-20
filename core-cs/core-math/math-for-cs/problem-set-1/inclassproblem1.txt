@@ -1,0 +1,22 @@
+prove that a * b  = n 
+
+id est
+
+a or b <= sqrt(n) where a, b are nonnegative real numbers.
+
+Proof.
+We use proof by contradiction
+Assume a and b > sqrt(n)
+therefore
+analyzing the product of a and b
+
+a * b > sqrt(n) * sqrt(n) = n
+
+which implies 
+a * b > n 
+
+QED
+this contradicts our original assumtion that a * b = n
+we just deduced that a * b must be greater then n,
+ since we reached contradiction, our initial assumtion
+must be false 

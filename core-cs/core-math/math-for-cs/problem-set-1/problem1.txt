@@ -2,19 +2,28 @@ Prove that
 log_4(6) is irrational
 
 Proof.
-I'll prove by contradiction
+We'll prove by contradiction
 if log_4(6) is rational then log_4(6) = p/q where p and q are integers
 
 Assume 
-log_4(6) = p/q 
+log_4(6) = p/q
+ 
+then rearranging the logarithm 
+by it's properties we get
 
 4^(p/q) = 6
 
+engineering 4 to be 2^2
 2^2p/q = 6
 
+dividing both sides by 2
+2^2p/q - 1 = 3
+
 QED
-Cannot express 6 as a power of 2, to solve for p/q
-which implies a contradiction
+Cannot unify the bases to solve for p/q, 3 cannot be express as 2^(of some p/q)
+Assuming log_4(6) is rational, this leads to contradiction
+
+
 
 
 

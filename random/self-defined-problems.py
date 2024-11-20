@@ -283,10 +283,18 @@ def problem7(n):
                 left, right= n[i], n[i + 1]
                 n[i + 1], n[i] = left, right
             i += 1
-print(problem7([3,9,1,0,0,1,1]))
-        
+    
 #best case O(n) worst case O(n^2)
 
+#problem 8 prefix sums 
 
+def problem8(arr):
+    prefixsum = [0]
+    for i in arr:
+        #yi = yi-1 + xi
+        prefixsum.append(prefixsum[-1] + i)
+    print(prefixsum)
 
-
+problem8([1,2,3])
+#problem 8a
+#extend problem8 to use cyclic shift k
