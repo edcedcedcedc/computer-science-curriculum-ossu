@@ -6,11 +6,26 @@ import threading
 from i_am_common import SERVER_HOST,SERVER_PORT
 
 shutdown_flag = False
+clients = {}
 
 def handle_client(client_socket, client_address):
-    print(f"New connection from {client_address}")
-
+    print(f"New connection from {client_address}.")
+    username = ""
+    
     try:
+        
+        while not username:
+            try:
+                readable, _, _ = select.select([client_socket], [], [], 3)  # Timeout 3 seconds
+                username = client_socket.recv(1024).decode().strip()
+                if client_socket in readable:
+                    clients[username] = client_socket  # Store username and socket
+                    print(f"{client_address} registered as {username}.")
+    
+            except BlockingIOError:
+                time.sleep(0.1) 
+                continue    
+    
         while not shutdown_flag:
 
             try:
@@ -22,13 +37,18 @@ def handle_client(client_socket, client_address):
                 
                 if message.startswith("SEND "):
                     parts = message[5:].split(":", 1)
-                    if len(parts) == 2:
-                        recipient, msg_body = parts
-                        recipient = recipient.strip()
-                        msg_body = msg_body.strip()
-                        client_socket.sendall(f"Echoing to you: {msg_body}".encode())
-                    else:
-                        client_socket.sendall("Error: Invalid message format. Use 'SEND recipient:message'.".encode())
+                    recipients, msg_body = parts
+                    recipients = eval(recipients)
+                    msg_body = msg_body.strip()
+                    print(recipients)
+
+                    for recipient in recipients:
+                        if recipient in clients:
+                            recipient_socket = clients[recipient]
+                            recipient_socket.sendall(f"Message received from {username}: {msg_body}".encode())#forwarded message to recipient 
+                            client_socket.sendall(f"Message sent to {recipient}".encode()) #forwarded confirmation to client
+                        else:
+                            client_socket.sendall(f"Error: Recipient {recipient} not found.".encode())
                 else:
                     client_socket.sendall("Error: Invalid message format. Use 'SEND recipient:message'.".encode())
             
@@ -36,12 +56,18 @@ def handle_client(client_socket, client_address):
                 time.sleep(0.1) 
                 continue
 
+            except Exception as e:
+                print(f"Error with {username}: {e}")
+                break
+
     except Exception as e:
         print(f"Error with {client_address}: {e}")
 
     finally:
+        if username and username in clients:
+            del clients[username]
         client_socket.close()
-        print(f"Connection with {client_address} closed.")
+        print(f"Connection with client address: {client_address} username: {username} closed.")
 
 # Function to handle the shutdown signal
 def shutdown_server(signal, frame):

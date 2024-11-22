@@ -1,32 +1,62 @@
 import socket
+import threading
 from i_am_common import SERVER_HOST, SERVER_PORT, MESSAGE_END
 
-def start_client():
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((SERVER_HOST, SERVER_PORT)) 
-    print(f"Connected to {SERVER_HOST}:{SERVER_PORT} {MESSAGE_END}")
 
-    try:
-        while True:
-            # Read the message from the user
-            message = input("Enter a message (type 'exit' to quit): ")
-            
-            # Exit condition
-            if message.lower() == "exit":
+def listen_for_messages(client_socket):
+    while True:
+        try:
+            message = client_socket.recv(1024)
+            if not message:  # Connection closed by the server
+                print("Server closed the connection.")
                 break
+            print(f"{message.decode()}")
+        except Exception as e:
+            print(f"Error receiving message: {e}")
+            break
 
-            # Check if the message starts with "SEND"
-            if message.startswith("SEND "):
-                client_socket.sendall(message.encode())
-                response = client_socket.recv(1024)
-                print(f"Server response: {response.decode()}")
-            else:
-                print("Error: Invalid message format. Use 'SEND recipient:message'.")
 
-    except KeyboardInterrupt:
-        print("\nDisconnected.")
-    finally:
-        client_socket.close()
+
+def start_client():
+    try:
+        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        client_socket.connect((SERVER_HOST, SERVER_PORT)) 
+        print(f"Connected to {SERVER_HOST}:{SERVER_PORT} {MESSAGE_END}")
+
+        try:
+            username = input("Enter your username: ")
+            client_socket.sendall(username.encode()) 
+            
+
+            listener_thread = threading.Thread(target=listen_for_messages, args=(client_socket,), daemon=True)
+            listener_thread.start()
+
+
+            while True:
+                message = input("")
+            
+                if message.lower() == "exit":
+                    break
+
+                if message.startswith("SEND "):
+                    if ":" in message[5:]:
+                        recipients , rest = message[5:].split(":", 1)
+                        recipients = recipients.split()
+                        formatted_message = f"SEND {recipients}: {rest}"
+
+                        client_socket.sendall(formatted_message.encode())
+            
+                    else:
+                        print("Error: Invalid message format. Use 'SEND recipient:message'.")
+
+        except KeyboardInterrupt:
+            print("\nDisconnected.")
+
+        finally:
+            client_socket.close()
+    
+    except ConnectionRefusedError:
+        print(f"Connection refused, cannot connected to {SERVER_HOST}:{SERVER_PORT}.")
 
 if __name__ == "__main__":
     start_client()

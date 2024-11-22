@@ -1,6 +1,5 @@
 This is a tcp/ip application.
 
-
 Server: 
 Listens on a non-blocking socket, handling multiple clients with threads.
 Gracefully shuts down with Ctrl+C using a global shutdown flag.
@@ -20,7 +19,11 @@ Connects to the server, sends and receives messages concurrently.
 1 Invent the capability to send a message to a list of clients as well as to a single client. Do this entirely in the client program, so what actually goes to the server is multiple requests.
     1.1 
     standardized the messaging format to be SEND recipient:message 
-    server is able to echo to the recipent the message 
+    server is able to echo to the recipent the message
+    1.1
+    clients can send messages to each other 
+    enabled threading on clientside 
+     
     
 2. Invent the capability to broadcast a message to every client. Do this by inventing a broadcast command that the server understands.
 3. Could #1 have been done with the server doing part of the work? Could #2 have been done entirely in the client code? Compare the virtues of the two approaches.
