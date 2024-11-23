@@ -33,7 +33,6 @@ def handle_client(client_socket, client_address):
                 if not message:
                     break
                 message = message.decode().strip()
-                print(f"Message from {client_address}: {message}")
                 
                 if message.startswith("SEND "):
                     parts = message[5:].split(":", 1)

@@ -1,0 +1,35 @@
+prove by truth table that
+P or (Q and R) is equivalent to (P or Q) and (P or R)
+
+T or T = T
+T or F = T
+F or T = T
+F or F = F
+
+T and T = T
+T and F = F
+F and T = F
+F and F = F
+
+Proof. Direct.
+
+Assume P is true, Q and R are false
+then by truth tables
+
+P or Q = T
+P or R = T 
+P and Q = F
+P and R = F
+
+then if 
+(P or Q) = T and (P or R) = T
+
+i get 
+T and T = T
+
+this clearly implies 
+T or (F and F) still must be T
+
+QED
+P or (Q and R) = (P or Q) and (P or R) = T or (F and F) = T
+

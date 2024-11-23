@@ -1,0 +1,69 @@
+use well ordering principle to proove that
+n <= 3^(n/3) for every nonnegative integer n
+
+hint: Verify (1) for n <= 4 by explicit calculation
+
+
+Proof. By contradiction.
+
+Assume theorem n <= 3^(n/3) is false
+there exists some integers n for which
+
+n > 3^(n/3) is true 
+
+I will collect them into a set C
+
+C = {0,1,2,3...n|n > 3^n/3}
+
+By assumption C is a nonempty set
+since the inequality fails for n 
+
+The well ordering principle tells us that
+any nonempty nonnegative set of integers
+has a smallest element.
+
+let c be the smallest counterexample.
+the inequality n <= 3^n/3 is true for all
+
+n < c 
+
+hint part: 
+
+0 <= 3^0/3 true
+
+1 <= 3^1/3 true 
+
+2 <= 3^2/3 true
+
+3 <= 3^3/3 true
+
+4 <= 3^4/3 true
+
+c has to be greater then 4 
+
+c > 4 
+
+but we know that inequality holds for 
+any n < c, then it should hold and for 
+
+c - 1,c - 2...c - n
+
+this leads to a contradiction
+because we just shown that 
+it is true for any n less then c
+but our initial deduction has n < c
+
+QED 
+The contradiction arises from the assumption
+that c is the smallest counterexample
+since the inequality holds for n < c, 
+but it hold true for n = c - 1, n = c - 2
+
+
+
+
+
+
+
+
+
