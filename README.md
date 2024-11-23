@@ -371,7 +371,7 @@ _Topics Covered_:
 - mit missing semester lesson 2, hw 2 in progress 
 
 ### 02/07/2024
-- mit 6.0001 done!
+- mit 6.0001 done
 - mit 18.01.1x chain rule done  
 
 ### 06/07/2024
@@ -468,5 +468,5 @@ _Topics Covered_:
 - calc-1b unit 2 out of 5, diff equations next..
 
 ## Resources
-- <a name="KhanAcademy">[Khan Academy](https://www.khanacademy.org)</a>
-- <a name="OSSU">[Open Source Society University](https://github.com/ossu/computer-science)</a>
+- <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
+- <a name=“OSSU”>[Open Source Society University](https://github.com/ossu/computer-science)</a>

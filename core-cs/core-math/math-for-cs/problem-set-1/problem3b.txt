@@ -1,0 +1,9 @@
+let P and Q be prop formulas.
+describe a formula R using only and's or's and not's
+and copies of P and Q such that R is valid iff P and Q are equivalent
+
+
+
+R = P and Q iff P is true and Q is true 
+R = P and Q iff P is false and Q is false 
+

@@ -1,0 +1,14 @@
+
+A propositional formula is satisfiable 
+iff there is an assignment of truth values to its variables—an 
+environment—which makes it true. 
+
+Explain why P is valid iff NOT.P / is not satisfiable
+
+
+Explanation
+okay so the statement says P is valid iff not(P) is not satisfable, 
+which implies not(P) and not satisfable by iff, 
+so if not(P) is false and not satisfable is false 
+then iff false and false is true, so P is valid
+

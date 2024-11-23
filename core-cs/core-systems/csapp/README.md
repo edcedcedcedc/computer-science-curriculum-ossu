@@ -2,7 +2,7 @@
 [CMU Course 15-213: Introduction to Computer Systems](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/schedule.html)
 
 ## Labs
-Labs can be found on the [CS:APP Labs website](https://csapp.cs.cmu.edu/3e/labs.html).
+Can be found on the [CS:APP website](https://csapp.cs.cmu.edu/3e/labs.html).
 
 ## Additional Resources
 - [GDB Guide](https://beej.us/guide/bggdb/)

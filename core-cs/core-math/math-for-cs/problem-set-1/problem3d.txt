@@ -1,0 +1,10 @@
+A set of propositional formulas P1; : : : ; Pk is consistent 
+iff there is an environment in which they are all true. 
+Write a formula, S, so that the set P1; : : : ; Pk is not consistent iff S is valid.
+
+
+consistent - exists at last one truth assignment where all formulas are true 
+inconsistent - not consistent :)
+
+
+S = not(P1 and P2 and P3...and Pk)
