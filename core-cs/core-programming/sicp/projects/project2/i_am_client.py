@@ -3,26 +3,32 @@ import threading
 from i_am_common import SERVER_HOST, SERVER_PORT, MESSAGE_END
 
 
+
 def listen_for_messages(client_socket):
     while True:
         try:
             message = client_socket.recv(1024)
-            if not message:  # Connection closed by the server
-                print("Server closed the connection.")
+            if not message:
+                print("Server closed the connection")
                 break
+           
+         
             print(f"{message.decode()}")
+
+        except ConnectionAbortedError:
+            break
         except Exception as e:
             print(f"Error receiving message: {e}")
             break
 
-
-
 def start_client():
+ 
     try:
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client_socket.connect((SERVER_HOST, SERVER_PORT)) 
-        print(f"Connected to {SERVER_HOST}:{SERVER_PORT} {MESSAGE_END}")
+        client_socket.connect((SERVER_HOST, SERVER_PORT))
 
+        print(f"Connected to {SERVER_HOST}:{SERVER_PORT} {MESSAGE_END}")
+        
         try:
             username = input("Enter your username: ")
             client_socket.sendall(username.encode()) 
@@ -36,7 +42,7 @@ def start_client():
                 message = input("")
             
                 if message.lower() == "exit":
-                    break
+                    raise KeyboardInterrupt
 
                 if message.startswith("SEND "):
                     if ":" in message[5:]:
@@ -45,9 +51,22 @@ def start_client():
                         formatted_message = f"SEND {recipients}: {rest}"
 
                         client_socket.sendall(formatted_message.encode())
-            
-                    else:
-                        print("Error: Invalid message format. Use 'SEND recipient:message'.")
+
+                elif message.startswith("BLOCK "):
+                        recipients = message[6:].split(" ")
+                        if recipients:
+                            formatted_message = f"BLOCK {recipients}"
+                            client_socket.sendall(formatted_message.encode())
+
+                elif message.startswith("BROADCAST"):
+                    if ":" in message[9:]:
+                        _, rest = message[9:].split(":", 1)
+                        formatted_message = f"BROADCAST: {rest}"
+
+                        client_socket.sendall(formatted_message.encode())
+                        
+                else:
+                    print("Error: Invalid message format. Use 'SEND recipient:message'.")
 
         except KeyboardInterrupt:
             print("\nDisconnected.")

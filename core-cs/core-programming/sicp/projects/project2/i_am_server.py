@@ -6,12 +6,14 @@ import threading
 from i_am_common import SERVER_HOST,SERVER_PORT
 
 shutdown_flag = False
-clients = {}
 
+clients = {}
+blocked = {}
 def handle_client(client_socket, client_address):
     print(f"New connection from {client_address}.")
+  
     username = ""
-    
+
     try:
         
         while not username:
@@ -30,43 +32,67 @@ def handle_client(client_socket, client_address):
 
             try:
                 message = client_socket.recv(1024)
+
                 if not message:
-                    break
+                    raise ConnectionResetError
+
                 message = message.decode().strip()
-                
-                if message.startswith("SEND "):
+
+                if message.startswith("BLOCK "):
+                    recipients = message[6:]
+                    recipients = eval(recipients)
+                    for recipient in recipients:
+                        if recipient in clients:
+                            if username not in blocked:
+                                blocked[username] = []
+                            blocked[username].append(recipient)
+                            recipient_socket = clients[recipient]
+                            recipient_socket.sendall(f"You have been restricted by username {username}".encode())
+                        
+
+                elif message.startswith("SEND "):
                     parts = message[5:].split(":", 1)
                     recipients, msg_body = parts
                     recipients = eval(recipients)
                     msg_body = msg_body.strip()
-                    print(recipients)
-
+        
                     for recipient in recipients:
                         if recipient in clients:
-                            recipient_socket = clients[recipient]
-                            recipient_socket.sendall(f"Message received from {username}: {msg_body}".encode())#forwarded message to recipient 
-                            client_socket.sendall(f"Message sent to {recipient}".encode()) #forwarded confirmation to client
+                            for k, v in blocked.items():
+                                if k == username:
+                                    if recipient not in v:
+                                        recipient_socket = clients[recipient]
+                                        recipient_socket.sendall(f"Message from {username}: {msg_body}".encode())
+         
                         else:
                             client_socket.sendall(f"Error: Recipient {recipient} not found.".encode())
+
+                elif message.startswith("BROADCAST"):
+                    parts = message[9:].split(":", 1)
+                    _, msg_body = parts
+                    for recipient, recipient_socket in clients.items():
+                        if username != recipient:
+                            recipient_socket.sendall(f"Broadcast from {username}:{msg_body}".encode())
+
                 else:
-                    client_socket.sendall("Error: Invalid message format. Use 'SEND recipient:message'.".encode())
+                    client_socket.sendall("Error: Invalid message format. Use 'SEND recipient:message' or 'BROADCAST: message.".encode())
             
             except BlockingIOError:
                 time.sleep(0.1) 
                 continue
 
-            except Exception as e:
-                print(f"Error with {username}: {e}")
+            except ConnectionResetError:
                 break
-
-    except Exception as e:
-        print(f"Error with {client_address}: {e}")
+            
 
     finally:
-        if username and username in clients:
+        if username in clients:
             del clients[username]
         client_socket.close()
         print(f"Connection with client address: {client_address} username: {username} closed.")
+        if username in blocked:
+            del blocked[username]
+            print(f"Blocked list for username {username} has been erased due to disconnect.")
 
 # Function to handle the shutdown signal
 def shutdown_server(signal, frame):
@@ -87,25 +113,24 @@ def start_server():
         while not shutdown_flag:
             # Use select to check if the server socket is ready to accept a new connection
             readable, _, _ = select.select([server_socket], [], [], 3)  # Timeout 3 seconds
-
             if server_socket in readable:
                 client_socket, client_address = server_socket.accept()
                 # Create a new thread to handle each client independently
                 # Pass the handle_client as a callback
+                """ client_socket.sendall(f"Succesifly connected to {SERVER_HOST}".encode()) """
+                #client_socket.sendall(f"Succesifly connected to {SERVER_HOST}".encode())
                 client_thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
                 client_thread.start()
 
-            # Periodically check for shutdown signal
             if shutdown_flag:
                 break
 
     except KeyboardInterrupt:
-        # Let the shutdown signal handle it
         pass 
 
     finally:
         server_socket.close()
-        print("Server stopped.")
+        print("Server socket closed.")
 
 # Setup signal handler for Ctrl+C
 signal.signal(signal.SIGINT, shutdown_server)
