@@ -1,5 +1,6 @@
 import socket
 import threading
+import select 
 from i_am_common import SERVER_HOST, SERVER_PORT, MESSAGE_END
 
 
@@ -9,7 +10,7 @@ def listen_for_messages(client_socket):
         try:
             message = client_socket.recv(1024)
             if not message:
-                print("Server closed the connection")
+                print("Server closed the connection.")
                 break
            
          
@@ -24,10 +25,18 @@ def listen_for_messages(client_socket):
 def start_client():
  
     try:
+        print(f"Initiating a connection to {SERVER_HOST}, {SERVER_PORT}...")
+        
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         client_socket.connect((SERVER_HOST, SERVER_PORT))
-
-        print(f"Connected to {SERVER_HOST}:{SERVER_PORT} {MESSAGE_END}")
+        readable, _, _ = select.select([client_socket], [], [], 3)
+        
+        if readable:
+            message = client_socket.recv(1024)
+            if message:
+                print(f"{message.decode()}")
+        else:
+            raise TimeoutError
         
         try:
             username = input("Enter your username: ")

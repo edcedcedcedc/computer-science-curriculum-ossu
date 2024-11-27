@@ -6,14 +6,15 @@ import threading
 from i_am_common import SERVER_HOST,SERVER_PORT
 
 shutdown_flag = False
-
 clients = {}
 blocked = {}
-def handle_client(client_socket, client_address):
-    print(f"New connection from {client_address}.")
-  
-    username = ""
 
+def handle_client(client_socket, client_address):
+
+    print(f"New connection from {client_address}.")
+    client_socket.send(f"Succesifly connected to {SERVER_HOST}, {SERVER_PORT}.".encode())
+    username = ""
+    
     try:
         
         while not username:
@@ -84,7 +85,6 @@ def handle_client(client_socket, client_address):
             except ConnectionResetError:
                 break
             
-
     finally:
         if username in clients:
             del clients[username]
@@ -111,14 +111,9 @@ def start_server():
 
     try:
         while not shutdown_flag:
-            # Use select to check if the server socket is ready to accept a new connection
             readable, _, _ = select.select([server_socket], [], [], 3)  # Timeout 3 seconds
             if server_socket in readable:
                 client_socket, client_address = server_socket.accept()
-                # Create a new thread to handle each client independently
-                # Pass the handle_client as a callback
-                """ client_socket.sendall(f"Succesifly connected to {SERVER_HOST}".encode()) """
-                #client_socket.sendall(f"Succesifly connected to {SERVER_HOST}".encode())
                 client_thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
                 client_thread.start()
 
