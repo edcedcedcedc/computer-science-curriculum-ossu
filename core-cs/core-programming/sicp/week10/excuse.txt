@@ -1,0 +1,30 @@
+Why didn't I do all the exercises for homework 10 ?
+
+It introduced client/server paradigm and concurrency.
+Brian told that we shouldn't know everything and he doesnt
+expect us to know it for sure.
+
+I got the main concepts of the week:
+thunk
+callback
+thread
+socket
+concurrency
+parallelism
+serializer
+mutex
+deadlock
+
+Did the client/server tcp/ip application from scratch
+because the original scheme files were corrupted and
+didn't work in DrRacket.It's located under cs61a/projects/project2
+Did partially the sicp exercises and read the book and lectures notes.
+
+There is no point to do the rest of the exercises because
+they introduce unnecessary complexity of the scheme language 
+where you cannot understand the code...and unnecessary missing 
+function that you have to handle with different libraries or
+write them yourself.
+
+I am done. Moving forward.
+

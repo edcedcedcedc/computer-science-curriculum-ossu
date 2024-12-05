@@ -1,0 +1,11 @@
+Problem 3. Translate the following sentence into a predicate formula:
+There is a student who has e-mailed at most two other people in the class, besides possibly himself.
+The domain of discourse should be the set of students in the class; in addition, the only predicates that you may use are
+equality, and
+E.x; E(x,y), meaning that “x has sent e-mail to y.”
+
+solving ->
+
+There exists x such that for all y. 
+where y != x and E(x,y) -> there exists y1, exists y2 
+such that y1 != y2, y1 != x, y2 != x and E(x,y1) and E(x,y2)

@@ -1,0 +1,18 @@
+
+(a) 
+Explain how to write a formula Members(p,a,b) of set theory that means p = {a, b}
+
+
+(p = {a, b}) = (for ANY x in p, x = a OR x = b) and (a in p AND b in p)
+
+
+(b) 
+Explain how to write a formula Pair(p, a, b) of set theory that means p = pair(a,b)
+
+(p = pair(a, b)) = (for ANY x in p, x = {a} OR x = {a,b}) and ({a} in p AND {a,b} in p)
+
+(c)
+Explain how to write a formula Second(p, b) of set theory that means p is a pair whose second item
+is b.
+
+(p = pair(x, b)) = (p = {{x}, {x, b}}) AND ({x} in p and {x, b} in p)

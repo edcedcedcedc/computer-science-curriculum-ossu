@@ -1,0 +1,68 @@
+
+
+a)verify that prop formula P and not(Q) or P and Q is equal to prop
+
+P and (not(Q) or Q) = P and not(Q) or P and Q 
+
+
+b)prove that  A = (A - B) u (A i B) 
+for all sets A, B by showing x in A iff x in (A - B) u (A i B)
+for all elements using equivalence of part (a) in a chain of iffs
+
+ 
+proof.
+
+some examples
+A = {4,1,2,3}
+B = {4,5,6}
+A u B = {1,2,3,4,5,6}
+Adiff = {1,2,3} 
+A i B = {4}
+A = {1,2,3} u {4}
+
+assume
+for all x. x in A <=> x in (A - B) u (A i B)
+
+first implication 
+x in A -> x in (A - B) u (A i B)
+
+assume 
+x in A 
+
+then 
+
+either 
+x in B then (A i B) 
+
+or  
+x not in B then (A - B)
+
+then
+x in A iff (A - B) u (A i B)
+
+
+second implication 
+x in (A - B) u (A i B) -> x in A 
+
+assume 
+x in (A - B) u (A i B)
+
+either 
+x in (A - B) then x in A but x not in B thus x in A
+
+or 
+x in (A i B) then x in A and x in B thus x in A 
+
+then 
+
+x in (A - B) u (A i B) iff x in A 
+
+
+QED
+x in A -> x in (A - B) u (A i B)
+x in (A - B) u (A i B) -> x in a
+
+x in A iff x in (A - B) u (A i B)
+
+
+

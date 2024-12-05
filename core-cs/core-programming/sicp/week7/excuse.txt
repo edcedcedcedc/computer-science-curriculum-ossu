@@ -1,0 +1,7 @@
+Why didn't I do week7 homework ?
+
+The project was corrupted
+I already took oop paradigm in 6.0001 - intro to computer science
+I have the underlying core concepts of OOP -> message passing, state and inheritance
+
+I only did all the reading and watched lectures.
