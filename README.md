@@ -62,7 +62,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/66) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/99) | 02.07.24 |17.10.24|-|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
 
 #### Core math
 
@@ -466,6 +466,13 @@ _Topics Covered_:
 
 ### 16/11/2024
 - calc-1b unit 2 out of 5, diff equations next..
+
+### 9/12/2024
+- I am done with CS61A, dropped weeks 12-15, because of redundancy and irrelevancy
+  it's outdated and makes no sense for me to continue, moving forward.
+
+### 10/12/2024
+- CS61B data structures week1 in progress
 
 ## Resources
 - <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
