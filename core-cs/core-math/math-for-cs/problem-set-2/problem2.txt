@@ -1,0 +1,22 @@
+prove 
+
+not(A and B) == NOT(A) or NOT(B)
+
+
+Proof.
+
+Assume
+
+if 
+x NOT in A and B; x must NOT be in both sets A and B 
+then 
+x NOT in A or x NOT in b
+
+if
+x NOT in A or x NOT in b
+then
+x NOT in A and B
+
+QED
+x NOT in A and B iff x in A or x in B
+
