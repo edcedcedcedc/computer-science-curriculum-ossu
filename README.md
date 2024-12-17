@@ -489,7 +489,7 @@ _Topics Covered_:
 ### 17/12/2024
 - CS61B hw1/lab1 done, next lectures in progress, looking forward for hw2/lab2 and project1
 - Linear Algebra unit 2 out of 3, lessons 1 out of 11, hw 5 in progress 
-- Math for CS hw 3 in progress...
+- Math for CS hw 3 in progress…
 
 ## Resources
 - <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
