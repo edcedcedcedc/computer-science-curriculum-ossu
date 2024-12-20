@@ -491,6 +491,9 @@ _Topics Covered_:
 - Linear Algebra unit 2 out of 3, lessons 1 out of 11, hw 5 in progress 
 - Math for CS hw 3 in progress…
 
+### 20/12/2024
+- CS61B lab2 done; I had to write it in EMACS, my lord, a little bit of pain in my life, the same btw as lab1
+
 ## Resources
 - <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
 - <a name=“OSSU”>[Open Source Society University](https://github.com/ossu/computer-science)</a>

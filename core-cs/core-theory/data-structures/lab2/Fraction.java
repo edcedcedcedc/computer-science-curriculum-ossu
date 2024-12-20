@@ -7,7 +7,7 @@ import java.io.*;
 class Fraction {
 
   /* private fields within a Fraction. */
-  private int numberOfFractions = 0;
+  private static int numberOfFractions = 0;
 
   private int numerator;
   private int denominator;
@@ -40,17 +40,13 @@ class Fraction {
   /** Constructs a Fraction 0/1. 
    */
   public Fraction() {
-    numberOfFractions++;
-    numerator = 0;
-    denominator = 1;
+      this(0, 1);
   }
 
   /** Copies the Fraction "original".
    */
   public Fraction(Fraction original) {
-    numberOfFractions++;
-    numerator = 0;
-    denominator = 1;
+      this(original.numerator, original.denominator);
   }
 
   /** Converts this Fraction to a string format:  "numerator/denominator."
@@ -84,7 +80,7 @@ class Fraction {
       System.out.println("Fatal error:  Negative numerator.");
       System.exit(0);
     }
-    numerator = numerator;
+    this.numerator = numerator;
   }
 
   /** Returns the number of Fraction objects in existence.
@@ -101,8 +97,12 @@ class Fraction {
    * @return the gcd of x and y
    */
   static private int gcd(int x, int y) {
-    /* Replace the following line with your solution. */
-    return 1;
+      if (y == 0){
+	  return x;
+      }else{
+	  return gcd(y, x % y);
+      }
+      
   }
 
   /** Put the Fraction class through some tests.
@@ -125,14 +125,13 @@ class Fraction {
     /* Test the add method. */
     System.out.println("\nTesting add:");
 
-    /*
-    Fraction sumOfTwo = _______________;              // Sum of f1 and f2.
-    Fraction sumOfThree = ______________;             // Sum of f0, f1, and f2.
-
+    
+    Fraction sumOfTwo = f1.add(f2);    // Sum of f1 and f2.
+    Fraction sumOfThree = f0.add(f1).add(f2);             // Sum of f0, f1, and f2.
     System.out.println("The sum of " + f1 + " and " + f2 + " is " + sumOfTwo);
     System.out.println("The sum of " + f0 + ", " + f1 + " and " + f2 + " is " +
                        sumOfThree);
-    */
+    
 
     /* Test the methods used in Part III. */
     System.out.println("\nTesting changeNumerator and fracs:");
