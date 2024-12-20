@@ -492,7 +492,7 @@ _Topics Covered_:
 - Math for CS hw 3 in progress…
 
 ### 20/12/2024
-- CS61B lab2 done; I had to write it in EMACS, my lord, a little bit of pain in my life, the same btw as lab1
+- CS61B lab2 done; I was supposed to write it in EMACS, my lord, a little bit of pain in my life
 
 ## Resources
 - <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
