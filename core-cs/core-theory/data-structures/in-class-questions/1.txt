@@ -1,0 +1,48 @@
+The method uses an ancient algorithm called the Sieve of Eratosthenes.  All
+integers are assumed prime until proven composite.  The algorithm iterates
+through all possible divisors, and marks as non-prime every integer divisible
+by a given divisor.  Here's the beginning of the method.
+
+    public static void printPrimes(int n) {
+      boolean[] prime = new boolean[n + 1];                  // Numbered 0...n.
+      int i;
+      for (i = 2; i <= n; i++) {
+        prime[i] = true;                       // Prime until proven composite.
+      }
+
+Why did we construct an array of length n + 1?  Because if we'd constructed an
+array of length n, its elements would be numbered from 0 to n - 1.  But we'd
+like to have an element numbered n.
+
+To continue the method, we iterate over all possible divisors from 2 to the
+square root of n.  For each prime value of divisor, we mark as non-prime all
+integers divisible by divisor, except divisor itself.
+
+      for (int divisor = 2; divisor * divisor <= n; divisor++) {
+        if (prime[divisor]) {
+          for (i = 2 * divisor; i <= n; i = i + divisor) {
+            prime[i] = false;                     // i is divisible by divisor.
+          }
+        }
+      }
+
+Math question:  why do we only need to consider divisors up to the square root
+of n?
+
+Proof by observation.
+
+Assume:
+Pairs after sqrt(n) start to repeat in swapped order.
+
+We are given a composite number n, whose pairs d1 x d2 = n 
+
+Observe:
+36 => (1,36),(2, 18),(3, 12),(4, 9),(6, 6)…(9, 4)
+
+After sqrt(36), pair (9, 4) repeats itself, but swapped,
+this shows the redundancy of checking pairs pairs greater
+then sqrt(n).
+
+QED
+Pairs repeat after sqrt(n)
+
