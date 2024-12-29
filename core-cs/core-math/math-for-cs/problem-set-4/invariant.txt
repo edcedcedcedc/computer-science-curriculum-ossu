@@ -1,0 +1,26 @@
+problem 1 odd or even:
+You have a pile of coins. On each step, you can either:
+
+Remove one coin from the pile, or
+Remove two coins and add one coin back.
+Invariant to consider: The parity (odd/even) of the number of coins.
+
+Question:
+If you start with an even number of coins, can you reach a state with exactly one coin?
+
+
+Answer:
+Assume I start with an even number of coins, i.e parity is even.
+
+observation:
+removing one coin, changes the parity from odd to even or even to odd 
+removing two coins and placing one back, changes the parity from odd to even or even to odd 
+
+conclusion:
+parity is an invariant because it's state is chained and never skips, i.e odd to even or even to odd.
+
+
+
+
+
+

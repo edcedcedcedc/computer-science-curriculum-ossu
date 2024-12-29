@@ -88,8 +88,8 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
-|Integral Calculus |![](https://geps.dev/progress/40)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
-|Math for CS|![](https://geps.dev/progress/10)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
+|Integral Calculus |![](https://geps.dev/progress/60)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
+|Math for CS|![](https://geps.dev/progress/33)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
 
 #### CS Tools
 
@@ -116,7 +116,7 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Essence of Linear Algebra |![](https://geps.dev/progress/45)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/40)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
+|Linear Algebra |![](https://geps.dev/progress/50)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
 
 ## Updates
 
