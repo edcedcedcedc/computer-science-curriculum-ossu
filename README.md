@@ -492,7 +492,15 @@ _Topics Covered_:
 - Math for CS hw 3 in progress…
 
 ### 20/12/2024
-- CS61B lab2 done; I was supposed to write it in EMACS, my lord, a little bit of pain in my life
+- CS61B lab2 done; I was supposed to write it in EMACS
+
+### 31/12/2024
+Another year came to an end, this is a very long run for me, I am my second year at OSSU, I need another year and a little more to get done all the courses needed, for all who will read this, continue to stay motivated, enjoy cs, enjoy programming, keep pushing. Happy New Year!🎉🎆✨
+
+- calc 1b 3/5 of the course done, my favourite, Sal Khan is a brilliant tutor.
+- math for cs 1/3 of the course done, don't like the explanations, very superficial.
+- linear algebra 1/2 of the course done, got a little lost at projection matrices.
+- cs61b data structures around 1/10 done, everything on point.
 
 ## Resources
 - <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
