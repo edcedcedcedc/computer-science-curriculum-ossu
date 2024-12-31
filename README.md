@@ -495,7 +495,7 @@ _Topics Covered_:
 - CS61B lab2 done; I was supposed to write it in EMACS
 
 ### 31/12/2024
-Another year came to an end, this is a very long run for me, I am my second year at OSSU, I need another year and a little more to get done all the courses needed, for all who will read this, continue to stay motivated, enjoy cs, enjoy programming, keep pushing. Happy New Year!🎉🎆✨
+Another year came to an end, this is a long run for me, I am in my second year at OSSU, I need another year and a little more to get done all the courses needed, for all who will read this, continue to stay motivated, enjoy cs, enjoy programming, keep pushing. Happy New Year🎉🎆✨
 
 - calc 1b 3/5 of the course done, my favourite, Sal Khan is a brilliant tutor.
 - math for cs 1/3 of the course done, don't like the explanations, very superficial.
