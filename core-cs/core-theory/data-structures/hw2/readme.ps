@@ -1,0 +1,900 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 25 25 587 767
+%%Title: Enscript Output
+%%For: Jonathan R. Shewchuk
+%%Creator: GNU enscript 1.6.4
+%%CreationDate: Wed Jan 29 17:52:00 2014
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 4
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 4
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript 1.6 4
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    % light bar
+    0 0 d_header_w d_header_h 2 div Box
+    .95 setgray fill
+
+    % dark gray boxes
+    /dbw d_header_h 2 mul def	% dark box width
+    /dbc .7 def			% dark box color
+
+    % left dark box.
+    0 0 dbw d_header_h Box
+    dbc setgray fill
+
+    0 setgray 
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 5 div moveto show
+
+    % right dark box
+    d_header_w dbw sub 0 dbw d_header_h Box
+    dbc setgray fill
+
+    HeaderPageNumF setfont
+    1 setgray
+    pagenumstr dup
+    stringwidth pop dbw exch sub 2 div d_header_w dbw sub add
+    d_header_h .2 mul moveto show
+
+    % filename
+    0 setgray 
+    HeaderHDRF setfont
+    d_header_w fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        d_header_w user_header_left_str stringwidth pop sub 2 div 
+        h moveto user_header_left_str show
+      } {
+        dbw 5 add h moveto user_header_left_str show
+
+        d_header_w user_header_center_str stringwidth pop sub 2 div 
+        h moveto user_header_center_str show
+
+	d_header_w dbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} def
+%%EndResource
+/d_page_w 742 def
+/d_page_h 562 def
+/d_header_x 0 def
+/d_header_y 526 def
+/d_header_w 742 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 742 def
+/d_footer_h 0 def
+/d_output_w 742 def
+/d_output_h 526 def
+/cols 2 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 1 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (01/29/14) def
+/modtimestr (17:51:13) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(                              CS 61B  Homework 2) s
+5 508 M
+(                     Due noon Wednesday, February 5, 2014) s
+5 492 M
+(This homework assignment is designed to help you learn about building Java) s
+5 484 M
+(classes and to observe the decomposition of a complicated task into simple) s
+5 476 M
+(subtasks.  This is an individual assignment; you may not share code with other) s
+5 468 M
+(students.) s
+5 452 M
+(Copy the Homework 2 directory by doing the following, starting from your home) s
+5 444 M
+(directory:) s
+5 428 M
+(        cp -r ~cs61b/hw/hw2 .) s
+5 420 M
+(        cd hw2) s
+5 404 M
+(Your task is to fill in the implementation of a class that manipulates dates.) s
+5 396 M
+(Do not use any of the built-in operations on dates provided in the Java library) s
+5 388 M
+(in your solution.  The overall task is broken down into subtasks, which we) s
+5 380 M
+(suggest you implement in a bottom-up order, so that you can easily test as you) s
+5 372 M
+(go.  The grading test cases will give partial credit for the more basic) s
+5 364 M
+(operations, even if some of the higher level operations do not work properly.) s
+5 348 M
+(Please observe these notes on grading.) s
+5 332 M
+(1\)  Your program must compile without errors to receive any partial credit on) s
+5 324 M
+(    this assignment.  If only one or two of your methods work, remove any code) s
+5 316 M
+(    that causes problems for "javac" before submitting your solution.  However,) s
+5 308 M
+(    don't remove any of the method declarations that appear in the skeletal) s
+5 300 M
+(    Date.java we give you.) s
+5 292 M
+(2\)  We have provided a main method in the Date class that tests some of your) s
+5 284 M
+(    methods.  You are welcome to modify the main method as you please, perhaps) s
+5 276 M
+(    to add further tests of your own.  We will not be testing or grading the) s
+5 268 M
+(    main method in this assignment.  \(It does, of course, need to compile.\)) s
+5 260 M
+(3\)  You are welcome to add new methods to the Date class.  Since they will) s
+5 252 M
+(    presumably be "helping" methods, declare them "private", not "public".) s
+5 244 M
+(4\)  Do not change the prototype \(interface\) of any method.  If you change) s
+5 236 M
+(    the arguments or the return type, or you change a method from static to) s
+5 228 M
+(    non-static, your program will not compile with our test cases, and will) s
+5 220 M
+(    not receive credit.) s
+5 212 M
+(5\)  Do not have any extraneous print statements in your program, including) s
+5 204 M
+(    error messages.  Your program should print out exactly what is specified) s
+5 196 M
+(    and nothing else.  \(If the comment prefixing a method does not mention) s
+5 188 M
+(    printing, the method should not print anything.\)  The only exception here) s
+5 180 M
+(    is the main method, which can do anything you like, so long as it compiles.) s
+5 172 M
+(6\)  Although some test cases are provided in the main method, we will add) s
+5 164 M
+(    trickier ones to our grading test suite, which won't be run until _after_) s
+5 156 M
+(    the due date.  It is your responsibility to ensure that your methods work) s
+5 148 M
+(    correctly on any input, not just the test cases.  So you might want to add) s
+5 140 M
+(    more tests.) s
+5 124 M
+(The file Date.java contains a skeleton, plus some test code, for a Date class.) s
+5 116 M
+(Your job is to fill in the implementations of the methods.  We have specified) s
+5 108 M
+(most or all of the methods you'll need, including some helper methods.) s
+5 92 M
+(Part I) s
+5 84 M
+(------) s
+5 76 M
+(Implement the basic helper methods listed below.  These methods, like the main) s
+5 68 M
+(method, are declared "static."  They are also declared "public" so we can test) s
+5 60 M
+(them from another class.  Don't change that.) s
+5 44 M
+(The Unix "cal" command will remind you of the number of days in each month.) s
+5 36 M
+(February contains 28 days most years, but 29 days during a leap year.  A leap) s
+5 28 M
+(year is any year divisible by 4, except that a year divisible by 100 is not a) s
+5 20 M
+(leap year, except that a year divisible by 400 is a leap year after all.) s
+5 12 M
+(Hence, 1800 and 1900 are not leap years, but 1600 and 2000 are.  \(Implement) s
+5 4 M
+(this rule in your program even if you know information to the contrary.\)) s
+376 508 M
+(  /** Checks whether the given year is a leap year.) s
+376 500 M
+(   *  @return true if and only if the input year is a leap year.) s
+376 492 M
+(   */) s
+376 484 M
+(  public static boolean isLeapYear\(int year\) {) s
+376 476 M
+(    ...) s
+376 468 M
+(  }) s
+376 452 M
+(  /** Returns the number of days in a given month.) s
+376 444 M
+(   *  @param month is a month, numbered in the range 1...12.) s
+376 436 M
+(   *  @param year is the year in question, with no digits omitted.) s
+376 428 M
+(   *  @return the number of days in the given month.) s
+376 420 M
+(   */) s
+376 412 M
+(  public static int daysInMonth\(int month, int year\) {) s
+376 404 M
+(    ...) s
+376 396 M
+(  }) s
+376 380 M
+(  /** Checks whether the given date is valid.) s
+376 372 M
+(   *  @return true if and only if month/day/year constitute a valid date.) s
+376 364 M
+(   *) s
+376 356 M
+(   *  Years prior to A.D. 1 are NOT valid.) s
+376 348 M
+(   */) s
+376 340 M
+(  public static boolean isValidDate\(int month, int day, int year\) {) s
+376 332 M
+(    ...) s
+376 324 M
+(  }) s
+376 308 M
+(Part II) s
+376 300 M
+(-------) s
+376 292 M
+(Define the internal state that a "Date" object needs to have by declaring some) s
+376 284 M
+(data fields \(all private\) within the Date class.  Define the basic constructor) s
+376 276 M
+(specified below.  A Date should be constructed only if the date is valid.  If) s
+376 268 M
+(a caller attempts to construct an invalid date, the program should halt after) s
+376 260 M
+(printing an error message of your choosing.  To halt the program, include the) s
+376 252 M
+(line:) s
+376 236 M
+(  System.exit\(0\);) s
+376 212 M
+(  /** Constructs a date with the given month, day and year.   If the date is) s
+376 204 M
+(   *  not valid, the entire program will halt with an error message.) s
+376 196 M
+(   *  @param month is a month, numbered in the range 1...12.) s
+376 188 M
+(   *  @param day is between 1 and the number of days in the given month.) s
+376 180 M
+(   *  @param year is the year in question, with no digits omitted.) s
+376 172 M
+(   */) s
+376 164 M
+(  public Date\(int month, int day, int year\) {) s
+376 156 M
+(    ...) s
+376 148 M
+(  }) s
+376 132 M
+(  /** Returns a string representation of this date in the form month/day/year.) s
+376 124 M
+(   *  The month, day, and year are expressed in full as integers; for example,) s
+376 116 M
+(   *  12/7/2006 or 3/21/407.) s
+376 108 M
+(   *  @return a String representation of this date.) s
+376 100 M
+(   */) s
+376 92 M
+(  public String toString\(\) {) s
+376 84 M
+(    ...) s
+376 76 M
+(  }) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 2 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (01/29/14) def
+/modtimestr (17:51:13) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Part III) s
+5 500 M
+(--------) s
+5 492 M
+(Implement the following methods.) s
+5 476 M
+(  /** Determines whether this Date is before the Date d.) s
+5 468 M
+(   *  @return true if and only if this Date is before d. ) s
+5 460 M
+(   */) s
+5 452 M
+(  public boolean isBefore\(Date d\) {) s
+5 444 M
+(    ...) s
+5 436 M
+(  }) s
+5 420 M
+(  /** Determines whether this Date is after the Date d.) s
+5 412 M
+(   *  @return true if and only if this Date is after d. ) s
+5 404 M
+(   */) s
+5 396 M
+(  public boolean isAfter\(Date d\) {) s
+5 388 M
+(    ...) s
+5 380 M
+(  }) s
+5 364 M
+(  /** Returns the number of this Date in the year.) s
+5 356 M
+(   *  @return a number n in the range 1...366, inclusive, such that this Date) s
+5 348 M
+(   *  is the nth day of its year.  \(366 is used only for December 31 in a leap) s
+5 340 M
+(   *  year.\)) s
+5 332 M
+(   */) s
+5 324 M
+(  public int dayInYear\(\) {) s
+5 316 M
+(    ...) s
+5 308 M
+(  }) s
+5 292 M
+(  /** Determines the difference in days between d and this Date.  For example,) s
+5 284 M
+(   *  if this Date is 12/15/2012 and d is 12/14/2012, the difference is 1.) s
+5 276 M
+(   *  If this Date occurs before d, the result is negative.) s
+5 268 M
+(   *  @return the difference in days between d and this date.) s
+5 260 M
+(   */) s
+5 252 M
+(  public int difference\(Date d\) {) s
+5 244 M
+(    ...) s
+5 236 M
+(  }) s
+5 220 M
+(Hint 1:  once you've implemented isBefore\(\), it's possible to implement) s
+5 212 M
+(isAfter\(\) with just one line of code.  You need to think carefully, though:) s
+5 204 M
+("return !isBefore\(d\)" is incorrect.  Can you see why?) s
+5 188 M
+(Hint 2:  all the methods in the Date class can read all the private fields in) s
+5 180 M
+(_any_ Date object \(not just "this" Date object\).) s
+376 508 M
+(Part IV) s
+376 500 M
+(-------) s
+376 492 M
+(Implement the final missing piece of your class, a second constructor that) s
+376 484 M
+(takes a String argument.) s
+376 468 M
+(  /** Constructs a Date object corresponding to the given string.) s
+376 460 M
+(   *  @param s should be a string of the form "month/day/year" where month must) s
+376 452 M
+(   *  be one or two digits, day must be one or two digits, and year must be) s
+376 444 M
+(   *  between 1 and 4 digits.  If s does not match these requirements or is not) s
+376 436 M
+(   *  a valid date, the program halts with an error message of your choice.) s
+376 428 M
+(   */) s
+376 420 M
+(  public Date\(String s\) {) s
+376 412 M
+(    ...) s
+376 404 M
+(  }) s
+376 388 M
+(We're flexible on how you handle dates that are "almost correct".  For example,) s
+376 380 M
+(the string "  011/4/2010 AD" is technically not valid because of the spaces and) s
+376 372 M
+(letters and leading zero, but it's your choice whether you treat it the same as) s
+376 364 M
+("11/4/2010" or halt with an error message.  We won't be pedantic about this or) s
+376 356 M
+(make it gratuitously difficult, so please don't worry about these "edge cases") s
+376 348 M
+(\(and please don't ask tons of clarification questions on Piazza--we're not) s
+376 340 M
+(going to have trick test cases\).) s
+376 324 M
+(But your Date constructor definitely should not accept "11/31/2009" or "12/4") s
+376 316 M
+(or "hey dude".  These aren't ambiguous cases; they're clearly wrong.) s
+376 300 M
+(Hint:  use the online Java API to familiarize yourself with all the methods) s
+376 292 M
+(available to you in the String class.) s
+376 276 M
+(Submitting your solution) s
+376 268 M
+(------------------------) s
+376 260 M
+(Change \(cd\) to your hw2 directory, which should contain Date.java.  Make sure) s
+376 252 M
+(your code compiles and your tests run correctly on the lab machines just before) s
+376 244 M
+(you submit it.  From your hw2 directory, type "submit hw2".) s
+376 228 M
+(WARNING:  make sure your code _compiles_ and _runs_ on the _lab_machines_ right) s
+376 220 M
+(before you submit it.  Every semester, we get dozens of homework submissions) s
+376 212 M
+(that don't even compile.  Don't make a tiny last-minute change and assume your) s
+376 204 M
+(code still compiles.  Don't assume because the code works on your laptop that) s
+376 196 M
+(it will work in the lab.  You will not receive sympathy for code that "almost") s
+376 188 M
+(compiles.) s
+376 172 M
+(After submitting, if you realize your solution is flawed, you may fix it and) s
+376 164 M
+(submit again.  You may submit as often as you like.  Only the last version you) s
+376 156 M
+(submit before the deadline will be graded.) s
+_R
+S
+%%Trailer
+%%Pages: 2
+%%DocumentNeededResources: font Times-Roman Courier-Bold Courier 
+%%+ font Times-Bold 
+%%EOF
