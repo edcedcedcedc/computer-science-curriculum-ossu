@@ -115,8 +115,8 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Essence of Linear Algebra |![](https://geps.dev/progress/45)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/50)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
+|Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
+|Linear Algebra |![](https://geps.dev/progress/54)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
 
 ## Updates
 

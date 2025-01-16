@@ -5,6 +5,9 @@ import java.security.InvalidParameterException;
 class Date {
 
   /* Put your private data fields here. */
+  private int year;
+  private int month;
+  private int day;
 
   /**
    * Constructs a date with the given month, day and year. If the date is
@@ -14,8 +17,16 @@ class Date {
    * @param day   is between 1 and the number of days in the given month.
    * @param year  is the year in question, with no digits omitted.
    */
-  public Date(int month, int day, int year) {
 
+  public Date(int month, int day, int year) {
+    if (Date.isValidDate(month, day, year)) {
+      this.month = month;
+      this.day = day;
+      this.year = year;
+    } else {
+      System.out.print(false);
+      /* System.exit(0); */
+    }
   }
 
   /**
@@ -29,7 +40,9 @@ class Date {
    *          a valid date, the program halts with an error message.
    */
   public Date(String s) {
-
+    this(Integer.parseInt(s.split("/")[0]),
+        Integer.parseInt(s.split("/")[1]),
+        Integer.parseInt(s.split("/")[2]));
   }
 
   /**
@@ -38,7 +51,7 @@ class Date {
    * @return true if and only if the input year is a leap year.
    */
   public static boolean isLeapYear(int year) {
-    return year % 4 == 0 && year % 100 != 0 && year % 400 != 0;
+    return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
   }
 
   /**
@@ -59,7 +72,7 @@ class Date {
       } else {
         return 28;
       }
-    } else if (month % 2 != 0) {
+    } else if (month % 2 == 0) {
       return switch (month) {
         case 9, 11 -> 30;
         default -> 31;
@@ -94,8 +107,9 @@ class Date {
    * 
    * @return a String representation of this date.
    */
+  @Override
   public String toString() {
-    return "stuff"; // replace this line with your solution
+    return month + "/" + day + "/" + year; // replace this line with your solution
   }
 
   /**
@@ -104,7 +118,12 @@ class Date {
    * @return true if and only if this Date is before d.
    */
   public boolean isBefore(Date d) {
-    return true; // replace this line with your solution
+    if (this.year < d.year) {
+      return true;
+    } else if (this.year == d.year && this.month < d.month) {
+      return true;
+    } else
+      return this.month == d.month && this.day < d.day;
   }
 
   /**
@@ -113,7 +132,12 @@ class Date {
    * @return true if and only if this Date is after d.
    */
   public boolean isAfter(Date d) {
-    return true; // replace this line with your solution
+    if (this.year > d.year) {
+      return true;
+    } else if (this.year == d.year && this.month > d.month) {
+      return true;
+    } else
+      return this.month == d.month && this.day > d.day;
   }
 
   /**
