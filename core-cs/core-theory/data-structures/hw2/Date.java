@@ -66,19 +66,21 @@ class Date {
       throw new InvalidParameterException("Invalid Year: Year prior to A.D. 1");
     }
 
-    if (month == 2) {
-      if (Date.isLeapYear(year)) {
-        return 29;
-      } else {
-        return 28;
+    switch (month) {
+      case 1, 3, 5, 7, 8, 10, 12 -> {
+        return 31;
       }
-    } else if (month % 2 == 0) {
-      return switch (month) {
-        case 9, 11 -> 30;
-        default -> 31;
-      };
-    } else {
-      return 30;
+      case 4, 6, 9, 11 -> {
+        return 30;
+      }
+      case 2 -> {
+        if (Date.isLeapYear(year)) {
+          return 29;
+        } else {
+          return 28;
+        }
+      }
+      default -> throw new InvalidParameterException("Invalid Month: Must be between 1 and 12");
     }
   }
 
@@ -141,15 +143,20 @@ class Date {
   }
 
   /**
-   * Returns the number of this Date in the year.
+   * Returns the number of this Date in the year. // I switched it to static
+   * method
    * 
    * @return a number n in the range 1...366, inclusive, such that this Date
    *         is the nth day of its year. (366 is used only for December 31 in a
    *         leap
    *         year.)
    */
-  public int dayInYear() {
-    return 0; // replace this line with your solution
+  public static int dayInYear(int year) {
+    if (Date.isLeapYear(year)) {
+      return 366;
+    } else {
+      return 365;
+    }
   }
 
   /**
@@ -157,10 +164,28 @@ class Date {
    * if this Date is 12/15/2012 and d is 12/14/2012, the difference is 1.
    * If this Date occurs before d, the result is negative.
    * 
-   * @return the difference in days between d and this date.
+   * @return the difference in days between d and this date, i.e date2 - date1.
    */
   public int difference(Date d) {
-    return 0; // replace this line with your solution
+    int date2 = Date.elapsedTime(this);
+    int date1 = Date.elapsedTime(d);
+    return date2 - date1;
+  }
+
+  public static int elapsedTime(Date d) {
+    int elapsedTime = 0;
+
+    for (int i = 1; i < d.year; i++) {
+      elapsedTime += Date.dayInYear(i);
+    }
+
+    for (int i = 1; i < d.month; i++) {
+      elapsedTime += Date.daysInMonth(i, d.year);
+    }
+
+    elapsedTime += d.day;
+    return elapsedTime;
+
   }
 
   public static void main(String[] argv) {
@@ -175,17 +200,24 @@ class Date {
       d1 = new Date("2/29/1904");
       System.out.println("Date should be 2/29/1904: " + d1);
 
-      d1 = new Date(12, 31, 1975);
+      d1 = new Date(12, 31, 1);
       System.out.println("Date should be 12/31/1975: " + d1);
-      Date d2 = new Date("1/1/1976");
+      Date d2 = new Date("1/1/2");
       System.out.println("Date should be 1/1/1976: " + d2);
       Date d3 = new Date("1/2/1976");
       System.out.println("Date should be 1/2/1976: " + d3);
 
       Date d4 = new Date("2/27/1977");
       Date d5 = new Date("8/31/2110");
+      Date d6 = new Date("8/29/2000");
+      Date d7 = new Date("7/25/2024");
+      Date d8 = new Date("6/19/2025");
 
       /* I recommend you write code to test the isLeapYear function! */
+      System.out.println("\nTesting Leap Year.");
+      System.out.println(d6.year + " Should be true: " + Date.isLeapYear(d6.year));
+      System.out.println(d7.year + " Should be true: " + Date.isLeapYear(d7.year));
+      System.out.println(d8.year + " Should be false: " + Date.isLeapYear(d8.year));
 
       System.out.println("\nTesting before and after.");
       System.out.println(d2 + " after " + d1 + " should be true: " +
@@ -210,17 +242,16 @@ class Date {
       System.out.println(d3 + " before " + d2 + " should be false: " +
           d3.isBefore(d2));
 
+      System.out.println("\nTesting Elapsed time since 1/1/1.");
+      System.out.println("1/1/1" + " + " + d1 + " should be 365: " + Date.elapsedTime(d1));
+      System.out.println("1/1/1" + " + " + d2 + " should be 365 + 1: " + Date.elapsedTime(d2));
+
       System.out.println("\nTesting difference.");
-      System.out.println(d1 + " - " + d1 + " should be 0: " +
-          d1.difference(d1));
-      System.out.println(d2 + " - " + d1 + " should be 1: " +
-          d2.difference(d1));
-      System.out.println(d3 + " - " + d1 + " should be 2: " +
-          d3.difference(d1));
-      System.out.println(d3 + " - " + d4 + " should be -422: " +
-          d3.difference(d4));
-      System.out.println(d5 + " - " + d4 + " should be 48762: " +
-          d5.difference(d4));
+      System.out.println(d1 + " - " + d1 + " should be 0: " + d1.difference(d1));
+      System.out.println(d2 + " - " + d1 + " should be 1: " + d2.difference(d1));
+      System.out.println(d5 + " - " + d4 + " should be 48762: " + d5.difference(d4));
+      System.out.println(d3 + " - " + d4 + " should be -422: " + d3.difference(d4));
+
     } catch (InvalidParameterException e) {
       System.out.println("Error: " + e.getMessage());
     }
