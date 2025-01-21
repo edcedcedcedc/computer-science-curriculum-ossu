@@ -74,7 +74,7 @@ _Topics Covered_:
 `etc`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/0) |10.12.24|10.02.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|
+|Data Structures|![](https://geps.dev/progress/20) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|
 
 #### Core math
 
@@ -117,6 +117,19 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
 |Linear Algebra |![](https://geps.dev/progress/54)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
+
+### ELECTIVES
+
+#### Physics 
+
+**Topics covered**:
+`vectors`
+`1d, 2d motion`
+`newton's laws`
+`and more`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Introduction to Physics 1|![](https://geps.dev/progress/0)| 21.01.25 |21.04.25|-|[physics-200](./electives/introduction-to-physics-1) |-|
 
 ## Updates
 
