@@ -1,8 +1,11 @@
 course link - https://oyc.yale.edu/physics/phys-200
-textbook - Physics Principles with Applications, Global Edition (Douglas Giancoli)
+textbook1 - Physics Principles with Applications, Global Edition (Douglas Giancoli)
+textbook2 - FUNDAMENTALS OF PHYSICS by Halliday & Resnick 
 
-
-
+log:
+22/1/2015
+I changed my mind I will use textbook2 instead of textboo1, because it uses calculus based physics,
+which what this course is about.
  _____ _   _ _   _ ____    _    __  __ _____ _   _ _____  _    _     ____     ___  _____   ____  _   ___   ______ ___ ____ ____        _ 
  |  ___| | | | \ | |  _ \  / \  |  \/  | ____| \ | |_   _|/ \  | |   / ___|   / _ \|  ___| |  _ \| | | \ \ / / ___|_ _/ ___/ ___|      / |
  | |_  | | | |  \| | | | |/ _ \ | |\/| |  _| |  \| | | | / _ \ | |   \___ \  | | | | |_    | |_) | |_| |\ V /\___ \| | |   \___ \ _____| |
