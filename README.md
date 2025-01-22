@@ -1,8 +1,20 @@
 ![ci workflow](https://github.com/edcedcedcedc/computer-science-curriculum-ossu/actions/workflows/main.yml/badge.svg)
 
-# About
+## Table of Contents
+1. [About](#about)
+2. [Curriculum Overview](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+3. Modules
+   - [Khan Academy](#khan-academy)
+   - [Intro CS](#intro-cs)
+   - [Core CS](#core-cs)
+   - [Advanced CS](#advanced-cs)
+   - [Electives](#electives)
+4. [Resources](#resources)
+5. [Log by date](#log)
 
-I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
+## About
+
+I will be sharing the courses taken to track and document my progress. This is a comprehensive self-paced computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
 ## Khan Academy
 
@@ -129,7 +141,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Physics 1|![](https://geps.dev/progress/0)| 21.01.25 |21.04.25|-|[physics-200](./electives/introduction-to-physics-1) |-|
+|Fundamentals of Physics 1|![](https://geps.dev/progress/0)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
 
 ## Updates
 
@@ -515,6 +527,14 @@ Another year came to an end, this is a long run for me, I am in my second year a
 - linear algebra 1/2 of the course done, got a little lost at projection matrices.
 - cs61b data structures around 1/10 done, everything on point.
 
+### 22/01/2025
+I am not sure how I will go with the fundamentals of physics, if it's going to be too hard I'll drop out. 
+- Data Structures hw2 done, looking forward to lab3 hw3 and project1.
+- Fundamentals of Physics week1 in progress, Newtonian mechanics, vectors.
+- Calculus 1b applications of integrals, with volumes.
+- Math for cs structures unit 2 out of 4 units, gcd.
+- Linear Algebra, determinant week and all about it.
+
 ## Resources
-- <a name=“KhanAcademy”>[Khan Academy](https://www.khanacademy.org)</a>
-- <a name=“OSSU”>[Open Source Society University](https://github.com/ossu/computer-science)</a>
+- [Khan Academy](https://www.khanacademy.org)
+- [Open Source Society University](https://github.com/ossu/computer-science)
