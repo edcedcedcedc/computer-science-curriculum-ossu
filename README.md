@@ -17,7 +17,7 @@
 I will be sharing the courses taken to track and document my progress. This is a comprehensive self-paced computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
 ## Khan Academy
-
+[Return to table of contents](#table-of-contents)
 #### Prerequisites
 
 _Topics Covered_:
@@ -36,7 +36,7 @@ _Topics Covered_:
 ## OSSU
 
 ### INTRO CS
-
+[Return to table of contents](#table-of-contents)
 #### Introduction to Programming and Computer Science
 
 _Topics Covered_:
@@ -56,7 +56,7 @@ _Topics Covered_:
 |Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
 
 ### CORE CS
-
+[Return to table of contents](#table-of-contents)
 #### Core programming
 
 **Topics covered**:
@@ -116,7 +116,7 @@ _Topics Covered_:
 |The Missing Semester |![](https://geps.dev/progress/100) | 22.06.24 |22.07.24|15.11.24|[mit-missing](./core-cs/core-tools/mit-missing) |-|
 
 ### ADVANCED CS
-
+[Return to table of contents](#table-of-contents)
 #### Advanced math
 
 **Topics covered**:
@@ -131,7 +131,7 @@ _Topics Covered_:
 |Linear Algebra |![](https://geps.dev/progress/54)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
 
 ### ELECTIVES
-
+[Return to table of contents](#table-of-contents)
 #### Physics 
 
 **Topics covered**:
@@ -143,8 +143,8 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Fundamentals of Physics 1|![](https://geps.dev/progress/0)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
 
-## Updates
-
+## Log
+[Return to table of contents](#table-of-contents)
 ### 10/02/2023
 
 - Khan Academy Algebra 1 completed.
@@ -538,3 +538,5 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
 - [Open Source Society University](https://github.com/ossu/computer-science)
+
+[Return to table of contents](#table-of-contents)
