@@ -143,6 +143,16 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Fundamentals of Physics 1|![](https://geps.dev/progress/0)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
 
+#### Reading and Composition 
+
+**Topics covered**:
+`critical reading and analysis`
+`writing`
+`types of writing`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|English Composition-1|![](https://geps.dev/progress/0)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
+
 ## Log
 [Return to table of contents](#table-of-contents)
 ### 10/02/2023
@@ -534,6 +544,14 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 - Calculus 1b applications of integrals, with volumes.
 - Math for cs structures unit 2 out of 4 units, gcd.
 - Linear Algebra, determinant week and all about it.
+
+### 24/01/2025
+- I took another elective to fulfill a part of the english composition and writing, it's free, why not.
+- Linear Algebra almost done with unit 2 out of 3, eigenvalues, eigenvectors, a little useless for me, too mathy, but have to carry it.
+- Calculus 1b, finising applications of integrals.
+- Data Structures, slinked lists lab3 done.
+- Math for CS, GCD.
+- Physics still week1 out of week12, plan to tackle homework this weekend.
 
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
