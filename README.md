@@ -100,7 +100,7 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
-|Integral Calculus |![](https://geps.dev/progress/60)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
+|Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
 |Math for CS|![](https://geps.dev/progress/33)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
 
 #### CS Tools
@@ -151,7 +151,7 @@ _Topics Covered_:
 `types of writing`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|English Composition-1|![](https://geps.dev/progress/0)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
+|English Composition 1|![](https://geps.dev/progress/0)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
 
 ## Log
 [Return to table of contents](#table-of-contents)
@@ -552,6 +552,13 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 - Data Structures, slinked lists lab3 done.
 - Math for CS, GCD.
 - Physics still week1 out of week12, plan to tackle homework this weekend.
+
+
+### 27/01/2025
+- fundamentals of physics - week2 lessons, pset1-problem1, problem2.
+- calculus 1b - applications of integrals done, arclen, around 80% of the course done, I don't consider parametric equations because it's a very small unit.
+- english composition - module1, part of hw1.
+- data structures, picture for linked list, and project1 in progress(very hard)
 
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
