@@ -558,7 +558,7 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 - fundamentals of physics - week2 lessons, pset1-problem1, problem2.
 - calculus 1b - applications of integrals done, arclen, around 80% of the course done, I don't consider parametric equations because it's a small unit.
 - english composition - module1, part of hw1.
-- data structures, picture for linked list, and project1 in progress(very hard)
+- data structures, picture for linked list, and project1 in progress
 
 
 ### 04/02/2025
