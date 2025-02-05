@@ -128,7 +128,7 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/54)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
+|Linear Algebra |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
 
 ### ELECTIVES
 [Return to table of contents](#table-of-contents)
@@ -141,7 +141,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Fundamentals of Physics 1|![](https://geps.dev/progress/0)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
+|Fundamentals of Physics 1|![](https://geps.dev/progress/25)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
 
 #### Reading and Composition 
 
@@ -151,7 +151,7 @@ _Topics Covered_:
 `types of writing`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|English Composition 1|![](https://geps.dev/progress/0)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
+|English Composition 1|![](https://geps.dev/progress/20)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
 
 ## Log
 [Return to table of contents](#table-of-contents)
@@ -559,6 +559,15 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 - calculus 1b - applications of integrals done, arclen, around 80% of the course done, I don't consider parametric equations because it's a small unit.
 - english composition - module1, part of hw1.
 - data structures, picture for linked list, and project1 in progress(very hard)
+
+
+### 04/02/2025
+- fundamentals of physics - week3 lessons, pset2-problem1, problem2.
+- calculus 1b - last unit.
+- english composition - module2.
+- data structures, hw3, project 1 stil pending.
+- linear algebra: dropping the course, its irrelevant, after unit I and unit II and 2/3 I needed transfomations but there arent any, instead of it, I will do my final project which is a spinning cube in c++ and sfml or sdl, to compensate the drop, project init.
+- math for cs -  ps5 only gcd and congruence were good, the rest irrelevant, moving forward to ps6.
 
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)

@@ -1,0 +1,66 @@
+### 1. Generalized Abstract Understanding
+
+The main goal of the project is to use linear algebra concepts to create a rotating 3D cube. This means we'll be using concepts like:
+- **Vertices**: The points in 3D space that make up the cube.
+- **Matrices**: To rotate and transform the cube.
+- **Transformation**: Using translation, rotation, and scaling to manipulate the cube.
+- **Rendering**: Projecting the 3D world onto a 2D screen, using the SDL3 GPU for rendering.
+
+You’ll have a 3D model of the cube with vertices. 
+To make it spin, you'll rotate the vertices using a **rotation matrix** and then project 
+them onto a 2D plane for rendering. You can use SDL3 to handle the display.
+
+### 2. Strategy
+
+1. **Define Cube Geometry (Vertices)**:  
+   Define the cube's 8 vertices in 3D space. Each vertex will be represented by (x, y, z) coordinates.
+
+2. **Create Rotation Matrix**:  
+   Use linear algebra to construct a rotation matrix. To rotate a point around the Z-axis, 
+   for example, the rotation matrix would look like this:
+
+   R = (con() sin() 0)(-sin() cos() 0)(0 0 1) - each index is a column.
+
+   You can rotate along the X and Y axes similarly by adjusting the appropriate rows/columns in the matrix.
+
+3. **Rotate Cube**:  
+   Apply the rotation matrix to each vertex of the cube. 
+   For each frame, rotate the cube slightly to create the illusion of continuous rotation.
+
+4. **Projection to 2D**:  
+   After rotating the vertices, you’ll need to project them onto the 2D screen. 
+   A simple way is to discard the Z-coordinate (perspective projection) 
+   or apply a more complex perspective projection to simulate depth.
+
+5. **Render Cube**:  
+   Use SDL3 to render the projected vertices. 
+   You’ll need to connect the vertices with lines to visualize the cube. 
+   Use the GPU API to draw lines or triangles, depending on your approach.
+
+### 3. Explaining the Strategy
+
+1. **Vertices Setup**:  
+   We define the cube's 8 corners in 3D space:
+   ```
+   (-1, -1, -1), (1, -1, -1), (1, 1, -1), (-1, 1, -1),
+   (-1, -1, 1), (1, -1, 1), (1, 1, 1), (-1, 1, 1)
+   ```
+   These represent the 8 corners of the cube.
+
+2. **Rotation**:  
+   For rotation, you can set an angle that increases over time (like `angle += 0.01;`) to rotate the cube continuously. 
+   Apply the matrix transformation to each vertex to update its position based on the angle.
+
+3. **Projection**:  
+   A simple projection can be done by ignoring the Z-axis. 
+   However, for a more realistic effect, you could scale the X and Y coordinates based on the Z coordinate to simulate perspective.
+
+4. **Rendering**:  
+   After projecting the cube's vertices to 2D, you will draw lines between the appropriate pairs of vertices to form the cube's edges.
+
+### 4. Your Next Steps
+
+1. Define your cube’s vertices and set up the SDL3 window and renderer.
+2. Implement a rotation matrix to rotate the cube’s vertices over time.
+3. Apply a basic projection to render the 3D cube in 2D space.
+4. Connect the vertices to draw the edges of the cube.
