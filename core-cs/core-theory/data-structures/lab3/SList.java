@@ -1,4 +1,4 @@
-/* SList.java */
+package lab3;
 
 /**
  * The SList class is a singly-linked implementation of the linked list

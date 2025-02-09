@@ -1,6 +1,6 @@
 /* Homework3.java */
-
 public class Homework3 {
+
   /**
    * smoosh() takes an array of ints. On completion the array contains
    * the same numbers, but wherever the array had two or more consecutive
@@ -101,84 +101,81 @@ public class Homework3 {
     for (i = 0; i < test5.length; i++) {
       list5.insertEnd(test5[i]);
     }
-    /*
-     * System.out.println("squishing " + list5.toString() + ":");
-     * list5.squish();
-     * result = list5.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  3  7  4  5  2  0  8  5  ]"),
-     * "BAD SQUISH!!!  No biscuit.");
-     * 
-     * int[] test6 = {6, 6, 6, 6, 6, 3, 6, 3, 6, 3, 3, 3, 3, 3, 3};
-     * SList list6 = new SList();
-     * for (i = 0; i < test6.length; i++) {
-     * list6.insertEnd(test6[i]);
-     * }
-     * System.out.println("squishing " + list6.toString() + ":");
-     * list6.squish();
-     * result = list6.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  6  3  6  3  6  3  ]"),
-     * "BAD SQUISH!!!  No biscuit.");
-     * 
-     * int[] test7 = {4, 4, 4, 4, 4};
-     * SList list7 = new SList();
-     * for (i = 0; i < test7.length; i++) {
-     * list7.insertEnd(test7[i]);
-     * }
-     * System.out.println("squishing " + list7.toString() + ":");
-     * list7.squish();
-     * result = list7.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  4  ]"),
-     * "BAD SQUISH!!!  No biscuit.");
-     * 
-     * int[] test8 = {0, 1, 2, 3, 4, 5, 6};
-     * SList list8 = new SList();
-     * for (i = 0; i < test8.length; i++) {
-     * list8.insertEnd(test8[i]);
-     * }
-     * System.out.println("squishing " + list8.toString() + ":");
-     * list8.squish();
-     * result = list8.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  0  1  2  3  4  5  6  ]"),
-     * "BAD SQUISH!!!  No biscuit.");
-     * 
-     * SList list9 = new SList();
-     * System.out.println("squishing " + list9.toString() + ":");
-     * list9.squish();
-     * result = list9.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  ]"),
-     * "BAD SQUISH!!!  No biscuit.");
-     * 
-     * 
-     * System.out.println("\nLet's twin linked lists!\n");
-     * 
-     * System.out.println("twinning " + list6.toString() + ":");
-     * list6.twin();
-     * result = list6.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals(
-     * "[  6  6  3  3  6  6  3  3  6  6  3  3  ]"),
-     * "BAD TWIN!!!  No gravy.");
-     * 
-     * System.out.println("twinning " + list7.toString() + ":");
-     * list7.twin();
-     * result = list7.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  4  4  ]"),
-     * "BAD TWIN!!!  No gravy.");
-     * 
-     * System.out.println("twinning " + list9.toString() + ":");
-     * list9.twin();
-     * result = list9.toString();
-     * System.out.println(result);
-     * TestHelper.verify(result.equals("[  ]"),
-     * "BAD TWIN!!!  No gravy.");
-     * }
-     */
 
+    System.out.println("squishing " + list5.toString() + ":");
+    list5.squish();
+    result = list5.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  3  7  4  5  2  0  8  5  ]"),
+        "BAD SQUISH!!!  No biscuit.");
+
+    int[] test6 = { 6, 6, 6, 6, 6, 3, 6, 3, 6, 3, 3, 3, 3, 3, 3 };
+    SList list6 = new SList();
+    for (i = 0; i < test6.length; i++) {
+      list6.insertEnd(test6[i]);
+    }
+    System.out.println("squishing " + list6.toString() + ":");
+    list6.squish();
+    result = list6.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  6  3  6  3  6  3  ]"),
+        "BAD SQUISH!!!  No biscuit.");
+
+    int[] test7 = { 4, 4, 4, 4, 4 };
+    SList list7 = new SList();
+    for (i = 0; i < test7.length; i++) {
+      list7.insertEnd(test7[i]);
+    }
+    System.out.println("squishing " + list7.toString() + ":");
+    list7.squish();
+    result = list7.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  4  ]"),
+        "BAD SQUISH!!!  No biscuit.");
+
+    int[] test8 = { 0, 1, 2, 3, 4, 5, 6 };
+    SList list8 = new SList();
+    for (i = 0; i < test8.length; i++) {
+      list8.insertEnd(test8[i]);
+    }
+    System.out.println("squishing " + list8.toString() + ":");
+    list8.squish();
+    result = list8.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  0  1  2  3  4  5  6  ]"),
+        "BAD SQUISH!!!  No biscuit.");
+
+    SList list9 = new SList();
+    System.out.println("squishing " + list9.toString() + ":");
+    list9.squish();
+    result = list9.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  ]"),
+        "BAD SQUISH!!!  No biscuit.");
+
+    System.out.println("\nLet's twin linked lists!\n");
+
+    System.out.println("twinning " + list6.toString() + ":");
+    list6.twin();
+    result = list6.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals(
+        "[  6  6  3  3  6  6  3  3  6  6  3  3  ]"),
+        "BAD TWIN!!!  No gravy.");
+
+    System.out.println("twinning " + list7.toString() + ":");
+    list7.twin();
+    result = list7.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  4  4  ]"),
+        "BAD TWIN!!!  No gravy.");
+
+    System.out.println("twinning " + list9.toString() + ":");
+    list9.twin();
+    result = list9.toString();
+    System.out.println(result);
+    TestHelper.verify(result.equals("[  ]"),
+        "BAD TWIN!!!  No gravy.");
   }
+
 }

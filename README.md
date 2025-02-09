@@ -567,7 +567,17 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 - english composition - module2.
 - data structures, hw3, project 1 stil pending.
 - linear algebra: dropping the course, its irrelevant, after unit I and unit II and 2/3 I needed transfomations but there arent any, instead of it, I will do my final project which is a spinning cube in c++ and sfml or sdl, to compensate the drop, project init.
-- math for cs -  ps5 only gcd and congruence were good, the rest irrelevant, moving forward to ps6.
+- math for cs -  ps5 only gcd and congruence were good, the rest are irrelevant, moving forward to ps6.
+
+### 09/02/2025
+- fundamentals of physics - week4, pset2 done, starting pset3 for the next week; its hard, I cannot solve almost anything without examples or hints, but the general concepts I do understand, the only problem is with algorithm design and the strategy design, what is what, which is the hardest part, but in general, I need it more in the theoretical way so, see no problem, I still understand it.
+- data structures, hw3 done, i'll try to move faster with this, too much time, had some bugs with vscode cache and java packages,
+my hw3 was importing classes from lab3 instead of current hw3 folder, so It was a super pain in the ass for me to fix that, besides the homework itself, which was ok.
+- calc 1b final unit - series; I started to enjoy calculus, in physics I get more practice with it.
+- linear algebra cube project is in progress, I barely started, I know 0 c++, but will get there
+
+In general, this versatility of programming languages, libraries, sometimes annoys me, but this skill should be good for the future self.
+
 
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
