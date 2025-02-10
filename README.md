@@ -11,6 +11,7 @@
    - [Electives](#electives)
 4. [Resources](#resources)
 5. [Log by date](#log)
+6. [Current Schedule](#schedule)
 
 ## About
 
@@ -571,8 +572,8 @@ I am not sure how I will go with the fundamentals of physics, if it's going to b
 
 ### 09/02/2025
 - fundamentals of physics - week4, pset2 done, starting pset3 for the next week; its hard, I cannot solve almost anything without examples or hints, but the general concepts I do understand, the only problem is with algorithm design and the strategy design, what is what, which is the hardest part, but in general, I need it more in the theoretical way so, see no problem, I still understand it.
-- data structures, hw3 done, i'll try to move faster with this, too much time, had some bugs with vscode cache and java packages,
-my hw3 was importing classes from lab3 instead of current hw3 folder, so It was a super pain in the ass for me to fix that, besides the homework itself, which was ok.
+- data structures, hw3 done, I'll try to move faster with this, too much time, had some bugs with vscode cache and java packages,
+my hw3 was importing classes from lab3 instead of current hw3 folder, It was hard for me to fix that besides the homework itself, which was ok.
 - calc 1b final unit - series; I started to enjoy calculus, in physics I get more practice with it.
 - linear algebra cube project is in progress, I barely started, I know 0 c++, but will get there
 
@@ -582,5 +583,44 @@ In general, this versatility of programming languages, libraries, sometimes anno
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
 - [Open Source Society University](https://github.com/ossu/computer-science)
+
+[Return to table of contents](#table-of-contents)
+
+
+## Schedule 
+
+**Monday:**  
+- Data Structures: Lecture, reading, and review homework for next time  
+- Physics: Homework  
+- Mathematics for Computer Science: Lecture, reading  
+
+**Tuesday:**  
+- Physics: Lecture  
+- Calculus 1b 
+- Linear Algebra: Cube Project
+
+**Wednesday:**  
+- Data Structures: Homework  
+- Physics: Homework  
+- Mathematics for Computer Science: Homework  
+- English Composition: Reading and homework  
+
+**Thursday:**  
+- Calculus 1b
+- Physics: Lecture  
+- Linear Algebra: Cube Project  
+
+**Friday:**  
+- Data Structures: Homework  
+- Physics: Homework  
+- Mathematics for Computer Science: Homework  
+
+**Saturday:**  
+- Linear Algebra: Cube Project  
+- English Composition: Reading and Homework  
+
+**Sunday:**  
+- Data Structures: Homework and/or Linear Algebra Project or any other backlog task  
+- English Composition: Reading and Homework
 
 [Return to table of contents](#table-of-contents)
