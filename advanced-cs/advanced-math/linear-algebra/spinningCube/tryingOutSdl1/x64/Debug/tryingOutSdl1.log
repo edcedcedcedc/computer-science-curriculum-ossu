@@ -1,3 +1,10 @@
 ﻿  main.cpp
-C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(6,17): warning C4804: '<': unsafe use of type 'bool' in operation
-  tryingOutSdl1.vcxproj -> C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\x64\Debug\tryingOutSdl1.exe
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(5,17): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(45,42): error C2065: 'scale1': undeclared identifier
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(46,42): error C2065: 'scale1': undeclared identifier
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(48,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(48,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(52,42): error C2065: 'scale2': undeclared identifier
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(53,42): error C2065: 'scale2': undeclared identifier
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(55,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(55,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
