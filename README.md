@@ -580,7 +580,7 @@ my hw3 was importing classes from lab3 instead of current hw3 folder, It was har
 In general, this versatility of programming languages, libraries, sometimes annoys me, but this skill should be good for the future self.
 
 ### 11/02/2025
-- solved one physics problem with the help of my gpt-ta, it was very helpful, I got an understanding, very pleased with the result, I was thinking all the way in steps, and used the understanding -> goal -> strategy -> implimentation -> evaluation, problem solving technique
+- solved one physics problem with the help of my gpt-ta, it was helpful, I got an understanding, very pleased with the result, I was thinking all the way in steps, and used the understanding -> goal -> strategy -> implimentation -> evaluation, problem solving technique
 - cube project: init project, window, renderer, poll, etc.
 - math for cs: pset6
 - data structures - pset4 download
