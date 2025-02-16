@@ -87,7 +87,7 @@ _Topics Covered_:
 `etc`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/20) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|
+|Data Structures|![](https://geps.dev/progress/33) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|
 
 #### Core math
 
@@ -102,7 +102,7 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
 |Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
-|Math for CS|![](https://geps.dev/progress/33)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
+|Math for CS|![](https://geps.dev/progress/50)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
 
 #### CS Tools
 
@@ -129,7 +129,7 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |-|
+|Linear Algebra |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|
 
 ### ELECTIVES
 [Return to table of contents](#table-of-contents)
@@ -155,8 +155,9 @@ _Topics Covered_:
 |English Composition 1|![](https://geps.dev/progress/20)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
 
 ## Log
-[Return to table of contents](#table-of-contents)
-### 10/02/2023
+[Return to table of contents](#table-of-contents)<br>
+[Move to HEAD](#head)
+### TAIL
 
 - Khan Academy Algebra 1 completed.
 
@@ -583,8 +584,18 @@ In general, this versatility of programming languages, libraries, sometimes anno
 - solved one physics problem with the help of my gpt-ta, it was helpful, I got an understanding, pleased with the result, I was thinking all the way in steps, and used the understanding -> goal -> strategy -> implimentation -> evaluation, problem solving technique
 - cube project: init project, window, renderer, poll, etc.
 - math for cs: pset6
-- data structures - pset4 download
+- data structures - lab4 download
 
+### HEAD
+- fundamentals of physics 1 - I started to get a hang of it, problems are hard but doable, the concepts aren't, as usual,
+week4 lessons done, week3 homework partially done.
+- linear algebra spinning cube - info in main folder log.txt 
+- data structures - lab4 done, next two lessons in plan, and project1 reading, as I mentioned it should be hard.
+- math for cs - rsa digraph homework 6, moving to week 7
+- english comp - in progress module 2
+- calc 1b - series 1/10 done 
+- readme.md - added head and tail pointers
+[Move to TAIL](#tail)
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
 - [Open Source Society University](https://github.com/ossu/computer-science)

@@ -70,7 +70,16 @@ public class DList1 {
    * insertFront() inserts an item at the front of a DList1.
    */
   public void insertFront(int i) {
-    // Your solution here.
+    DListNode1 current = new DListNode1(i);
+    if (head == null) {
+      head = current;
+      tail = current;
+    } else {
+      current.next = head;
+      head.prev = current;
+      head = current;
+    }
+    size++;
   }
 
   /**
@@ -78,7 +87,17 @@ public class DList1 {
    * list is empty, do nothing.
    */
   public void removeFront() {
-    // Your solution here.
+    if (head == null) {
+      return;
+    }
+    if (head == tail) {
+      head = null;
+      tail = null;
+    } else {
+      head = head.next;
+      head.prev = null;
+    }
+    size--;
   }
 
   /**

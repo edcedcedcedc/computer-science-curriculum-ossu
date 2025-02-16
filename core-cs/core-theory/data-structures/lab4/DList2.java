@@ -76,15 +76,28 @@ public class DList2 {
    * insertFront() inserts an item at the front of a DList2.
    */
   public void insertFront(int i) {
-    // Your solution here.
+    DListNode2 current = new DListNode2(i);
+    current.next = head.next;
+    current.prev = head;
+    head.next.prev = current;
+    head.next = current;
+    size++;
   }
 
   /**
    * removeFront() removes the first item (and first non-sentinel node) from
    * a DList2. If the list is empty, do nothing.
+   * 
+   * 
+   * head null
+   * size 0
+   * size > 0
+   * sentinel -> <-head.next -> <-head.next.next-> <-sentinel
    */
   public void removeFront() {
-    // Your solution here.
+    head.next = head.next.next;
+    head.next.prev = head;
+    size--;
   }
 
   /**
