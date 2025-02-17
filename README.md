@@ -11,7 +11,8 @@
    - [Electives](#electives)
 4. [Resources](#resources)
 5. [Log by date](#log)
-6. [Current Schedule](#schedule)
+6. [Current schedule](#schedule)
+7. [Current graph version of the progress](#graph)
 
 ## About
 
@@ -594,7 +595,7 @@ week4 lessons done, week3 homework partially done.
 - math for cs - rsa digraph homework 6, moving to week 7
 - english comp - in progress module 2
 - calc 1b - series 1/10 done 
-- readme.md - added head and tail pointers
+- readme.md - added head and tail pointers<br>
 [Move to TAIL](#tail)
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
@@ -638,5 +639,11 @@ week4 lessons done, week3 homework partially done.
 **Sunday:**  
 - Data Structures: Homework and/or Linear Algebra Project or any other backlog task  
 - English Composition: Reading and Homework
+
+[Return to table of contents](#table-of-contents)
+
+
+## Graph
+![CS Roadmap](random/graph/Screenshot%202025-02-17%20234212.png)
 
 [Return to table of contents](#table-of-contents)
