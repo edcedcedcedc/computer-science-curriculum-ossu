@@ -43,7 +43,7 @@ for link in soup.find_all('a'):
     file_name = link.get('href')
     
 
-    if file_name in ("../", "/") or file_name.endswith('/'):
+    if file_name in ("../", "/") or file_name.endswith('/') or file_name.startswith("?"):
         continue
     
     file_url = url + file_name

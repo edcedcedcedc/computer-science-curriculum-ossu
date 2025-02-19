@@ -1,0 +1,15 @@
+public class Test {
+
+    /*
+    1)
+    a) At compile time we can assign y to x but not x to y, because x is the superclass of y.
+       A cast is needed when assigning x to y.
+    
+    */
+    public static void main(String[] args) {
+        X x = new X();
+	Y y = new Y();
+        y = (Y)x;
+	System.out.println("x" + x + " " + "y" + y);
+    }
+}
