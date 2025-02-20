@@ -1,0 +1,43 @@
+Problem 2.
+In the course textbook Lemma 9.2.5 states that dist(u,v) <= dist(u,x) + dist(x,v)
+equality holds iff x is on a shortest path from u to v.
+
+(a) Prove the “iff” statement from left to right.
+(b) Prove the “iff” from right to left.
+
+
+proof "iff"
+
+assume 
+dist(u,v) = dist(u,x) + dist(x,v)
+
+by triangle inequality definition 
+dist(u,v) <= dist(u,x) + dist(x,v)
+
+since 
+equality holds there cannot exist any shorter path from u to v that bypass x
+
+conclusion
+x must lie on a shortest path from u to v 
+
+assume 
+x lie on a shortest path from u to v
+
+by definition 
+the shortest path from u to v passes through x
+
+then
+dist(u,v) = dist(u,x) + dist(x,v)
+
+conclusion
+x must lie on a shortest path from u to v, equality holds
+
+QED
+dist(u,v) <= dist(u,x) + dist(x,v)
+
+
+
+
+
+
+
