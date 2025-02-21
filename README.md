@@ -16,7 +16,7 @@
 
 ## About
 
-I will be sharing the courses taken to track and document my progress. This is a comprehensive self-paced computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
+I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
 ## Khan Academy
 [Return to table of contents](#table-of-contents)
@@ -587,7 +587,7 @@ In general, this versatility of programming languages, libraries, sometimes anno
 - math for cs: pset6
 - data structures - lab4 download
 
-### HEAD
+### 15/02/2025
 - fundamentals of physics 1 - I started to get a hang of it, problems are hard but doable, the concepts aren't, as usual,
 week4 lessons done, week3 homework partially done.
 - linear algebra spinning cube - info in main folder log.txt 
@@ -595,7 +595,20 @@ week4 lessons done, week3 homework partially done.
 - math for cs - rsa digraph homework 6, moving to week 7
 - english comp - in progress module 2
 - calc 1b - series 1/10 done 
-- readme.md - added head and tail pointers<br>
+- readme.md - added head and tail pointers
+
+### HEAD
+- fundamentals of physics 1 - week 6, pset 6, moving into pset 7, actually, it isn't that hard, I understand
+mass, weight, velocity, speed, acceleration, acceleration of gravity, distance, displacement, work, power, kinetic energy,
+potentital energy, elastic collision...I mean I got it, this is important, the thing that I cannot solve each problem is seconds, its another thing, but I don't need that, I am happy and proud solving simple problems and those from pset which I can or want to.
+- math for cs - pset 7, partial orders of equivalence, degrees and isomorphism
+- calc 1b - series still 
+- linear algebra cube project, rendered the 12 lines connecting the cube, more info in log.txt 
+- readme.md updates 
+- started codeforces again I solved already like 40 problems, want to get really good, my scope is 100 for now.
+- data structures - lab5, still lazy to get ready for project 1
+
+<br>
 [Move to TAIL](#tail)
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
@@ -615,6 +628,7 @@ week4 lessons done, week3 homework partially done.
 - Physics: Lecture  
 - Calculus 1b 
 - Linear Algebra: Cube Project
+- Codeforces(competitive programming)
 
 **Wednesday:**  
 - Data Structures: Homework  
@@ -626,6 +640,7 @@ week4 lessons done, week3 homework partially done.
 - Calculus 1b
 - Physics: Lecture  
 - Linear Algebra: Cube Project  
+- Codeforces(competitive programming)
 
 **Friday:**  
 - Data Structures: Homework  
@@ -635,10 +650,12 @@ week4 lessons done, week3 homework partially done.
 **Saturday:**  
 - Linear Algebra: Cube Project  
 - English Composition: Reading and Homework  
+- Codeforces(competitive programming)
 
 **Sunday:**  
 - Data Structures: Homework and/or Linear Algebra Project or any other backlog task  
 - English Composition: Reading and Homework
+- Codeforces(competitive programming)
 
 [Return to table of contents](#table-of-contents)
 

@@ -1,5 +1,7 @@
 ﻿  main.cpp
 C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(5,17): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(57,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(57,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(85,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(85,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(85,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\tryingOutSdl1\main.cpp(85,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   tryingOutSdl1.vcxproj -> C:\Users\ranog\cs\OSSU\computer-science-curriculum\advanced-cs\advanced-math\linear-algebra\spinningCube\x64\Debug\tryingOutSdl1.exe

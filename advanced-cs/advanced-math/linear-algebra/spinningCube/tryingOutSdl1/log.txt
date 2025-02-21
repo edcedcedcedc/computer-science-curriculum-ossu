@@ -14,5 +14,7 @@ the center would be (0 0 0), in the case of (0 0 0) to (1 1 1), the center is go
 Used cartesian product to multiply to sets and get the coordinates for the cube vertices, A {-1,1} x B{(-1,-1),(1,1),(-1,1),(1,-1)}
 For loop to iterate thru vertices 
 
-next goal: connect dots with lines 
+22/02/25 -
+Rendered the lines that connect each vertex
+for example (-1 -1 -1) is left bottom corner or 0 row if though in array structure it connects to (-1 1 -1) left top corner
 

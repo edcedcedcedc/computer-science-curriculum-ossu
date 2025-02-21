@@ -1,0 +1,35 @@
+Kinetic Energy derivation
+Did it at random, really enjoyed this one!
+
+F = m*a 
+W = F*d
+W = ma*d
+W = m*dv/dt*d
+W = m*dv/dt*v*dt
+W = mv*dv
+Integrate(mv*dv)
+W = 1/2mv^2 = K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
