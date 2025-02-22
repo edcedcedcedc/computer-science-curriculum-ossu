@@ -606,9 +606,7 @@ potentital energy, elastic collision...I mean I got it, this is important, the t
 - linear algebra cube project, rendered the 12 lines connecting the cube, more info in log.txt 
 - readme.md updates 
 - started codeforces again I solved already like 40 problems, want to get really good, my scope is 100 for now.
-- data structures - lab5, still lazy to get ready for project 1
-
-<br>
+- data structures - lab5, still lazy to get ready for project 1<br>
 [Move to TAIL](#tail)
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
