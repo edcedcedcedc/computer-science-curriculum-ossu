@@ -1,4 +1,4 @@
-public class Y extends X {
+public class Y extends X implements MyTestInterface {
     int[] y;
 
     public Y(){
@@ -11,8 +11,7 @@ public class Y extends X {
                 result = result + " " + y[i] + " ";
             }
             return result + "]";
-        }
-    
+        }    
 }
  
 
