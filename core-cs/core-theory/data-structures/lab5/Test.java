@@ -25,12 +25,22 @@ public class Test {
       b) generally no, depends on type compatibility
       c) ...
       d) no, it's just just a string, what's important, it's the position
+      III)
+      Suppose subclass inherits a "public static final" constant from superclass
+      and implements a java interface that contains a "public static final" constant 
+      with the same name 
+      a)No it wont it doesnt matter, in the interface you don't usually assign values 
+      b)No it doesnt make a difference it will run the result 
+      c) - am dropping this part.
+      IV)
     */
+    
     public static void main(String[] args) {
-        X x = new Y();
+        X x = new X();
 	Y y = new Y();
 	System.out.println("x" + x + " " + "y" + y);
 
  
     }
 }
+
