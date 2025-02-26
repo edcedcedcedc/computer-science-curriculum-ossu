@@ -597,16 +597,22 @@ week4 lessons done, week3 homework partially done.
 - calc 1b - series 1/10 done 
 - readme.md - added head and tail pointers
 
-### HEAD
+### 20/02/2025
 - fundamentals of physics 1 - week 6, pset 6, moving into pset 7, actually, it isn't that hard, I understand
 mass, weight, velocity, speed, acceleration, acceleration of gravity, distance, displacement, work, power, kinetic energy,
-potentital energy, elastic collision...I mean I got it, this is important, the thing that I cannot solve each problem is seconds, its another thing, but I don't need that, I am happy and proud solving simple problems and those from pset which I can or want to.
+potentital energy, elastic collision, I mean I got it, this is important, the thing that I cannot solve each problem is seconds, its another thing, but I don't need that, I am happy and proud solving simple problems and those from pset which I can or want to.
 - math for cs - pset 7, partial orders of equivalence, degrees and isomorphism
 - calc 1b - series still 
 - linear algebra cube project, rendered the 12 lines connecting the cube, more info in log.txt 
 - readme.md updates 
 - started codeforces again I solved already like 40 problems, want to get really good, my scope is 100 for now.
-- data structures - lab5, still lazy to get ready for project 1<br>
+- data structures - lab5, still lazy to get ready for project 1
+
+
+### HEAD 26/02/2025
+- dropping english composition and substituting it codeforces 
+- dropping cube project, too hard, and substituting it for 2d shapes and matrix transformations and ui 
+- updating schedule, current HEAD and date <br>
 [Move to TAIL](#tail)
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
@@ -625,19 +631,19 @@ potentital energy, elastic collision...I mean I got it, this is important, the t
 **Tuesday:**  
 - Physics: Lecture  
 - Calculus 1b 
-- Linear Algebra: Cube Project
+- Linear Algebra: 2d shapes with matrix transformations and ui project
 - Codeforces(competitive programming)
 
 **Wednesday:**  
 - Data Structures: Homework  
 - Physics: Homework  
 - Mathematics for Computer Science: Homework  
-- English Composition: Reading and homework  
+- Codeforces(competitive programming) 
 
 **Thursday:**  
 - Calculus 1b
 - Physics: Lecture  
-- Linear Algebra: Cube Project  
+- Linear Algebra: 2d shapes with matrix transformations and ui project
 - Codeforces(competitive programming)
 
 **Friday:**  
@@ -646,13 +652,11 @@ potentital energy, elastic collision...I mean I got it, this is important, the t
 - Mathematics for Computer Science: Homework  
 
 **Saturday:**  
-- Linear Algebra: Cube Project  
-- English Composition: Reading and Homework  
+- Linear Algebra: 2d shapes with matrix transformations and ui project 
 - Codeforces(competitive programming)
 
 **Sunday:**  
 - Data Structures: Homework and/or Linear Algebra Project or any other backlog task  
-- English Composition: Reading and Homework
 - Codeforces(competitive programming)
 
 [Return to table of contents](#table-of-contents)
