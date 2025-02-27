@@ -52,21 +52,25 @@ def handle_client(client_socket, client_address):
                         
 
                 elif message.startswith("SEND "):
-                
                     parts = message[5:].split(":", 1)
                     recipients, msg_body = parts
                     recipients = eval(recipients)
                     msg_body = msg_body.strip()
-                    print("recipients", recipients, "username",username)
                     for recipient in recipients:
                         if recipient in clients:
-                            for k, v in clients.items():
-                                if k == username and k not in blocked:
+                            #if A blocks B, then the B cannot message A,
+                            #before B message A, it checks A[B]
+                            try:
+                                recipient_blocked_list = blocked[recipient]
+                                if  username in recipient_blocked_list:
+                                    pass
+                                else:
                                     recipient_socket = clients[recipient]
                                     recipient_socket.sendall(f"Message from {username}: {msg_body}".encode())
+                            except:
+                                recipient_socket = clients[recipient]
+                                recipient_socket.sendall(f"Message from {username}: {msg_body}".encode())
                                     
-                                    
-         
                         else:
                             client_socket.sendall(f"Error: Recipient {recipient} not found.".encode())
 
