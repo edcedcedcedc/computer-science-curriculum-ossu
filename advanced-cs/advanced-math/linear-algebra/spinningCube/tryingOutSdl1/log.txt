@@ -18,3 +18,18 @@ For loop to iterate thru vertices
 Rendered the lines that connect each vertex
 for example (-1 -1 -1) is left bottom corner or 0 row if though in array structure it connects to (-1 1 -1) left top corner
 
+27/02/25 - 
+rotation around x axis tilt forward backward, x remains the same
+y' = y cos - z sin
+z' = y sin  + z cos
+rotation around y axis left right, y remains the same 
+x' = x cos + z sin
+z' = -x sin + z cos 
+rotation around z axis, spin in place, z remains the same
+x' = x cos - y sin
+y' = x sin + y cos 
+I want to rotate both, x, y sequencially 
+
+bugfixes:
+- cube was accelerating and because of that warping
+	I was using the same points over and over again, I created an originalPoints and copied the originalPoints into points before rotating 

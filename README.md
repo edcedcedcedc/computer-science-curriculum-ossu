@@ -609,10 +609,19 @@ potentital energy, elastic collision, I mean I got it, this is important, the th
 - data structures - lab5, still lazy to get ready for project 1
 
 
-### HEAD 26/02/2025
+### 26/02/2025
+
 - dropping english composition and substituting it codeforces 
 - dropping cube project, too hard, and substituting it for 2d shapes and matrix transformations and ui 
-- updating schedule, current HEAD and date <br>
+- updating schedule, current HEAD and date 
+
+### HEAD 
+27/02/2025
+- I changed my mind and actually finished the cube project for the linear algebra, pushed it to the end
+and finished linear algebra, this was a long run, moving forward.
+- Fundamentals of Physics dummy problems
+- Archive English Composition<br>
+
 [Move to TAIL](#tail)
 ## Resources
 - [Khan Academy](https://www.khanacademy.org)
@@ -631,7 +640,6 @@ potentital energy, elastic collision, I mean I got it, this is important, the th
 **Tuesday:**  
 - Physics: Lecture  
 - Calculus 1b 
-- Linear Algebra: 2d shapes with matrix transformations and ui project
 - Codeforces(competitive programming)
 
 **Wednesday:**  
@@ -643,7 +651,6 @@ potentital energy, elastic collision, I mean I got it, this is important, the th
 **Thursday:**  
 - Calculus 1b
 - Physics: Lecture  
-- Linear Algebra: 2d shapes with matrix transformations and ui project
 - Codeforces(competitive programming)
 
 **Friday:**  
@@ -652,7 +659,7 @@ potentital energy, elastic collision, I mean I got it, this is important, the th
 - Mathematics for Computer Science: Homework  
 
 **Saturday:**  
-- Linear Algebra: 2d shapes with matrix transformations and ui project 
+- Data Structures: Homework
 - Codeforces(competitive programming)
 
 **Sunday:**  

@@ -1,90 +1,112 @@
 #include <SDL3/SDL.h>
-#include <iostream>
 #include <cmath>
 
-struct Vertex {
-    float x, y;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+
+struct Vec3 {
+    float x, y, z;
 };
 
-// Square points (centered at (0,0))
-Vertex square[4] = {
-    {-50, -50}, {50, -50}, {50, 50}, {-50, 50}
+
+Vec3 originalPoints[8] = {
+    {-100, -100, -100}, {100, -100, -100}, {100, 100, -100}, {-100, 100, -100},
+    {-100, -100, 100},  {100, -100, 100},  {100, 100, 100},  {-100, 100, 100}
 };
 
-SDL_Window* window;
-SDL_Renderer* renderer;
-bool running = true;
+Vec3 points[8];
 
-// Function to apply transformations (identity for now)
-void transform(Vertex& v) {
-    // Identity transformation (just return the same point)
-    float newX = v.x;
-    float newY = v.y;
-    v.x = newX;
-    v.y = newY;
-}
+int edges[12][2] = {
+    {0, 1}, {1, 2}, {2, 3}, {3, 0},
+    {4, 5}, {5, 6}, {6, 7}, {7, 4},
+    {0, 4}, {1, 5}, {2, 6}, {3, 7}
+};
 
-void drawSquare() {
-    Vertex transformed[4];
 
-    // Apply transformation
-    for (int i = 0; i < 4; i++) {
-        transformed[i] = square[i];
-        transform(transformed[i]);
+void rotateCube(Vec3 points[], int numPoints, float angleX, float angleY) {
+    float cosX = cos(angleX);
+    float sinX = sin(angleX);
+    float cosY = cos(angleY);
+    float sinY = sin(angleY);
+
+    //bugfix copy original points into points to avoid acceleration and warp
+    for (int i = 0; i < 8; i++) {
+        points[i] = originalPoints[i];
     }
 
-    // Offset for screen center
-    int cx = 400, cy = 300;
+    for (int i = 0; i < numPoints;i++)
+    {
+        Vec3 p = points[i];
+        //rotate around x axis, x stays the same
+        float newY = p.y * cosX - p.z * sinX;
+        float newZ = p.y * sinX + p.z * cosX;
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    for (int i = 0; i < 4; i++) {
-        int next = (i + 1) % 4;
+       //rotate around y axis, y stays the same 
+        float newX = p.x * cosY + newZ * sinY;
+        newZ = -p.x * sinY + newZ * cosY;
+
+
+        points[i].x = newX;
+        points[i].y = newY;
+        points[i].z = newZ;
+    }
+    
+    
+}
+
+SDL_Point project3D(Vec3 point) {
+    float distance = 400;
+    float scale = 200;      
+
+    SDL_Point p;
+    p.x = (int)(SCREEN_WIDTH / 2 + (point.x / (point.z + distance)) * scale);
+    p.y = (int)(SCREEN_HEIGHT / 2 + (point.y / (point.z + distance)) * scale);
+    return p;
+}
+
+void renderCube(SDL_Renderer* renderer, Vec3 points[], int edges[][2]) {
+    SDL_Point projectedPoints[8];
+
+    for (int i = 0; i < 8; i++) {
+        projectedPoints[i] = project3D(points[i]);
+    }
+
+    for (int i = 0; i < 12; i++) {
         SDL_RenderLine(renderer,
-            transformed[i].x + cx, transformed[i].y + cy,
-            transformed[next].x + cx, transformed[next].y + cy);
+            projectedPoints[edges[i][0]].x, projectedPoints[edges[i][0]].y,
+            projectedPoints[edges[i][1]].x, projectedPoints[edges[i][1]].y);
     }
 }
 
 int main() {
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
-        return 1;
-    }
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Window* window = SDL_CreateWindow("3D Rotating Cube", SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
 
-    window = SDL_CreateWindow("2D Transformations", 800, 600, 0);
-    if (!window) {
-        std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
-        SDL_Quit();
-        return 1;
-    }
+    bool running = true;
+    SDL_Event event;
+    float angleX = 0, angleY = 0;
 
-    renderer = SDL_CreateRenderer(window, nullptr);
-    if (!renderer) {
-        std::cerr << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-        return 1;
-    }
-
-    SDL_Event e;
     while (running) {
-        while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_EVENT_QUIT) {
-                running = false;
-            }
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_EVENT_QUIT) running = false;
         }
+        angleX += 0.01f;
+        angleY += 0.01f;
+        rotateCube(points, 8, angleX, angleY);
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
-        drawSquare();
-
+        renderCube(renderer, points, edges);
         SDL_RenderPresent(renderer);
-        SDL_Delay(16); // ~60 FPS
+        SDL_Delay(16);
     }
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    
     SDL_Quit();
     return 0;
 }
