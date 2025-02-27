@@ -130,7 +130,7 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|
 |Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|
+|Linear Algebra |![](https://geps.dev/progress/90)| 14.10.24 |22.01.25|27.02.25|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|
 
 ### ELECTIVES
 [Return to table of contents](#table-of-contents)
@@ -146,14 +146,6 @@ _Topics Covered_:
 |Fundamentals of Physics 1|![](https://geps.dev/progress/25)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
 
 #### Reading and Composition 
-
-**Topics covered**:
-`critical reading and analysis`
-`writing`
-`types of writing`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|English Composition 1|![](https://geps.dev/progress/20)| 24.01.25 |24.07.25|-|[english-comp-1](./electives/english-comp-1) |-|
 
 ## Log
 [Return to table of contents](#table-of-contents)<br>

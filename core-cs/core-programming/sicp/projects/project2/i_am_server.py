@@ -38,7 +38,7 @@ def handle_client(client_socket, client_address):
                     raise ConnectionResetError
 
                 message = message.decode().strip()
-
+               
                 if message.startswith("BLOCK "):
                     recipients = message[6:]
                     recipients = eval(recipients)
@@ -52,18 +52,20 @@ def handle_client(client_socket, client_address):
                         
 
                 elif message.startswith("SEND "):
+                
                     parts = message[5:].split(":", 1)
                     recipients, msg_body = parts
                     recipients = eval(recipients)
                     msg_body = msg_body.strip()
-        
+                    print("recipients", recipients, "username",username)
                     for recipient in recipients:
                         if recipient in clients:
-                            for k, v in blocked.items():
-                                if k == username:
-                                    if recipient not in v:
-                                        recipient_socket = clients[recipient]
-                                        recipient_socket.sendall(f"Message from {username}: {msg_body}".encode())
+                            for k, v in clients.items():
+                                if k == username and k not in blocked:
+                                    recipient_socket = clients[recipient]
+                                    recipient_socket.sendall(f"Message from {username}: {msg_body}".encode())
+                                    
+                                    
          
                         else:
                             client_socket.sendall(f"Error: Recipient {recipient} not found.".encode())
@@ -111,6 +113,7 @@ def start_server():
 
     try:
         while not shutdown_flag:
+
             readable, _, _ = select.select([server_socket], [], [], 3)  # Timeout 3 seconds
             if server_socket in readable:
                 client_socket, client_address = server_socket.accept()
