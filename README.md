@@ -27,13 +27,13 @@ _Topics Covered_:
 `college algebra`
 `trigonometry`
 `precalculus`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Algebra 1 |![Algebra 1](https://geps.dev/progress/100) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|
-|HS Geometry |![HS Geometry](https://geps.dev/progress/94) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|
-|Algebra 2 |![Algebra 2](https://geps.dev/progress/93) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|
-|Trigonometry |![Trigonometry](https://geps.dev/progress/96) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|
-|Precalculus |![Precalculus](https://geps.dev/progress/93) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|
+| Course | Progress | Start Date | Planned End Date | Actual End Date | Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Algebra 1 |![Algebra 1](https://geps.dev/progress/100) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1BJkhLWKtQVTutCbBOL5Am8IlfLq9bDqoBrA2aGlQ7eo/edit?usp=sharing)|
+|Geometry |![HS Geometry](https://geps.dev/progress/94) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1n7f1E6zxKXha6v5mLx7cQehJuKmo-on3UmyP_uOSCYI/edit?usp=sharing)|
+|Algebra 2 |![Algebra 2](https://geps.dev/progress/93) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1ma1xHGy0dGXNuQbXPrLDidT_F8d6hQ4QrPBRRmm-hyA/edit?usp=sharing)|
+|Trigonometry |![Trigonometry](https://geps.dev/progress/96) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1n7f1E6zxKXha6v5mLx7cQehJuKmo-on3UmyP_uOSCYI/edit?usp=sharing)|
+|Precalculus |![Precalculus](https://geps.dev/progress/93) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1PSfIDMT3UEdDhIJkCUgGjDmI9NO2-VB8JhcVCIdnaJ8/edit?usp=sharing)|
 
 ## OSSU
 
@@ -49,13 +49,13 @@ _Topics Covered_:
 `basic abstractions`
 `basic data structures and algorithms`
 `and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Programming|![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Introduction to Programming|![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|[Google Docs](https://docs.google.com/document/d/1W2IWr0ZsR0zi2xMu8_otMD-uPK5WGmOiPZjDeM9zeJU/edit?usp=sharing)|
 
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|[Google Docs](https://docs.google.com/document/d/1SEqocEuG1JfpeHpxPkkRKuUvD8_yLBg1HBKsEq8jwOE/edit?usp=sharing)|
 
 ### CORE CS
 [Return to table of contents](#table-of-contents)
@@ -74,9 +74,9 @@ _Topics Covered_:
 `Lisp-family languages (via Racket, Scheme)`
 `Ruby`
 `and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/99) | 02.07.24 |17.10.24|10.12.24|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/99) | 02.07.24 |17.10.24|10.12.24|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|[Google Docs](https://docs.google.com/document/d/1ge1JjM2ER7VkYoT3uk8Wp_-HZ2bAJwh-QjD7YnkYW6o/edit?usp=sharing)|
 
 #### Core theory 
 
@@ -86,9 +86,9 @@ _Topics Covered_:
 `hash table`
 `trees`
 `etc`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/33) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Data Structures|![](https://geps.dev/progress/33) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
 
 #### Core math
 
@@ -99,11 +99,11 @@ _Topics Covered_:
 `O-notation`
 `discrete probability`
 `and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|
-|Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|
-|Math for CS|![](https://geps.dev/progress/50)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
+|Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
+|Math for CS|![](https://geps.dev/progress/50)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
 
 #### CS Tools
 
@@ -113,9 +113,9 @@ _Topics Covered_:
 `command line environments`
 `version control`
 `and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|The Missing Semester |![](https://geps.dev/progress/100) | 22.06.24 |22.07.24|15.11.24|[mit-missing](./core-cs/core-tools/mit-missing) |-|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|The Missing Semester |![](https://geps.dev/progress/100) | 22.06.24 |22.07.24|15.11.24|[mit-missing](./core-cs/core-tools/mit-missing) |-|[Google Docs](https://docs.google.com/document/d/1jrVr1e5MFEhYxtQ7pT5dFxz6ExrojlgzKy-8xUpES0c/edit?usp=sharing)|
 
 ### ADVANCED CS
 [Return to table of contents](#table-of-contents)
@@ -127,14 +127,13 @@ _Topics Covered_:
 `linear independence`
 `dimensions`
 `and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
-|Linear Algebra |![](https://geps.dev/progress/90)| 14.10.24 |22.01.25|27.02.25|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Linear Algebra |![](https://geps.dev/progress/90)| 14.10.24 |22.01.25|27.02.25|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|[Google Docs](https://docs.google.com/document/d/1ieGaWKd6_c_jAStE7_Xhg6oUc5kr_CYZ34NqOsLDX_E/edit?usp=sharing)|
 
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Introduction to Probability|![](https://geps.dev/progress/0)| 01.03.25 |1.07.25||[stat-110](./advanced-cs/advanced-math/introduction-to-probability/) |[projects]()|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Introduction to Probability|![](https://geps.dev/progress/0)| 01.03.25 |1.07.25||[stat-110](./advanced-cs/advanced-math/introduction-to-probability/) |[projects]()|[Google Docs](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing)|
 
 
 ### ELECTIVES
@@ -146,9 +145,9 @@ _Topics Covered_:
 `1d, 2d motion`
 `newton's laws`
 `and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|
-|Fundamentals of Physics 1|![](https://geps.dev/progress/25)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Fundamentals of Physics 1|![](https://geps.dev/progress/50)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|[Google Docs](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)|
 
 #### Reading and Composition 
 

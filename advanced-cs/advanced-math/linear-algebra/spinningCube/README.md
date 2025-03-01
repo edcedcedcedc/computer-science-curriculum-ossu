@@ -73,8 +73,8 @@ Update	Changes object properties for animations
 Clean	Free resources and exit
 
 12/02/25 - <br>
-Cube vertices have to be from (-1 -1 -1) to (1 1 1), i.e. 0.5 of a cube shall occupy each quadrant then 
-the center would be at (0 0 0), in the case of (0 0 0) to (1 1 1), its going to be at (0.5 0.5 0.5)
+A cube's vertices should range from (-1, -1, -1) to (1, 1, 1) so that half of the cube occupies each quadrant. This ensures that the cube is centered at (0, 0, 0).
+If the cube's vertices range from (0, 0, 0) to (1, 1, 1) instead, the center of the cube will be at (0.5, 0.5, 0.5) rather than the origin.
 
 15/02/25 - <br>
 Used cartesian product to multiply to sets and get the coordinates for the cube vertices, A {-1,1} x B{(-1,-1),(1,1),(-1,1),(1,-1)}
