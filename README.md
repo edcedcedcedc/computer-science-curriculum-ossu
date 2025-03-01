@@ -132,6 +132,11 @@ _Topics Covered_:
 |Essence of Linear Algebra |![](https://geps.dev/progress/)|-|-|
 |Linear Algebra |![](https://geps.dev/progress/90)| 14.10.24 |22.01.25|27.02.25|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|
 
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects|
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|
+|Introduction to Probability|![](https://geps.dev/progress/0)| 01.03.25 |1.07.25||[stat-110](./advanced-cs/advanced-math/introduction-to-probability/) |[projects]()|
+
+
 ### ELECTIVES
 [Return to table of contents](#table-of-contents)
 #### Physics 
@@ -607,12 +612,17 @@ potentital energy, elastic collision, I mean I got it, this is important, the th
 - dropping cube project, too hard, and substituting it for 2d shapes and matrix transformations and ui 
 - updating schedule, current HEAD and date 
 
-### HEAD 
-27/02/2025
+### 27/02/2025 
+
 - I changed my mind and actually finished the cube project for the linear algebra, pushed it to the end
 and finished linear algebra, this was a long run, moving forward.
 - Fundamentals of Physics dummy problems
-- Archive English Composition<br>
+- Archive English Composition
+
+### HEAD 
+03/01/2025
+- Started introduction to probability - want to take this class with more responsibility, like the core cs classes, because I guess will need this
+- Want to finish my calculus 1b class as fast as I can, I have left around 80% of the series unit , and focus more on cs classes, probability, physics, codeforces and other<br>
 
 [Move to TAIL](#tail)
 ## Resources
@@ -632,18 +642,20 @@ and finished linear algebra, this was a long run, moving forward.
 **Tuesday:**  
 - Physics: Lecture  
 - Calculus 1b 
-- Codeforces(competitive programming)
+- Codeforces(competitive programming) 3 problems
+- Introduction to Probibality
 
 **Wednesday:**  
 - Data Structures: Homework  
 - Physics: Homework  
 - Mathematics for Computer Science: Homework  
-- Codeforces(competitive programming) 
+- Codeforces(competitive programming)  1 problem
 
 **Thursday:**  
 - Calculus 1b
 - Physics: Lecture  
-- Codeforces(competitive programming)
+- Codeforces(competitive programming) 3 problems
+- Introduction to Probability 
 
 **Friday:**  
 - Data Structures: Homework  
@@ -652,11 +664,12 @@ and finished linear algebra, this was a long run, moving forward.
 
 **Saturday:**  
 - Data Structures: Homework
-- Codeforces(competitive programming)
+- Codeforces(competitive programming) 3 problems
+- Any other backlog task
 
 **Sunday:**  
-- Data Structures: Homework and/or Linear Algebra Project or any other backlog task  
-- Codeforces(competitive programming)
+- Any other backlog task  
+- Codeforces(competitive programming) 3 problems
 
 [Return to table of contents](#table-of-contents)
 

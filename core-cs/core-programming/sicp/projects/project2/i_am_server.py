@@ -12,7 +12,7 @@ blocked = {}
 def handle_client(client_socket, client_address):
 
     print(f"New connection from {client_address}.")
-    client_socket.send(f"Succesifly connected to {SERVER_HOST}, {SERVER_PORT}.".encode())
+    client_socket.send(f"Successfully connected to {SERVER_HOST}, {SERVER_PORT}.".encode())
     username = ""
     
     try:
