@@ -33,36 +33,33 @@ import java.util.NoSuchElementException;
 public class RunIterator implements Iterator {
 
   /**
-   *  Define any variables associated with a RunIterator object here.
-   *  These variables MUST be private.
+   * Define any variables associated with a RunIterator object here.
+   * These variables MUST be private.
    */
 
-
-
-
   /**
-   *  RunIterator() constructs a new iterator starting with a specified run.
+   * RunIterator() constructs a new iterator starting with a specified run.
    *
-   *  @param node the run where this iterator starts.
+   * @param node the run where this iterator starts.
    */
   // Unlike all the other methods we have asked you to write, the RunIterator()
   // constructor does not have a predefined signature, because no outside
   // class should ever call this constructor except the iterator() method in
-  // the RunLengthEncoding class.  The correct way for outside classes to
+  // the RunLengthEncoding class. The correct way for outside classes to
   // get access to a RunIterator is to call the iterator() method on a
-  // RunLengthEncoding object.  You are welcome to add any parameters to the
+  // RunLengthEncoding object. You are welcome to add any parameters to the
   // constructor that you want so that your RunLengthEncoding.iterator()
   // implementation can construct a RunIterator that points to the first run of
   // the encoding.
   RunIterator() {
-    // Your solution here.  You may add parameters to the method signature.
+    // Your solution here. You may add parameters to the method signature.
   }
 
   /**
-   *  hasNext() returns true if this iterator has more runs.  If it returns
-   *  false, then the next call to next() may throw an exception.
+   * hasNext() returns true if this iterator has more runs. If it returns
+   * false, then the next call to next() may throw an exception.
    *
-   *  @return true if the iterator has more elements.
+   * @return true if the iterator has more elements.
    */
   public boolean hasNext() {
     // Replace the following line with your solution.
@@ -70,25 +67,30 @@ public class RunIterator implements Iterator {
   }
 
   /**
-   *  next() returns an array of 4 ints that specifies the current run in the
-   *  sequence.  It also advances the iterator to the next run, so that the
-   *  next call to next() will return the following run.
+   * next() returns an array of 4 ints that specifies the current run in the
+   * sequence. It also advances the iterator to the next run, so that the
+   * next call to next() will return the following run.
    *
-   *  If "this" RunIterator has returned every run, it cannot be expected to
-   *  behave well.  (Technically, it is supposed to throw a
-   *  NoSuchElementException, but we haven't learned about exceptions yet.)
+   * If "this" RunIterator has returned every run, it cannot be expected to
+   * behave well. (Technically, it is supposed to throw a
+   * NoSuchElementException, but we haven't learned about exceptions yet.)
    *
-   *  @return an array of 4 ints that specify the current run in the sequence.
-   *  The pixel count is in index [0]; the red value is in index [1]; the green
-   *  value is in index [2]; and the blue value is in index [3].
-   *  @throws NoSuchElementException if the iteration has no more elements.
-   *  (We strongly recommend calling hasNext() to check whether there are any
-   *  more runs before calling next().)
+   * @return an array of 4 ints that specify the current run in the sequence.
+   *         The pixel count is in index [0]; the red value is in index [1]; the
+   *         green
+   *         value is in index [2]; and the blue value is in index [3].
+   * @throws NoSuchElementException if the iteration has no more elements.
+   *                                (We strongly recommend calling hasNext() to
+   *                                check whether there are any
+   *                                more runs before calling next().)
    *
-   *  The returned four-int array is constructed in next(), and can be
-   *  discarded by the calling method after use.  The array should not be part
-   *  of your RunLengthEncoding data structure!  It must be freshly constructed
-   *  for the sole purpose of returning four ints.
+   *                                The returned four-int array is constructed in
+   *                                next(), and can be
+   *                                discarded by the calling method after use. The
+   *                                array should not be part
+   *                                of your RunLengthEncoding data structure! It
+   *                                must be freshly constructed
+   *                                for the sole purpose of returning four ints.
    */
   public int[] next() {
     // Construct a new array of 4 ints, fill in its values, and return it.
@@ -100,10 +102,10 @@ public class RunIterator implements Iterator {
   }
 
   /**
-   *  remove() would remove from the underlying run-length encoding the run
-   *  identified by this iterator, but we are NOT implementing it.
+   * remove() would remove from the underlying run-length encoding the run
+   * identified by this iterator, but we are NOT implementing it.
    *
-   *  DO NOT CHANGE THIS METHOD.
+   * DO NOT CHANGE THIS METHOD.
    */
   public void remove() {
     throw new UnsupportedOperationException();

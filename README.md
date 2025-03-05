@@ -634,41 +634,43 @@ and finished linear algebra, this was a long run, moving forward.
 ## Schedule 
 
 **Monday:**  
-- Data Structures: Lecture, reading, and review homework for next time  
+- Data Structures: Lecture/Reading  
 - Physics: Homework  
-- Mathematics for Computer Science: Lecture, reading  
+- Mathematics for Computer Science: Practice/Homework
+- Introduction to Probability - Lecture/Reading
 
 **Tuesday:**  
-- Physics: Lecture  
+- Physics: Lecture/Reading
 - Calculus 1b 
 - Codeforces(competitive programming) 3 problems
-- Introduction to Probibality
+- Introduction to Probability - Practice and Homework
 
 **Wednesday:**  
 - Data Structures: Homework  
 - Physics: Homework  
-- Mathematics for Computer Science: Homework  
+- Mathematics for Computer Science: Lecture/Reading  
 - Codeforces(competitive programming)  1 problem
 
 **Thursday:**  
 - Calculus 1b
 - Physics: Lecture  
 - Codeforces(competitive programming) 3 problems
-- Introduction to Probability 
+- Introduction to Probability - Lecture
 
 **Friday:**  
-- Data Structures: Homework  
+- Data Structures: Lecture/Reading  
 - Physics: Homework  
-- Mathematics for Computer Science: Homework  
+- Mathematics for Computer Science: Practice/Homework 
+- Introduction to Probability - Practice and Homework
 
 **Saturday:**  
 - Data Structures: Homework
+- Math for Computer Science: Lecture
 - Codeforces(competitive programming) 3 problems
 - Any other backlog task
 
 **Sunday:**  
 - Any other backlog task  
-- Codeforces(competitive programming) 3 problems
 
 [Return to table of contents](#table-of-contents)
 

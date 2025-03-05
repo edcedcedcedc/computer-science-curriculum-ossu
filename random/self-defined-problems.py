@@ -298,3 +298,15 @@ def problem8(arr):
 problem8([1,2,3])
 #problem 8a
 #extend problem8 to use cyclic shift k
+
+
+#problem 9 implement a cache high order function 
+def cache_decorator(func):
+    cache = {}
+    def wrapper(n):
+        if n in cache:
+            return cache[n]
+        cache[n] = func(n)
+        return cache[n]
+    
+    return wrapper

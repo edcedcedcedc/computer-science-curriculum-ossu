@@ -1,3 +1,3 @@
-https://projects.iq.harvard.edu/stat110
+course https://projects.iq.harvard.edu/stat110
 
 book https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/edit
