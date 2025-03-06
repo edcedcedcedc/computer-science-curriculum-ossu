@@ -618,10 +618,18 @@ and finished linear algebra, this was a long run, moving forward.
 - Fundamentals of Physics dummy problems
 - Archive English Composition
 
-### HEAD 
-03/01/2025
+### 01/03/2025 
+
 - Started introduction to probability - want to take this class with more responsibility, like the core cs classes, because I guess will need this
 - Want to finish my calculus 1b class as fast as I can, I have left around 80% of the series unit , and focus more on cs classes, probability, physics, codeforces and other<br>
+
+### HEAD 
+06/03/2025
+- Calc 1b series exercises
+- Google Summer of Code 2025 project prototype init
+- Codeforces 1 problem 
+- I also had to do data structures and physics but I couldn't<br>
+
 
 [Move to TAIL](#tail)
 ## Resources
