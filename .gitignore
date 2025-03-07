@@ -3,7 +3,7 @@
 *.pdf
 *.pptx
 *.private
-
+.vscode/*
 
 
 advanced-cs/advanced-math/linear-algebra/spinningCube/*

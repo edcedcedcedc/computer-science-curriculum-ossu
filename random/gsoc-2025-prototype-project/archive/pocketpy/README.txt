@@ -52,3 +52,6 @@ Project init
 
 06/03/2025:
 Phase 1 and 2(debugger), have to test it more and re-read the documentation for DAP
+
+08/03/2025:
+I got denied! Thats bad news, no GSOC 2025 with pocketpy, I am dropping this project!
