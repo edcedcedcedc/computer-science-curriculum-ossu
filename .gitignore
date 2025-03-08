@@ -4,7 +4,7 @@
 *.pptx
 *.private
 .vscode/*
-
+node_modules/
 
 advanced-cs/advanced-math/linear-algebra/spinningCube/*
 
