@@ -49,3 +49,6 @@ Decide whether to do it entirely in the client or with the server’s cooperatio
 - 27/02/2025:
 server side was checking user in blocked instead of clients, which implied a impossible way to send a message to a connected client
 correct blocked object check and added try execept in case there is no key-value pair
+
+- 09/03/2025:
+Added a react UI rendering and websockets, splitted the backend into cli version and websocket version with async
