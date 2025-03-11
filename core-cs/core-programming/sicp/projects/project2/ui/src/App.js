@@ -80,7 +80,9 @@ const App = () => {
       </button>
       {!username ? (
         <div className="center">
+          <div>Welcome to Chattato</div>
           <input
+            className="my-input"
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

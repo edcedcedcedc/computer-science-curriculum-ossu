@@ -155,9 +155,16 @@ body.dark .messages li {
 
 .center {
   display: flex;
-  justify-content: center; 
-  align-items: center;     
-  height: 100%;  
-  padding-left: 25%;
-  padding-right: 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  text-align: center;
+}
+
+.my-input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 200px;
+  max-height: 35px;
 }

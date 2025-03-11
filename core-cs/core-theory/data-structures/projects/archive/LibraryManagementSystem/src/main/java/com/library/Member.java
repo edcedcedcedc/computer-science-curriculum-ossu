@@ -1,4 +1,4 @@
-package projects.LibraryManagementSystem.src.main.java.com.library;
+package projects.archive.LibraryManagementSystem.src.main.java.com.library;
 
 public class Member {
 

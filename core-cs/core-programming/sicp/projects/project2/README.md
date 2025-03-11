@@ -42,8 +42,6 @@ Decide whether to do it entirely in the client or with the server’s cooperatio
    4.3 when a client disconnect all blocked recipients are erased
 5. Why is the 3-way handshake necessary when connecting to the server?
    5.1 to better inform each side about the connection
-   
-
 
 #### bugfixes:
 - 27/02/2025:

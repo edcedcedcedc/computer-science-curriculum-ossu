@@ -22,6 +22,9 @@ public class PixImage {
    * Define any variables associated with a PixImage object here. These variables
    * MUST be private.
    */
+  private int height;
+  private int width;
+  private short[][][] pixels; // pixels[x][y][0] = red, pixels[x][y][1] = green, pixels[x][y][2] = blue;
 
   /**
    * PixImage() constructs an empty PixImage with a specified width and height.
@@ -31,7 +34,16 @@ public class PixImage {
    * @param height the height of the image.
    */
   public PixImage(int width, int height) {
-    // Your solution here.
+    this.width = width;
+    this.height = height;
+    this.pixels = new short[width][height][3];
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        pixels[x][y][0] = 0;
+        pixels[x][y][1] = 0;
+        pixels[x][y][2] = 0;
+      }
+    }
   }
 
   /**
@@ -40,8 +52,7 @@ public class PixImage {
    * @return the width of the image.
    */
   public int getWidth() {
-    // Replace the following line with your solution.
-    return 1;
+    return this.width;
   }
 
   /**
@@ -50,8 +61,7 @@ public class PixImage {
    * @return the height of the image.
    */
   public int getHeight() {
-    // Replace the following line with your solution.
-    return 1;
+    return this.height;
   }
 
   /**
@@ -62,8 +72,7 @@ public class PixImage {
    * @return the red intensity of the pixel at coordinate (x, y).
    */
   public short getRed(int x, int y) {
-    // Replace the following line with your solution.
-    return 0;
+    return this.pixels[x][y][0];
   }
 
   /**
@@ -74,8 +83,7 @@ public class PixImage {
    * @return the green intensity of the pixel at coordinate (x, y).
    */
   public short getGreen(int x, int y) {
-    // Replace the following line with your solution.
-    return 0;
+    return this.pixels[x][y][1];
   }
 
   /**
@@ -86,8 +94,7 @@ public class PixImage {
    * @return the blue intensity of the pixel at coordinate (x, y).
    */
   public short getBlue(int x, int y) {
-    // Replace the following line with your solution.
-    return 0;
+    return this.pixels[x][y][2];
   }
 
   /**
@@ -104,7 +111,12 @@ public class PixImage {
    * @param blue  the new blue intensity for the pixel at coordinate (x, y).
    */
   public void setPixel(int x, int y, short red, short green, short blue) {
-    // Your solution here.
+    if (red >= 0 && red <= 255 && green >= 0 && green <= 255 && blue >= 0 && blue <= 255) {
+      this.pixels[x][y][0] = red;
+      this.pixels[x][y][1] = green;
+      this.pixels[x][y][2] = blue;
+    }
+
   }
 
   /**
@@ -115,9 +127,16 @@ public class PixImage {
    *
    * @return a String representation of this PixImage.
    */
+  @Override
   public String toString() {
-    // Replace the following line with your solution.
-    return "";
+    StringBuilder sb = new StringBuilder();
+    for (int y = 0; y < height; y++) {
+      for (int x = 0; x < width; x++) {
+        sb.append(String.format("(%3d,%3d,%3d) ", pixels[x][y][0], pixels[x][y][1], pixels[x][y][2]));
+      }
+      sb.append("\n");
+    }
+    return sb.toString();
   }
 
   /**
@@ -150,8 +169,38 @@ public class PixImage {
    * @return a blurred version of "this" PixImage.
    */
   public PixImage boxBlur(int numIterations) {
-    // Replace the following line with your solution.
-    return this;
+    if (numIterations <= 0) {
+      return this;
+    }
+
+    PixImage current = this;
+    for (int iter = 0; iter < numIterations; iter++) {
+      PixImage next = new PixImage(this.width, this.height);
+
+      for (int x = 0; x < this.width; x++) {
+        for (int y = 0; y < this.height; y++) {
+
+          int redSum = 0, greenSum = 0, blueSum = 0, count = 0;
+
+          for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+
+              int nx = x + dx, ny = y + dy;
+              if (nx >= 0 && nx < this.width && ny >= 0 && ny < this.height) {
+                redSum += current.getRed(nx, ny);
+                greenSum += current.getGreen(nx, ny);
+                blueSum += current.getBlue(nx, ny);
+                count++;
+              }
+            }
+          }
+
+          next.setPixel(x, y, (short) (redSum / count), (short) (greenSum / count), (short) (blueSum / count));
+        }
+      }
+      current = next;
+    }
+    return current;
   }
 
   /**
