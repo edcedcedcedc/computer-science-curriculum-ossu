@@ -179,12 +179,10 @@ public class PixImage {
 
       for (int x = 0; x < this.width; x++) {
         for (int y = 0; y < this.height; y++) {
-
           int redSum = 0, greenSum = 0, blueSum = 0, count = 0;
 
           for (int dx = -1; dx <= 1; dx++) {
             for (int dy = -1; dy <= 1; dy++) {
-
               int nx = x + dx, ny = y + dy;
               if (nx >= 0 && nx < this.width && ny >= 0 && ny < this.height) {
                 redSum += current.getRed(nx, ny);
@@ -243,11 +241,104 @@ public class PixImage {
    * @return a grayscale PixImage representing the edges of the input image.
    *         Whiter pixels represent stronger edges.
    */
+
+  /*
+   * private boolean isCorner(int x, int y) { return ((x == 0 || x == width - 1)
+   * && (y == 0 || y == height - 1)); }
+   * 
+   * private boolean isCenter(int x, int y) { return (x > 0 && x < width - 1 && y
+   * > 0 && y < height - 1); }
+   * 
+   * private boolean isBoundary(int x, int y) { return ((x == 0 || x == width - 1
+   * || y == 0 || y == height - 1) && !isCorner(x, y)); }
+   */
+
+  private boolean isValid(int x, int y) {
+    return (x >= 0 && x <= width - 1 && y >= 0 && y <= height - 1);
+  }
+
+  private long[] convention(short[][] A, short[][][] G) {
+    long[] mag = new long[3];
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        for (int k = 0; k < 3; k++) {
+          mag[k] += A[i][j] * G[i][j][k];
+        }
+      }
+    }
+    return mag;
+  }
+
+  private short[] findValid(int x, int y) {
+    short[] result = null;
+    if (isValid(x - 1, y)) {
+      result = pixels[x - 1][y];
+    }
+    if (isValid(x + 1, y)) {
+      result = pixels[x + 1][y];
+    }
+    if (isValid(x, y - 1)) {
+      result = pixels[x][y - 1];
+    }
+    if (isValid(x, y + 1)) {
+      result = pixels[x][y + 1];
+    }
+    if (result == null) {
+      if (isValid(x - 1, y - 1)) {
+        result = pixels[x - 1][y - 1];
+      }
+      if (isValid(x + 1, y - 1)) {
+        result = pixels[x + 1][y - 1];
+      }
+      if (isValid(x - 1, y + 1)) {
+        result = pixels[x - 1][y + 1];
+      }
+      if (isValid(x + 1, y + 1)) {
+        result = pixels[x + 1][y + 1];
+      }
+    }
+    return result;
+  }
+
+  private short[][][] reflection(int x, int y) {
+    short[][][] result = new short[3][3][3];
+    int x0 = 0;
+    int y0 = 0;
+    for (int x1 = x - 1; x1 <= x + 1; x1++) {
+      for (int y1 = y - 1; y1 <= y + 1; y1++) {
+        if (isValid(x1, y1)) {
+          result[x0][y0] = pixels[x1][y1];
+        } else {
+          result[x0][y0] = findValid(x1, y1);
+        }
+        y0++;
+      }
+      y0 = 0;
+      x0++;
+    }
+    return result;
+  }
+
   public PixImage sobelEdges() {
-    // Replace the following line with your solution.
-    return this;
-    // Don't forget to use the method mag2gray() above to convert energies to
-    // pixel intensities.
+    PixImage result = new PixImage(width, height);
+    short[][] A1 = { { 1, 0, -1 }, { 2, 0, -2 }, { 1, 0, -1 } };
+    short[][] A2 = { { 1, 2, 1 }, { 0, 0, 0 }, { -1, -2, -1 } };
+    long[] gx;
+    long[] gy;
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        long energy = 0;
+        gx = convention(A1, reflection(x, y));
+        gy = convention(A2, reflection(x, y));
+        for (int k = 0; k < 3; k++) {
+          energy += gx[k] * gx[k];
+          energy += gy[k] * gy[k];
+        }
+        short grayscale = mag2gray(energy);
+        result.setPixel(x, y, grayscale, grayscale, grayscale);
+      }
+    }
+    return result;
   }
 
   /**
