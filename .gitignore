@@ -5,6 +5,5 @@
 *.private
 .vscode
 node_modules/
-gsoc.txt
 advanced-cs/advanced-math/linear-algebra/spinningCube/*
 

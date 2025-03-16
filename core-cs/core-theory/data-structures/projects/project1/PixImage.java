@@ -242,22 +242,19 @@ public class PixImage {
    *         Whiter pixels represent stronger edges.
    */
 
-  /*
-   * private boolean isCorner(int x, int y) { return ((x == 0 || x == width - 1)
-   * && (y == 0 || y == height - 1)); }
-   * 
-   * private boolean isCenter(int x, int y) { return (x > 0 && x < width - 1 && y
-   * > 0 && y < height - 1); }
-   * 
-   * private boolean isBoundary(int x, int y) { return ((x == 0 || x == width - 1
-   * || y == 0 || y == height - 1) && !isCorner(x, y)); }
-   */
-
-  private boolean isValid(int x, int y) {
+  private boolean isValidCoordinate(int x, int y) {
     return (x >= 0 && x <= width - 1 && y >= 0 && y <= height - 1);
   }
 
-  private long[] convention(short[][] A, short[][][] G) {
+  /**
+   * Computes the convolution of a 3x3 matrix A with a 3x3x3 matrix G.
+   *
+   * @param A a 3x3 matrix of short values.
+   * @param G a 3x3x3 matrix of short values.
+   * @return a long array of size 3, where each element is the sum of the products
+   *         of corresponding elements in A and G.
+   */
+  private long[] convolution(short[][] A, short[][][] G) {
     long[] mag = new long[3];
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {
@@ -270,34 +267,31 @@ public class PixImage {
   }
 
   private short[] findValid(int x, int y) {
-    short[] result = null;
-    if (isValid(x - 1, y)) {
-      result = pixels[x - 1][y];
+    if (isValidCoordinate(x - 1, y)) {
+      return pixels[x - 1][y];
     }
-    if (isValid(x + 1, y)) {
-      result = pixels[x + 1][y];
+    if (isValidCoordinate(x + 1, y)) {
+      return pixels[x + 1][y];
     }
-    if (isValid(x, y - 1)) {
-      result = pixels[x][y - 1];
+    if (isValidCoordinate(x, y - 1)) {
+      return pixels[x][y - 1];
     }
-    if (isValid(x, y + 1)) {
-      result = pixels[x][y + 1];
+    if (isValidCoordinate(x, y + 1)) {
+      return pixels[x][y + 1];
     }
-    if (result == null) {
-      if (isValid(x - 1, y - 1)) {
-        result = pixels[x - 1][y - 1];
-      }
-      if (isValid(x + 1, y - 1)) {
-        result = pixels[x + 1][y - 1];
-      }
-      if (isValid(x - 1, y + 1)) {
-        result = pixels[x - 1][y + 1];
-      }
-      if (isValid(x + 1, y + 1)) {
-        result = pixels[x + 1][y + 1];
-      }
+    if (isValidCoordinate(x - 1, y - 1)) {
+      return pixels[x - 1][y - 1];
     }
-    return result;
+    if (isValidCoordinate(x + 1, y - 1)) {
+      return pixels[x + 1][y - 1];
+    }
+    if (isValidCoordinate(x - 1, y + 1)) {
+      return pixels[x - 1][y + 1];
+    }
+    if (isValidCoordinate(x + 1, y + 1)) {
+      return pixels[x + 1][y + 1];
+    }
+    return null;
   }
 
   private short[][][] reflection(int x, int y) {
@@ -306,7 +300,7 @@ public class PixImage {
     int y0 = 0;
     for (int x1 = x - 1; x1 <= x + 1; x1++) {
       for (int y1 = y - 1; y1 <= y + 1; y1++) {
-        if (isValid(x1, y1)) {
+        if (isValidCoordinate(x1, y1)) {
           result[x0][y0] = pixels[x1][y1];
         } else {
           result[x0][y0] = findValid(x1, y1);
@@ -328,8 +322,8 @@ public class PixImage {
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
         long energy = 0;
-        gx = convention(A1, reflection(x, y));
-        gy = convention(A2, reflection(x, y));
+        gx = convolution(A1, reflection(x, y));
+        gy = convolution(A2, reflection(x, y));
         for (int k = 0; k < 3; k++) {
           energy += gx[k] * gx[k];
           energy += gy[k] * gy[k];
