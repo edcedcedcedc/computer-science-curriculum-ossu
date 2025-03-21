@@ -621,14 +621,20 @@ and finished linear algebra, this was a long run, moving forward.
 ### 01/03/2025 
 
 - Started introduction to probability - want to take this class with more responsibility, like the core cs classes, because I guess will need this
-- Want to finish my calculus 1b class as fast as I can, I have left around 80% of the series unit , and focus more on cs classes, probability, physics, codeforces and other<br>
+- Want to finish my calculus 1b class as fast as I can, I have left around 80% of the series unit , and focus more on cs classes, probability, physics, codeforces and other
 
-### HEAD 
-06/03/2025
+### 06/03/2025 
+
 - Calc 1b series exercises
 - Google Summer of Code 2025 project prototype init
 - Codeforces 1 problem 
-- I also had to do data structures and physics but I couldn't<br>
+- I also had to do data structures and physics but I couldn't
+
+### HEAD 
+20/03/2025
+🎉🎉🎉 I'll take a minute and clap for myself.
+- I formally closed all required Calculus courses, in total, from Algebra 1 till present moment it took me around 3 years, 
+but I started from 0 and was lazy, I didn't even understand fractions, so as practice shows, you can do it, with consistency and patience. Right now I am sure that my current level of math is enough to swing in almost any cs/programming/se field. I wish myself good luck<br>
 
 
 [Move to TAIL](#tail)
@@ -649,7 +655,6 @@ and finished linear algebra, this was a long run, moving forward.
 
 **Tuesday:**  
 - Physics: Lecture/Reading
-- Calculus 1b 
 - Codeforces(competitive programming) 3 problems
 - Introduction to Probability - Practice and Homework
 
@@ -660,7 +665,6 @@ and finished linear algebra, this was a long run, moving forward.
 - Codeforces(competitive programming)  1 problem
 
 **Thursday:**  
-- Calculus 1b
 - Physics: Lecture  
 - Codeforces(competitive programming) 3 problems
 - Introduction to Probability - Lecture
@@ -678,12 +682,13 @@ and finished linear algebra, this was a long run, moving forward.
 - Any other backlog task
 
 **Sunday:**  
-- Any other backlog task  
+- Any other backlog task
+- Every 2-3 weeks take either a, probability/math for CS/calculus/linear algebra/physics dummy test
 
 [Return to table of contents](#table-of-contents)
 
 
 ## Graph
-![CS Roadmap](random/graph/Screenshot%202025-02-17%20234212.png)
+![CS Roadmap](random/graph/screenshot2.png)
 
 [Return to table of contents](#table-of-contents)

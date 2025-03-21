@@ -4,6 +4,8 @@
 *.pptx
 *.private
 .vscode
+*.zip
+*.tar.gz
 node_modules/
 advanced-cs/advanced-math/linear-algebra/spinningCube/*
 
