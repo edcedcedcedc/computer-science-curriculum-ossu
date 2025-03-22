@@ -630,11 +630,14 @@ and finished linear algebra, this was a long run, moving forward.
 - Codeforces 1 problem 
 - I also had to do data structures and physics but I couldn't
 
-### HEAD 
-20/03/2025
+### 20/03/2025
 🎉🎉🎉 I'll take a minute and clap for myself.
 - I formally closed all required Calculus courses, in total, from Algebra 1 till present moment it took me around 3 years, 
 but I started from 0 and was lazy, I didn't even understand fractions, so as practice shows, you can do it, with consistency and patience. Right now I am sure that my current level of math is enough to swing in almost any cs/programming/se field. I wish myself good luck<br>
+
+### HEAD 
+23/03/2025
+- Ok, FUCK PROJECT1 of Data Structures class, I deleted it and don't event want to think on it, fuck it, I am moving forward.<br>
 
 
 [Move to TAIL](#tail)
