@@ -20,17 +20,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-updates:
-23/03/2025 - recursively lookup n-nested folders and download files
-            NOTES:
-                This update is very specific and is searching folder under "folder/" and files undr "files",
-                For this to be more generalized, you need a more advanced match for "folder/".
-            FOR EXAMPLE:
-                Now it will download a folder which has inside n-nested folders as "folder/" but not as "folder"
             
-
 """
 import os
 import sys
