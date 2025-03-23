@@ -1,0 +1,1472 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 25 25 587 767
+%%Title: Enscript Output
+%%For: Jonathan Shewchuk
+%%Creator: GNU enscript 1.6.4
+%%CreationDate: Wed Mar  5 20:47:58 2014
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 4
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 4
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript 1.6 4
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    % light bar
+    0 0 d_header_w d_header_h 2 div Box
+    .95 setgray fill
+
+    % dark gray boxes
+    /dbw d_header_h 2 mul def	% dark box width
+    /dbc .7 def			% dark box color
+
+    % left dark box.
+    0 0 dbw d_header_h Box
+    dbc setgray fill
+
+    0 setgray 
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 5 div moveto show
+
+    % right dark box
+    d_header_w dbw sub 0 dbw d_header_h Box
+    dbc setgray fill
+
+    HeaderPageNumF setfont
+    1 setgray
+    pagenumstr dup
+    stringwidth pop dbw exch sub 2 div d_header_w dbw sub add
+    d_header_h .2 mul moveto show
+
+    % filename
+    0 setgray 
+    HeaderHDRF setfont
+    d_header_w fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        d_header_w user_header_left_str stringwidth pop sub 2 div 
+        h moveto user_header_left_str show
+      } {
+        dbw 5 add h moveto user_header_left_str show
+
+        d_header_w user_header_center_str stringwidth pop sub 2 div 
+        h moveto user_header_center_str show
+
+	d_header_w dbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} def
+%%EndResource
+/d_page_w 742 def
+/d_page_h 562 def
+/d_header_x 0 def
+/d_header_y 526 def
+/d_header_w 742 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 742 def
+/d_footer_h 0 def
+/d_output_w 742 def
+/d_output_h 526 def
+/cols 2 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 1 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (03/05/14) def
+/modtimestr (20:47:19) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(                               CS 61B Project 2) s
+5 508 M
+(                              Network \(The Game\)) s
+5 500 M
+(                      Due noon Wednesday, April 2, 2014) s
+5 492 M
+(                    Interface design due in lab March 13-14) s
+5 476 M
+(Warning:  This project is substantially more time-consuming than Project 1.) s
+5 468 M
+(          Start early.) s
+5 452 M
+(This is a team project.  Form a team of 2 or 3 people.  No teams of 1 or teams) s
+5 444 M
+(of 4 or more are allowed.  Your project partners do NOT have to be in your lab.) s
+5 428 M
+(Copy the Project 2 directory by doing the following, starting from your home) s
+5 420 M
+(directory.) s
+5 404 M
+(    cp -r ~cs61b/hw/pj2 .) s
+5 396 M
+(    cd pj2) s
+5 380 M
+(Suggested Timeline \(if you want to finish on time\)) s
+5 372 M
+(==================) s
+5 364 M
+(Design the classes, modules, and interfaces \(see "Teamwork"\).      March 13-14) s
+5 356 M
+(Have working code for the easier modules.                          March 14) s
+5 348 M
+(Have working code for identifying a network; progress on search.   March 21) s
+5 340 M
+(Finish project.                                                    April 2) s
+5 324 M
+(Network) s
+5 316 M
+(=======) s
+5 308 M
+(In this project you will implement a program that plays the game Network) s
+5 300 M
+(against a human player or another computer program.  Network is played on an) s
+5 292 M
+(8-by-8 board.  There are two players, "Black" and "White."  Each player has ten) s
+5 284 M
+(chips of its own color to place on the board.  White moves first.) s
+5 268 M
+(                 -----------------------------------------) s
+5 260 M
+(                 |    | 10 | 20 | 30 | 40 | 50 | 60 |    |) s
+5 252 M
+(                 -----------------------------------------) s
+5 244 M
+(                 | 01 | 11 | 21 | 31 | 41 | 51 | 61 | 71 |) s
+5 236 M
+(                 -----------------------------------------) s
+5 228 M
+(                 | 02 | 12 | 22 | 32 | 42 | 52 | 62 | 72 |) s
+5 220 M
+(                 -----------------------------------------) s
+5 212 M
+(                 | 03 | 13 | 23 | 33 | 43 | 53 | 63 | 73 |) s
+5 204 M
+(                 -----------------------------------------) s
+5 196 M
+(                 | 04 | 14 | 24 | 34 | 44 | 54 | 64 | 74 |) s
+5 188 M
+(                 -----------------------------------------) s
+5 180 M
+(                 | 05 | 15 | 25 | 35 | 45 | 55 | 65 | 75 |) s
+5 172 M
+(                 -----------------------------------------) s
+5 164 M
+(                 | 06 | 16 | 26 | 36 | 46 | 56 | 66 | 76 |) s
+5 156 M
+(                 -----------------------------------------) s
+5 148 M
+(                 |    | 17 | 27 | 37 | 47 | 57 | 67 |    |) s
+5 140 M
+(                 -----------------------------------------) s
+5 124 M
+(The board has four goal areas:  the top row, the bottom row, the left column,) s
+5 116 M
+(and the right column.  Black's goal areas are squares 10, 20, 30, 40, 50, 60) s
+5 108 M
+(and 17, 27, 37, 47, 57, 67.  Only Black may place chips in these areas.) s
+5 100 M
+(White's goal areas are 01, 02, 03, 04, 05, 06 and 71, 72, 73, 74, 75, 76; only) s
+5 92 M
+(White may play there.  The corner squares--00, 70, 07, and 77--are dead;) s
+5 84 M
+(neither player may use them.  Either player may place a chip in any square not) s
+5 76 M
+(on the board's border.) s
+376 508 M
+(Object of Play) s
+376 500 M
+(==============) s
+376 492 M
+(Each player tries to complete a "network" joining its two goal areas.) s
+376 484 M
+(A network is a sequence of six or more chips that starts in one of the player's) s
+376 476 M
+(goal areas and terminates in the other.  Each consecutive pair of chips in the) s
+376 468 M
+(sequence are connected to each other along straight lines, either orthogonally) s
+376 460 M
+(\(left, right, up, down\) or diagonally.) s
+376 444 M
+(The diagram below shows a winning configuration for Black.  \(There should be) s
+376 436 M
+(White chips on the board as well, but for clarity these are not shown.\)  Here) s
+376 428 M
+(are two winning black networks.  Observe that the second one crosses itself.) s
+376 412 M
+(    60 - 65 - 55 - 33 - 35 - 57) s
+376 404 M
+(    20 - 25 - 35 - 13 - 33 - 55 - 57) s
+376 388 M
+(                 -----------------------------------------) s
+376 380 M
+(                 |    |    | BB |    |    |    | BB |    | _0) s
+376 372 M
+(                 -----------------------------------------) s
+376 364 M
+(                 |    |    |    |    |    |    |    |    | _1) s
+376 356 M
+(                 -----------------------------------------) s
+376 348 M
+(                 |    |    |    |    | BB |    |    |    | _2) s
+376 340 M
+(                 -----------------------------------------) s
+376 332 M
+(                 |    | BB |    | BB |    |    |    |    | _3) s
+376 324 M
+(                 -----------------------------------------) s
+376 316 M
+(                 |    |    |    |    |    |    |    |    | _4) s
+376 308 M
+(                 -----------------------------------------) s
+376 300 M
+(                 |    |    | BB | BB |    | BB | BB |    | _5) s
+376 292 M
+(                 -----------------------------------------) s
+376 284 M
+(                 |    |    |    |    |    |    |    |    | _6) s
+376 276 M
+(                 -----------------------------------------) s
+376 268 M
+(                 |    |    |    |    |    | BB |    |    | _7) s
+376 260 M
+(                 -----------------------------------------) s
+376 252 M
+(                   0_   1_   2_   3_   4_   5_   6_   7_) s
+376 236 M
+(An enemy chip placed in the straight line between two chips breaks the) s
+376 228 M
+(connection.  In the second network listed above, a white chip in square 56) s
+376 220 M
+(would break the connection to Black's lower goal.) s
+376 204 M
+(Although more than one chip may be placed in a goal area, a network can have) s
+376 196 M
+(only two chips in the goal areas:  the first and last chips in the network.) s
+376 188 M
+(Neither of the following are networks, because they both make use of two chips) s
+376 180 M
+(in the upper goal.) s
+376 164 M
+(    60 - 20 - 42 - 33 - 35 - 57) s
+376 156 M
+(    20 - 42 - 60 - 65 - 55 - 57) s
+376 140 M
+(A network cannot pass through the same chip twice, even if it is only counted) s
+376 132 M
+(once.  For that reason the following is not a network.) s
+376 116 M
+(    20 - 25 - 35 - 33 - 55 - 35 - 57) s
+376 100 M
+(A network cannot pass through a chip without turning a corner \(i.e. changing) s
+376 92 M
+(direction\).  Because of the chip in square 42, the following is not a network.) s
+376 76 M
+(    60 - 42 - 33 - 35 - 55 - 57) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 2 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (03/05/14) def
+/modtimestr (20:47:19) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Legal Moves) s
+5 500 M
+(===========) s
+5 492 M
+(To begin the game, choose who is Black and who is White in any manner \(we use a) s
+5 484 M
+(random number generator\).  The players alternate taking turns, with White) s
+5 476 M
+(moving first.) s
+5 460 M
+(The first three rules of legal play are fairly simple.) s
+5 452 M
+(  1\)  No chip may be placed in any of the four corners. ) s
+5 444 M
+(  2\)  No chip may be placed in a goal of the opposite color.) s
+5 436 M
+(  3\)  No chip may be placed in a square that is already occupied.) s
+5 420 M
+(The fourth rule is a bit trickier.) s
+5 412 M
+(  4\)  A player may not have more than two chips in a connected group, whether) s
+5 404 M
+(      connected orthogonally or diagonally.) s
+5 388 M
+(This fourth rule means that you cannot have three or more chips of the same) s
+5 380 M
+(color in a cluster.  A group of three chips form a cluster if one of them is) s
+5 372 M
+(adjacent to the other two.  In the following diagram, Black is not permitted to) s
+5 364 M
+(place a chip in any of the squares marked with an X, because doing so would) s
+5 356 M
+(form a group of 3 or more chips.  \(Of course, the far left and right columns) s
+5 348 M
+(are also off-limits to Black.\)) s
+5 332 M
+(                 -----------------------------------------) s
+5 324 M
+(                 |    |  X |  X | BB |  X |    |    |    |) s
+5 316 M
+(                 -----------------------------------------) s
+5 308 M
+(                 |    |  X | BB |  X |  X |  X |  X |    |) s
+5 300 M
+(                 -----------------------------------------) s
+5 292 M
+(                 |    |  X |  X |  X |  X | BB |  X |    |) s
+5 284 M
+(                 -----------------------------------------) s
+5 276 M
+(                 |    |    |    |    |  X | BB |  X |    |) s
+5 268 M
+(                 -----------------------------------------) s
+5 260 M
+(                 |    |    | BB |    |  X |  X |  X |    |) s
+5 252 M
+(                 -----------------------------------------) s
+5 244 M
+(                 |    |  X |  X |    |    |    | BB |    |) s
+5 236 M
+(                 -----------------------------------------) s
+5 228 M
+(                 |    | BB |    |    |    |  X |    |    |) s
+5 220 M
+(                 -----------------------------------------) s
+5 212 M
+(                 |    |    |    |    | BB |    |    |    |) s
+5 204 M
+(                 -----------------------------------------) s
+5 188 M
+(There are two kinds of moves:  add moves and step moves.  In an add move, a) s
+5 180 M
+(player places a chip on the board \(following the rules above\).  Each player has) s
+5 172 M
+(ten chips, and only add moves are permitted until those chips are exhausted.) s
+5 164 M
+(If neither player has won when all twenty chips are on the board, the rest of) s
+5 156 M
+(the game comprises step moves.  In a step move, a player moves a chip to a) s
+5 148 M
+(different square, subject to the same restrictions.  A player is not permitted) s
+5 140 M
+(to decline to move a piece \(nor to "move from square ij to square ij"\).) s
+5 124 M
+(A step move may create a network for the opponent by unblocking a connection) s
+5 116 M
+(between two enemy chips.  If the step move breaks the network at some other) s
+5 108 M
+(point, the enemy does not win, but if the network is still intact when the chip) s
+5 100 M
+(has been placed back on the board, the player taking the step move loses.  If) s
+5 92 M
+(a player makes a move that causes both players to complete a network, the other) s
+5 84 M
+(player wins.) s
+5 68 M
+(To make sure you understand the rules, try playing a few games against your) s
+5 60 M
+(project partners.  See the instructions in "Running Network" below.  Or, use) s
+5 52 M
+(ten pennies, ten silver coins, and a checkerboard.) s
+5 36 M
+(Bibliographic note:  Network is taken from Sid Sackson, "A Gamut of Games,") s
+5 28 M
+(Dover Publications \(New York\), 1992.) s
+376 508 M
+(Your Task) s
+376 500 M
+(=========) s
+376 492 M
+(Your job is to implement a MachinePlayer class that plays Network well.  One) s
+376 484 M
+(subtask is to write a method that identifies legal moves; another subtask is to) s
+376 476 M
+(write a method that finds a move that is likely to win the game.) s
+376 460 M
+(The MachinePlayer class is in the player package and extends the abstract) s
+376 452 M
+(Player class, which defines the following methods.) s
+376 436 M
+(  // Returns a new move by "this" player.  Internally records the move \(updates) s
+376 428 M
+(  // the internal game board\) as a move by "this" player.) s
+376 420 M
+(  public Move chooseMove\(\);) s
+376 404 M
+(  // If the Move m is legal, records the move as a move by the opponent) s
+376 396 M
+(  // \(updates the internal game board\) and returns true.  If the move is) s
+376 388 M
+(  // illegal, returns false without modifying the internal state of "this") s
+376 380 M
+(  // player.  This method allows your opponents to inform you of their moves.) s
+376 372 M
+(  public boolean opponentMove\(Move m\);) s
+376 356 M
+(  // If the Move m is legal, records the move as a move by "this" player) s
+376 348 M
+(  // \(updates the internal game board\) and returns true.  If the move is) s
+376 340 M
+(  // illegal, returns false without modifying the internal state of "this") s
+376 332 M
+(  // player.  This method is used to help set up "Network problems" for your) s
+376 324 M
+(  // player to solve.) s
+376 316 M
+(  public boolean forceMove\(Move m\);) s
+376 300 M
+(In addition to the methods above, implement two constructors for MachinePlayer.) s
+376 284 M
+(  // Creates a machine player with the given color.  Color is either 0 \(black\)) s
+376 276 M
+(  // or 1 \(white\).  \(White has the first move.\)) s
+376 268 M
+(  public MachinePlayer\(int color\)) s
+376 252 M
+(  // Creates a machine player with the given color and search depth.  Color is) s
+376 244 M
+(  // either 0 \(black\) or 1 \(white\).  \(White has the first move.\)) s
+376 236 M
+(  public MachinePlayer\(int color, int searchDepth\)) s
+376 220 M
+(As usual, do not change the signatures of any of these methods; they are your) s
+376 212 M
+(interface to other players.  You may add helper methods.) s
+376 196 M
+(Your MachinePlayer must record enough internal state, including the current) s
+376 188 M
+(board configuration, so that chooseMove\(\) can choose a good \(or at the very) s
+376 180 M
+(least, legal\) move.  In a typical game, two players and a referee each have) s
+376 172 M
+(their own internal representation of the board.  If all the implementations are) s
+376 164 M
+(free of bugs, they all have the same idea of what the board looks like,) s
+376 156 M
+(although each of the three uses different data structures.  The referee keeps) s
+376 148 M
+(its own copy to prevent malicious or buggy players from cheating or corrupting) s
+376 140 M
+(the board.  If your MachinePlayer is buggy and attempts to make an illegal) s
+376 132 M
+(move, the referee will grant the win to your opponent.) s
+376 116 M
+(Most of your work will be implementing chooseMove\(\).  You will be implementing) s
+376 108 M
+(the minimax algorithm for searching game trees, described in Lecture 17.) s
+376 100 M
+(A game tree is a mapping of all possible moves you can make, and all possible) s
+376 92 M
+(responses by your opponent, and all possible responses by you, and so on to a) s
+376 84 M
+(specified "search depth."  You will NOT need to implement a tree data) s
+376 76 M
+(structure; a "game tree" is the structure of a set of recursive method calls.) s
+376 60 M
+(The forceMove\(\) method forces your player to make a specified move.  It is for) s
+376 52 M
+(testing and grading.  We can set up particular board configurations by) s
+376 44 M
+(constructing a MachinePlayer and making an alternating series of forceMove\(\)) s
+376 36 M
+(and opponentMove\(\) calls to put the board in the desired configuration.  Then) s
+376 28 M
+(we will call chooseMove\(\) to ensure that your MachinePlayer makes a good) s
+376 20 M
+(choice.) s
+376 4 M
+(The second MachinePlayer constructor, whose second parameter searchDepth is the) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 3 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (3) def
+/moddatestr (03/05/14) def
+/modtimestr (20:47:19) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(chosen search depth, is also used for debugging and testing your code.) s
+5 508 M
+(A search depth of one implies that your MachinePlayer considers all the moves) s
+5 500 M
+(and chooses the one that yields the "best" board.  A search depth of two) s
+5 492 M
+(implies that you consider your opponent's response as well, and choose the move) s
+5 484 M
+(that will yield the "best" board after your opponent makes the best move) s
+5 476 M
+(available to it.  A search depth of three implies that you consider two) s
+5 468 M
+(MachinePlayer moves and one opponent move between them.) s
+5 452 M
+(The first MachinePlayer constructor should create a MachinePlayer whose search) s
+5 444 M
+(depth you have chosen so that it always returns a move within five seconds.) s
+5 436 M
+(\(This precise time limit will be important only for the Network tournament late) s
+5 428 M
+(in the semester.\)  The second MachinePlayer constructor MUST create a) s
+5 420 M
+(MachinePlayer that always searches to exactly the specified search depth.) s
+5 404 M
+(You may want to design the MachinePlayer constructed by your first constructor) s
+5 396 M
+(so that it searches to a variable depth.  In particular, you will almost) s
+5 388 M
+(certainly want to reduce your search depth for step moves, because there are) s
+5 380 M
+(many more possible step moves than add moves, and a search depth that is fast) s
+5 372 M
+(for add moves will be very slow for step moves.) s
+5 356 M
+(The Move class in Move.java is a container for storing the fields needed to) s
+5 348 M
+(define one move in Network.  It is not an ADT and it has no interesting) s
+5 340 M
+(invariants, so all its fields are public.  It is part of the interface of your) s
+5 332 M
+(MachinePlayer, and it is how your MachinePlayer communicates with other) s
+5 324 M
+(programs, so you cannot change Move.java in any way.  If you would like to have) s
+5 316 M
+(additional methods or fields, feel free to extend the Move class; your) s
+5 308 M
+(MachinePlayer may return subclasses of Move without any fear.) s
+5 292 M
+(Strategy) s
+5 284 M
+(========) s
+5 276 M
+(Where should you start?  First, design the structure of your program \(see) s
+5 268 M
+("Teamwork" below\).  Then begin by writing a relatively simple MachinePlayer) s
+5 260 M
+(class that simply chooses some correct move, no matter how bad.  These actions) s
+5 252 M
+(will give you partial credit on the project.  Based on that foundation, you can) s
+5 244 M
+(implement something more sophisticated that incorporates strategy.) s
+5 228 M
+(Game trees rely on an "evaluation function" that assigns a score to each board) s
+5 220 M
+(that estimates how well your MachinePlayer is doing.  An evaluation function is) s
+5 212 M
+(necessary because it is rarely possible to search all the way to the end of the) s
+5 204 M
+(game.  You need to estimate your odds of winning if you make a particular move.) s
+5 196 M
+(Your evaluation function should assign a maximum positive score to a win by) s
+5 188 M
+(your MachinePlayer, and a minimum negative score to a win by the opponent.) s
+5 172 M
+(Assign an intermediate score to a board where neither player has completed a) s
+5 164 M
+(network.  One of the most important but difficult parts of implementing game) s
+5 156 M
+(search is inventing a board evaluation function that reliably evaluates these) s
+5 148 M
+(intermediate boards.  For example, a rough evaluation function might count how) s
+5 140 M
+(many pairs of your chips can see each other, and subtract the opponent's pairs.) s
+5 132 M
+(A slightly better evaluation function would also try to establish at least one) s
+5 124 M
+(chip in each goal early in the game.  I leave you to your own wits to improve) s
+5 116 M
+(upon these ideas.) s
+5 100 M
+(You should assign a slightly higher score to a win in one move than to a win in) s
+5 92 M
+(three moves, which should get a higher score than a win in five moves, and so) s
+5 84 M
+(on.  Otherwise, your MachinePlayer might always choose the win in three over) s
+5 76 M
+(the win in one, move after move, and never get around to actually winning.) s
+5 60 M
+(You will need to invent an algorithm that determines whether a player has a) s
+5 52 M
+(winning network.  A good place to look for clues is Section 13.3 of Goodrich) s
+5 44 M
+(and Tamassia, which describes depth-first search in graphs.  It's not quite) s
+5 36 M
+(what you need for the job, but close enough that you'll be able to modify it.) s
+5 28 M
+(This is the hardest part of the whole project, so assign it to your smartest) s
+5 20 M
+(teammate and START EARLY!!!) s
+5 4 M
+(To earn full credit, you must implement alpha-beta search, which is discussed) s
+376 516 M
+(in Lecture 17.  Alpha-beta search is a technique for "pruning" a game tree, so) s
+376 508 M
+(you don't need to search the entire tree.  Alpha-beta search can be) s
+376 500 M
+(significantly faster than naive tree search.  You can earn partial credit by) s
+376 492 M
+(implementing game tree search without pruning.  If you can't get that working,) s
+376 484 M
+(you can earn a little bit of partial credit by looking ahead one move.) s
+376 476 M
+(This is the second-hardest part of the project, but the closer you stick to the) s
+376 468 M
+(Lecture 17 pseudocode, the more likely you are to succeed.) s
+376 452 M
+(You will almost certainly want to create a separate class to represent game) s
+376 444 M
+(boards internally.  One decision you will have to make is whether to create) s
+376 436 M
+(a new game board or change an existing one each time you consider a move.  The) s
+376 428 M
+(latter choice is faster \(i.e. more likely to win the tournament\), but it's also) s
+376 420 M
+(more bug-prone; it could cause very hard-to-solve bugs if you're not extremely) s
+376 412 M
+(careful about how and when you manipulate game boards.) s
+376 396 M
+(Late in the semester, we will hold a tournament pitting student MachinePlayers) s
+376 388 M
+(against each other.  Participation in the tournament is optional and does not) s
+376 380 M
+(affect your grade.  You will submit your contestant several weeks after the) s
+376 372 M
+(Project 2 due date, so you will have time to improve your MachinePlayer's) s
+376 364 M
+(evaluation function and strategy in April.  During the tournament, we will) s
+376 356 M
+(strictly enforce a time limit of five seconds \(which will be checked by our) s
+376 348 M
+(refereeing software\) on the time to perform one chooseMove\(\).  The winning team) s
+376 340 M
+(will receive gift certificates to Amoeba Music or Amazon.) s
+376 324 M
+(This is a difficult project.  Do not wait to start working on it.  If you don't) s
+376 316 M
+(have the code that identifies networks implemented by March 21, I advise you) s
+376 308 M
+(to wallow in neurotic spasms of fear and worry.  We will have autograder) s
+376 300 M
+(software set up to test your submitted code for legal moves.) s
+376 284 M
+(Teamwork \(10% of project grade\) \(show to your TA in Lab 8, March 13-14\)) s
+376 276 M
+(========) s
+376 268 M
+(Before you start programming, read the Lecture 18 notes carefully, then break) s
+376 260 M
+(the project up into multiple modules \(tasks\).  Decide what high-level methods) s
+376 252 M
+(and classes must be implemented, define the interfaces by which these methods) s
+376 244 M
+(and classes will communicate, and divide up the work among your team.  Some) s
+376 236 M
+(possible modules \(these seem reasonably modular\) are) s
+376 228 M
+(  1\)  determining whether a move is valid,) s
+376 220 M
+(  2\)  generating a list of all valid moves,) s
+376 212 M
+(  3\)  finding the chips \(of the same color\) that form connections with a chip,) s
+376 204 M
+(  4\)  determining whether a game board contains any networks for a given) s
+376 196 M
+(      player \(very difficult; put your smartest teammate on this\),) s
+376 188 M
+(  5\)  computing an evaluation function for a board \(possibly difficult\), and) s
+376 180 M
+(  6\)  performing minimax tree search \(difficult\).) s
+376 164 M
+(The file GRADER provided in the pj2 directory includes a questionnaire, which) s
+376 156 M
+(you are required to submit.  Once you've worked out your classes, modules, and) s
+376 148 M
+(interfaces, write them down at the bottom of GRADER.  Your description should) s
+376 140 M
+(include:) s
+376 132 M
+(  -  A list of the classes your program will need.) s
+376 124 M
+(  -  A list of each of the "modules" used in or by MachinePlayer, which might) s
+376 116 M
+(     be similar to, but more detailed, than the list above.) s
+376 108 M
+(  -  For each module, list the class\(es\) the module will be implemented in.) s
+376 100 M
+(     It may \(or may not\) make it easier for you to work as a team if each) s
+376 92 M
+(     module is in a separate class.) s
+376 84 M
+(  -  For each module, describe its interface--specifically, the prototype and) s
+376 76 M
+(     behavior of each method that is available for external callers \(outside) s
+376 68 M
+(     the module\) to call.  Don't include methods that are only meant to be) s
+376 60 M
+(     called from within the module.  For each method, provide \(1\) a method) s
+376 52 M
+(     prototype and \(2\) a complete, unambiguous description of the behavior of) s
+376 44 M
+(     the method/module.  \(This description will also appear before the method) s
+376 36 M
+(     in your code's comments.\)) s
+376 28 M
+(  -  Which partner is assigned the task of implementing each module?) s
+376 12 M
+(If you have defined your classes, modules, and module interfaces well, you) s
+376 4 M
+(should be able to implement any one of the modules without having decided how) s
+_R
+S
+%%Page: (4) 4
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 4 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (4) def
+/moddatestr (03/05/14) def
+/modtimestr (20:47:19) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(to implement any of the others.  This will allow you to divide up the chores) s
+5 508 M
+(and work quickly as a team.  See the Lecture 18 notes for details.) s
+5 492 M
+(You should have a draft of your GRADER file ready to show your TA in Lab 8) s
+5 484 M
+(\(March 13-14\).  Your Lab 8 score depends on having a finished draft of your) s
+5 476 M
+(modules and interfaces.  Your TA will comment on your design decisions.) s
+5 460 M
+(You may change some of your design decisions based on your TA's feedback, and) s
+5 452 M
+(you will probably make other changes as you program.  Be sure to update your) s
+5 444 M
+(GRADER to reflect these changes.  The GRADER file you submit with this project) s
+5 436 M
+(should reflect the FINAL decisions you make about modules and interfaces.) s
+5 428 M
+(Before you submit, make sure your GRADER file tells us who _actually_) s
+5 420 M
+(implemented each portion of your project.) s
+5 404 M
+(Your design of classes and interfaces will be worth 10% of your project grade.) s
+5 388 M
+(Running Network) s
+5 380 M
+(===============) s
+5 372 M
+(You can run Network from your pj2 directory in several ways.) s
+5 356 M
+(  java Network human random) s
+5 348 M
+(    This pits you against a very naive machine player that makes random legal) s
+5 340 M
+(    moves.  Use this to learn to play the game.  The human plays white and the) s
+5 332 M
+(    random player play black.  To reverse colors, swap "human" and "random".) s
+5 316 M
+(  java Network human human) s
+5 308 M
+(    Compete against your project partner.) s
+5 292 M
+(  java Network human machine) s
+5 284 M
+(    Compete against your MachinePlayer.) s
+5 268 M
+(  java Network machine random) s
+5 260 M
+(    Your MachinePlayer competes against the random player.) s
+5 244 M
+(  java Network machine machine) s
+5 236 M
+(    Your MachinePlayer competes against itself.) s
+5 220 M
+(Every combination of "machine", "human", and "random" works.  It's amusing to) s
+5 212 M
+(pit two random players against each other.) s
+5 196 M
+(If you put a "-q" switch right after the word "Network", Network will quit) s
+5 188 M
+(immediately when the game ends.  This can be useful for batch testing of) s
+5 180 M
+(evaluation functions.) s
+5 164 M
+(Grading) s
+5 156 M
+(=======) s
+5 148 M
+(Your project will be graded in part on correctness and the quality of moves) s
+5 140 M
+(chosen by chooseMove\(\).  This grading will be done with automatic test cases.) s
+5 132 M
+(Be sure the following statements apply to your chooseMove\(\).) s
+5 116 M
+(  1\)  forceMove and opponentMove return true if the given move is legal.) s
+5 108 M
+(  2\)  forceMove and opponentMove return false if the given move is illegal.) s
+5 100 M
+(  3\)  chooseMove returns only legal moves.) s
+5 92 M
+(  4\)  If a winning move exists, chooseMove selects one.  \(This will happen) s
+5 84 M
+(      automatically if you are searching one level of the game tree.\)) s
+5 76 M
+(  5\)  If you cannot win in this step, but can prevent your opponent from) s
+5 68 M
+(      winning during its next move, chooseMove selects a move that does this.) s
+5 60 M
+(      \(This will happen automatically if you are searching two levels of the) s
+5 52 M
+(      game tree.\)) s
+5 44 M
+(  6\)  Your player can beat the random player almost every time.  Any reasonable) s
+5 36 M
+(      search strategy and evaluation function should accomplish this.) s
+5 20 M
+(You will also be graded on style, documentation, efficiency, and the use of) s
+5 12 M
+(encapsulation.) s
+376 516 M
+(  1\)  Every method must be preceded by a comment describing its behavior) s
+376 508 M
+(      unambiguously.  These comments must include descriptions of what each) s
+376 500 M
+(      parameter is for, and what the method returns \(if anything\).) s
+376 492 M
+(      They must also include a description of what the method does \(though) s
+376 484 M
+(      not necessarily how it does it\) detailed enough that somebody else could) s
+376 476 M
+(      implement a method that does the same thing from scratch, using only the) s
+376 468 M
+(      comments and this readme file.) s
+376 452 M
+(      Some methods serve as entry points to the modules you designed when) s
+376 444 M
+(      you began the project.  The prototypes and behavioral descriptions of) s
+376 436 M
+(      these methods are interfaces, and should be included in GRADER.) s
+376 428 M
+(  2\)  All classes, fields, and methods must have the proper public/private/) s
+376 420 M
+(      protected/package qualifier.  We will deduct points if you make things) s
+376 412 M
+(      public that could conceivably allow a user to corrupt the data structure.) s
+376 404 M
+(  3\)  There are no asymptotic limits on running time.  However, part of your) s
+376 396 M
+(      job is to avoid using inefficient algorithms and data structures.  If) s
+376 388 M
+(      your MachinePlayer takes longer than 5 seconds to search to a depth of) s
+376 380 M
+(      two on a Soda lab machine, it's too slow.) s
+376 372 M
+(  4\)  You should have divided up the tasks into well-defined modules in your) s
+376 364 M
+(      GRADER file and in your software.) s
+376 356 M
+(  5\)  We will deduct points for code that does not match the following style) s
+376 348 M
+(      guidelines.) s
+376 332 M
+(  - Classes that contain extraneous debugging code, print statements, or) s
+376 324 M
+(    meaningless comments that make the code hard to read will be penalized.) s
+376 316 M
+(    \(It's okay to have methods whose sole purpose is to contain lots of) s
+376 308 M
+(    debugging code, so long as your comments inform the reader who grades your) s
+376 300 M
+(    project that he can skip those methods.  These methods should not contain) s
+376 292 M
+(    anything necessary to the functioning of your project.\)) s
+376 284 M
+(  - Your file should be indented in the manner enforced by Emacs \(e.g., a) s
+376 276 M
+(    two-space or four-space indentation inside braces\) and used in the lecture) s
+376 268 M
+(    notes throughout the semester.  The indentation should clearly show the) s
+376 260 M
+(    structure of nested statements like loops and if statements.  Sloppy) s
+376 252 M
+(    indentation will be penalized.) s
+376 244 M
+(  - All if, else, while, do, and for statements should use braces.  \(Ask me if) s
+376 236 M
+(    you want to know why.\)) s
+376 228 M
+(  - All classes start with a capital letter, all methods and \(non-final\) data) s
+376 220 M
+(    fields start with a lower case letter, and in both cases, each new word) s
+376 212 M
+(    within the name starts with a capital letter.  Constants \(final fields\) are) s
+376 204 M
+(    all-capital-letters only.) s
+376 196 M
+(  - Numerical constants with special meaning should always be represented by) s
+376 188 M
+(    all-caps "final static" constants.) s
+376 180 M
+(  - All class, method, field, and variable names should be meaningful to a) s
+376 172 M
+(    human reader.  \(Exception:  short loop index variables like "i" are okay if) s
+376 164 M
+(    their meaning is obvious from context.\)) s
+376 156 M
+(  - Methods should not exceed about 120 lines.  Any method that long can) s
+376 148 M
+(    probably be broken up into logical pieces.  The same is probably true for) s
+376 140 M
+(    any method that needs more than 8 levels of indentation.) s
+376 132 M
+(  - Avoid unnecessary duplicated code; if you use the same \(or very similar\)) s
+376 124 M
+(    fifteen lines of code in two different places, those lines should probably) s
+376 116 M
+(    be a separate method call.) s
+376 108 M
+(  - Programs should be easy to read.) s
+376 92 M
+(Finally, we will be looking at your code to see whether you have implemented) s
+376 84 M
+(minimax game tree search, and whether you use alpha-beta pruning.) s
+_R
+S
+%%Page: (5) 5
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 5 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (5) def
+/moddatestr (03/05/14) def
+/modtimestr (20:47:19) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Submitting your Solution) s
+5 500 M
+(========================) s
+5 492 M
+(Be sure that you have updated all your answers in GRADER before submitting to) s
+5 484 M
+(reflect your final code and tell us who wrote which module.  Don't forget that) s
+5 476 M
+(it's worth 10% of your grade.) s
+5 460 M
+(Designate one member of your team to submit the project.  If you resubmit, the) s
+5 452 M
+(project should always be submitted by the same student.  If for some reason a) s
+5 444 M
+(different partner must submit \(because the designated member is out of town,) s
+5 436 M
+(for instance\), you must send cs61b@cory.eecs a listing of your team members,) s
+5 428 M
+(explaining which of them have submitted the project and why.  Let us know which) s
+5 420 M
+(submission you want graded.  If you've submitted your project once, or even) s
+5 412 M
+(written a substantial amount of code together, you may not change partners) s
+5 404 M
+(without the permission of the instructor.) s
+5 388 M
+(The designated teammate only:  change \(cd\) to your pj2 directory, which should) s
+5 380 M
+(contain the player directory \(i.e. the player package\), which should contain) s
+5 372 M
+(your MachinePlayer.java and other Java files.  You may also submit other) s
+5 364 M
+(packages in your pj2 directory \(e.g. a list package\).  Type "submit pj2".) s
+5 356 M
+(The submit program will not submit Move.java and Player.java, because you're) s
+5 348 M
+(not allowed to change them.) s
+_R
+S
+%%Trailer
+%%Pages: 5
+%%DocumentNeededResources: font Times-Roman Courier-Bold Courier 
+%%+ font Times-Bold 
+%%EOF
