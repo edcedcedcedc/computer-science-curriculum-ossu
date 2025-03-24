@@ -1,0 +1,766 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 25 25 587 767
+%%Title: Enscript Output
+%%For: Jonathan Shewchuk
+%%Creator: GNU enscript 1.6.4
+%%CreationDate: Wed Feb 12 20:20:44 2014
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 4
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 4
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript 1.6 4
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    % light bar
+    0 0 d_header_w d_header_h 2 div Box
+    .95 setgray fill
+
+    % dark gray boxes
+    /dbw d_header_h 2 mul def	% dark box width
+    /dbc .7 def			% dark box color
+
+    % left dark box.
+    0 0 dbw d_header_h Box
+    dbc setgray fill
+
+    0 setgray 
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 5 div moveto show
+
+    % right dark box
+    d_header_w dbw sub 0 dbw d_header_h Box
+    dbc setgray fill
+
+    HeaderPageNumF setfont
+    1 setgray
+    pagenumstr dup
+    stringwidth pop dbw exch sub 2 div d_header_w dbw sub add
+    d_header_h .2 mul moveto show
+
+    % filename
+    0 setgray 
+    HeaderHDRF setfont
+    d_header_w fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        d_header_w user_header_left_str stringwidth pop sub 2 div 
+        h moveto user_header_left_str show
+      } {
+        dbw 5 add h moveto user_header_left_str show
+
+        d_header_w user_header_center_str stringwidth pop sub 2 div 
+        h moveto user_header_center_str show
+
+	d_header_w dbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} def
+%%EndResource
+/d_page_w 742 def
+/d_page_h 562 def
+/d_header_x 0 def
+/d_header_y 526 def
+/d_header_w 742 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 742 def
+/d_footer_h 0 def
+/d_output_w 742 def
+/d_output_h 526 def
+/cols 2 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 1 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (02/12/14) def
+/modtimestr (20:20:12) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(                               CS 61B Homework 4) s
+5 508 M
+(                        Due noon Wednesday, February 26) s
+5 492 M
+(This homework will give you practice with writing doubly-linked lists and using) s
+5 484 M
+(subclasses.  This is an individual assignment; you may not share code with) s
+5 476 M
+(other students.) s
+5 460 M
+(Copy the Homework 4 directory by doing the following, starting from your home) s
+5 452 M
+(directory.) s
+5 436 M
+(    cp -r ~cs61b/hw/hw4 .) s
+5 428 M
+(    cd hw4) s
+5 412 M
+(When you did Project 1, you probably noticed that the SList ADT doesn't allow) s
+5 404 M
+(you to walk through an SList and process each node as you go.  Either you must) s
+5 396 M
+(violate the ADT by manipulating the SListNode pointers directly from your) s
+5 388 M
+(RunLengthEncoding class, or you must use the slow nth\(\) method to access each) s
+5 380 M
+(successive element, thereby obtaining a toPixImage\(\) method that runs in time) s
+5 372 M
+(proportional to N^2, where N is the size of the list.  Because we didn't know) s
+5 364 M
+(about Java packages, we were unable to develop a really satisfying list ADT.) s
+5 348 M
+(In this homework, you will implement a doubly-linked list ADT that allows an) s
+5 340 M
+(application to holdlist nodes and hop from node to node quickly.  How do we) s
+5 332 M
+(make the list an ADT if applications can get access to list nodes?  It's easy:) s
+5 324 M
+(we put all the list code in a package called "list", and we declare the fields) s
+5 316 M
+(of DListNode protected--except the "item" field, which is public.  Applications) s
+5 308 M
+(can't access the "prev" or "next" fields of a DListNode, so they can't violate) s
+5 300 M
+(any DList invariants.) s
+5 284 M
+(I've chosen to make the "item" field public because it doesn't take part in any) s
+5 276 M
+(invariants, so it does no harm to make it public.  Applications may read and) s
+5 268 M
+(change "item" as they please.  In fact, no method is provided for reading the) s
+5 260 M
+("item" field indirectly.) s
+5 244 M
+(Part I  \(6 points\)) s
+5 236 M
+(------------------) s
+5 228 M
+(list/DList.java contains a skeleton of a doubly-linked list class.  Fill in the) s
+5 220 M
+(method implementations.) s
+5 204 M
+(Your DList should be circularly-linked, and its head should be a sentinel node) s
+5 196 M
+(\(which holds no item\) as described in Lecture 8.  An empty DList is signified) s
+5 188 M
+(by a sentinel node that points to itself.  Some DList methods return) s
+5 180 M
+(DListNodes; they should NEVER return the sentinel under any circumstances.) s
+5 172 M
+(Your DList should satisfy the following invariants.) s
+5 156 M
+(    1\)  For any DList d, d.head != null.) s
+5 148 M
+(    2\)  For any DListNode x in a DList, x.next != null.) s
+5 140 M
+(    3\)  For any DListNode x in a DList, x.prev != null.) s
+5 132 M
+(    4\)  For any DListNode x in a DList, if x.next == y, then y.prev == x.) s
+5 124 M
+(    5\)  For any DListNode x in a DList, if x.prev == y, then y.next == x.) s
+5 116 M
+(    6\)  For any DList d, the field d.size is the number of DListNodes,) s
+5 108 M
+(        NOT COUNTING the sentinel, that can be accessed from the sentinel) s
+5 100 M
+(        \(d.head\) by a sequence of "next" references.) s
+5 84 M
+(The DList class includes a newNode\(\) method whose sole purpose is to call the) s
+5 76 M
+(DListNode constructor.  All of your methods that insert a new node should call) s
+5 68 M
+(this method; they should not call the DListNode constructor directly.  This) s
+5 60 M
+(will help minimize the number of methods you need to override in Part III.) s
+5 44 M
+(Do not change any of the method prototypes; as usual, our test code expects you) s
+5 36 M
+(to adhere to the interface we provide.  Do not change the fields of DList or) s
+5 28 M
+(DListNode.  You may add private/package helper methods as you please.) s
+5 12 M
+(You are welcome to create a main\(\) method with test code.  It will not be) s
+5 4 M
+(graded.  We'll be testing your DList class, so you should too.) s
+376 508 M
+(A quirk of Java is that you must compile and run your code from outside the) s
+376 500 M
+(list/ directory by changing to your hw4 directory and typing the following.) s
+376 484 M
+(  javac -g list/*.java) s
+376 476 M
+(  java list.DList) s
+376 460 M
+(Part II  \(1 point\)) s
+376 452 M
+(------------------) s
+376 444 M
+(Our ADT is not as well protected as we would like.  There are several ways by) s
+376 436 M
+(which a hostile \(or stupid\) application can corrupt our DList \(i.e., make it) s
+376 428 M
+(violate an invariant\) through method calls alone.  Describe one in a text file) s
+376 420 M
+(named GRADER \(which will be submitted with your code\).  Assume that the) s
+376 412 M
+(application is NOT in the list package \(which would be a remarkably) s
+376 404 M
+(inappropriate place to put an application\).) s
+376 388 M
+(At the top of the GRADER file, include your name and cs61b login ID.) s
+376 372 M
+(Part III  \(3 points\)) s
+376 364 M
+(--------------------) s
+376 356 M
+(Implement a "lockable" doubly-linked list ADT:  a list in which any node can be) s
+376 348 M
+("locked."  A locked node can never be removed from its list.  Any attempt to) s
+376 340 M
+(remove a locked node has no effect \(not even an error message\).  Your locked) s
+376 332 M
+(list classes should be in the list package alongside DList and DListNode.) s
+376 316 M
+(First, define a LockDListNode class that extends DListNode and carries) s
+376 308 M
+(information about whether it has been locked.  LockDListNodes are not locked) s
+376 300 M
+(when they are first created.  Your LockDListNode constructor\(s\) should call a) s
+376 292 M
+(DListNode constructor to avoid code duplication.) s
+376 276 M
+(Second, define a LockDList class that extends DList and includes an additional) s
+376 268 M
+(method) s
+376 252 M
+(    public void lockNode\(DListNode node\) { ... }) s
+376 236 M
+(that permanently locks "node".) s
+376 220 M
+(DO NOT CHANGE THE SIGNATURE OF lockNode\(\).  The parameter really is supposed to) s
+376 212 M
+(be of static type DListNode, not LockDListNode.  I chose this signature for the) s
+376 204 M
+(convenience of the users of your LockDList.  It saves them the nuisance of) s
+376 196 M
+(having to cast every node they want to lock.  Instead, it's your job to take) s
+376 188 M
+(care of that cast \(from DListNode to LockDListNode\).) s
+376 172 M
+(Your LockDList class should override just enough methods to ensure that) s
+376 164 M
+(\(1\)  LockDListNodes are always used in LockDLists \(instead of DListNodes\), and) s
+376 156 M
+(\(2\)  locked nodes cannot be removed from a list.) s
+376 140 M
+(WARNING:  To override a method, you must write a new method in the subclass) s
+376 132 M
+(with EXACTLY the same prototype.  You can't change a parameter's type to a) s
+376 124 M
+(subclass.  Overriding WON'T WORK if you do that.) s
+376 108 M
+(Your overriding methods should include calls to the overridden superclass) s
+376 100 M
+(methods whenever it makes sense to do so.  Unnecessary code duplication will be) s
+376 92 M
+(penalized.) s
+376 76 M
+(Again, I recommend you write tests for your code.) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 2 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (02/12/14) def
+/modtimestr (20:20:12) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Submitting your solution) s
+5 500 M
+(------------------------) s
+5 492 M
+(Change \(cd\) to your hw4 directory, which should contain a file called GRADER) s
+5 484 M
+(and the list directory.  The list directory should contain DList.java,) s
+5 476 M
+(DListNode.java, LockDList.java, LockDListNode.java, and any other .java files) s
+5 468 M
+(required by those classes.  Make sure your code compiles and your tests run) s
+5 460 M
+(correctly on the _lab_ machines just before you submit.) s
+5 444 M
+(Your GRADER file should include your name, login, and answer to Part II.) s
+5 436 M
+(Note that it's just called GRADER, with no extension.  "submit" won't take it) s
+5 428 M
+(if you name it GRADER.txt or add some other extension.  It won't take "grader") s
+5 420 M
+(either; it's gotta be all-caps.) s
+5 404 M
+(From your hw4 directory, type "submit hw4".  \(Note that "submit" will not work) s
+5 396 M
+(if you are inside the list directory!\)  After submitting, if you realize your) s
+5 388 M
+(solution is flawed, you may fix it and submit again.  You may submit as often) s
+5 380 M
+(as you like.  Only the last version you submit before the deadline will be) s
+5 372 M
+(graded.) s
+_R
+S
+%%Trailer
+%%Pages: 2
+%%DocumentNeededResources: font Times-Roman Courier-Bold Courier 
+%%+ font Times-Bold 
+%%EOF
