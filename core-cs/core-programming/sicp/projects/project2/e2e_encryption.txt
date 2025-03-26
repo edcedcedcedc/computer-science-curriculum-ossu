@@ -1,9 +1,19 @@
 
 Understanding:
-End-to-end encryption is a method to secure messages such that only the sender and the intended recipient can read them. Using C++ for encryption algorithms ensures better performance due to its low-level optimization capabilities. We will use cryptographic libraries to implement AES or RSA encryption/decryption and then integrate this with the Python backend to secure WebSocket messages.
+End-to-end encryption is a method to secure messages such that 
+only the sender and the intended recipient can read them. 
+Using C++ for encryption algorithms ensures better performance 
+due to its low-level optimization capabilities. 
+We will use cryptographic libraries to implement AES or RSA 
+encryption/decryption and then integrate this with the Python backend to secure WebSocket messages.
 
 Goal:
-The goal is to implement secure end-to-end encryption for the chat messages exchanged between the frontend (React) and the backend (Python). The C++ component will handle encryption/decryption using cryptographic algorithms like AES, RSA, or Diffie-Hellman. The backend (Python) will call the C++ functions via pybind11, while the frontend will handle the encrypted messages and decrypt them when necessary.
+The goal is to implement secure end-to-end encryption for 
+the chat messages exchanged between the frontend (React) and the backend (Python). 
+The C++ component will handle encryption/decryption 
+using cryptographic algorithms like AES, RSA, or Diffie-Hellman. 
+The backend (Python) will call the C++ functions via pybind11, 
+while the frontend will handle the encrypted messages and decrypt them when necessary.
 
 Strategy:
 1. Implement the encryption/decryption logic in C++.
@@ -20,7 +30,8 @@ Implementation:
 
 2. Python-C++ Interface:
     - Use pybind11 to expose the C++ encryption/decryption functions to Python.
-    - The Python backend will call these C++ functions to encrypt messages before sending and decrypt messages received from the frontend.
+    - The Python backend will call these C++ functions to encrypt messages 
+    before sending and decrypt messages received from the frontend.
 
 3. Frontend:
     - The frontend (React) will send encrypted messages to the backend.
