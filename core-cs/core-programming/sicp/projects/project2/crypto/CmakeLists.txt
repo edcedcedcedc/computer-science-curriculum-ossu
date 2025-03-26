@@ -4,6 +4,21 @@ project(Crypto)
 
 find_package(fmt CONFIG REQUIRED)
 
-add_executable(HelloWorld helloworld.cpp)
 
-target_link_libraries(HelloWorld PRIVATE fmt::fmt)
+find_package(CryptoPP REQUIRED)
+
+
+find_package(pybind11 REQUIRED)
+
+
+set(VCPKG_TARGET_TRIPLET "x64-windows-static")
+
+
+add_library(crypto_module MODULE main.cpp)
+
+
+target_link_libraries(crypto_module PRIVATE fmt::fmt-header-only CryptoPP::CryptoPP pybind11::module)
+
+
+set_target_properties(crypto_module PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/python)
+

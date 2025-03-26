@@ -9,4 +9,5 @@
 node_modules/
 advanced-cs/advanced-math/linear-algebra/spinningCube/*
 vcpkg_installed/
-
+CmakeUserPresets.json
+build/
