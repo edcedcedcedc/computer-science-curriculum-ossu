@@ -8,6 +8,9 @@
 *.tar.gz
 node_modules/
 advanced-cs/advanced-math/linear-algebra/spinningCube/*
+!advanced-cs/advanced-math/linear-algebra/spinningCube/tryingOutSdl1/main.cpp
+!advanced-cs/advanced-math/linear-algebra/spinningCube/README.md
+!advanced-cs/advanced-math/linear-algebra/spinningCube/spinningCube.gif
 vcpkg_installed/
 CmakeUserPresets.json
 build/
