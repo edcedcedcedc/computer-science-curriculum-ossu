@@ -1,7 +1,9 @@
-package hashmap;
+package lab8.tests.hashmap;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import lab8.src.hashmap.MyHashMap;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,8 +30,7 @@ public class TestMyHashMapExtra {
     }
 
     /**
-     * Remove Test 2
-     * Test the 3 different cases of remove
+     * Remove Test 2 Test the 3 different cases of remove
      */
     @Test
     public void testRemoveThreeCases() {
@@ -38,18 +39,18 @@ public class TestMyHashMapExtra {
         q.put("b", "a");
         q.put("a", "a");
         q.put("d", "a");
-        q.put("e", "a");                         // a b c d e
-        assertThat(q.remove("e")).isNotNull();      // a b c d
+        q.put("e", "a"); // a b c d e
+        assertThat(q.remove("e")).isNotNull(); // a b c d
         assertThat(q.containsKey("a")).isTrue();
         assertThat(q.containsKey("b")).isTrue();
         assertThat(q.containsKey("c")).isTrue();
         assertThat(q.containsKey("d")).isTrue();
-        assertThat(q.remove("c")).isNotNull();     // a b d
+        assertThat(q.remove("c")).isNotNull(); // a b d
         assertThat(q.containsKey("a")).isTrue();
         assertThat(q.containsKey("b")).isTrue();
         assertThat(q.containsKey("d")).isTrue();
-        q.put("f", "a");                         // a b d f
-        assertThat(q.remove("d")).isNotNull();      // a b f
+        q.put("f", "a"); // a b d f
+        assertThat(q.remove("d")).isNotNull(); // a b f
         assertThat(q.containsKey("a")).isTrue();
         assertThat(q.containsKey("b")).isTrue();
         assertThat(q.containsKey("f")).isTrue();
@@ -66,7 +67,7 @@ public class TestMyHashMapExtra {
             b.put("hi" + i, 1);
             values.add("hi" + i);
         }
-        assertEquals(455, b.size()); //keys are there
+        assertEquals(455, b.size()); // keys are there
         Set<String> keySet = b.keySet();
         assertThat(values).containsExactlyElementsIn(keySet);
         assertThat(keySet).containsExactlyElementsIn(values);

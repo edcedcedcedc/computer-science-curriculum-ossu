@@ -1,9 +1,11 @@
-package game2048rendering;
+package projects.proj0.src.game2048rendering;
 
-import game2048logic.Model;
+import projects.proj0.src.game2048logic.Model;
 
-/** The main class for the 2048 game.
- *  @author P. N. Hilfinger
+/**
+ * The main class for the 2048 game.
+ * 
+ * @author P. N. Hilfinger
  */
 public class Main {
     /** Probability of choosing 2 as random tile (as opposed to 4). */
@@ -19,12 +21,8 @@ public class Main {
     static final boolean USE_CUSTOM_START = false;
 
     /** Custom starting state of the game. Useful for debugging. */
-    static final Model CUSTOM_START = new Model(new int[][]{
-            {2, 0, 2, 128},
-            {0, 0, 8, 0},
-            {8, 64, 0, 128},
-            {4, 64, 8, 256},
-    }, 0);
+    static final Model CUSTOM_START = new Model(
+            new int[][] { { 2, 0, 2, 128 }, { 0, 0, 8, 0 }, { 8, 64, 0, 128 }, { 4, 64, 8, 256 }, }, 0);
 
     public static void main(String[] args) {
         Model model = USE_CUSTOM_START ? CUSTOM_START : new Model(BOARD_SIZE);

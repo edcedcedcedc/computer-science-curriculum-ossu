@@ -1,12 +1,16 @@
-package game2048logic;
+package projects.proj0.tests.game2048logic;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+import projects.proj0.src.game2048logic.Model;
+
 import static com.google.common.truth.Truth.assertWithMessage;
 
-/** Tests the maxTileExists() method of Model.
+/**
+ * Tests the maxTileExists() method of Model.
  *
  * @author Omar Khan, Erik Kizior
  */
@@ -18,12 +22,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test empty board")
     public void testEmptyBoard() {
-        int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-        };
+        int[][] rawVals = new int[][] { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, };
 
         Model m = new Model(rawVals, 0);
         assertWithMessage("Board is empty\n" + m.getBoard()).that(m.maxTileExists()).isFalse();
@@ -34,12 +33,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test no max piece")
     public void testFullBoardNoMax() {
-        int[][] rawVals = new int[][] {
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-        };
+        int[][] rawVals = new int[][] { { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, };
 
         Model m = new Model(rawVals, 0);
         assertWithMessage("No 2048 tile on board\n" + m.getBoard()).that(m.maxTileExists()).isFalse();
@@ -50,12 +44,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test board with max piece")
     public void testFullBoardMax() {
-        int[][] rawVals = new int[][] {
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2048},
-        };
+        int[][] rawVals = new int[][] { { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, { 2, 2, 2, 2048 }, };
 
         Model m = new Model(rawVals, 0);
         assertWithMessage("One 2048 tile on board\n" + m.getBoard()).that(m.maxTileExists()).isTrue();
@@ -66,12 +55,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test board with multiple max pieces")
     public void testMultipleMax() {
-        int[][] rawVals = new int[][] {
-                {2, 2, 2, 2},
-                {2, 2048, 0, 0},
-                {0, 0, 0, 2},
-                {0, 0, 2, 2048},
-        };
+        int[][] rawVals = new int[][] { { 2, 2, 2, 2 }, { 2, 2048, 0, 0 }, { 0, 0, 0, 2 }, { 0, 0, 2, 2048 }, };
 
         Model m = new Model(rawVals, 0);
         assertWithMessage("Two 2048 tiles on board\n" + m.getBoard()).that(m.maxTileExists()).isTrue();
@@ -83,12 +67,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test board with max piece in top right corner")
     public void testTopRightCorner() {
-        int[][] rawVals = new int[][] {
-                {0, 0, 0, 2048},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0}
-        };
+        int[][] rawVals = new int[][] { { 0, 0, 0, 2048 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
 
         Model m = new Model(rawVals, 0);
         assertWithMessage("One 2048 tile on board\n" + m.getBoard()).that(m.maxTileExists()).isTrue();
@@ -99,12 +78,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test board with max piece in top left corner")
     public void testTopLeftCorner() {
-        int[][] rawVals = new int[][] {
-                {2048, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0}
-        };
+        int[][] rawVals = new int[][] { { 2048, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
 
         Model m = new Model(rawVals, 0);
         assertWithMessage("One 2048 tile on board\n" + m.getBoard()).that(m.maxTileExists()).isTrue();
@@ -115,12 +89,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test board with max piece in the bottom left corner")
     public void testBottomLeftCorner() {
-        int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {2048, 0, 0, 0}
-        };
+        int[][] rawVals = new int[][] { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 2048, 0, 0, 0 } };
 
         Model m = new Model(rawVals, 0);
 
@@ -132,12 +101,7 @@ public class TestTask2 {
     @Tag("task2")
     @DisplayName("Test board with max piece in the bottom right corner")
     public void testBottomRightCorner() {
-        int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 2048}
-        };
+        int[][] rawVals = new int[][] { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 2048 } };
 
         Model m = new Model(rawVals, 0);
 

@@ -1,4 +1,4 @@
-package hashmap;
+package lab8.src.hashmap;
 
 import java.util.Set;
 
@@ -9,13 +9,17 @@ import java.util.Set;
  */
 public interface Map61B<K, V> extends Iterable<K> {
 
-    /** Associates the specified value with the specified key in this map.
-     *  If the map already contains the specified key, replaces the key's mapping
-     *  with the value specified. */
+    /**
+     * Associates the specified value with the specified key in this map. If the map
+     * already contains the specified key, replaces the key's mapping with the value
+     * specified.
+     */
     void put(K key, V value);
 
-    /** Returns the value to which the specified key is mapped, or null if this
-     * map contains no mapping for the key. */
+    /**
+     * Returns the value to which the specified key is mapped, or null if this map
+     * contains no mapping for the key.
+     */
     V get(K key);
 
     /** Returns whether this map contains a mapping for the specified key. */
@@ -27,13 +31,16 @@ public interface Map61B<K, V> extends Iterable<K> {
     /** Removes every mapping from this map. */
     void clear();
 
-    /** Returns a Set view of the keys contained in this map. Not required for this lab.
-     * If you don't implement this, throw an UnsupportedOperationException. */
+    /**
+     * Returns a Set view of the keys contained in this map. Not required for this
+     * lab. If you don't implement this, throw an UnsupportedOperationException.
+     */
     Set<K> keySet();
 
-    /** Removes the mapping for the specified key from this map if present,
-     * or null if there is no such mapping.
-     * Not required for this lab. If you don't implement this, throw an
-     * UnsupportedOperationException. */
+    /**
+     * Removes the mapping for the specified key from this map if present, or null
+     * if there is no such mapping. Not required for this lab. If you don't
+     * implement this, throw an UnsupportedOperationException.
+     */
     V remove(K key);
 }

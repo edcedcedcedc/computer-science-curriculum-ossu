@@ -1,9 +1,11 @@
-package hashmap;
+package lab8.tests.hashmap;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+
+import lab8.src.hashmap.MyHashMap;
 
 import java.lang.reflect.Field;
 import java.time.Duration;
@@ -15,10 +17,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 /**
- * Tests by Brendan Hu, Spring 2015
- * Revised for 2016 by Josh Hug
- * Revised for 2021 by Neil Kulkarni
- * Revised for 2023 by Aram Kazorian and Noah Adhikari
+ * Tests by Brendan Hu, Spring 2015 Revised for 2016 by Josh Hug Revised for
+ * 2021 by Neil Kulkarni Revised for 2023 by Aram Kazorian and Noah Adhikari
  */
 public class TestMyHashMap {
 
@@ -35,7 +35,7 @@ public class TestMyHashMap {
         }
     }
 
-    //assumes put/size/containsKey/get work
+    // assumes put/size/containsKey/get work
     @DisplayName("clear")
     @Test
     public void testClear() {
@@ -45,7 +45,7 @@ public class TestMyHashMap {
     public static void sanityClearTest(MyHashMap<String, Integer> b) {
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, i);
-            //make sure put is working via containsKey and get
+            // make sure put is working via containsKey and get
             assertThat(b.get("hi" + i)).isEqualTo(i);
             assertThat(b.containsKey("hi" + i)).isTrue();
         }
@@ -108,7 +108,7 @@ public class TestMyHashMap {
         assertThat(b.size()).isEqualTo(456);
     }
 
-    //assumes get/containsKey work
+    // assumes get/containsKey work
     @DisplayName("put")
     @Test
     public void testPut() {
@@ -128,8 +128,7 @@ public class TestMyHashMap {
         functionalityTest(new MyHashMap<>(), new MyHashMap<>());
     }
 
-    public static void functionalityTest(MyHashMap<String, String> dictionary,
-                                         MyHashMap<String, Integer> studentIDs) {
+    public static void functionalityTest(MyHashMap<String, String> dictionary, MyHashMap<String, Integer> studentIDs) {
         assertThat(dictionary.size()).isEqualTo(0);
 
         // can put objects in dictionary and get them
@@ -169,8 +168,10 @@ public class TestMyHashMap {
         assertThat(studentIDs.get("alan")).isEqualTo(studentIDs.get("evil alan"));
     }
 
-    /** Tests that the backing array is resized when the load factor is exceeded.
-     *  In addition, times out if it takes too long (e.g. arithmetically instead of geometrically).
+    /**
+     * Tests that the backing array is resized when the load factor is exceeded. In
+     * addition, times out if it takes too long (e.g. arithmetically instead of
+     * geometrically).
      */
     @DisplayName("resize")
     @Test
@@ -180,7 +181,10 @@ public class TestMyHashMap {
         sanityResizeTest(new MyHashMap<>(64, 0.5), 64, 0.5);
     }
 
-    /** Times out after 10 seconds. Note that when debugging this test, you may run into timeout issues. */
+    /**
+     * Times out after 10 seconds. Note that when debugging this test, you may run
+     * into timeout issues.
+     */
     public static void sanityResizeTest(MyHashMap<String, Integer> m, int initialCapacity, double loadFactor) {
         assertTimeoutPreemptively(Duration.ofSeconds(10), () -> {
             int backingArrayCapacity = sizeOfBackingArray(m);
@@ -195,11 +199,13 @@ public class TestMyHashMap {
         });
     }
 
-    /** Returns the length of the backing array of the given map.
-     *  Be sure that you only use one instance variable to hold the buckets,
-     *  otherwise this will not work properly.
-
-     *  Don't worry about knowing how this method works. */
+    /**
+     * Returns the length of the backing array of the given map. Be sure that you
+     * only use one instance variable to hold the buckets, otherwise this will not
+     * work properly.
+     * 
+     * Don't worry about knowing how this method works.
+     */
     private static <K, V> int sizeOfBackingArray(MyHashMap<K, V> m) {
         Class<?> clazz = m.getClass();
         if (clazz.getSuperclass().equals(MyHashMap.class)) {
@@ -221,7 +227,6 @@ public class TestMyHashMap {
         throw new IllegalArgumentException("Could not find backing array");
     }
 
-
     @DisplayName("edge cases")
     @Test
     public void testEdgeCases() {
@@ -229,15 +234,15 @@ public class TestMyHashMap {
     }
 
     /**
-     * This test uses an unusual hash function and equals method to
-     * capture some strange edge case behavior with collisions.
-
+     * This test uses an unusual hash function and equals method to capture some
+     * strange edge case behavior with collisions.
+     * 
      * If you're stuck on this test, use the debugger to see what values are
      * expected from the reference map, which is Java's built-in HashMap.
-
-     * If you're still stuck, walk through the expected behavior by hand.
-     * Does your map behave the same way?
-     * Note Bee's strange equals and hashCode implementations!
+     * 
+     * If you're still stuck, walk through the expected behavior by hand. Does your
+     * map behave the same way? Note Bee's strange equals and hashCode
+     * implementations!
      */
     static void edgeCasesTest(MyHashMap<Bee, Integer> map) {
 

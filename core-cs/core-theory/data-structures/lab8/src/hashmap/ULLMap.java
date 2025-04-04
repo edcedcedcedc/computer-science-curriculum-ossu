@@ -1,15 +1,16 @@
-package hashmap;
+package lab8.src.hashmap;
 
 import java.util.Iterator;
 import java.util.Set;
 
 /**
  * A data structure that uses a linked list to store pairs of keys and values.
- * Any key must appear at most once in the dictionary, but values may appear multiple
- * times. Key operations are get(key), put(key, value), and contains(key) methods. The value
- * associated to a key is the value in the last call to put with that key.
+ * Any key must appear at most once in the dictionary, but values may appear
+ * multiple times. Key operations are get(key), put(key, value), and
+ * contains(key) methods. The value associated to a key is the value in the last
+ * call to put with that key.
  */
-public class ULLMap<K, V>  implements Map61B<K, V> {
+public class ULLMap<K, V> implements Map61B<K, V> {
     int size = 0;
 
     /** Returns the value corresponding to KEY or null if no such value exists. */
@@ -37,8 +38,8 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
     }
 
     /**
-     * Inserts the key-value pair of KEY and VALUE into this map,
-     * replacing the previous value associated to KEY, if any.
+     * Inserts the key-value pair of KEY and VALUE into this map, replacing the
+     * previous value associated to KEY, if any.
      */
     public void put(K key, V val) {
         if (list != null) {
@@ -56,8 +57,8 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
     }
 
     /**
-     * Returns true if and only if this dictionary contains KEY as the
-     * key of some key-value pair.
+     * Returns true if and only if this dictionary contains KEY as the key of some
+     * key-value pair.
      */
     public boolean containsKey(K key) {
         if (list == null) {
@@ -72,20 +73,20 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
     }
 
     /**
-     * Keys and values are stored in a linked list of Node objects.
-     * This variable stores the first Node in this linked list.
+     * Keys and values are stored in a linked list of Node objects. This variable
+     * stores the first Node in this linked list.
      */
     private Node list;
 
     /**
-     * Represents one node in the linked list that stores the key-value pairs
-     * in the dictionary.
+     * Represents one node in the linked list that stores the key-value pairs in the
+     * dictionary.
      */
     private class Node {
 
         /**
-         * Stores KEY as the key in this key-value pair, VAL as the value, and
-         * NEXT as the next node in the linked list.
+         * Stores KEY as the key in this key-value pair, VAL as the value, and NEXT as
+         * the next node in the linked list.
          */
         Node(K k, V v, Node n) {
             key = k;
@@ -94,8 +95,8 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
         }
 
         /**
-         * Returns the Node in this linked list of key-value pairs whose key
-         * is equal to KEY, or null if no such Node exists.
+         * Returns the Node in this linked list of key-value pairs whose key is equal to
+         * KEY, or null if no such Node exists.
          */
         Node get(K k) {
             if (k != null && k.equals(key)) {
@@ -120,8 +121,8 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
     private class ULLMapIter implements Iterator<K> {
 
         /**
-         * Create a new ULLMapIter by setting cur to the first node in the
-         * linked list that stores the key-value pairs.
+         * Create a new ULLMapIter by setting cur to the first node in the linked list
+         * that stores the key-value pairs.
          */
         ULLMapIter() {
             cur = list;
@@ -139,7 +140,6 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
             return ret;
         }
 
-
         /** Stores the current key-value pair. */
         private Node cur;
 
@@ -156,4 +156,3 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
     }
 
 }
-

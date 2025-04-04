@@ -1,19 +1,21 @@
-package speed;
+package lab8.tests.speed;
 
 import edu.princeton.cs.algs4.Stopwatch;
 import java.util.*;
 
-import hashmap.Map61B;
+import lab8.src.hashmap.Map61B;
 
-import static hashmap.MyHashMapFactory.createBucketedMap;
+import static lab8.tests.hashmap.MyHashMapFactory.createBucketedMap;
 
-/** Performs a timing test on three different set implementations.
- *  @author Neil Kulkarni adapted from Josh Hug, Brendan Hu
+/**
+ * Performs a timing test on three different set implementations.
+ * 
+ * @author Neil Kulkarni adapted from Josh Hug, Brendan Hu
  */
 public class BucketsSpeedTest {
     /**
      * Requests user input and performs tests of three different bucket
-     * implementations. ARGS is unused. 
+     * implementations. ARGS is unused.
      */
     public static void main(String[] args) {
         int N;
@@ -29,13 +31,8 @@ public class BucketsSpeedTest {
 
         String repeat;
 
-        List<Class<? extends Collection>> bucketTypes = List.of(
-                ArrayList.class,
-                LinkedList.class,
-                HashSet.class,
-                Stack.class,
-                ArrayDeque.class
-        );
+        List<Class<? extends Collection>> bucketTypes = List.of(ArrayList.class, LinkedList.class, HashSet.class,
+                Stack.class, ArrayDeque.class);
 
         do {
             System.out.print("\nEnter # strings to insert into each map: ");
@@ -67,9 +64,8 @@ public class BucketsSpeedTest {
     }
 
     /**
-     * Attempts to insert N random strings of length L into map,
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * Attempts to insert N random strings of length L into map, Prints time of the
+     * N insert calls, otherwise Prints a nice message about the error
      */
     public static void timeRandomMap61B(Map61B<String, Integer> map, int N, int L) {
         try {
@@ -83,9 +79,8 @@ public class BucketsSpeedTest {
     }
 
     /**
-     * Waits for the user on other side of Scanner
-     * to enter a positive int,
-     * and outputs that int
+     * Waits for the user on other side of Scanner to enter a positive int, and
+     * outputs that int
      */
     public static int waitForPositiveInt(Scanner input) {
         int ret;
@@ -95,18 +90,21 @@ public class BucketsSpeedTest {
                 input.next();
             }
             ret = input.nextInt();
-            input.nextLine(); //consume \n not taken by nextInt()
+            input.nextLine(); // consume \n not taken by nextInt()
         } while (ret <= 0);
         return ret;
     }
-    /* ------------------------------- Private methods ------------------------------- */
+
+    /*
+     * ------------------------------- Private methods
+     * -------------------------------
+     */
     /**
-     * To be called after catching a StackOverflowError
-     * Prints the error with corresponding N and L
+     * To be called after catching a StackOverflowError Prints the error with
+     * corresponding N and L
      */
     private static void printInfoOnStackOverflow(int N, int L) {
-        System.out.println("--Stack Overflow -- couldn't add " + N
-                + " strings of length " + L + ".");
+        System.out.println("--Stack Overflow -- couldn't add " + N + " strings of length " + L + ".");
     }
 
     /**

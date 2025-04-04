@@ -1,19 +1,23 @@
-package game2048rendering;
+package projects.proj0.src.game2048rendering;
 
-import game2048logic.Model;
+import projects.proj0.src.game2048logic.Model;
 
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
-import static game2048rendering.Side.*;
+import static projects.proj0.src.game2048rendering.Side.*;
 
-/** The input/output and GUI controller for play of a game of 2048.
- *  @author P. N. Hilfinger. */
+/**
+ * The input/output and GUI controller for play of a game of 2048.
+ * 
+ * @author P. N. Hilfinger.
+ */
 class Game {
 
-
-    /** Controller for a game represented by MODEL, using GUI as the
-     *  source of key inputs. Uses SEED as the random seed. */
+    /**
+     * Controller for a game represented by MODEL, using GUI as the source of key
+     * inputs. Uses SEED as the random seed.
+     */
     public Game(Model model, GUI gui, double tile2p, long seed) {
         _model = model;
         _playing = true;
@@ -32,9 +36,11 @@ class Game {
         return _playing;
     }
 
-    /** Clear the board and play one game, until receiving a quit or
-     *  new-game request.  Update the viewer with each added tile or
-     *  change in the board from tilting. */
+    /**
+     * Clear the board and play one game, until receiving a quit or new-game
+     * request. Update the viewer with each added tile or change in the board from
+     * tilting.
+     */
     void playGame(boolean hotStart) {
 
         if (!hotStart) {
@@ -58,51 +64,60 @@ class Game {
             while (!moved) {
                 String cmnd = _gui.getKey();
                 switch (cmnd) {
-                    case "Quit":
-                        _playing = false;
-                        return;
-                    case "New Game":
-                        return;
-                    case KeyEvent.VK_UP + "": case KeyEvent.VK_DOWN + "": case KeyEvent.VK_LEFT + "": case KeyEvent.VK_RIGHT+ "":
-                    case "\u2190": case "\u2191": case "\u2192": case "\u2193":
-                        if (!_model.gameOver()) {
-                            _gui.update();
-                            moved = false;
-                        }
+                case "Quit":
+                    _playing = false;
+                    return;
+                case "New Game":
+                    return;
+                case KeyEvent.VK_UP + "":
+                case KeyEvent.VK_DOWN + "":
+                case KeyEvent.VK_LEFT + "":
+                case KeyEvent.VK_RIGHT + "":
+                case "\u2190":
+                case "\u2191":
+                case "\u2192":
+                case "\u2193":
+                    if (!_model.gameOver()) {
+                        _gui.update();
+                        moved = false;
+                    }
 
-                        String stateBefore = _model.toString();
-                        _model.tiltWrapper(keyToSide(cmnd));
-                        String stateAfter = _model.toString();
+                    String stateBefore = _model.toString();
+                    _model.tiltWrapper(keyToSide(cmnd));
+                    String stateAfter = _model.toString();
 
-                        if (!stateBefore.equals(stateAfter)) {
-                            _gui.update();
-                            moved = true;
-                        }
+                    if (!stateBefore.equals(stateAfter)) {
+                        _gui.update();
+                        moved = true;
+                    }
 
-                        break;
-                    default:
-                        break;
+                    break;
+                default:
+                    break;
                 }
 
             }
         }
     }
 
-    /** Return the side indicated by KEY ("Up", "Down", "Left",
-     *  or "Right"). */
+    /**
+     * Return the side indicated by KEY ("Up", "Down", "Left", or "Right").
+     */
     private Side keyToSide(String key) {
         return switch (key) {
-            case KeyEvent.VK_UP + "", "\u2191" -> NORTH;
-            case KeyEvent.VK_DOWN + "", "\u2193" -> SOUTH;
-            case KeyEvent.VK_LEFT + "", "\u2190" -> WEST;
-            case KeyEvent.VK_RIGHT+ "", "\u2192" -> EAST;
-            default -> throw new IllegalArgumentException("unknown key designation");
+        case KeyEvent.VK_UP + "", "\u2191" -> NORTH;
+        case KeyEvent.VK_DOWN + "", "\u2193" -> SOUTH;
+        case KeyEvent.VK_LEFT + "", "\u2190" -> WEST;
+        case KeyEvent.VK_RIGHT + "", "\u2192" -> EAST;
+        default -> throw new IllegalArgumentException("unknown key designation");
         };
     }
 
-    /** Return a valid tile, using our source's tile input until finding
-     *  one that fits on the current board. Assumes there is at least one
-     *  empty square on the board. */
+    /**
+     * Return a valid tile, using our source's tile input until finding one that
+     * fits on the current board. Assumes there is at least one empty square on the
+     * board.
+     */
     private Tile getValidNewTile() {
         while (true) {
             Tile tile = generateNewTile(_model.size());
@@ -112,9 +127,11 @@ class Game {
         }
     }
 
-    /** Return a randomly positioned tile with either value of 2 with
-     * probability _probOf2 or a value of 4 with probability 1 - _probOf2 in a
-     * board with size SIZE. */
+    /**
+     * Return a randomly positioned tile with either value of 2 with probability
+     * _probOf2 or a value of 4 with probability 1 - _probOf2 in a board with size
+     * SIZE.
+     */
     private Tile generateNewTile(int size) {
         int c = _random.nextInt(size), r = _random.nextInt(size);
         int v = _random.nextDouble() <= _probOf2 ? 2 : 4;

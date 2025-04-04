@@ -1,21 +1,23 @@
-package speed;
+package lab8.tests.speed;
 
 import java.util.HashMap;
 import java.util.Scanner;
 import edu.princeton.cs.algs4.Stopwatch;
 
-import hashmap.Map61B;
-import hashmap.ULLMap;
-import hashmap.MyHashMap;
+import lab8.src.hashmap.Map61B;
+import lab8.src.hashmap.ULLMap;
+import lab8.src.hashmap.MyHashMap;
 
-/** Performs a timing test on three different set implementations.
- *  @author Josh Hug
- *  @author Brendan Hu
+/**
+ * Performs a timing test on three different set implementations.
+ * 
+ * @author Josh Hug
+ * @author Brendan Hu
  */
 public class InsertRandomSpeedTest {
     /**
      * Requests user input and performs tests of three different set
-     * implementations. ARGS is unused. 
+     * implementations. ARGS is unused.
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -31,16 +33,13 @@ public class InsertRandomSpeedTest {
         String repeat;
         do {
             System.out.print("\nEnter # strings to insert into ULLMap: ");
-            timeRandomMap61B(new ULLMap<>(),
-                    waitForPositiveInt(input), L);
+            timeRandomMap61B(new ULLMap<>(), waitForPositiveInt(input), L);
 
             System.out.print("\nEnter # strings to insert into your MyHashMap: ");
-            timeRandomMap61B(new MyHashMap<>(),
-                    waitForPositiveInt(input), L);
+            timeRandomMap61B(new MyHashMap<>(), waitForPositiveInt(input), L);
 
             System.out.print("\nEnter # strings to insert into Java's HashMap: ");
-            timeRandomHashMap(new HashMap<>(),
-                    waitForPositiveInt(input), L);
+            timeRandomHashMap(new HashMap<>(), waitForPositiveInt(input), L);
 
             System.out.print("\nWould you like to try more timed-tests? (y/n)");
             repeat = input.nextLine();
@@ -63,8 +62,8 @@ public class InsertRandomSpeedTest {
     }
 
     /**
-     * Returns time needed to put N random strings of length L into the
-     * HashMap hashMap.
+     * Returns time needed to put N random strings of length L into the HashMap
+     * hashMap.
      */
     public static double insertRandom(HashMap<String, Integer> hashMap, int N, int L) {
         Stopwatch sw = new Stopwatch();
@@ -77,9 +76,8 @@ public class InsertRandomSpeedTest {
     }
 
     /**
-     * Attempts to insert N random strings of length L into map,
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * Attempts to insert N random strings of length L into map, Prints time of the
+     * N insert calls, otherwise Prints a nice message about the error
      */
     public static void timeRandomMap61B(Map61B<String, Integer> map, int N, int L) {
         try {
@@ -93,9 +91,8 @@ public class InsertRandomSpeedTest {
     }
 
     /**
-     * Attempts to insert N random strings of length L into a HashMap
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * Attempts to insert N random strings of length L into a HashMap Prints time of
+     * the N insert calls, otherwise Prints a nice message about the error
      */
     public static void timeRandomHashMap(HashMap<String, Integer> hashMap, int N, int L) {
         try {
@@ -109,9 +106,8 @@ public class InsertRandomSpeedTest {
     }
 
     /**
-     * Waits for the user on other side of Scanner
-     * to enter a positive int,
-     * and outputs that int
+     * Waits for the user on other side of Scanner to enter a positive int, and
+     * outputs that int
      */
     public static int waitForPositiveInt(Scanner input) {
         int ret;
@@ -121,18 +117,21 @@ public class InsertRandomSpeedTest {
                 input.next();
             }
             ret = input.nextInt();
-            input.nextLine(); //consume \n not taken by nextInt()
+            input.nextLine(); // consume \n not taken by nextInt()
         } while (ret <= 0);
         return ret;
     }
-    /* ------------------------------- Private methods ------------------------------- */
+
+    /*
+     * ------------------------------- Private methods
+     * -------------------------------
+     */
     /**
-     * To be called after catching a StackOverflowError
-     * Prints the error with corresponding N and L
+     * To be called after catching a StackOverflowError Prints the error with
+     * corresponding N and L
      */
     private static void printInfoOnStackOverflow(int N, int L) {
-        System.out.println("--Stack Overflow -- couldn't add " + N
-                + " strings of length " + L + ".");
+        System.out.println("--Stack Overflow -- couldn't add " + N + " strings of length " + L + ".");
     }
 
     /**
@@ -143,4 +142,3 @@ public class InsertRandomSpeedTest {
     }
 
 }
-

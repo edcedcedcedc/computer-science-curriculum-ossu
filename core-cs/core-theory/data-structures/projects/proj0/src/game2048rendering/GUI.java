@@ -1,6 +1,6 @@
-package game2048rendering;
+package projects.proj0.src.game2048rendering;
 
-import game2048logic.Model;
+import projects.proj0.src.game2048logic.Model;
 import ucb.gui2.TopLevel;
 import ucb.gui2.LayoutSpec;
 
@@ -8,9 +8,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 import java.awt.event.KeyEvent;
 
-
-/** The GUI controller for a 2048 board and buttons.
- *  @author P. N. Hilfinger
+/**
+ * The GUI controller for a 2048 board and buttons.
+ * 
+ * @author P. N. Hilfinger
  */
 class GUI extends TopLevel {
 
@@ -25,10 +26,7 @@ class GUI extends TopLevel {
         _model = model;
 
         _widget = new BoardWidget(model.size());
-        add(_widget,
-            new LayoutSpec("y", 0,
-                           "height", "REMAINDER",
-                           "width", "REMAINDER"));
+        add(_widget, new LayoutSpec("y", 0, "height", "REMAINDER", "width", "REMAINDER"));
 
         _widget.requestFocusInWindow();
         _widget.setKeyHandler("keypress", this::keyPressed);
@@ -48,16 +46,19 @@ class GUI extends TopLevel {
         _widget.requestFocusInWindow();
     }
 
-    /** Respond to the user pressing key E by queuing the key on our
-     *  queue of pending keys.*/
+    /**
+     * Respond to the user pressing key E by queuing the key on our queue of pending
+     * keys.
+     */
     private void keyPressed(String unused, KeyEvent e) {
         _pendingKeys.offer(e.getKeyCode() + "");
     }
 
-    /** Return the next pending event, waiting for it as necessary.
-     *  Ordinary key presses are reported as the key codes of the
-     *  character pressed.  In addition, menu-button clicks result in
-     *  the messages "Quit" or "New Game". */
+    /**
+     * Return the next pending event, waiting for it as necessary. Ordinary key
+     * presses are reported as the key codes of the character pressed. In addition,
+     * menu-button clicks result in the messages "Quit" or "New Game".
+     */
     private String readKey() {
         try {
             return _pendingKeys.take();
@@ -70,11 +71,12 @@ class GUI extends TopLevel {
     String getKey() {
         String command = readKey();
         switch (command) {
-            case "↑" -> command = "Up";
-            case "→" -> command = "Right";
-            case "↓" -> command = "Down";
-            case "←" -> command = "Left";
-            default -> {}
+        case "↑" -> command = "Up";
+        case "→" -> command = "Right";
+        case "↓" -> command = "Down";
+        case "←" -> command = "Left";
+        default -> {
+        }
         }
 
         return command;
@@ -98,7 +100,6 @@ class GUI extends TopLevel {
     private final Model _model;
 
     /** Queue of pending key presses. */
-    private final ArrayBlockingQueue<String> _pendingKeys =
-        new ArrayBlockingQueue<>(5);
+    private final ArrayBlockingQueue<String> _pendingKeys = new ArrayBlockingQueue<>(5);
 
 }

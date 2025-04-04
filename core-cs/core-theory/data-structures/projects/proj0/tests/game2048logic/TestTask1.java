@@ -1,13 +1,16 @@
-package game2048logic;
+package projects.proj0.tests.game2048logic;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+import projects.proj0.src.game2048logic.Model;
+
 import static com.google.common.truth.Truth.assertWithMessage;
 
-
-/** Tests the emptySpaceExists() method of Model.
+/**
+ * Tests the emptySpaceExists() method of Model.
  *
  * @author Omar Khan, Erik Kizior
  */
@@ -19,12 +22,7 @@ public class TestTask1 {
     @Tag("task1")
     @DisplayName("Fully empty board")
     public void testCompletelyEmpty() {
-        int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-        };
+        int[][] rawVals = new int[][] { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Board is full of empty space\n" + m.getBoard()).that(m.emptySpaceExists()).isTrue();
     }
@@ -34,12 +32,7 @@ public class TestTask1 {
     @Tag("task1")
     @DisplayName("Empty top row")
     public void testEmptyTopRow() {
-        int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 4, 2, 4},
-        };
+        int[][] rawVals = new int[][] { { 0, 0, 0, 0 }, { 2, 4, 2, 4 }, { 4, 2, 4, 2 }, { 2, 4, 2, 4 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Top row is empty\n" + m.getBoard()).that(m.emptySpaceExists()).isTrue();
 
@@ -50,29 +43,18 @@ public class TestTask1 {
     @Tag("task1")
     @DisplayName("Empty bottom row")
     public void testEmptyBottomRow() {
-        int[][] rawVals = new int[][] {
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 4, 2, 4},
-                {0, 0, 0, 0},
-        };
+        int[][] rawVals = new int[][] { { 2, 4, 2, 4 }, { 4, 2, 4, 2 }, { 2, 4, 2, 4 }, { 0, 0, 0, 0 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Bottom row is empty\n" + m.getBoard()).that(m.emptySpaceExists()).isTrue();
 
     }
-
 
     /** Tests a board that is completely full except for the left column. */
     @Test
     @Tag("task1")
     @DisplayName("Empty left column")
     public void testEmptyLeftCol() {
-        int[][] rawVals = new int[][] {
-                {0, 4, 2, 4},
-                {0, 2, 4, 2},
-                {0, 4, 2, 4},
-                {0, 2, 4, 2},
-        };
+        int[][] rawVals = new int[][] { { 0, 4, 2, 4 }, { 0, 2, 4, 2 }, { 0, 4, 2, 4 }, { 0, 2, 4, 2 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Left col is empty\n" + m.getBoard()).that(m.emptySpaceExists()).isTrue();
     }
@@ -82,12 +64,7 @@ public class TestTask1 {
     @Tag("task1")
     @DisplayName("Empty right column")
     public void testEmptyRightCol() {
-        int[][] rawVals = new int[][] {
-                {2, 4, 2, 0},
-                {4, 2, 4, 0},
-                {2, 4, 2, 0},
-                {4, 2, 4, 0},
-        };
+        int[][] rawVals = new int[][] { { 2, 4, 2, 0 }, { 4, 2, 4, 0 }, { 2, 4, 2, 0 }, { 4, 2, 4, 0 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Right col is empty\n" + m.getBoard()).that(m.emptySpaceExists()).isTrue();
     }
@@ -97,30 +74,21 @@ public class TestTask1 {
     @Tag("task1")
     @DisplayName("One empty space")
     public void testAlmostFullBoard() {
-        int[][] rawVals = new int[][] {
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 0, 2, 4},
-                {4, 2, 4, 2},
-        };
+        int[][] rawVals = new int[][] { { 2, 4, 2, 4 }, { 4, 2, 4, 2 }, { 2, 0, 2, 4 }, { 4, 2, 4, 2 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Board is not full\n" + m.getBoard()).that(m.emptySpaceExists()).isTrue();
     }
 
-    /** Tests a completely full board.
-     * The game isn't over since you can merge, but the emptySpaceExists method
-     * should only look for empty space (and not adjacent values).
+    /**
+     * Tests a completely full board. The game isn't over since you can merge, but
+     * the emptySpaceExists method should only look for empty space (and not
+     * adjacent values).
      */
     @Test
     @Tag("task1")
     @DisplayName("Full board with valid merge")
     public void testFullBoard() {
-        int[][] rawVals = new int[][] {
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-        };
+        int[][] rawVals = new int[][] { { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, { 2, 2, 2, 2 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Board is full\n" + m.getBoard()).that(m.emptySpaceExists()).isFalse();
     }
@@ -130,12 +98,7 @@ public class TestTask1 {
     @Tag("task1")
     @DisplayName("Full board")
     public void testFullBoardNoMerge() {
-        int[][] rawVals = new int[][] {
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-        };
+        int[][] rawVals = new int[][] { { 2, 4, 2, 4 }, { 4, 2, 4, 2 }, { 2, 4, 2, 4 }, { 4, 2, 4, 2 }, };
         Model m = new Model(rawVals, 0);
         assertWithMessage("Board is full\n" + m.getBoard()).that(m.emptySpaceExists()).isFalse();
     }

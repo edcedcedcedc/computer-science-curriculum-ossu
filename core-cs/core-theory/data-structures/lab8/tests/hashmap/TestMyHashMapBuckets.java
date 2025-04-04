@@ -1,4 +1,4 @@
-package hashmap;
+package lab8.tests.hashmap;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Named;
@@ -6,10 +6,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import lab8.src.hashmap.MyHashMap;
+
 import java.util.*;
 import java.util.stream.Stream;
 
-import static hashmap.MyHashMapFactory.createBucketedMap;
+import static lab8.tests.hashmap.MyHashMapFactory.createBucketedMap;
 
 /**
  * Tests by Brendan Hu, Spring 2015
@@ -19,9 +21,9 @@ import static hashmap.MyHashMapFactory.createBucketedMap;
  */
 
 /**
- * This class tests MyHashMap with different bucket types
- * imported from java.util. You should pass the tests in
- * TestMyHashMap before attempting these tests.
+ * This class tests MyHashMap with different bucket types imported from
+ * java.util. You should pass the tests in TestMyHashMap before attempting these
+ * tests.
  */
 public class TestMyHashMapBuckets {
 
@@ -74,8 +76,7 @@ public class TestMyHashMapBuckets {
     @ParameterizedTest
     @MethodSource("bucketArguments")
     public void functionalityTest(Class<? extends Collection<?>> bucketType) {
-        TestMyHashMap.functionalityTest(createBucketedMap(bucketType),
-                                        createBucketedMap(bucketType));
+        TestMyHashMap.functionalityTest(createBucketedMap(bucketType), createBucketedMap(bucketType));
     }
 
     @DisplayName("resize")
@@ -93,12 +94,8 @@ public class TestMyHashMapBuckets {
     }
 
     private static Stream<Arguments> bucketArguments() {
-        return Stream.of(
-                Arguments.of(Named.of("LinkedList", LinkedList.class)),
-                Arguments.of(Named.of("ArrayList", ArrayList.class)),
-                Arguments.of(Named.of("HashSet", HashSet.class)),
-                Arguments.of(Named.of("Stack", Stack.class)),
-                Arguments.of(Named.of("ArrayDeque", ArrayDeque.class))
-        );
+        return Stream.of(Arguments.of(Named.of("LinkedList", LinkedList.class)),
+                Arguments.of(Named.of("ArrayList", ArrayList.class)), Arguments.of(Named.of("HashSet", HashSet.class)),
+                Arguments.of(Named.of("Stack", Stack.class)), Arguments.of(Named.of("ArrayDeque", ArrayDeque.class)));
     }
 }

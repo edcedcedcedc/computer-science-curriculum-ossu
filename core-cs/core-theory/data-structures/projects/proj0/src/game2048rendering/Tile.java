@@ -1,19 +1,22 @@
-package game2048rendering;
+package projects.proj0.src.game2048rendering;
 
-/** Represents the image of a numbered tile on a 2048 board.
- *  @author P. N. Hilfinger.
+/**
+ * Represents the image of a numbered tile on a 2048 board.
+ * 
+ * @author P. N. Hilfinger.
  */
 public class Tile {
 
-    /** A new tile with VALUE as its value at (x, y).  This
-     *  constructor is private, so all tiles are created by the
-     *  factory method create. */
+    /**
+     * A new tile with VALUE as its value at (x, y). This constructor is private, so
+     * all tiles are created by the factory method create.
+     */
     private Tile(int value, int x, int y) {
         this._value = value;
         this._x = x;
         this._y = y;
         this._next = null;
-        this._merged  = false;
+        this._merged = false;
     }
 
     /** Return whether this tile was already merged. */
@@ -40,8 +43,9 @@ public class Tile {
         return _value;
     }
 
-    /** Return my next state.  Before I am moved or merged, I am my
-     *  own successor. */
+    /**
+     * Return my next state. Before I am moved or merged, I am my own successor.
+     */
     Tile next() {
         return _next == null ? this : _next;
     }
@@ -56,14 +60,15 @@ public class Tile {
         return new Tile(value, x, y);
     }
 
-    /** Return the distance in rows or columns between me and my successor
-     *  tile (0 if I have no successor). */
+    /**
+     * Return the distance in rows or columns between me and my successor tile (0 if
+     * I have no successor).
+     */
     int distToNext() {
         if (_next == null) {
             return 0;
         } else {
-            return Math.max(Math.abs(_y - _next.y()),
-                            Math.abs(_x - _next.x()));
+            return Math.max(Math.abs(_y - _next.y()), Math.abs(_x - _next.x()));
         }
     }
 

@@ -1,4 +1,4 @@
-package game2048rendering;
+package projects.proj0.src.game2048rendering;
 
 import java.util.Arrays;
 import java.util.Formatter;
@@ -17,13 +17,19 @@ public class Board {
         _viewPerspective = Side.NORTH;
     }
 
-    /** Shifts the view of the board such that the board behaves as if side S is north. */
+    /**
+     * Shifts the view of the board such that the board behaves as if side S is
+     * north.
+     */
     public void setViewingPerspective(Side s) {
         _viewPerspective = s;
     }
 
-    /** Create a board where RAWVALUES hold the values of the tiles on the board 
-     * (0 is null) with a current score of SCORE and the viewing perspective set to north. */
+    /**
+     * Create a board where RAWVALUES hold the values of the tiles on the board (0
+     * is null) with a current score of SCORE and the viewing perspective set to
+     * north.
+     */
     public Board(int[][] rawValues) {
         int size = rawValues.length;
         _values = new Tile[size][size];
@@ -47,14 +53,18 @@ public class Board {
         return _values.length;
     }
 
-    /** Return the current Tile at (x, y), when sitting with the board
-     *  oriented so that SIDE is at the top (farthest) from you. */
+    /**
+     * Return the current Tile at (x, y), when sitting with the board oriented so
+     * that SIDE is at the top (farthest) from you.
+     */
     private Tile vtile(int x, int y, Side side) {
         return _values[side.x(x, y, size())][side.y(x, y, size())];
     }
 
-    /** Return the current Tile at (x, y), where 0 <= x < size(),
-     *  0 <= y < size(). Returns null if there is no tile there. */
+    /**
+     * Return the current Tile at (x, y), where 0 <= x < size(), 0 <= y < size().
+     * Returns null if there is no tile there.
+     */
     public Tile tile(int x, int y) {
         return vtile(x, y, _viewPerspective);
     }
@@ -71,16 +81,16 @@ public class Board {
         _values[t.x()][t.y()] = t;
     }
 
-    
-    /** Places the Tile TILE at column x, row y where x and y are
-     * treated as coordinates with respect to the current viewPerspective.
+    /**
+     * Places the Tile TILE at column x, row y where x and y are treated as
+     * coordinates with respect to the current viewPerspective.
      *
      * (0, 0) is bottom-left corner.
      *
      * If the move is a merge, sets the tile's merged status to true.
      *
      * Fails if TILE is null, aborts if the tile wouldn't move.
-     * */
+     */
     public void move(int x, int y, Tile tile) {
         if (tile == null) {
             throw new IllegalArgumentException("Cannot move a null tile");
@@ -119,7 +129,7 @@ public class Board {
     public void resetMerged() {
         for (int x = 0; x < size(); x += 1) {
             for (int y = 0; y < size(); y += 1) {
-                if (_values[x][y] != null){
+                if (_values[x][y] != null) {
                     _values[x][y].setMerged(false);
                 }
             }

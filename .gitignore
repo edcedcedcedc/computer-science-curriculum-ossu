@@ -14,3 +14,9 @@ advanced-cs/advanced-math/linear-algebra/spinningCube/*
 vcpkg_installed/
 CmakeUserPresets.json
 build/
+out/
+.xml
+*.iml
+.idea 
+*.jar
+*.pom

@@ -1,10 +1,12 @@
-package speed;
+package lab8.tests.speed;
 
 import java.util.regex.Pattern;
 import java.util.Random;
 
-/** Utility function for Strings.
- *  @author Josh Hug
+/**
+ * Utility function for Strings.
+ * 
+ * @author Josh Hug
  */
 public class StringUtils {
     /** To get the style checker to be quiet. */
@@ -13,7 +15,7 @@ public class StringUtils {
     /** Random number generator for this class. */
     private static Random r = new Random();
 
-    /** Sets random seed to L so that results of randomString are predictable.*/
+    /** Sets random seed to L so that results of randomString are predictable. */
     public static void setSeed(long l) {
         r = new Random(l);
     }
@@ -28,19 +30,17 @@ public class StringUtils {
     }
 
     /**
-     * Returns true if string S consists of characters between
-     * 'a' and 'z' only. No spaces, numbers, upper-case, or any other
-     * characters are allowed.
+     * Returns true if string S consists of characters between 'a' and 'z' only. No
+     * spaces, numbers, upper-case, or any other characters are allowed.
      */
     public static boolean isLowerCase(String s) {
         return Pattern.matches("[a-z]*", s);
     }
 
     /**
-     * Returns the string that comes right after S in alphabetical order.
-     * For example, if s is 'potato', this method will return 'potatp'. If
-     * the last character is a z, then we add to the next position, and so
-     * on.
+     * Returns the string that comes right after S in alphabetical order. For
+     * example, if s is 'potato', this method will return 'potatp'. If the last
+     * character is a z, then we add to the next position, and so on.
      */
     public static String nextString(String s) {
         /* Handle all zs as a special case to keep helper method simple. */
@@ -53,13 +53,13 @@ public class StringUtils {
     }
 
     /**
-     * Helper function for nextString. Increments the Pth position of X
-     * by one, wrapping around to 'a' if p == 'z'. If wraparound occurs,
-     * then we need to carry the one, and we increment position P - 1.
+     * Helper function for nextString. Increments the Pth position of X by one,
+     * wrapping around to 'a' if p == 'z'. If wraparound occurs, then we need to
+     * carry the one, and we increment position P - 1.
      *
      * Will fail for a character array containing only zs.
      */
-    private static void incrementCharArray(char [] x, int p) {
+    private static void incrementCharArray(char[] x, int p) {
         if (x[p] != 'z') {
             x[p] += 1;
         } else {
@@ -83,4 +83,3 @@ public class StringUtils {
     }
 
 }
-
