@@ -174,6 +174,7 @@ public class Model {
         }
         String over = gameOver() ? "over" : "not over";
         out.format("] %d (game is %s) %n", score(), over);
+        // out.close();
         return out.toString();
     }
 
