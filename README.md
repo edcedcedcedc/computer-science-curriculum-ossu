@@ -653,30 +653,30 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 
 ## Schedule 
 
+**Each Day:**
+- Codeforecs from 8-9am till Noon
+
 **Monday:**  
 - Data Structures: Lecture/Reading  
 - Physics: Homework  
-- Mathematics for Computer Science: Practice/Homework
 - Introduction to Probability - Lecture/Reading
 
 **Tuesday:**  
 - Physics: Lecture/Reading
-- Codeforces(competitive programming) 3 problems
 - Introduction to Probability - Practice and Homework
+- Mathematics for Computer Science: Practice/Homework
 
 **Wednesday:**  
 - Data Structures: Homework  
 - Physics: Homework  
 - Mathematics for Computer Science: Lecture/Reading  
-- Codeforces(competitive programming)  1 problem
 
 **Thursday:**  
 - Physics: Lecture  
-- Codeforces(competitive programming) 3 problems
 - Introduction to Probability - Lecture
+- Data Structures: Lecture/Reading  
 
 **Friday:**  
-- Data Structures: Lecture/Reading  
 - Physics: Homework  
 - Mathematics for Computer Science: Practice/Homework 
 - Introduction to Probability - Practice and Homework
@@ -684,7 +684,6 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 **Saturday:**  
 - Data Structures: Homework
 - Math for Computer Science: Lecture
-- Codeforces(competitive programming) 3 problems
 - Any other backlog task
 
 **Sunday:**  
