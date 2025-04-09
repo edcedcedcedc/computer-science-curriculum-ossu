@@ -654,7 +654,7 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 ## Schedule 
 
 **Each Day:**
-- Codeforecs from 8-9am till Noon
+- Codeforces from 9am 12pm
 
 **Monday:**  
 - Data Structures: Lecture/Reading  
