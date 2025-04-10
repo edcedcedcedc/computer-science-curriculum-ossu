@@ -654,36 +654,30 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 ## Schedule 
 
 **Each Day:**
-- Codeforces from 9am 12pm
+- Codeforces from 9 a.m noon
 
 **Monday:**  
-- Data Structures: Lecture/Reading  
-- Physics: Homework  
-- Introduction to Probability - Lecture/Reading
+- Data Structures 
+- Physics 200
 
 **Tuesday:**  
-- Physics: Lecture/Reading
-- Introduction to Probability - Practice and Homework
-- Mathematics for Computer Science: Practice/Homework
+- Introduction to Probability
+- Mathematics for Computer Science
 
 **Wednesday:**  
-- Data Structures: Homework  
-- Physics: Homework  
-- Mathematics for Computer Science: Lecture/Reading  
+- Data Structures
+- Physics 200
 
 **Thursday:**  
-- Physics: Lecture  
-- Introduction to Probability - Lecture
-- Data Structures: Lecture/Reading  
+- Introduction to Probability
+- Data Structures
 
 **Friday:**  
-- Physics: Homework  
-- Mathematics for Computer Science: Practice/Homework 
-- Introduction to Probability - Practice and Homework
+- Physics 200 
+- Mathematics for Computer Science
 
 **Saturday:**  
-- Data Structures: Homework
-- Math for Computer Science: Lecture
+- Data Structures
 - Any other backlog task
 
 **Sunday:**  
