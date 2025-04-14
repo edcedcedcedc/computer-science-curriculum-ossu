@@ -15,6 +15,6 @@ public class BadAccountException extends Exception {
   public BadAccountException(int badAcctNumber) {
     super("Invalid account number: " + badAcctNumber);
 
-    accountNumber = badAcctNumber;
+    this.accountNumber = badAcctNumber;
   }
 }

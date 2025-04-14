@@ -12,7 +12,7 @@ public class BankApp {
   private BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
   private VirtualTeller ATM = new VirtualTeller();
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException, BadAccountException {
     greeting();
     usage();
     BankApp bankApp = new BankApp();
@@ -62,8 +62,9 @@ public class BankApp {
    * deposit transaction on that account.
    * 
    * @exception IOException if there are problems reading user input.
+   * @throws BadAccountException
    */
-  private void doDeposit() throws IOException {
+  private void doDeposit() throws IOException, BadAccountException {
     int acctNumber = -1;
     int amount = -1;
 
@@ -71,7 +72,7 @@ public class BankApp {
       try {
         acctNumber = readInt("Enter account number: ");
       } catch (NumberFormatException e) {
-        System.err.println("Invalid account number. Please enter a valid integer.");
+        System.err.println(e.getMessage() + " " + e.getCause());
       }
     }
 
@@ -83,14 +84,15 @@ public class BankApp {
           amount = -1; // Reset to retry
         }
       } catch (NumberFormatException e) {
-        System.err.println("Invalid amount. Please enter a valid integer.");
+        System.err.println(e.getMessage() + " " + e.getCause());
       }
     }
+
     try {
       ATM.deposit(acctNumber, amount);
       System.out.println("New balance for #" + acctNumber + " is " + ATM.balanceInquiry(acctNumber));
-    } catch (Exception e) {
-      System.out.println("Error:  Couldn't find account number `" + acctNumber + "'");
+    } catch (BadAccountException e) {
+      System.err.println(e.getMessage() + " " + e.getCause());
     }
 
   }
@@ -110,7 +112,7 @@ public class BankApp {
       try {
         acctNumber = readInt("Enter account number: ");
       } catch (NumberFormatException e) {
-        System.err.println("Invalid account number. Please enter a valid integer.");
+        System.err.println(e.getMessage());
       }
     }
 
@@ -123,14 +125,14 @@ public class BankApp {
           amount = -1; // Reset to retry
         }
       } catch (NumberFormatException e) {
-        System.err.println("Invalid amount. Please enter a valid integer.");
+        System.err.println(e.getMessage());
       }
     }
     try {
       ATM.withdraw(acctNumber, amount);
       System.out.println("New balance for #" + acctNumber + " is " + ATM.balanceInquiry(acctNumber));
-    } catch (Exception e) {
-      System.out.println("Error:  Couldn't find account number `" + acctNumber + "'");
+    } catch (BadAccountException e) {
+      System.err.println(e.getMessage() + " " + e.getCause());
     }
 
   }
@@ -139,9 +141,10 @@ public class BankApp {
    * doInquire() prompts the user for an account number, then attempts to discover
    * and print that account's balance.
    * 
-   * @exception IOException if there are problems reading user input.
+   * @exception IOException         if there are problems reading user input.
+   * @exception BadAccountException if account number is null
    */
-  private void doInquire() throws IOException {
+  private void doInquire() throws IOException, BadAccountException {
     int acctNumber = readInt("Enter account number: ");
     System.out.println("Balance for #" + acctNumber + " is " + ATM.balanceInquiry(acctNumber));
   }
