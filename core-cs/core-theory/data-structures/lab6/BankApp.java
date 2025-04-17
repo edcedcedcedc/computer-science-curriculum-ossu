@@ -12,7 +12,7 @@ public class BankApp {
   private BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
   private VirtualTeller ATM = new VirtualTeller();
 
-  public static void main(String[] args) throws IOException, BadAccountException {
+  public static void main(String[] args) throws IOException, BadAccountException, BadTransactionException {
     greeting();
     usage();
     BankApp bankApp = new BankApp();
@@ -62,36 +62,24 @@ public class BankApp {
    * deposit transaction on that account.
    * 
    * @exception IOException if there are problems reading user input.
+   * @throws BadTransactionException
    * @throws BadAccountException
+   * @throws NumberFormatException
    */
-  private void doDeposit() throws IOException, BadAccountException {
+  private void doDeposit() throws IOException, BadAccountException, BadTransactionException, NumberFormatException {
     int acctNumber = -1;
     int amount = -1;
 
-    while (acctNumber == -1) {
-      try {
-        acctNumber = readInt("Enter account number: ");
-      } catch (NumberFormatException e) {
-        System.err.println(e.getMessage() + " " + e.getCause());
-      }
-    }
-
-    while (amount == -1) {
-      try {
-        amount = readInt("Enter amount to deposit: ");
-        if (amount <= 0) {
-          System.err.println("Deposit amount must be greater than zero.");
-          amount = -1; // Reset to retry
-        }
-      } catch (NumberFormatException e) {
-        System.err.println(e.getMessage() + " " + e.getCause());
-      }
-    }
-
     try {
+      amount = readInt("Enter amount to deposit: ");
+      acctNumber = readInt("Enter account number: ");
       ATM.deposit(acctNumber, amount);
       System.out.println("New balance for #" + acctNumber + " is " + ATM.balanceInquiry(acctNumber));
     } catch (BadAccountException e) {
+      System.err.println(e.getMessage() + " " + e.getCause());
+    } catch (BadTransactionException e) {
+      System.err.println(e.getMessage() + " " + e.getCause());
+    } catch (NumberFormatException e) {
       System.err.println(e.getMessage() + " " + e.getCause());
     }
 
@@ -102,36 +90,24 @@ public class BankApp {
    * withdrawal transaction from that account.
    * 
    * @exception IOException if there are problems reading user input.
+   * @throws BadTransactionException
+   * @throws BadAccountException
+   * @throws NumberFormatException
    */
-  private void doWithdraw() throws IOException {
+  private void doWithdraw() throws IOException, BadTransactionException, BadAccountException, NumberFormatException {
     int acctNumber = -1;
     int amount = -1;
 
-    // Get account number with validation
-    while (acctNumber == -1) {
-      try {
-        acctNumber = readInt("Enter account number: ");
-      } catch (NumberFormatException e) {
-        System.err.println(e.getMessage());
-      }
-    }
-
-    // Get withdrawal amount with validation
-    while (amount == -1) {
-      try {
-        amount = readInt("Enter amount to withdraw: ");
-        if (amount <= 0) {
-          System.err.println("Withdrawal amount must be greater than zero.");
-          amount = -1; // Reset to retry
-        }
-      } catch (NumberFormatException e) {
-        System.err.println(e.getMessage());
-      }
-    }
     try {
+      amount = readInt("Enter amount to withdraw: ");
+      acctNumber = readInt("Enter account number: ");
       ATM.withdraw(acctNumber, amount);
       System.out.println("New balance for #" + acctNumber + " is " + ATM.balanceInquiry(acctNumber));
     } catch (BadAccountException e) {
+      System.err.println(e.getMessage() + " " + e.getCause());
+    } catch (BadTransactionException e) {
+      System.err.println(e.getMessage() + " " + e.getCause());
+    } catch (NumberFormatException e) {
       System.err.println(e.getMessage() + " " + e.getCause());
     }
 

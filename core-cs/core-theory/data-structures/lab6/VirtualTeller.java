@@ -40,7 +40,7 @@ public class VirtualTeller {
    * @param acct   is an account number.
    * @param amount an amount of money.
    */
-  public void withdraw(int acct, int amount) throws IOException, BadAccountException {
+  public void withdraw(int acct, int amount) throws IOException, BadAccountException, BadTransactionException {
     AccountData account = findAccount(acct);
     account.withdraw(amount);
   }
@@ -52,7 +52,7 @@ public class VirtualTeller {
    * @param acct   is an account number.
    * @param amount an amount of money.
    */
-  public void deposit(int acct, int amount) throws BadAccountException {
+  public void deposit(int acct, int amount) throws BadAccountException, BadTransactionException {
     AccountData account = findAccount(acct);
     account.deposit(amount);
   }
