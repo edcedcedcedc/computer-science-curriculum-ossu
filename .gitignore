@@ -20,3 +20,4 @@ out/
 .idea 
 *.jar
 *.pom
+private/*
