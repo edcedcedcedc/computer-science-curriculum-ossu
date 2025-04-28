@@ -50,8 +50,8 @@ public class DList {
    */
   public DList() {
     head = newNode(null, null, null);
-    head.next = head;
-    head.prev = head;
+    this.head.next = head;
+    this.head.prev = head;
     size = 0;
   }
 
@@ -158,7 +158,7 @@ public class DList {
    */
 
   public DListNode prev(DListNode node) {
-    if (node == null || node.prev != head) {
+    if (node.prev == null || node.prev == head) {
       return null;
     }
     return node.prev;
