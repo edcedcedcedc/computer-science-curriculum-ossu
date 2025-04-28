@@ -43,8 +43,11 @@ public class DListNode extends ListNode {
    *
    *         Performance: runs in O(1) time.
    */
+  @Override
   public boolean isValidNode() {
-    return myList != null;
+    // A node is valid if it belongs to a list (myList != null) and is not the
+    // sentinel node
+    return (myList != null) && (this != ((DList) myList).head);
   }
 
   /**
@@ -97,6 +100,10 @@ public class DListNode extends ListNode {
     // "this" is null. Remember that this node's "myList" field tells you
     // what DList it's in. You should use myList.newNode() to create the
     // new node.
+    DListNode newNode = (DListNode) ((DList) myList).newNode(item, (DList) myList, this, this.next);
+    this.next.prev = newNode;
+    this.next = newNode;
+    ((DList) myList).size++;
   }
 
   /**
@@ -117,6 +124,10 @@ public class DListNode extends ListNode {
     // "this" is null. Remember that this node's "myList" field tells you
     // what DList it's in. You should use myList.newNode() to create the
     // new node.
+    DListNode newNode = (DListNode) ((DList) myList).newNode(item, (DList) myList, this, this.prev);
+    this.prev.next = newNode;
+    this.prev = newNode;
+    ((DList) myList).size++;
   }
 
   /**
@@ -135,7 +146,9 @@ public class DListNode extends ListNode {
     // but changes are necessary. For instance, there is no need to check if
     // "this" is null. Remember that this node's "myList" field tells you
     // what DList it's in.
-
+    this.prev.next = this.next;
+    this.next.prev = this.prev;
+    ((DList) myList).size--;
     // Make this node an invalid node, so it cannot be used to corrupt myList.
     myList = null;
     // Set other references to null to improve garbage collection.

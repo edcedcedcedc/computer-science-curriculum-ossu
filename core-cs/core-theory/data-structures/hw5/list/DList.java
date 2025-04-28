@@ -55,7 +55,6 @@ public class DList extends List {
     // the `list' field (second parameter) as well.
     head = newNode(null, this, null, null);
     head.next = head;
-    head.next.prev = head.next;
     head.prev = head;
     size = 0;
 
@@ -71,6 +70,10 @@ public class DList extends List {
   public void insertFront(Object item) {
     // Your solution here. Similar to Homework 4, but now you need to specify
     // the `list' field (second parameter) as well.
+    DListNode newNode = newNode(item, this, head, head.next);
+    head.next.prev = newNode;
+    head.next = newNode;
+    size++;
   }
 
   /**
@@ -83,6 +86,10 @@ public class DList extends List {
   public void insertBack(Object item) {
     // Your solution here. Similar to Homework 4, but now you need to specify
     // the `list' field (second parameter) as well.
+    DListNode newNode = newNode(item, this, head.prev, head);
+    head.prev.next = newNode;
+    head.prev = newNode;
+    size++;
   }
 
   /**
@@ -143,7 +150,7 @@ public class DList extends List {
       System.out.println("p.item() should throw an exception, and did.");
     }
     try {
-      p.setItem(new Integer(0));
+      p.setItem(0);
       System.out.println("p.setItem() should throw an exception, but didn't.");
     } catch (InvalidNodeException lbe) {
       System.out.println("p.setItem() should throw an exception, and did.");
@@ -161,13 +168,13 @@ public class DList extends List {
       System.out.println("p.prev() should throw an exception, and did.");
     }
     try {
-      p.insertBefore(new Integer(1));
+      p.insertBefore(1);
       System.out.println("p.insertBefore() should throw an exception, but " + "didn't.");
     } catch (InvalidNodeException lbe) {
       System.out.println("p.insertBefore() should throw an exception, and did.");
     }
     try {
-      p.insertAfter(new Integer(1));
+      p.insertAfter(1);
       System.out.println("p.insertAfter() should throw an exception, but " + "didn't.");
     } catch (InvalidNodeException lbe) {
       System.out.println("p.insertAfter() should throw an exception, and did.");
@@ -191,23 +198,23 @@ public class DList extends List {
     System.out.println("Finding back node p of l.");
     p = l.back();
     testInvalidNode(p);
-    l.insertFront(new Integer(10));
+    l.insertFront(10);
     System.out.println("l after insertFront(10) should be [  10  ]: " + l);
   }
 
   public static void main(String[] argv) {
     testEmpty();
     List l = new DList();
-    l.insertFront(new Integer(3));
-    l.insertFront(new Integer(2));
-    l.insertFront(new Integer(1));
+    l.insertFront(3);
+    l.insertFront(2);
+    l.insertFront(1);
     System.out.println("l is a list of 3 elements: " + l);
     try {
       ListNode n;
       int i = 1;
       for (n = l.front(); n.isValidNode(); n = n.next()) {
         System.out.println("n.item() should be " + i + ": " + n.item());
-        n.setItem(new Integer(((Integer) n.item()).intValue() * 2));
+        n.setItem(((Integer) n.item()).intValue() * 2);
         System.out.println("n.item() should be " + 2 * i + ": " + n.item());
         i++;
       }
@@ -217,7 +224,7 @@ public class DList extends List {
       i = 6;
       for (n = l.back(); n.isValidNode(); n = n.prev()) {
         System.out.println("n.item() should be " + i + ": " + n.item());
-        n.setItem(new Integer(((Integer) n.item()).intValue() * 2));
+        n.setItem(((Integer) n.item()).intValue() * 2);
         System.out.println("n.item() should be " + 2 * i + ": " + n.item());
         i = i - 2;
       }
