@@ -88,7 +88,7 @@ _Topics Covered_:
 `etc`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/38) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
+|Data Structures|![](https://geps.dev/progress/45) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
 
 #### Core math
 
@@ -148,8 +148,6 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
 |Fundamentals of Physics 1|![](https://geps.dev/progress/83)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|[Google Docs](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)|
-
-#### Reading and Composition 
 
 ## Log
 [Return to table of contents](#table-of-contents)<br>
