@@ -202,7 +202,7 @@ public class DList extends List {
     System.out.println("l after insertFront(10) should be [  10  ]: " + l);
   }
 
-  public static void main(String[] argv) {
+  public static void main(String[] argv) throws InvalidNodeException {
     testEmpty();
     List l = new DList();
     l.insertFront(3);

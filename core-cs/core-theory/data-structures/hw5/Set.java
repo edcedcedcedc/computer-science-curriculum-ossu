@@ -23,8 +23,11 @@ public class Set {
    *
    * Performance: runs in O(1) time.
    **/
+  private DList elements;
+
   public Set() {
     // Your solution here.
+    this.elements = new DList();
   }
 
   /**
@@ -34,7 +37,7 @@ public class Set {
    **/
   public int cardinality() {
     // Replace the following line with your solution.
-    return 0;
+    return elements.length();
   }
 
   /**
@@ -44,9 +47,27 @@ public class Set {
    * compareTo() method of the java.lang.Comparable interface.
    *
    * Performance: runs in O(this.cardinality()) time.
+   * 
+   * @throws InvalidNodeException
    **/
-  public void insert(Comparable c) {
-    // Your solution here.
+  public void insert(Comparable c) throws InvalidNodeException {
+    if (elements.isEmpty()) {
+      elements.insertBack(c);
+      return;
+    }
+    DListNode current = (DListNode) elements.front();
+    while (current.isValidNode()) {
+      int comparison = c.compareTo((Comparable) current.item());
+      if (comparison == 0) {
+        return;
+      } else if (comparison < 0) {
+
+        current.insertBefore(c);
+        return;
+      }
+      current = (DListNode) current.next();
+    }
+    elements.insertBack(c);
   }
 
   /**
@@ -97,27 +118,42 @@ public class Set {
    * RIGHT UP TO THE TWO SPACES BETWEEN ELEMENTS. ANY DEVIATIONS WILL LOSE POINTS.
    **/
   public String toString() {
-    // Replace the following line with your solution.
-    return "";
+    if (elements.isEmpty()) {
+      return "{ }";
+    }
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    try {
+      DListNode current = (DListNode) elements.front();
+      while (current.isValidNode()) {
+        sb.append(" ").append(current.item());
+        current = (DListNode) current.next();
+      }
+    } catch (InvalidNodeException e) {
+      System.out.println("Error traversing the list: " + e.getMessage());
+    }
+
+    sb.append(" }");
+    return sb.toString();
   }
 
-  public static void main(String[] argv) {
+  public static void main(String[] argv) throws InvalidNodeException {
     Set s = new Set();
-    s.insert(new Integer(3));
-    s.insert(new Integer(4));
-    s.insert(new Integer(3));
+    s.insert(3);
+    s.insert(4);
+    s.insert(3);
     System.out.println("Set s = " + s);
 
     Set s2 = new Set();
-    s2.insert(new Integer(4));
-    s2.insert(new Integer(5));
-    s2.insert(new Integer(5));
+    s2.insert(4);
+    s2.insert(5);
+    s2.insert(5);
     System.out.println("Set s2 = " + s2);
 
     Set s3 = new Set();
-    s3.insert(new Integer(5));
-    s3.insert(new Integer(3));
-    s3.insert(new Integer(8));
+    s3.insert(5);
+    s3.insert(3);
+    s3.insert(8);
     System.out.println("Set s3 = " + s3);
 
     s.union(s2);
