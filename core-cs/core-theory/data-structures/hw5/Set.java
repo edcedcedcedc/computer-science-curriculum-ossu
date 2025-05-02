@@ -85,8 +85,27 @@ public class Set {
    * DO NOT MODIFY THE SET s. DO NOT ATTEMPT TO COPY ELEMENTS; just copy
    * _references_ to them.
    **/
-  public void union(Set s) {
+  public void union(Set s) throws InvalidNodeException {
     // Your solution here.
+    DListNode thisCurrent = (DListNode) this.elements.front();
+    DListNode sCurrent = (DListNode) s.elements.front();
+    while (thisCurrent.isValidNode() && sCurrent.isValidNode()) {
+      Comparable thisItem = (Comparable) thisCurrent.item();
+      Comparable sItem = (Comparable) sCurrent.item();
+      int comparison = thisItem.compareTo(sItem);
+      if (comparison == 0) {
+        sCurrent = (DListNode) sCurrent.next();
+      } else if (comparison > 0) {
+        thisCurrent.insertBefore(sItem);
+        sCurrent = (DListNode) sCurrent.next();
+      } else {
+        thisCurrent = (DListNode) thisCurrent.next();
+      }
+    }
+    while (sCurrent.isValidNode()) {
+      this.elements.insertBack(sCurrent.item());
+      sCurrent = (DListNode) sCurrent.next();
+    }
   }
 
   /**
@@ -101,8 +120,26 @@ public class Set {
    * DO NOT MODIFY THE SET s. DO NOT CONSTRUCT ANY NEW NODES. DO NOT ATTEMPT TO
    * COPY ELEMENTS.
    **/
-  public void intersect(Set s) {
-    // Your solution here.
+  public void intersect(Set s) throws InvalidNodeException {
+    DListNode thisCurrent = (DListNode) this.elements.front();
+    DListNode sCurrent = (DListNode) s.elements.front();
+
+    while (thisCurrent.isValidNode() && sCurrent.isValidNode()) {
+      Comparable thisItem = (Comparable) thisCurrent.item();
+      Comparable sItem = (Comparable) sCurrent.item();
+
+      int comparison = thisItem.compareTo(sItem);
+      if (comparison == 0) {
+        thisCurrent = (DListNode) thisCurrent.next();
+        sCurrent = (DListNode) sCurrent.next();
+      } else if (comparison < 0) {
+        DListNode toRemove = thisCurrent;
+        thisCurrent = (DListNode) thisCurrent.next();
+        toRemove.remove();
+      } else {
+        sCurrent = (DListNode) sCurrent.next();
+      }
+    }
   }
 
   /**
@@ -142,8 +179,18 @@ public class Set {
     s.insert(3);
     s.insert(4);
     s.insert(3);
+    s.insert(6);
     System.out.println("Set s = " + s);
-
+    s.elements.front().remove();
+    System.out.println("Removing front from s " + s);
+    s.elements.back().remove();
+    System.out.println("Removing back from s " + s);
+    System.out.print("Inserting again 3, 4, 3, 6" + '\n');
+    s.insert(3);
+    s.insert(4);
+    s.insert(3);
+    s.insert(6);
+    System.out.println("Set s = " + s);
     Set s2 = new Set();
     s2.insert(4);
     s2.insert(5);
@@ -154,6 +201,8 @@ public class Set {
     s3.insert(5);
     s3.insert(3);
     s3.insert(8);
+    s3.insert(9);
+    s3.insert(4);
     System.out.println("Set s3 = " + s3);
 
     s.union(s2);
