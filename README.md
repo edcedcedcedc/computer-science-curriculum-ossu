@@ -630,14 +630,28 @@ and finished linear algebra, this was a long run, moving forward.
 
 ### 20/03/2025
 🎉🎉🎉 I'll take a minute and clap for myself.
-- I formally closed all required Calculus courses, in total, from Algebra 1 till present moment it took me around 3 years, 
-but I started from 0 and was lazy, I didn't even understand fractions, so as practice shows, you can do it, with consistency and patience. Right now I am sure that my current level of math is enough to swing in almost any cs/programming/se field. I wish myself good luck
+- I formally closed all required Calculus courses, in total, from Algebra 1 till present moment it took me around 3 years, but I started from 0 and was lazy, I didn't even understand fractions, so as practice shows, you can do it, with consistency and patience. Right now I am sure that my current level of math is enough to swing in almost any cs/programming/se field. I wish myself good luck.
+
+### 23/03/2025
+- Ok, is enough of PROJECT1 of Data Structures class, I deleted it and don't event want to think on it, I am moving forward.
+- Downloaded PROJECT2 for Data Structures class.
+- Updated downloader.py to be recursive.
 
 ### HEAD 
-23/03/2025
-- Ok, is enought of PROJECT1 of Data Structures class, I deleted it and don't event want to think on it, I am moving forward.
-- Downloaded PROJECT2, seems more intersting to me.
-- Updated downloader.py to be recursive.
+12/05/2025
+- I got a litte lazy, and I am moving in a relative slow pace if compared to what I used to be, I guess it's summer and had burnout of crazy coding preparations for gsoc-2025.
+
+- 🎉🎉🎉 I was accepted into Google Summer of Code 2025 for @Rocket.Chat
+
+- Data Structes course is around 50% 22 lessons done out of 42, I also read the book and think on it, extra exercises maybe. Also I didn't do any project for this class yet, but I downloaded a bunch of them from other years of this class and I plan to do them at some point, but because there is another course in the way called, "software construction" and it's in Java also, I think I might not force myself to do all projects but at leasts half of this within this course.
+
+- Introduction to Probability is hard, I expected it to be that way, I am still at hw2 but soon will move forward, I have to keep taking small tests every other day to better understand it, the problem is that I confuse some of the concepts, because I didn't get the intuition for all of them yet, so I have to solve problems, that's it
+
+- Math for CS: Coloring, Trees, and problem set 8, unit 2 is almost done, I need to finish unit 3, and the course will be done, I plan to skip unit 4, because I take a separate probability course, so it's no point of it.
+
+- Fundamentals Of Physics-1: around 80% of the course done, I need a final push to it, and will close this and move forward
+
+- Because of the Google Summer of Code I have to modify the schedule.
 <br>
 
 
@@ -652,11 +666,12 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 ## Schedule 
 
 **Each Day:**
-- Codeforces from 9 a.m noon
+- Google Summer of Code for Rocket Chat in the morning and afternoon
 
 **Monday:**  
 - Data Structures 
 - Physics 200
+- Codeforces 
 
 **Tuesday:**  
 - Introduction to Probability
@@ -665,6 +680,7 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 **Wednesday:**  
 - Data Structures
 - Physics 200
+- Codeforces 
 
 **Thursday:**  
 - Introduction to Probability
@@ -673,6 +689,7 @@ but I started from 0 and was lazy, I didn't even understand fractions, so as pra
 **Friday:**  
 - Physics 200 
 - Mathematics for Computer Science
+- Codeforces 
 
 **Saturday:**  
 - Data Structures
