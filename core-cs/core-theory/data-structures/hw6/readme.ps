@@ -1,0 +1,818 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 25 25 587 767
+%%Title: Enscript Output
+%%For: Jonathan Shewchuk
+%%Creator: GNU enscript 1.6.4
+%%CreationDate: Wed Mar 12 15:32:17 2014
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 4
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 4
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript 1.6 4
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    % light bar
+    0 0 d_header_w d_header_h 2 div Box
+    .95 setgray fill
+
+    % dark gray boxes
+    /dbw d_header_h 2 mul def	% dark box width
+    /dbc .7 def			% dark box color
+
+    % left dark box.
+    0 0 dbw d_header_h Box
+    dbc setgray fill
+
+    0 setgray 
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 5 div moveto show
+
+    % right dark box
+    d_header_w dbw sub 0 dbw d_header_h Box
+    dbc setgray fill
+
+    HeaderPageNumF setfont
+    1 setgray
+    pagenumstr dup
+    stringwidth pop dbw exch sub 2 div d_header_w dbw sub add
+    d_header_h .2 mul moveto show
+
+    % filename
+    0 setgray 
+    HeaderHDRF setfont
+    d_header_w fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        d_header_w user_header_left_str stringwidth pop sub 2 div 
+        h moveto user_header_left_str show
+      } {
+        dbw 5 add h moveto user_header_left_str show
+
+        d_header_w user_header_center_str stringwidth pop sub 2 div 
+        h moveto user_header_center_str show
+
+	d_header_w dbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} def
+%%EndResource
+/d_page_w 742 def
+/d_page_h 562 def
+/d_header_x 0 def
+/d_header_y 526 def
+/d_header_w 742 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 742 def
+/d_footer_h 0 def
+/d_output_w 742 def
+/d_output_h 526 def
+/cols 2 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 1 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (03/12/14) def
+/modtimestr (15:26:44) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(                              CS 61B  Homework 6) s
+5 508 M
+(                     Due noon Wednesday, March 19, 2014) s
+5 492 M
+(This homework will teach you about hash tables, hash codes, and compression) s
+5 484 M
+(functions.  This is an individual assignment; you may not share code with other) s
+5 476 M
+(students.) s
+5 460 M
+(Copy the Homework 6 directory by doing the following, starting from your home) s
+5 452 M
+(directory.) s
+5 436 M
+(    cp -r ~cs61b/hw/hw6 .) s
+5 420 M
+(Part I  \(6 points\)) s
+5 412 M
+(------------------) s
+5 404 M
+(Implement a class called HashTableChained, a hash table with chaining.) s
+5 396 M
+(HashTableChained implements an interface called Dictionary, which defines the) s
+5 388 M
+(set of methods that a dictionary needs.  Both files appear in the "dict") s
+5 380 M
+(package.) s
+5 364 M
+(The methods you will implement:  insert\(\) an entry \(key + value\) into a hash) s
+5 356 M
+(table, find\(\) an entry with a specified key, remove\(\) an entry with a specified) s
+5 348 M
+(key, return the size\(\) of the hash table \(in entries\), and say whether the hash) s
+5 340 M
+(table isEmpty\(\).  There is also a makeEmpty\(\) method, which removes every entry) s
+5 332 M
+(from a hash table, and two HashTableChained constructors.  One constructor lets) s
+5 324 M
+(applications specify an estimate of the number of entries that will be stored) s
+5 316 M
+(in the hash table; the other uses a default size.  Both constructors should) s
+5 308 M
+(create a hash table that uses a prime number of buckets.  \(Several methods for) s
+5 300 M
+(identifying prime numbers were discussed early in the semester.\)  In the first) s
+5 292 M
+(constructor, shoot for a load factor between 0.5 and 1.  In the second) s
+5 284 M
+(constructor, shoot for around 100 buckets.  Descriptions of all the methods may) s
+5 276 M
+(be found in Dictionary.java and HashTableChained.java.) s
+5 260 M
+(Do not change Dictionary.java.  Do not change any prototypes in) s
+5 252 M
+(HashTableChained.java, or throw any checked exceptions.  Most of your solution) s
+5 244 M
+(should appear in HashTableChained.java, but other classes are permitted.  You) s
+5 236 M
+(will probably want to use a linked list code of your choice.  Note that even) s
+5 228 M
+(though the hash table is in the "dict" package, it can still use linked list) s
+5 220 M
+(code in a separate "list" package.  There's no need to move the list code or) s
+5 212 M
+(the "list" package into the "dict" package, nor is it a good idea.) s
+5 196 M
+(Look up the hashCode method in the java.lang.Object API.  Assume that the) s
+5 188 M
+(objects used as keys to your hash table have a hashCode\(\) method that returns a) s
+5 180 M
+("good" hash code between Integer.MIN_VALUE and Integer.MAX_VALUE \(that is,) s
+5 172 M
+(between -2147483648 and 2147483647\).  Your hash table should use a compression) s
+5 164 M
+(function, as described in lecture, to map each key's hash code to a bucket of) s
+5 156 M
+(the table.  Your compression function should be computed by the compFunction\(\)) s
+5 148 M
+(helper method in HashTableChained.java \(which has "package" protection so we) s
+5 140 M
+(can test it independently; DO NOT CHANGE ITS PROTECTION\).  Your insert\(\),) s
+5 132 M
+(find\(\), and remove\(\) should all use this compFunction\(\) method.) s
+5 116 M
+(The methods find\(\) and remove\(\) should return \(and in the latter case,) s
+5 108 M
+(remove\) an entry whose key is equals\(\) to the parameter "key".  Reference) s
+5 100 M
+(equality \(==\) is NOT required for a match.) s
+376 508 M
+(Compression functions) s
+376 500 M
+(---------------------) s
+376 492 M
+(Besides the lecture notes, compression functions are also covered in Section) s
+376 484 M
+(9.2.4 of Goodrich and Tamassia.  If you have an old edition \(prior to the) s
+376 476 M
+(fifth\), they make the erroneous claim that for a hash code i and an N-bucket) s
+376 468 M
+(hash table,) s
+376 452 M
+(  h\(i\) = |ai + b| mod N) s
+376 436 M
+(is "a more sophisticated compression function" than) s
+376 420 M
+(  h\(i\) = |i| mod N.) s
+376 404 M
+(Actually, the "more sophisticated" function causes _exactly_ the same) s
+376 396 M
+(collisions as the less sophisticated compression function; it just shuffles the) s
+376 388 M
+(buckets to different indices.  The better compression function \(which they get) s
+376 380 M
+(right in the fifth edition\) is) s
+376 364 M
+(  h\(i\) = \(\(ai + b\) mod p\) mod N,) s
+376 348 M
+(where p is a large prime that's substantially bigger than N.  \(You can replace) s
+376 340 M
+(the parentheses with absolute values if you like; it doesn't matter much.\)) s
+376 324 M
+(For this homework, the simplest compression function might suffice.  The bottom) s
+376 316 M
+(line is whether you have too many collisions or not in Part II.  If so, you'll) s
+376 308 M
+(need to improve your hash code or compression function or both.) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 2 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (03/12/14) def
+/modtimestr (15:26:44) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Part II  \(4 points\)) s
+5 500 M
+(-------------------) s
+5 492 M
+(It is often useful to hash data structures other than strings or integers.  For) s
+5 484 M
+(example, game tree search can sometimes be sped by saving game boards and their) s
+5 476 M
+(evaluation functions, so that if the same game board can be reached by several) s
+5 468 M
+(different sequences of moves, it will only have to be evaluated once.  For this) s
+5 460 M
+(application each game board is a key, and the value returned by the minimax) s
+5 452 M
+(algorithm is the value stored alongside the key in the hash table.  If our) s
+5 444 M
+(search encounters the same game board again, we can look up its value in the) s
+5 436 M
+(dictionary, so we won't have to run minimax on it twice.) s
+5 420 M
+(The class SimpleBoard represents an 8x8 checkerboard.  Each position has one of) s
+5 412 M
+(three values:  0, 1, or 2.  Your job is to fill in two missing methods:) s
+5 404 M
+(equals\(\) and hashCode\(\).  The equals\(\) operation should be true whenever the) s
+5 396 M
+(boards have the same pieces in the same locations.  The hashCode\(\) function) s
+5 388 M
+(should satisfy the specifications described in the java.lang.Object API.  In) s
+5 380 M
+(particular, if two SimpleBoards are equals\(\), they have the same hash code.) s
+5 364 M
+(You will be graded on how "good" your hash code and compression function are.) s
+5 356 M
+(By "good" we mean that, regardless of the table size, the hash code and) s
+5 348 M
+(compression function evenly distribute SimpleBoards throughout the hash table.) s
+5 340 M
+(Your solution will be graded in part on how well it distributes a set of) s
+5 332 M
+(randomly constructed boards.  Hence, the sum of all the cells is not a good) s
+5 324 M
+(hash code, because it does not change if cells are swapped.  The product of all) s
+5 316 M
+(cells is even worse, because it's usually zero.  What's better?  One idea is to) s
+5 308 M
+(think of each cell as a digit of a base-3 number \(with 64 digits\), and convert) s
+5 300 M
+(that base-3 number to a single int.  \(Be careful not to use floating-point) s
+5 292 M
+(numbers for this purpose, because they round off the least significant digits,) s
+5 284 M
+(which is the opposite of what you want.  Better to round off the most) s
+5 276 M
+(significant digits, which is what happens when an int gets too big.\)) s
+5 260 M
+(Do not change any prototypes in SimpleBoard.java, or throw any checked) s
+5 252 M
+(exceptions.  The file Homework6Test.java is provided to help you test your) s
+5 244 M
+(HashTableChained and your SimpleBoard together.  Note that Homework6Test.java) s
+5 236 M
+(does NOT test all the methods of HashTableChained; you should write additional) s
+5 228 M
+(tests of your own.  Moreover, you will need to write a test to see if your) s
+5 220 M
+(hash code is doing a good job of distributing SimpleBoards evenly through the) s
+5 212 M
+(table.  Our autograder will do extensive tests on that.) s
+376 508 M
+(A tutorial on collision probability) s
+376 500 M
+(-----------------------------------) s
+376 492 M
+(Students are always surprised when they find out how many collisions occur in) s
+376 484 M
+(a working hash table.  You might have the misimpression that there won't be) s
+376 476 M
+(many collisions at all until the table is nearly full.  Let's analyze how many) s
+376 468 M
+(collisions you should expect to see if your hash code and compression function) s
+376 460 M
+(are good.  Here, we define a "collision" to be the event where a newly inserted) s
+376 452 M
+(key has to share its bucket with one or more previously inserted keys.  \(We) s
+376 444 M
+(count that as only one collision, regardless of how many keys are already in) s
+376 436 M
+(the bucket.\)) s
+376 420 M
+(If you have N buckets and a good \(pseudorandom\) hash function, the probability) s
+376 412 M
+(of any two keys colliding is 1/N.  So when you have i keys in the table and) s
+376 404 M
+(insert key i + 1, the probability that the new key does NOT collide with any) s
+376 396 M
+(old key is \(1 - 1/N\)^i.  If you insert n distinct items, the expected number) s
+376 388 M
+(that WON'T collide with any previous item is) s
+376 372 M
+(  n-1) s
+376 364 M
+(  sum \(1 - 1/N\)^i = N - N \(1 - 1/N\)^n,) s
+376 356 M
+(  i=0) s
+376 340 M
+(so the expected number of collisions is) s
+376 324 M
+(  n - N + N \(1 - 1/N\)^n.) s
+376 308 M
+(Now, for any n and N you test, you can just plug them into this formula and see) s
+376 300 M
+(if the number of collisions you're getting is in the ballpark of what you) s
+376 292 M
+(should expect to get.  For example, if you have N = 100 buckets and n = 100) s
+376 284 M
+(keys, expect about 36.6 collisions.) s
+376 268 M
+(Submitting your solution) s
+376 260 M
+(------------------------) s
+376 252 M
+(Change \(cd\) to your hw6 directory, which should contain SimpleBoard.java and) s
+376 244 M
+(the dict directory \(and optionally a list directory\).  The dict directory) s
+376 236 M
+(should contain HashTableChained.java and any other .java files it uses \(except) s
+376 228 M
+(those in the list package\).  You're not allowed to change Dictionary.java or) s
+376 220 M
+(Entry.java, so the "submit" program won't take them; nor will it take) s
+376 212 M
+(Homework6Test.java \(which you can change as much as you like\).) s
+376 196 M
+(Make sure that your submission compiles and runs on the _lab_ machines.  From) s
+376 188 M
+(your hw6 directory, type "submit hw6".  \(Note that "submit" will not work if) s
+376 180 M
+(you are inside the dict or list directory!\)  After submitting, if you realize) s
+376 172 M
+(your solution is flawed, you may fix it and submit again.  You may submit as) s
+376 164 M
+(often as you like.  Only the last version you submit before the deadline will) s
+376 156 M
+(be graded.) s
+_R
+S
+%%Trailer
+%%Pages: 2
+%%DocumentNeededResources: font Times-Roman Courier-Bold Courier 
+%%+ font Times-Bold 
+%%EOF
