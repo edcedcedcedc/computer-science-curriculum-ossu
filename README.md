@@ -13,10 +13,10 @@
 5. [Log by date](#log)
 6. [Current schedule](#schedule)
 7. [Current graph version of the progress](#graph)
+8. [Support](#support)
 
 ## About
-
-I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#OSSU) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
+I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#ossu) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
 ## Khan Academy
 [Return to table of contents](#table-of-contents)
@@ -704,5 +704,13 @@ and finished linear algebra, this was a long run, moving forward.
 
 ## Graph
 ![CS Roadmap](random/graph/screenshot2.png)
+
+[Return to table of contents](#table-of-contents)
+
+
+## Support 
+Currently, GSoC is my only source of support (and it hasn’t started yet). If you'd like to keep me caffeinated and coding — thank you ❤️.
+I still have about two years left to complete OSSU, and I'm working hard to become self-sufficient soon. Your support helps bridge that gap while I build skills, contribute to open source, and grow into a full-time software engineer.<br>
+[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/androranogajec)
 
 [Return to table of contents](#table-of-contents)
