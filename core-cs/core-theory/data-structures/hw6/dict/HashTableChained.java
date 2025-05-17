@@ -13,7 +13,14 @@ package hw6.dict;
  * DO NOT CHANGE ANY PROTOTYPES IN THIS FILE.
  **/
 
+import hw5.list.DList;
+import hw5.list.DListNode;
+import hw5.list.InvalidNodeException;
+
 public class HashTableChained implements Dictionary {
+
+  private int size;
+  protected DList[] buckets;
 
   /**
    * Place any data fields here.
@@ -26,7 +33,13 @@ public class HashTableChained implements Dictionary {
    **/
 
   public HashTableChained(int sizeEstimate) {
-    // Your solution here.
+    this.buckets = new DList[sizeEstimate];
+
+    for (int i = 0; i <= this.buckets.length - 1; i++) {
+      this.buckets[i] = new DList();
+    }
+
+    this.size = 0;
   }
 
   /**
@@ -46,9 +59,13 @@ public class HashTableChained implements Dictionary {
    * be used by insert, find, and remove.
    **/
 
+  int hash(Object key) {
+    int index = compFunction(key.hashCode());
+    return index;
+  }
+
   int compFunction(int code) {
-    // Replace the following line with your solution.
-    return 88;
+    return Math.abs(code) % buckets.length;
   }
 
   /**
@@ -60,7 +77,7 @@ public class HashTableChained implements Dictionary {
 
   public int size() {
     // Replace the following line with your solution.
-    return 0;
+    return this.size;
   }
 
   /**
@@ -71,7 +88,7 @@ public class HashTableChained implements Dictionary {
 
   public boolean isEmpty() {
     // Replace the following line with your solution.
-    return true;
+    return size == 0;
   }
 
   /**
@@ -88,8 +105,13 @@ public class HashTableChained implements Dictionary {
    **/
 
   public Entry insert(Object key, Object value) {
-    // Replace the following line with your solution.
-    return null;
+    Entry entry = new Entry();
+    entry.key = key;
+    entry.value = value;
+    int index = hash(key);
+    buckets[index].insertBack(entry);
+    size++;
+    return entry;
   }
 
   /**
@@ -102,10 +124,20 @@ public class HashTableChained implements Dictionary {
    * @param key the search key.
    * @return an entry containing the key and an associated value, or null if no
    *         entry contains the specified key.
+   * @throws InvalidNodeException
    **/
 
-  public Entry find(Object key) {
-    // Replace the following line with your solution.
+  public Entry find(Object key) throws InvalidNodeException {
+    int index = hash(key);
+    DList bucket = buckets[index];
+    DListNode node = (DListNode) bucket.front();
+    while (node.isValidNode()) {
+      Entry entry = (Entry) node.item();
+      if (entry.key.equals(key)) {
+        return entry;
+      }
+      node = (DListNode) node.next();
+    }
     return null;
   }
 
@@ -131,6 +163,28 @@ public class HashTableChained implements Dictionary {
    */
   public void makeEmpty() {
     // Your solution here.
+  }
+
+  public static void main(String[] args) throws InvalidNodeException {
+    HashTableChained table = new HashTableChained(7); // small prime for easy testing
+
+    System.out.println("Is empty? " + table.isEmpty()); // true
+    table.insert("foo", 42);
+    table.insert("bar", 99);
+    table.insert("baz", 123);
+
+    System.out.println("Size: " + table.size()); // 3
+    System.out.println("Find foo: " + table.find("foo") + " " + "Should be: Entry(foo, 42)"); // should print Entry with
+                                                                                              // key "foo"
+    System.out.println("Find bar: " + table.find("bar") + " " + "Should be: Entry(bar, 99)"); // should print Entry with
+                                                                                              // key "bar"
+    System.out.println("Find missing: " + table.find("missing") + " " + "Should be null"); // null
+
+    System.out.println("Remove foo: " + table.remove("foo")); // should print Entry with key "foo"
+    System.out.println("Size after remove: " + table.size()); // 2
+
+    table.makeEmpty();
+    System.out.println("Is empty after makeEmpty? " + table.isEmpty()); // true
   }
 
 }

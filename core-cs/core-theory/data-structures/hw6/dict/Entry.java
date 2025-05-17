@@ -21,4 +21,8 @@ public class Entry {
     return value;
   }
 
+  @Override
+  public String toString() {
+    return "Entry(" + key + ", " + value + ")";
+  }
 }
