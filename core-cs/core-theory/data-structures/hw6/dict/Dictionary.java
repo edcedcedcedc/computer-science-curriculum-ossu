@@ -2,6 +2,7 @@
 
 package hw6.dict;
 
+import hw5.list.DListNode;
 import hw5.list.InvalidNodeException;
 
 /**
@@ -53,6 +54,16 @@ public interface Dictionary {
    * @throws InvalidNodeException
    **/
 
+  /**
+   * Searches for and returns the DListNode associated with the specified key.
+   *
+   * @param key the key whose associated node is to be found
+   * @return the DListNode containing the specified key, or null if not found
+   * @throws InvalidNodeException if the node is invalid or the operation cannot
+   *                              be completed
+   */
+  public DListNode findNode(Object key) throws InvalidNodeException;
+
   public Entry find(Object key) throws InvalidNodeException;
 
   /**
@@ -65,12 +76,11 @@ public interface Dictionary {
    *         entry contains the specified key.
    */
 
-  public Entry remove(Object key);
+  public Entry remove(Object key) throws InvalidNodeException;
 
   /**
    * Remove all entries from the dictionary.
    */
 
   public void makeEmpty();
-
 }

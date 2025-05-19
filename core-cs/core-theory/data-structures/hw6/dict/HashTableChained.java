@@ -115,6 +115,30 @@ public class HashTableChained implements Dictionary {
   }
 
   /**
+   * Searches for a node in the hash table's bucket list that contains the
+   * specified key.
+   *
+   * @param the key to search for in the hash table.
+   * @return the node containing the entry with the specified key, or null if not
+   *         found.
+   * @throws InvalidNodeException if an invalid node is encountered during
+   *                              traversal.
+   */
+  public DListNode findNode(Object key) throws InvalidNodeException {
+    int index = hash(key);
+    DList bucket = buckets[index];
+    DListNode node = (DListNode) bucket.front();
+    while (node.isValidNode()) {
+      Entry entry = (Entry) node.item();
+      if (entry.key.equals(key)) {
+        return node;
+      }
+      node = (DListNode) node.next();
+    }
+    return null;
+  }
+
+  /**
    * Search for an entry with the specified key. If such an entry is found, return
    * it; otherwise return null. If several entries have the specified key, choose
    * one arbitrarily and return it.
@@ -128,17 +152,13 @@ public class HashTableChained implements Dictionary {
    **/
 
   public Entry find(Object key) throws InvalidNodeException {
-    int index = hash(key);
-    DList bucket = buckets[index];
-    DListNode node = (DListNode) bucket.front();
-    while (node.isValidNode()) {
+    DListNode node = findNode(key);
+    if (node != null) {
       Entry entry = (Entry) node.item();
-      if (entry.key.equals(key)) {
-        return entry;
-      }
-      node = (DListNode) node.next();
+      return entry;
+    } else {
+      return null;
     }
-    return null;
   }
 
   /**
@@ -153,9 +173,16 @@ public class HashTableChained implements Dictionary {
    *         entry contains the specified key.
    */
 
-  public Entry remove(Object key) {
-    // Replace the following line with your solution.
-    return null;
+  public Entry remove(Object key) throws InvalidNodeException {
+    DListNode node = findNode(key);
+    if (node != null) {
+      Entry entry = (Entry) node.item();
+      node.remove();
+      size--;
+      return entry;
+    } else {
+      return null;
+    }
   }
 
   /**
