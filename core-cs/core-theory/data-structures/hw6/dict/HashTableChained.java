@@ -188,8 +188,18 @@ public class HashTableChained implements Dictionary {
   /**
    * Remove all entries from the dictionary.
    */
-  public void makeEmpty() {
-    // Your solution here.
+  public void makeEmpty() throws InvalidNodeException {
+    for (int i = 0; i <= buckets.length - 1; i++) {
+      DList bucket = buckets[i];
+      DListNode node = (DListNode) bucket.front();
+      while (node.isValidNode()) {
+        DListNode current = node;
+        current = (DListNode) current.next();
+        node.remove();
+        node = current;
+        size--;
+      }
+    }
   }
 
   public static void main(String[] args) throws InvalidNodeException {

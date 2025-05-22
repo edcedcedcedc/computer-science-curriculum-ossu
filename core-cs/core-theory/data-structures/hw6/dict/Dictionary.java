@@ -82,5 +82,5 @@ public interface Dictionary {
    * Remove all entries from the dictionary.
    */
 
-  public void makeEmpty();
+  public void makeEmpty() throws InvalidNodeException;
 }
