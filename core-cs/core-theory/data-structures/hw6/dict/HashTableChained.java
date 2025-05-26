@@ -48,7 +48,7 @@ public class HashTableChained implements Dictionary {
    **/
 
   public HashTableChained() {
-    // Your solution here.
+    this(97);
   }
 
   /**

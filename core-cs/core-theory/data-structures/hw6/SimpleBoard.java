@@ -67,10 +67,21 @@ public class SimpleBoard {
    */
 
   public boolean equals(Object board) {
-    // Replace the following line with your solution. Be sure to return false
-    // (rather than throwing a ClassCastException) if "board" is not
-    // a SimpleBoard.
-    return false;
+    if (this == board)
+      return true;
+    if (!(board instanceof SimpleBoard))
+      return false;
+
+    SimpleBoard other = (SimpleBoard) board;
+
+    for (int i = 0; i < DIMENSION; i++) {
+      for (int j = 0; j < DIMENSION; j++) {
+        if (this.grid[i][j] != other.grid[i][j]) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   /**
@@ -80,8 +91,15 @@ public class SimpleBoard {
    */
 
   public int hashCode() {
-    // Replace the following line with your solution.
-    return 99;
+    int hash = 7;
+    int prime = 31;
+
+    for (int i = 0; i < DIMENSION; i++) {
+      for (int j = 0; j < DIMENSION; j++) {
+        hash = prime * hash + grid[i][j];
+      }
+    }
+    return hash;
   }
 
 }
