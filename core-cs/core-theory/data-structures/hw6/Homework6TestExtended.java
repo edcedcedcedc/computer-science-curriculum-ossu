@@ -128,7 +128,7 @@ public class Homework6TestExtended {
     testSizeIsEmpty();
 
     // Uncomment if you add the method getBucketSizes() in HashTableChained
-    // testDistribution();
+    testDistribution();
 
     System.out.println("All tests completed.");
   }

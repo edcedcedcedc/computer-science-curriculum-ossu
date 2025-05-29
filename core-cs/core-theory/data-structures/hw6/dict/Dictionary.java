@@ -83,4 +83,6 @@ public interface Dictionary {
    */
 
   public void makeEmpty() throws InvalidNodeException;
+
+  public int[] getBucketSizes();
 }

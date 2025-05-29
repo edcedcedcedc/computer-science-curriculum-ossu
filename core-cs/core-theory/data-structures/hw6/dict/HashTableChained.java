@@ -202,6 +202,14 @@ public class HashTableChained implements Dictionary {
     }
   }
 
+  public int[] getBucketSizes() {
+    int[] sizes = new int[buckets.length];
+    for (int i = 0; i < buckets.length; i++) {
+      sizes[i] = buckets[i].length();
+    }
+    return sizes;
+  }
+
   public static void main(String[] args) throws InvalidNodeException {
     HashTableChained table = new HashTableChained(7); // small prime for easy testing
 
