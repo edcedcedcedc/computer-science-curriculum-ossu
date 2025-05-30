@@ -1,0 +1,23 @@
+claim 
+2^n + 1 in O(4^n - 16)
+
+I want to proove that there exists constants c > 0 and n0 > 1 such that 
+2^n + 1 <= c(4^n - 16) for all  n >= n0 
+
+try to find a value for c and value for n0 that the inequality holds
+4^n = (2^2)^n = 2^2n
+
+2^n + 1 <= c(2^2n - 16)
+
+с----n------
+1    1      2^1 + 1 = 3 <= -12 = 1(4 - 16)
+2    2      2^2 + 1 = 5 <=  0  = 2(4^2 - 16)
+3    3      2^3 + 1 = 9 <= 144 = 3(4^3 - 16) = 3(64 - 16)
+
+thus 
+
+2^n + 1 in O(4^n - 16)
+
+
+
+ 
