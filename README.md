@@ -88,7 +88,7 @@ _Topics Covered_:
 `etc`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/45) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
+|Data Structures|![](https://geps.dev/progress/60) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
 
 #### Core math
 
@@ -133,7 +133,7 @@ _Topics Covered_:
 
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Introduction to Probability|![](https://geps.dev/progress/14)| 01.03.25 |1.07.25||[stat-110](./advanced-cs/advanced-math/introduction-to-probability/) |[projects]()|[Google Docs](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing)|
+|Introduction to Probability|![](https://geps.dev/progress/35)| 01.03.25 |1.07.25||[stat-110](./advanced-cs/advanced-math/introduction-to-probability/) |[projects]()|[Google Docs](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing)|
 
 
 ### ELECTIVES
@@ -147,7 +147,7 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Fundamentals of Physics 1|![](https://geps.dev/progress/91)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|[Google Docs](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)|
+|Fundamentals of Physics 1|![](https://geps.dev/progress/99)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|[Google Docs](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)|
 
 ## Log
 [Return to table of contents](#table-of-contents)<br>
@@ -637,8 +637,8 @@ and finished linear algebra, this was a long run, moving forward.
 - Downloaded PROJECT2 for Data Structures class.
 - Updated downloader.py to be recursive.
 
-### HEAD 
-12/05/2025
+
+### 12/05/2025
 - I got a litte lazy, and I am moving in a relative slow pace if compared to what I used to be, I guess it's summer and had burnout of crazy coding preparations for gsoc-2025.
 
 - 🎉🎉🎉 I was accepted into Google Summer of Code 2025 for @Rocket.Chat
@@ -652,6 +652,16 @@ and finished linear algebra, this was a long run, moving forward.
 - Fundamentals Of Physics-1: around 80% of the course done, I need a final push to it, and will close this and move forward
 
 - Because of the Google Summer of Code I have to modify the schedule.
+
+
+### HEAD 
+30/05/2025
+- Fundamentals of Physics 1 - done, it was hard, but as a cs student, I have nothing to do with 
+physics only mostly at conceptual lvl, so I understand it know, maybe I'll take Fundamentals of Physics 2,
+sometime in the near future.
+- Data Structures - still in progress, a hard class as well, the labs, and hw, are no joke.
+- Math for Cs - Tree hw8
+- Introduction to Probability - lecture 5 or 6, don't even remeber, hw3 
 <br>
 
 
