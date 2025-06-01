@@ -1,0 +1,31 @@
+Formally prove that if f(n) is in O(g(n)), and g(n) is in O(h(n)), then
+f(n) is in O(h(n)).
+
+NOTE:  The values of c and N used to prove that f(n) is in O(g(n)) are
+not necessarily the same as the values used to prove that g(n) is in O(h(n)).
+Hence, assume that there are positive c', N', c'', and N'' such that
+
+    f(n) <= c' g(n)        for all n >= N', and
+    g(n) <= c'' h(n)       for all n >= N''.
+
+------------------------------------------------------------------------
+if both function are true and chained then 
+I need an upper bound to match both 
+f(n) <= c' * g(n)        for all n >= N'
+g(n) <= c''* h(n)        for all n >= N''
+
+N_max is the upper bound 
+n >= N' and n >= N''
+N_max = max(N', N'')
+
+both function are true for all n >= N_max 
+f(n) <= c' * g(n) 
+g(n) <= c'' * h(n)
+then
+f(n) <= c' * c'' * h(n)
+f(n) <= c'c''h(n)
+and
+c = c'c''
+f(n) <= c * h(n)
+conclusion
+f(n) in O(h(n)); for all n >= N_max where N_max = max(N', N'')
