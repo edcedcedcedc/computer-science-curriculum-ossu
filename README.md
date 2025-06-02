@@ -680,7 +680,6 @@ sometime in the near future.
 
 **Monday:**  
 - Data Structures 
-- Physics 200
 - Codeforces 
 
 **Tuesday:**  
@@ -689,7 +688,6 @@ sometime in the near future.
 
 **Wednesday:**  
 - Data Structures
-- Physics 200
 - Codeforces 
 
 **Thursday:**  
@@ -697,7 +695,6 @@ sometime in the near future.
 - Data Structures
 
 **Friday:**  
-- Physics 200 
 - Mathematics for Computer Science
 - Codeforces 
 
