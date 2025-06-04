@@ -1,0 +1,48 @@
+Part III:  (2 points)
+---------------------
+Formally prove that 0.01 n^2 - 1  is NOT in  O(n).
+
+We need to show that, no matter how large we choose c and N, we will never
+obtain the desired inequality.  We cannot prove this by picking a specific
+value of c and N.  Instead, we must study how the two functions behave as
+n approaches infinity.
+
+Let T(n) = 0.01 n^2 - 1, and let f(n) = n.  Prove that
+
+                    c f(n)
+            lim     ------ = 0,
+        n->infinity  T(n)
+
+no matter how large we choose c to be.  You will need to scale both the
+numerator and the denominator by a well-chosen multiplier to get the result.
+
+Use this result to show that there are no values c, N such that T(n) <= c f(n)
+for all n >= N.
+
+----------- my solution 
+
+Proove that 
+T(n) = 0.01 * n^2 - 1 not in O(n) 
+no constant c > 0 and N exists such that for all  n >= N the inequality is 0.01n^2 - 1 <= c * n 
+
+state the given equations 
+c * f(n) = c * n 
+T(n) = 0.01n^2 - 1 
+
+engineer and divide by n 
+(c * n)/n  / (0.01n^2 - 1 )/n
+
+take the limit 
+lim as n -> infinity  of c / (0.01n - 1/n)
+lim of 1/n -> 0
+lim of 0.01n -> infinity 
+lim of c / 0.01n -> 0 
+
+conclusion 
+as n -> infinity, c * f(n) / T(n) -> 0
+
+therefore 
+T(n) > c * f(n) for all large n 
+
+there are no constants such that 
+T(n) <= c * f(n) for all n >= N, T(n) not in O(n)
