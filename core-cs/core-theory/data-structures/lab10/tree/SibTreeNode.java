@@ -11,19 +11,29 @@ package lab10.tree;
 class SibTreeNode extends TreeNode {
 
   /**
-   * (inherited) item references the item stored in this node. (inherited) valid
-   * is true if and only if this is a valid node in some Tree. myTree references
-   * the Tree that contains this node. parent references this node's parent node.
-   * firstChild references this node's first (leftmost) child. nextSibling
-   * references this node's next sibling.
+   * (inherited) item references the item stored in this node.
+   * 
+   * (inherited) valid is true if and only if this is a valid node in some Tree.
+   * 
+   * myTree references the Tree that contains this node. parent references this
+   * node's parent node.
+   * 
+   * firstChild references this node's first (leftmost) child.
+   * 
+   * nextSibling references this node's next sibling.
    *
    * DO NOT CHANGE THE FOLLOWING FIELD DECLARATIONS.
    */
 
   /**
-   * ADT implementation invariants: 1) if valid == true, myTree != null. 2) if
-   * valid == true, then this is a descendent of myTree.root. 3) if valid == true,
-   * myTree satisfies all the invariants of a SibTree (listed in SibTree.java).
+   * ADT implementation invariants:
+   * 
+   * 1) if valid == true, myTree != null.
+   * 
+   * 2) if valid == true, then this is a descendent of myTree.root.
+   * 
+   * 3) if valid == true, myTree satisfies all the invariants of a SibTree (listed
+   * in SibTree.java).
    */
 
   protected SibTree myTree;
@@ -69,13 +79,18 @@ class SibTreeNode extends TreeNode {
   }
 
   /**
-   * parent() returns the parent TreeNode of this TreeNode. Throws an exception if
-   * `this' is not a valid node. Returns an invalid TreeNode if this node is the
-   * root.
+   * parent() returns the parent TreeNode of this TreeNode.
+   * 
+   * Throws an exception if `this' is not a valid node.
+   * 
+   * Returns an invalid TreeNode if this node is the root.
    */
   public TreeNode parent() throws InvalidNodeException {
-    // REPLACE THE FOLLOWING LINE WITH YOUR SOLUTION TO PART I.
-    return null;
+    if (!isValidNode())
+      throw new InvalidNodeException();
+    if (parent == null)
+      return new SibTreeNode();
+    return parent;
   }
 
   /**

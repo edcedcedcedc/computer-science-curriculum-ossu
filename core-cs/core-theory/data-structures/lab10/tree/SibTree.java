@@ -22,21 +22,39 @@ public class SibTree extends Tree {
   /**
    * ADT implementation invariants:
    *
-   * Definition: SibTreeNode y is a "sibling of" SibTreeNode x if 1) x.nextSibling
-   * == y, or 2) y is a sibling of x.nextSibling Definition: SibTreeNode y is a
-   * "descendant of" SibTreeNode x if 1) x == y, or 2) y is a descendant of
-   * x.firstChild, or 3) y is a descendant of some SibTreeNode z and z is a
-   * sibling of x.firstChild Definition: a SibTreeNode x is said to be "in"
-   * SibTree "this" if x is a descendant of this.root
+   * Definition: SibTreeNode y is a "sibling of" SibTreeNode x if
+   * 
+   * 1) x.nextSibling == y, or
+   * 
+   * 2) y is a sibling of x.nextSibling
+   * 
+   * Definition: SibTreeNode y is a "descendant of" SibTreeNode x if
+   * 
+   * 1) x == y, or
+   * 
+   * 2) y is a descendant of x.firstChild, or
+   * 
+   * 3) y is a descendant of some SibTreeNode z and z is a sibling of x.firstChild
+   * 
+   * Definition: a SibTreeNode x is said to be "in" SibTree "this" if x is a
+   * descendant of this.root
    *
-   * 1) if root != null, then root.valid == true, and root.parent == null. 2) for
-   * any SibTreeNode x in SibTree "this", x.valid == true. 3) for any SibTreeNodes
-   * x and y in SibTree "this", if x.firstChild == y or y is a sibling of
-   * x.firstChild, then y.parent == x. 4) for any SibTreeNodes x and y in SibTree
-   * "this", if x.parent == y, then y.firstChild == x or x is a sibling of
-   * y.firstChild. 5) for any SibTreeNode x in SibTree "this", if x.parent ==
-   * null, then x == root. 6) "size" is the number of nodes in SibTree "this". 7)
-   * for any SibTreeNode x in SibTree "this", x satisfies all the invariants of
+   * 1) if root != null, then root.valid == true, and root.parent == null.
+   * 
+   * 2) for any SibTreeNode x in SibTree "this", x.valid == true.
+   * 
+   * 3) for any SibTreeNodes x and y in SibTree "this", if x.firstChild == y or y
+   * is a sibling of x.firstChild, then y.parent == x.
+   * 
+   * 4) for any SibTreeNodes x and y in SibTree "this", if x.parent == y, then
+   * y.firstChild == x or x is a sibling of y.firstChild.
+   * 
+   * 5) for any SibTreeNode x in SibTree "this", if x.parent == null, then x ==
+   * root.
+   * 
+   * 6) "size" is the number of nodes in SibTree "this".
+   * 
+   * 7) for any SibTreeNode x in SibTree "this", x satisfies all the invariants of
    * SibTreeNode (listed in SibTreeNode.java).
    */
 
@@ -108,8 +126,8 @@ public class SibTree extends Tree {
     TreeNode r, r1, r2, r3, r31, r32;
 
     // Create two-node tree.
-    Tree t = new SibTree(new Integer(11));
-    t.insertRoot(new Integer(1));
+    Tree t = new SibTree(11);
+    t.insertRoot(1);
     System.out.println("Creating 2-node tree.");
 
     // Reference the nodes.
@@ -147,8 +165,8 @@ public class SibTree extends Tree {
     r31 = null;
     r32 = null;
     try {
-      r.insertChild(new Integer(13), 1000);
-      r.insertChild(new Integer(12), 2);
+      r.insertChild(13, 1000);
+      r.insertChild(12, 2);
       r2 = r.child(2);
       r3 = r.child(3);
       if (((Integer) r2.item()).intValue() != 12) {
@@ -172,8 +190,8 @@ public class SibTree extends Tree {
       }
 
       System.out.println("Adding two more nodes to the 4-node tree.");
-      r3.insertChild(new Integer(132), 1);
-      r3.insertChild(new Integer(131), 1);
+      r3.insertChild(132, 1);
+      r3.insertChild(131, 1);
       r31 = r3.child(1);
       r32 = r3.child(2);
       if (((Integer) r31.item()).intValue() != 131) {
@@ -202,7 +220,7 @@ public class SibTree extends Tree {
       if (r.parent() == null) {
         System.out.println("  ERROR:  parent() returned null.");
       } else {
-        r.parent().insertChild(new Integer(0), 1);
+        r.parent().insertChild(0, 1);
         System.out.println("  ERROR:  insertChild() failed to throw" + " exception on invalid node.");
       }
     } catch (InvalidNodeException e) {
