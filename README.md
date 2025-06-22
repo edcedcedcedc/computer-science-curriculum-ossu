@@ -654,7 +654,7 @@ and finished linear algebra, this was a long run, moving forward.
 - Because of the Google Summer of Code I have to modify the schedule.
 
 
-### HEAD 
+
 30/05/2025
 - Fundamentals of Physics 1 - done, it was hard, but as a cs student, I have nothing to do with 
 physics only mostly at conceptual lvl, so I understand it know, maybe I'll take Fundamentals of Physics 2,
@@ -662,6 +662,11 @@ sometime in the near future.
 - Data Structures - still in progress, a hard class as well, the labs, and hw, are no joke.
 - Math for Cs - Tree hw8
 - Introduction to Probability - lecture 5 or 6, don't even remeber, hw3 
+
+
+### HEAD 
+21/06/2025
+- Math for CS - Almost done, 
 <br>
 
 

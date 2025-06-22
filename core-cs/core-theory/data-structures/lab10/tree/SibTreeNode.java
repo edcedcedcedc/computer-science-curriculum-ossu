@@ -135,25 +135,119 @@ class SibTreeNode extends TreeNode {
   }
 
   /**
-   * insertChild() inserts an item as the cth child of this node. Existing
-   * children numbered c or higher are shifted one place to the right to
-   * accommodate. If the current node has fewer than c children, the new item is
-   * inserted as the last child. If c < 1, act as if c is 1.
+   * insertChild() inserts an item as the cth child of this node.
+   * 
+   * Existing children numbered c or higher are shifted one place to the right to
+   * accommodate.
+   * 
+   * If the current node has fewer than c children, the new item is inserted as
+   * the last child.
+   * 
+   * If c < 1, act as if c is 1.
    *
    * Throws an InvalidNodeException if "this" node is invalid.
+   * 
+   * 
+   * understanding:
+   * 
+   * this.firstChild -> B -> C -> D -> E -> F (the structure)
+   * 
+   * insert at c = 2 -> implies I have to insert at c - 1, so it will be 2 to
+   * insert I need a previous pointer a current pointer and position (what does it
+   * mean to insert)
+   * 
+   * edge cases: insert at 1 and insert at inf
+   * 
+   * 
    */
   public void insertChild(Object item, int c) throws InvalidNodeException {
-    // FILL IN YOUR SOLUTION TO PART II HERE.
+    SibTreeNode prev = null;
+    SibTreeNode current = this.firstChild;
+    int position = 1;
+
+    if (!isValidNode()) {
+      throw new InvalidNodeException();
+    }
+
+    while (position < c && current != null) {
+      prev = current;
+      current = current.nextSibling;
+      position++;
+    }
+
+    SibTreeNode newNode = new SibTreeNode(myTree, item);
+    newNode.nextSibling = current;
+    newNode.parent = this;
+
+    if (prev == null) {
+      this.firstChild = newNode;
+    } else {
+      prev.nextSibling = newNode;
+    }
+
+    myTree.size++;
+
   }
 
   /**
    * removeLeaf() removes the node at the current position from the tree if it is
-   * a leaf. Does nothing if `this' has one or more children. Throws an exception
-   * if `this' is not a valid node. If 'this' has siblings to its right, those
-   * siblings are all shifted left by one.
+   * a leaf.
+   * 
+   * Does nothing if `this' has one or more children.
+   * 
+   * Throws an exception if `this' is not a valid node.
+   * 
+   * If 'this' has siblings to its right, those siblings are all shifted left by
+   * one.
+   * 
+   * understanding:
+   * 
+   * Find yourself in your parent’s list of children, and if you have no children
+   * of your own, disconnect yourself from that list and mark yourself invalid.
+   * 
+   * 
+   * a leaf node is a node that has no children
+   * 
+   * Parent |
+   * 
+   * -------v
+   * 
+   * -------Child1 -> Child2 (this node) -> Child3 -> null
+   * 
+   * 
+   * 
    */
   public void removeLeaf() throws InvalidNodeException {
-    // FILL IN YOUR SOLUTION TO PART III HERE.
+    if (!isValidNode())
+      throw new InvalidNodeException();
+
+    if (this.firstChild != null) // not a leaf node at start
+      return;
+
+    if (this.parent == null) {
+      this.valid = false;
+      this.myTree.size--;
+      return;
+    }
+
+    SibTreeNode current = this.parent.firstChild;
+    SibTreeNode prev = null;
+
+    while (current != null) {
+      if (current == this) {
+        if (prev == null) {
+          parent.firstChild = current.nextSibling;
+        } else {
+          prev.nextSibling = current.nextSibling;
+        }
+        current.valid = false;
+        myTree.size--;
+        break;
+      } else {
+        prev = current;
+        current = current.nextSibling;
+      }
+    }
   }
 
 }
