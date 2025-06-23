@@ -679,6 +679,7 @@ sometime in the near future.
 
 
 ## Schedule 
+(I stopped codeforces for a while, busy with gsoc and personal project)
 
 **Each Day:**
 - Google Summer of Code for Rocket Chat in the morning and afternoon
