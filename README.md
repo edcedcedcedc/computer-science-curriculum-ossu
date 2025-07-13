@@ -102,7 +102,7 @@ _Topics Covered_:
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
-|Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|-|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
+|Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|22.03.25|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
 |Math for CS|![](https://geps.dev/progress/80)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
 
 #### CS Tools
