@@ -1,3 +1,0 @@
-this are the libs needed for the projects to work
-https://github.com/Berkeley-CS61B/library-fa24
-
