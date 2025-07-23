@@ -1,0 +1,752 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 25 25 587 767
+%%Title: Enscript Output
+%%For: Jonathan Shewchuk
+%%Creator: GNU enscript 1.6.4
+%%CreationDate: Wed Apr  9 18:34:12 2014
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 4
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 4
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript 1.6 4
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    % light bar
+    0 0 d_header_w d_header_h 2 div Box
+    .95 setgray fill
+
+    % dark gray boxes
+    /dbw d_header_h 2 mul def	% dark box width
+    /dbc .7 def			% dark box color
+
+    % left dark box.
+    0 0 dbw d_header_h Box
+    dbc setgray fill
+
+    0 setgray 
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 5 div moveto show
+
+    % right dark box
+    d_header_w dbw sub 0 dbw d_header_h Box
+    dbc setgray fill
+
+    HeaderPageNumF setfont
+    1 setgray
+    pagenumstr dup
+    stringwidth pop dbw exch sub 2 div d_header_w dbw sub add
+    d_header_h .2 mul moveto show
+
+    % filename
+    0 setgray 
+    HeaderHDRF setfont
+    d_header_w fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        d_header_w user_header_left_str stringwidth pop sub 2 div 
+        h moveto user_header_left_str show
+      } {
+        dbw 5 add h moveto user_header_left_str show
+
+        d_header_w user_header_center_str stringwidth pop sub 2 div 
+        h moveto user_header_center_str show
+
+	d_header_w dbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} def
+%%EndResource
+/d_page_w 742 def
+/d_page_h 562 def
+/d_header_x 0 def
+/d_header_y 526 def
+/d_header_w 742 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 742 def
+/d_footer_h 0 def
+/d_output_w 742 def
+/d_output_h 526 def
+/cols 2 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 1 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (04/09/14) def
+/modtimestr (18:33:06) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(                               CS 61B  Homework 8) s
+5 508 M
+(                       Due noon Wednesday, April 16, 2014) s
+5 492 M
+(This homework will give you practice implementing sorting algorithms, and will) s
+5 484 M
+(illustrate how sorting linked lists can be different from sorting arrays.) s
+5 476 M
+(This is an individual assignment; you may not share code with other students.) s
+5 460 M
+(Copy the Homework 8 directory by doing the following, starting from your home) s
+5 452 M
+(directory.) s
+5 436 M
+(    cp -r ~cs61b/hw/hw8 .) s
+5 420 M
+(Your job is to implement two sorting algorithms for linked lists.  The data) s
+5 412 M
+(structure you will use is a catenable queue.  "Catenable" means that two queues) s
+5 404 M
+(can be concatenated into a single queue efficiently--in O\(1\) time.  The) s
+5 396 M
+(LinkedQueue data structure is implemented as a singly-linked list with a tail) s
+5 388 M
+(pointer, much like the one you worked with in Lab 3.) s
+5 372 M
+(The LinkedQueue class \(in the list package\) has the following methods.) s
+5 356 M
+(  public LinkedQueue\(\);) s
+5 348 M
+(  public int size\(\);) s
+5 340 M
+(  public boolean isEmpty\(\);) s
+5 332 M
+(  public void enqueue\(Object item\);) s
+5 324 M
+(  public Object dequeue\(\) throws QueueEmptyException;) s
+5 316 M
+(  public Object front\(\) throws QueueEmptyException;) s
+5 308 M
+(  public String toString\(\);) s
+5 300 M
+(  public Object nth\(int n\);) s
+5 292 M
+(  public void append\(LinkedQueue q\);) s
+5 276 M
+(The second-last method, nth\(\), returns item n in the queue \(with the assumption) s
+5 268 M
+(that items are numbered from 1\) without removing it, taking Theta\(n\) time.) s
+5 260 M
+(The last method, append\(\), concatenates the contents of q onto the end of) s
+5 252 M
+("this" queue and leaves q empty, taking constant time.) s
+5 236 M
+(You will implement mergesort and quicksort in the file ListSorts.java.  In) s
+5 228 M
+(Parts I and II below, assume that the input LinkedQueue \(to be sorted\) contains) s
+5 220 M
+(only Comparable items, so that casting items to Comparable is safe.  All) s
+5 212 M
+(comparisons should be done using the method compareTo\(\).  Your code should be) s
+5 204 M
+(work with any Comparable objects, not just the Integer objects used by the test) s
+5 196 M
+(code.  \(In other words, do not cast queue items to Integers.\)) s
+5 180 M
+(The dequeue\(\) and front\(\) methods can throw QueueEmptyExceptions; make sure) s
+5 172 M
+(that these exceptions are always caught.  \(If your code is bug-free, such an) s
+5 164 M
+(exception will never occur, so you can handle caught exceptions by simply) s
+5 156 M
+(printing an error message to let yourself know you have a bug.\)  Do not add) s
+5 148 M
+(a "throws" clause to any method prototype that doesn't already have one.) s
+376 508 M
+(Part I  \(4 points\)) s
+376 500 M
+(------------------) s
+376 492 M
+(Implement mergesort on LinkedQueues using the following three steps.) s
+376 476 M
+(\(1\)  Write a method called makeQueueOfQueues\(\) that takes a LinkedQueue as) s
+376 468 M
+(input and returns a queue of queues in which each queue contains one item from) s
+376 460 M
+(the input queue.  For example, if the input queue is [ 3 5 2 ], this method) s
+376 452 M
+(should return the queue [ [ 3 ] [ 5 ] [ 2 ] ].) s
+376 436 M
+(  public static LinkedQueue makeQueueOfQueues\(LinkedQueue q\);) s
+376 420 M
+(\(2\)  Write a method called mergeSortedQueues\(\) that merges two sorted queues) s
+376 412 M
+(into one.  See the comments in ListSorts.java for details.) s
+376 396 M
+(  public static LinkedQueue mergeSortedQueues\(LinkedQueue q1, LinkedQueue q2\);) s
+376 380 M
+(\(3\)  Implement mergeSort\(\), which sorts a LinkedQueue q as follows.  First, use) s
+376 372 M
+(makeQueueOfQueues\(\) to convert q into a queue of queues.  Repeatedly do the) s
+376 364 M
+(following:  remove two items from the queue of queues, merge them with) s
+376 356 M
+(mergeSortedQueues\(\), and enqueue the resulting queue on the queue of queues.) s
+376 348 M
+(When there is only one queue left on the queue of queues, move its items back) s
+376 340 M
+(to q \(preferably using the fast append\(\) method\).) s
+376 324 M
+(  public static void mergeSort\(LinkedQueue q\);) s
+376 308 M
+(Part II  \(4 points\)) s
+376 300 M
+(-------------------) s
+376 292 M
+(Implement quicksort on LinkedQueues using the following two steps.) s
+376 276 M
+(\(1\)  Implement a partition\(\) method that partitions a queue into three separate) s
+376 268 M
+(queues containing items less than, equal to, or greater than a pivot item.) s
+376 260 M
+(See the comments for details.) s
+376 244 M
+(  public static void partition\(LinkedQueue qIn, Comparable pivot,) s
+376 236 M
+(                               LinkedQueue qSmall, LinkedQueue qEquals,) s
+376 228 M
+(                               LinkedQueue qLarge\);) s
+376 212 M
+(\(2\)  Implement quickSort\(\), which sorts a LinkedQueue q as follows.  Choose a) s
+376 204 M
+(random integer between 1 and q.size\(\).  Find the corresponding item using the) s
+376 196 M
+(nth\(\) method, and use the item as the pivot in a call to partition\(\).) s
+376 188 M
+(Recursively quickSort\(\) the smaller and larger partitions, and then put all of) s
+376 180 M
+(the items back into q in sorted order by using the append\(\) method.) s
+376 164 M
+(  public static void quickSort\(LinkedQueue q\);) s
+376 148 M
+(There is test code for both mergesort and quicksort; run "java ListSorts".) s
+376 140 M
+(The test code generates different random arrays each time you run it.) s
+376 124 M
+(I strongly advise that you also test that your mergesort and quicksort both) s
+376 116 M
+(work on lists of size zero and one.  \(Our autograder will.\)) s
+376 100 M
+(Part III  \(1 point\)) s
+376 92 M
+(-------------------) s
+376 84 M
+(Uncomment the timing code in the main\(\) method, then run your sorting routines) s
+376 76 M
+(on larger lists.  By changing the SORTSIZE constant, you may change the size of) s
+376 68 M
+(the queues you sort.  What are the running times \(in milliseconds\) for sorting) s
+376 60 M
+(lists of sizes 100, 1000, 10,000, 100,000, and 1,000,000?  Put your answers in) s
+376 52 M
+(the GRADER file.  \(Do NOT put a .txt extension on GRADER!\)) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 2 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (04/09/14) def
+/modtimestr (18:33:06) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Part IV  \(1 point\)) s
+5 500 M
+(------------------) s
+5 492 M
+(A sort is _stable_ if items with equal keys always come out in the same order) s
+5 484 M
+(they went in.  If you sort the database records [ 3:hex 7:boo 3:spa ] by) s
+5 476 M
+(number, and the output is [ 3:spa 3:hex 7:boo ], then the sort is not stable) s
+5 468 M
+(because two records with the same key \(3\) traded places.) s
+5 452 M
+(Is your mergesort always stable?  Explain why or why not.) s
+5 444 M
+(Is your quicksort always stable?  Explain why or why not.) s
+5 428 M
+(Give a sentence or two in your explanations that describe where in your code or) s
+5 420 M
+(in the data structures the stability of the sort is decided--that is, whether) s
+5 412 M
+(or not equal items are kept in their original order at critical parts of the) s
+5 404 M
+(sorting process.  Put your answers in the GRADER file.) s
+5 388 M
+(Submitting your solution) s
+5 380 M
+(------------------------) s
+5 372 M
+(Change \(cd\) to your hw8 directory, which should contain GRADER and) s
+5 364 M
+(ListSorts.java.  \(Your entire implementation should be in ListSorts.java.\)) s
+5 356 M
+(You're not allowed to change any other files, so you can't submit them.) s
+5 348 M
+(Include your name, login, and answers to Parts III and IV in GRADER.  Make sure) s
+5 340 M
+(your code compiles and your tests run correctly on the _lab_ machines just) s
+5 332 M
+(before you submit.) s
+5 316 M
+(From your hw8 directory, type "submit hw8".  You may submit as often as you) s
+5 308 M
+(like.  Only the last version you submit before the deadline will be graded.) s
+_R
+S
+%%Trailer
+%%Pages: 2
+%%DocumentNeededResources: font Times-Roman Courier-Bold Courier 
+%%+ font Times-Bold 
+%%EOF

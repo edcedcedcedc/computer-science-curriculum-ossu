@@ -1,0 +1,23 @@
+GRADER file for Homework 8
+
+Your Name:  Andro Ranogajec  
+Your Login:  (your login name here)
+
+Part III.  Running time comparisons
+
+  List size         mergesort             quicksort
+      100           0 msec                0 msec
+    1,000           1 msec                1 msec
+   10,000           1 msec                8 msec
+  100,000           5 msec               83 msec
+1,000,000          35 msec              625 msec
+
+
+Part IV.
+
+  Is mergesort stable?  
+  Yes. Because in `mergeSortedQueues`, when items are equal, the item from `q1` is dequeued first. This ensures that items with equal keys maintain their original order. Stability is preserved throughout the merges.
+
+  Is quicksort stable?  
+  No. Even though `partition()` preserves relative order within each partition, the recursive structure of quicksort does not guarantee that elements equal to the pivot stay in the same order as they were in the original queue. Equal elements can come from different recursive paths and be reordered.
+
