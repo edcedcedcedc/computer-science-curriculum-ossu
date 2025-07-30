@@ -1,10 +1,8 @@
->>>>>>>>>>>>>>joint probability 
+>>>>>>>>>>>>>> joint probability 
 
 P(A and B)  = P(A) *  P(B given A)
     event A happens with probability P(A)
-    then given A happend event B happens
-    or 
-    event B happens given A happend 
+    then event B happens given A happend 
 
 if A and B are independent then
 
@@ -19,6 +17,12 @@ P(coinflip and rolladie) = 1/2 * 1/6
 
 
 example2(non independent event)
+it rains today, the ground is wet 
+P(ground is wet) = 0.2 = A
+P(rains today) = 0.3 = B
+
+P(A given B) - this is the key part, one is dependent on the other; 
+                probability that the ground is wet given that it rained today
 ....
 
 >>>>>>>>>>union probability 
@@ -83,6 +87,12 @@ P(Pos) = 0.99 * 0.01 + 0.05 * 0.99 = 0.0594
 final anwer 
 
 P(D given Pos) = 0.99 * 0.01 / 0.0594 equals around 16%
+
+
+
+<<<<<<<<<<<<<<<<<<<<< law of total probability (which essentially is joint non independent probability)
+
+P(A) = Sigma(i=1,n) of P(A given Bi) * P(Bi)
 
 
 

@@ -1,0 +1,58 @@
+
+
+a)
+Doors 1,2,3; the 1,2,3 imply the door and the number of the door, i.e. 1 means door 1
+
+I choose 1, car 1, goats 2,3; Monty opens 2, if I switch I LOSE
+LOSS
+I choose 1, car 2, goats 1,3; Monty opens 3, if I switch I WIN 
+WIN
+I choose 1, car 3, goats 1,2; Monty opens 2, if I switch I WIN
+WIN 
+
+P(wins if always switching) = 1/3 + 1/3 = 2/3
+
+this is unconditional probability 
+
+
+
+b)
+P(A given B) = [P(B given A) * P(A) ]/P(B) - Bayes' Theorem 
+
+M - Monty opens door 2 
+Ci = Car is under door i, where i is 1,2,3
+W - I win by switching 
+
+P(W given M)
+
+P(M given C1) = p, monty opens 2, if I switch I lose = p
+P(M given C2) = p, monty cannot open 2 ? impossible case ??? = 0
+P(M given C3) = p, monty opens 3, if I switch I win = 1
+
+P(C3 given M) = [P(M given C3) * P(C3)] / P(M)
+
+P(M given C3) = 1
+P(M given C1) = p 
+P(C3) = 1/3 
+P(C1) = 1/3
+P(M) =
+    P(M given C1) = p * 1/3 
+    P(M given C2) = 0 * 1/3 
+    P(M given C3) = 1/3
+    =
+    p1/3 + 1/3 
+    =
+    1/3(p + 1)
+
+P(C3 given M) = 1*1/3 / 1/3(p + 1) = 1/(p + 1)
+
+c)...
+
+
+
+
+
+
+
+
+
