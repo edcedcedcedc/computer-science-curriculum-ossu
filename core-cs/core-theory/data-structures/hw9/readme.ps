@@ -1,0 +1,836 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 25 25 587 767
+%%Title: Enscript Output
+%%For: Jonathan Shewchuk
+%%Creator: GNU enscript 1.6.4
+%%CreationDate: Wed Apr 16 22:21:33 2014
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 4
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 4
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript 1.6 4
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    % light bar
+    0 0 d_header_w d_header_h 2 div Box
+    .95 setgray fill
+
+    % dark gray boxes
+    /dbw d_header_h 2 mul def	% dark box width
+    /dbc .7 def			% dark box color
+
+    % left dark box.
+    0 0 dbw d_header_h Box
+    dbc setgray fill
+
+    0 setgray 
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop dbw exch sub 2 div 
+    d_header_h 5 div moveto show
+
+    % right dark box
+    d_header_w dbw sub 0 dbw d_header_h Box
+    dbc setgray fill
+
+    HeaderPageNumF setfont
+    1 setgray
+    pagenumstr dup
+    stringwidth pop dbw exch sub 2 div d_header_w dbw sub add
+    d_header_h .2 mul moveto show
+
+    % filename
+    0 setgray 
+    HeaderHDRF setfont
+    d_header_w fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        d_header_w user_header_left_str stringwidth pop sub 2 div 
+        h moveto user_header_left_str show
+      } {
+        dbw 5 add h moveto user_header_left_str show
+
+        d_header_w user_header_center_str stringwidth pop sub 2 div 
+        h moveto user_header_center_str show
+
+	d_header_w dbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} def
+%%EndResource
+/d_page_w 742 def
+/d_page_h 562 def
+/d_header_x 0 def
+/d_header_y 526 def
+/d_header_w 742 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 742 def
+/d_footer_h 0 def
+/d_output_w 742 def
+/d_output_h 526 def
+/cols 2 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 1 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (04/16/14) def
+/modtimestr (22:18:01) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 516 M
+(                              CS 61B Homework 9) s
+5 508 M
+(                     Due noon Wednesday, April 23, 2014) s
+5 492 M
+(Part I  \(8 points\)) s
+5 484 M
+(------------------) s
+5 476 M
+(Edit the file Maze.java and complete the implementation of the Maze) s
+5 468 M
+(constructor.  Use our disjoint sets data structure to create a random) s
+5 460 M
+(rectangular maze.  Your random mazes should have two properties:  there is a) s
+5 452 M
+(path from any given cell to any other cell, and there are no cycles \(loops\)--) s
+5 444 M
+(in other words, there is _only_ one path from any given cell to any other cell.) s
+5 428 M
+(Each maze is an h-by-v grid of square cells \(where h is the number of cells in) s
+5 420 M
+(the horizontal direction, and v is the number of cells in the vertical) s
+5 412 M
+(direction\).  The cell in the upper left corner is numbered \(0, 0\).  The cell to) s
+5 404 M
+(its right is numbered \(1, 0\).  The cell below the upper left cell is numbered) s
+5 396 M
+(\(0, 1\).) s
+5 380 M
+(There are vertical walls and horizontal walls separating adjacent cells.  Each) s
+5 372 M
+(interior horizontal wall has the same numbering as the cell immediately above) s
+5 364 M
+(it.  Each interior vertical wall has the same numbering as the cell to its) s
+5 356 M
+(immediate left.  Hence, horizontal wall \(i, j\) separates cell \(i, j\) from cell) s
+5 348 M
+(\(i, j + 1\), and vertical wall \(i, j\) separates cell \(i, j\) from cell) s
+5 340 M
+(\(i + 1, j\).  Here is a depiction of a 6-by-3 grid.) s
+5 324 M
+(   +-----------+-----------+-----------+-----------+-----------+-----------+) s
+5 316 M
+(   |           |           |           |           |           |           |  ) s
+5 308 M
+(   |           |           |           |           |           |           |  ) s
+5 300 M
+(   |   \(0,0\) \(0,0\) \(1,0\) \(1,0\) \(2,0\) \(2,0\) \(3,0\) \(3,0\) \(4,0\) \(4,0\) \(5,0\)   |) s
+5 292 M
+(   |           |           |           |           |           |           |  ) s
+5 284 M
+(   |           |           |           |           |           |           |  ) s
+5 276 M
+(   +---\(0,0\)---+---\(1,0\)---+---\(2,0\)---+---\(3,0\)---+---\(4,0\)---+---\(5,0\)---+) s
+5 268 M
+(   |           |           |           |           |           |           |  ) s
+5 260 M
+(   |           |           |           |           |           |           |  ) s
+5 252 M
+(   |   \(0,1\) \(0,1\) \(1,1\) \(1,1\) \(2,1\) \(2,1\) \(3,1\) \(3,1\) \(4,1\) \(4,1\) \(5,1\)   |) s
+5 244 M
+(   |           |           |           |           |           |           |  ) s
+5 236 M
+(   |           |           |           |           |           |           |  ) s
+5 228 M
+(   +---\(0,1\)---+---\(1,1\)---+---\(2,1\)---+---\(3,1\)---+---\(4,1\)---+---\(5,1\)---+) s
+5 220 M
+(   |           |           |           |           |           |           |  ) s
+5 212 M
+(   |           |           |           |           |           |           |  ) s
+5 204 M
+(   |   \(0,2\) \(0,2\) \(1,2\) \(1,2\) \(2,2\) \(2,2\) \(3,2\) \(3,2\) \(4,2\) \(4,2\) \(5,2\)   |) s
+5 196 M
+(   |           |           |           |           |           |           |  ) s
+5 188 M
+(   |           |           |           |           |           |           |  ) s
+5 180 M
+(   +-----------+-----------+-----------+-----------+-----------+-----------+) s
+5 164 M
+(Observe that there is an h-by-\(v-1\) set of horizontal walls, and an \(h-1\)-by-v) s
+5 156 M
+(set of vertical walls.  In your maze, some of these walls will be present and) s
+5 148 M
+(some will be missing.  The walls present are indicated by the arrays hWalls and) s
+5 140 M
+(vWalls, which are an h-by-\(v-1\) boolean array and an \(h-1\)-by-v boolean array,) s
+5 132 M
+(respectively.  \(Exterior walls are numbered according to the same system, but) s
+5 124 M
+(there is no explicit storage for them, because they are presumed to always be) s
+5 116 M
+(present.\)) s
+5 100 M
+(The Maze constructor currently creates a "maze" in which every possible wall is) s
+5 92 M
+(present.  To make a proper maze, you will need to eliminate walls selectively.) s
+5 84 M
+(Do so as follows.) s
+5 68 M
+(\(1\)  Create a disjoint sets data structure in which each cell of the maze is) s
+5 60 M
+(     represented as a separate item.  Use the DisjointSets class \(described in) s
+5 52 M
+(     the Lecture 33 notes\), which is in the set package we've provided.) s
+5 36 M
+(\(2\)  Order the interior walls of the maze in a random order.) s
+5 20 M
+(     One way to do this is to create an array in which every wall \(horizontal) s
+5 12 M
+(     and vertical\) is represented.  \(How you represent each wall is up to) s
+5 4 M
+(     you.\)  Scramble the walls by reodering them into a random permutation.) s
+376 516 M
+(     Each possible permutation \(ordering\) of walls should be equally likely.) s
+376 500 M
+(     Here's how to do that.  Put all the walls into the array.  The idea is to) s
+376 492 M
+(     randomly choose \(from all the walls\) the wall that will be at the end of) s
+376 484 M
+(     the array.  Swap it to the end, then never move it again.  From the) s
+376 476 M
+(     remaining walls, choose the wall that will come second-last.  Swap it to) s
+376 468 M
+(     its final position, then never move it again.  Repeat until you've chosen) s
+376 460 M
+(     a wall for each slot in the array.) s
+376 444 M
+(     Here's an algorithmic rephrasing of what I just said.  Maintain a counter) s
+376 436 M
+(     w, initially set to the number of walls.  Iterate the following procedure:) s
+376 428 M
+(     select one of the first w walls in the array at random, and swap it with) s
+376 420 M
+(     the wth wall in the array \(at index w - 1\).  This permanently establishes) s
+376 412 M
+(     the randomly chosen wall as the wth wall.  Then decrease w by one.  Repeat) s
+376 404 M
+(     this operation until w is one.) s
+376 388 M
+(\(3\)  Visit the walls in the \(random\) order in which they appear in the array.) s
+376 380 M
+(     For each wall you visit:) s
+376 364 M
+(        \(i\)  Determine which cell is on each side of the wall.) s
+376 356 M
+(       \(ii\)  Determine whether these two cells are members of the same set) s
+376 348 M
+(             in the disjoint sets data structure.  If they are, then there is) s
+376 340 M
+(             already a path between them, so you must leave the wall intact to) s
+376 332 M
+(             avoid creating a cycle.) s
+376 324 M
+(      \(iii\)  If the cells are members of different sets, eliminate the wall) s
+376 316 M
+(             separating them \(thereby creating a path from any cell in one) s
+376 308 M
+(             set to any cell in the other\) by setting the appropriate element) s
+376 300 M
+(             of hWalls or vWalls to false.  Form the union of the two sets in) s
+376 292 M
+(             the disjoint sets data structure.) s
+376 276 M
+(When you have visited every wall once, you have a finished maze!) s
+376 260 M
+(Be forewarned that the DisjointSets class has no error checking, and will fail) s
+376 252 M
+(catastrophically if you union\(\) vertices that are not roots of their respective) s
+376 244 M
+(sets, or if you union\(\) a set with itself.  You may want to add error checking) s
+376 236 M
+(to DisjointSets.java to help you find your bugs, and/or augment union\(\) so it) s
+376 228 M
+(always calls find\(\) on both inputs first.  This error checking can help you) s
+376 220 M
+(with Project 3 as well.) s
+376 204 M
+(All the other methods you need, including test methods, are provided for you.) s
+376 188 M
+(  toString\(\) converts the maze to a string so you can print it.) s
+376 180 M
+(  randInt\(c\) generates a random number from 0 to c - 1, and is provided to) s
+376 172 M
+(      help you write the Maze\(\) constructor.  To keep the mazes interesting,) s
+376 164 M
+(      it generates a different sequence of random numbers each time you run the) s
+376 156 M
+(      program.) s
+376 148 M
+(  diagnose\(\) tests your maze for cycles or unreachable cells with depth-first) s
+376 140 M
+(      search.  DON'T CHANGE IT.  YOUR CODE MUST WORK WITH _OUR_ COPY OF THIS) s
+376 132 M
+(      METHOD.) s
+376 124 M
+(  main\(\) generates a maze \(with your constructor\), prints it, and tests it.) s
+376 108 M
+(diagnose\(\) depends on the following two methods, so don't make changes that) s
+376 100 M
+(will prevent these from working:) s
+376 84 M
+(  horizontalWall\(x, y\) determines whether a horizontal wall is intact.) s
+376 76 M
+(  verticalWall\(x, y\) determines whether a vertical wall is intact.) s
+376 60 M
+(You may see how you're doing by compiling and running Maze.java.  To look at a) s
+376 52 M
+(30 x 10 maze, run:) s
+376 36 M
+(  java Maze 30 10) s
+376 20 M
+(The default dimensions, if you don't specify any on the command line, are) s
+376 12 M
+(39 x 15.) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+25 -587 translate
+/pagenum 2 def
+/fname (readme) def
+/fdir () def
+/ftail (readme) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (04/16/14) def
+/modtimestr (22:18:01) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+column_lines
+do_header
+5 508 M
+(Part II  \(2 points\)) s
+5 500 M
+(-------------------) s
+5 492 M
+(You have probably noticed the similarity between your maze and a graph data) s
+5 484 M
+(structure.  Think of the cells of the maze as vertices of a graph.  Two) s
+5 476 M
+(adjacent cells are connected by an edge if there is no wall separating them.) s
+5 468 M
+(Our diagnose\(\) method uses depth-first search to test that your maze is a tree.) s
+5 452 M
+(If the depthFirstSearch\(\) method ever examines an "edge" and discovers a cell) s
+5 444 M
+(that has already been visited, then there is a cycle in the maze.  \(The depth-) s
+5 436 M
+(first search implementation used here never walks back over an edge it's just) s
+5 428 M
+(traversed, so it won't look back and mistakenly diagnose a cycle.\)  If some) s
+5 420 M
+(cell is not visited at all, then it is not reachable from the cell where the) s
+5 412 M
+(search started.  Hence, depth-first search can diagnose both potential) s
+5 404 M
+(deficiencies of a bad maze:  having more than one path between two cells, or) s
+5 396 M
+(having no path between two cells.  \(You may want to look at the diagnose\(\) and) s
+5 388 M
+(depthFirstSearch\(\) methods to see how this is done.\)) s
+5 372 M
+(In a plain-text file called GRADER, suggest \(in simple English\) how you could) s
+5 364 M
+(use depth-first search to generate a random maze \(or more importantly, lots of) s
+5 356 M
+(different random mazes\), without using disjoint sets at all.) s
+5 340 M
+(\(a\)  How would your algorithm ensure that there is a path between every pair of) s
+5 332 M
+(     cells, but no more than one path between any pair of cells \(i.e., no) s
+5 324 M
+(     cycles\)?) s
+5 308 M
+(\(b\)  How does your algorithm use random numbers to generate a different maze) s
+5 300 M
+(     each time?  Specifically, what decision should be made by random numbers) s
+5 292 M
+(     at each recursive invocation of the depth-first search method?) s
+5 276 M
+(These questions can be answered with just a few sentences.) s
+5 260 M
+(Submitting your solution) s
+5 252 M
+(------------------------) s
+5 244 M
+(Change \(cd\) to your hw9 directory, which should contain GRADER, Maze.java, any) s
+5 236 M
+(other files your solution needs, and the set directory.  The set directory) s
+5 228 M
+(should contain DisjointSets.java.  You must submit the latter because you're) s
+5 220 M
+(allowed to change it.) s
+5 204 M
+(Include your name, login, and answer to Part II in GRADER.  Make sure it is) s
+5 196 M
+(just called GRADER, not GRADER.txt.  Make sure your homework compiles and runs) s
+5 188 M
+(on the _lab_ machines just before you submit.) s
+5 172 M
+(From your hw9 directory, type "submit hw9".  \(Note that "submit" will not work) s
+5 164 M
+(if you are inside the set directory!\)  After submitting, if you realize your) s
+5 156 M
+(solution is flawed, you may fix it and submit again.  You may submit as often) s
+5 148 M
+(as you like.  Only the last version you submit before the deadline will be) s
+5 140 M
+(graded.) s
+_R
+S
+%%Trailer
+%%Pages: 2
+%%DocumentNeededResources: font Times-Roman Courier-Bold Courier 
+%%+ font Times-Bold 
+%%EOF
