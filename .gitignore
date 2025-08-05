@@ -21,3 +21,4 @@ out/
 *.jar
 *.pom
 private/*
+*:Zone.Identifier
