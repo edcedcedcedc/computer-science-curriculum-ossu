@@ -88,7 +88,7 @@ _Topics Covered_:
 `etc`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/60) |10.12.24|10.03.25|-|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
+|Data Structures|![](https://geps.dev/progress/90) |10.12.24|10.03.25|08.06.2025|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
 
 #### Core math
 
@@ -103,7 +103,7 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
 |Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
 |Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|22.03.25|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
-|Math for CS|![](https://geps.dev/progress/80)| 15.11.24 |22.02.25|-|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
+|Math for CS|![](https://geps.dev/progress/99)| 15.11.24 |22.02.25|06.08.25|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
 
 #### CS Tools
 
@@ -664,9 +664,22 @@ sometime in the near future.
 - Introduction to Probability - lecture 5 or 6, don't even remeber, hw3 
 
 
-### HEAD 
 21/06/2025
 - Math for CS - Almost done, 
+
+
+### HEAD 
+06/08/2025
+- Math for CS - done; closing the course because I already take introduction to probability so its no point for me to continue, I have done UNITS 1,2,3 with all the homeworks...
+
+- Data Strucures - might be considered done, I did almost everything besides the projects and some labs or hw assignments, because they where broken or they where very annoying and my Inner self just rejected to do that...; the only thing I have left is to watch the final lectures 
+
+Looking back on math, If I would take any math test right now, I would 99% fail it, I was thinking why is that,
+maybe because I am trying to understand, but not memorize, and my brain is always confused what is right and what is wrong, 
+I never used formulas and never memorized anything; In short to do math I need always a refresher, solve a bunch of exercises,
+and only then take a test, which implies that I don't truly understand everything in math, and I am not a math person, but I am used to while doing computer science...
+
+
 <br>
 
 
