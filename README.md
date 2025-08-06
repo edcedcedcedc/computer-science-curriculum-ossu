@@ -670,14 +670,14 @@ sometime in the near future.
 
 ### HEAD 
 06/08/2025
-- Math for CS - done; closing the course because I already take introduction to probability so its no point for me to continue, I have done UNITS 1,2,3 with all the homeworks...
+- Math for CS - done; closing the course because I already take introduction to probability so its no point for me to continue, I have done UNITS 1,2,3 with all the homeworks
 
-- Data Strucures - might be considered done, I did almost everything besides the projects and some labs or hw assignments, because they where broken or they where very annoying and my Inner self just rejected to do that...; the only thing I have left is to watch the final lectures 
+- Data Strucures - might be considered done, I did almost everything besides the projects and some labs or hw assignments, because they where broken or they where annoying and my Inner self just rejected to do that; the only thing I have left is to watch the final lectures 
 
 Looking back on math, If I would take any math test right now, I would 99% fail it, I was thinking why is that,
 maybe because I am trying to understand, but not memorize, and my brain is always confused what is right and what is wrong, 
 I never used formulas and never memorized anything; In short to do math I need always a refresher, solve a bunch of exercises,
-and only then take a test, which implies that I don't truly understand everything in math, and I am not a math person, but I am used to while doing computer science...
+and only then take a test, which implies that I don't truly understand everything in math, and I am not a math person, but I am used to while doing computer science
 
 
 <br>
