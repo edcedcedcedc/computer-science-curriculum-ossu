@@ -105,6 +105,19 @@ _Topics Covered_:
 |Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|22.03.25|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
 |Math for CS|![](https://geps.dev/progress/99)| 15.11.24 |22.02.25|06.08.25|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
 
+
+#### Core systems
+
+**Topics covered**:
+`bits`
+`bytes`
+`memory`
+`C`
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Computer Systems A Programmer's Perspective |![](https://geps.dev/progress/0)| 09.08.25 |01.01.26|-|[csapp](./core-cs/core-systems/csapp/)|[labs](./core-cs/core-systems/csapp/labs)|[Google Docs](https://docs.google.com/document/d/18r7r6Z1z2QoiD8wXbQ21lLw4oSjcbSKKjRthHwBEvoo/edit?usp=sharing)|
+
+
 #### CS Tools
 
 **Topics covered**:
@@ -692,33 +705,26 @@ and only then take a test, which implies that I don't truly understand everythin
 
 
 ## Schedule 
-(I stopped codeforces for a while, busy with gsoc and personal project)
 
-**Each Day:**
-- Google Summer of Code for Rocket Chat in the morning and afternoon
 
 **Monday:**  
-- Data Structures 
-- Codeforces 
+
 
 **Tuesday:**  
 - Introduction to Probability
-- Mathematics for Computer Science
 
 **Wednesday:**  
-- Data Structures
-- Codeforces 
+
 
 **Thursday:**  
 - Introduction to Probability
-- Data Structures
+
 
 **Friday:**  
-- Mathematics for Computer Science
-- Codeforces 
+
 
 **Saturday:**  
-- Data Structures
+
 - Any other backlog task
 
 **Sunday:**  
