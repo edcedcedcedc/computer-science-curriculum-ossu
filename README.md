@@ -681,7 +681,7 @@ sometime in the near future.
 - Math for CS - Almost done, 
 
 
-### HEAD 
+
 06/08/2025
 - Math for CS - done; closing the course because I already take introduction to probability so its no point for me to continue, I have done UNITS 1,2,3 with all the homeworks
 
@@ -692,6 +692,11 @@ maybe because I am trying to understand, but not memorize, and my brain is alway
 I never used formulas and never memorized anything; In short to do math I need always a refresher, solve a bunch of exercises,
 and only then take a test, which implies that I don't truly understand everything in math, and I am not a math person, but I am used to while doing computer science
 
+
+### HEAD 
+27/08/2025
+- Introduction to probability, still problem set 3
+- Csapp, reading in progress, lab1 soon
 
 <br>
 
