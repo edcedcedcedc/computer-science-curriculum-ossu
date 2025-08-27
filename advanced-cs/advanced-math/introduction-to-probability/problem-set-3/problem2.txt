@@ -1,0 +1,8 @@
+a)
+
+let X = Z, which implies X and Z are dependant, X determines Z and Z determines X
+
+
+
+b)
+

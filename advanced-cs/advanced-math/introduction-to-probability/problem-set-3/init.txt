@@ -60,7 +60,7 @@ P(B given A) - likehood event
 P(B) - total probability of B, evidence 
 
 
-practice problem 1
+practice problem1
 
 a factory produces 1% defective items P(D) = 0.01
 if product is defective, the test is positive with 99% probability P(Pos | D) = 0.99
@@ -77,34 +77,43 @@ P(Pos) = P(Pos given D) * P(D) + P(Pos given not D) * P(not D)
 
 Calculate P(Pos) then P(D given Pos)
 
-
 P(Pos) = 0.99 * 0.01 + 0.05 * P(not D)
-
 P(not D) = 1 - P(D) = 1 - 0.01 = 0.99 
-
 P(Pos) = 0.99 * 0.01 + 0.05 * 0.99 = 0.0594
 
 final anwer 
-
 P(D given Pos) = 0.99 * 0.01 / 0.0594 equals around 16%
 
 
-
-<<<<<<<<<<<<<<<<<<<<< law of total probability (which essentially is joint non independent probability)
-
-P(A) = Sigma(i=1,n) of P(A given Bi) * P(Bi)
+P(A) = Sigma(i=1,n) of P(A given Bi) * P(Bi) - law of total probability, (which essentially is joint non independent probability)
+The law states that the total probability of an event A, is the sum of its probabilities in all possible scenarios, weighted by the probability of each scenario.
 
 
+>>>>>>>>>>more explanation on conditional probability 
+The law of total probability is useful because it allows us to compute the probability of an event A, 
+by breaking it down into cases based on another event B.
+
+A depends on B, which means P(A given B) is known 
+we know the probability of different cases P(B) P(not B), but not P(A)
+By using the law of total probability  P(A given B) P(A given not B), P(B) P(not B), to get the P(A),
+this is like averaging the conditional probabilities, weighted by how likely each case is.
+Once we have P(A), we can use Bayes' Theorem to find the reverse conditional probiablitites of P(B given A)
 
 
+example5
+B its raining P(B) = 0.3
+A you carry an umbrella
+
+if it rains you carry an umbrella with probability P(A given B) = 0.8
+if it doesn't rain you carry an umbrella with probability P(A given not B) = 0.1 
+
+What is the probability of A ? we want P(A)
+
+using the law of total probability 
+
+P(A) = P(A given B) * P(B) + P(A given not B) * P(not B) = 0.8 * 0.3 + 0.7 * 0.1 = 31%
 
 
-
-
-
-
-
-
-
-
-
+summary/conclusion:
+okay so I think I got it, my summary for contional probability is that, 
+if some A depends on some B, then its impossible to predict the correct answer without knowing the whole tree

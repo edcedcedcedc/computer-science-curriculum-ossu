@@ -1,0 +1,34 @@
+
+problem 1(with help)
+
+Bag 1 contains 4 red marbles and 6 blue marbles 
+Bag 2 contains 3 red marbles and 7 blue marbles 
+
+You choose a bag at random (each bag has 50% chance of being selected)
+
+What is the probability that you draw a red marble ?
+use the law of total probability to find P(Red)
+
+1)define the events
+
+B1 event that I choose bag 1, P(B1) = 0.5
+B2 event that I choose bag 2, P(B2) = 0.5
+R event that I draw a red marble
+
+2)find the conditional probablities
+(favourable/total, we can't use classic formula here)
+P(R given B1) = 4/10
+P(R given B2) = 3/10 
+
+
+3)apply the law of total probability 
+P(R) = P(R given B1) * B(1) + P(R given B2) * (B2)
+
+
+to be continued...
+
+
+
+
+
+
