@@ -740,7 +740,7 @@ and only then take a test, which implies that I don't truly understand everythin
 
 
 ## Graph
-![CS Roadmap](random/graph/screenshot2.png)
+![CS Roadmap](random/graph/dag090825.png)
 
 [Return to table of contents](#table-of-contents)
 
