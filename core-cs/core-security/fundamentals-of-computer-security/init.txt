@@ -1,0 +1,6 @@
+course site - https://61600.csail.mit.edu/2023/index.html
+
+03.09.25 -
+    this class should be very good a base course to close core security at OSSU, 
+    I didn't choose any of the mooc that they offer purely because this one has more depth
+    and it's more academic.

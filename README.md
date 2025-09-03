@@ -117,6 +117,18 @@ _Topics Covered_:
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
 |Computer Systems A Programmer's Perspective |![](https://geps.dev/progress/0)| 09.08.25 |01.01.26|-|[csapp](./core-cs/core-systems/csapp/)|[labs](./core-cs/core-systems/csapp/labs)|[Google Docs](https://docs.google.com/document/d/18r7r6Z1z2QoiD8wXbQ21lLw4oSjcbSKKjRthHwBEvoo/edit?usp=sharing)|
 
+#### Core security 
+
+**Topics covered**:
+`authentication`
+`transport security`
+`platform security`
+`software security`
+`human/end-user security.`
+
+| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
+:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
+|Foundations of Computer Security|![](https://geps.dev/progress/0) |03.09.25|03.12.25||[cs61600](./core-cs/core-security/fundamentals-of-computer-security/) |[projects](./core-cs/core-security/fundamentals-of-computer-security/labs)|[Google Docs](https://docs.google.com/document/d/1pUK9NoM78XD8NCP2V_O2x0w1Oz9R2FfCtjFWNwVidJI/edit?usp=sharing)|
 
 #### CS Tools
 
