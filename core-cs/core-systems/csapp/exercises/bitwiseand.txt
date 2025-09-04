@@ -1,0 +1,32 @@
+For example 
+x and y as hex value 
+x = 0x3F
+y = 0x34
+
+Bitwise and 
+x & y ? 
+hex to bin
+0x3F => 0011 1111
+0x34 => 0011 0100
+
+
+
+00111111 (apply &)
+00110100
+
+00110100 (res)
+
+bin to hex 
+0011 0100 => 0x34
+
+
+
+
+I transform bin to hex using this mapping 
+
+8421 maps to 0x + 0000
+
+example 
+
+0111 in bin 
+0x7 in hex 
