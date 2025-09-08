@@ -13,6 +13,7 @@
  * 
  * Note: not 64-bit safe. Always compile with gcc -m32 option.
  */
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
