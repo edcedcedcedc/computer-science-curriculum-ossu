@@ -141,6 +141,40 @@ NOTES:
  *   Legal ops: ~ &
  *   Max ops: 14
  *   Rating: 1
+ *  
+ *  understanding:
+ * 
+ *  ~ - bitwise not
+ *  & - bitwise and 
+ * 
+ *  0100 ^
+ *  0101
+ *  0001 = 1 
+ * 
+ *  0100 &
+ *  0101
+ *  0100 = 4
+ * 
+ *  0100 ~ 
+ *  1011 = 11
+ *  
+ *  0101 ~
+ *  1010 = 10
+ *  
+ * 1 &  1 ^  0 &  0 ^  1 &
+ * 1    1    0    0    0
+ * 1 ~  0    0    0    0 ~
+ * 0                   1
+ * 
+ * when 1 1 then & ~ 
+ * when 0 0 then &
+ * when 1 0 then & ~
+ * 
+ * then 
+ * 
+ * in xor the result is 1 only in both bits are different 
+ * 
+ *           
  */
 int bitXor(int x, int y) {
   return 2;
