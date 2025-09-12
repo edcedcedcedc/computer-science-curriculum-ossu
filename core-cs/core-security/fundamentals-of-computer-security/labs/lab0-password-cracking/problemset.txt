@@ -1,0 +1,22 @@
+Problem 1: Storing passwords
+
+NOTE:
+    I am using chatgpt as my TA, like office hours in US unis, gpt is my feedback, I he hints explains, I think etc.
+
+A) Typically, only the root user on a machine has access to the shadow file. 
+The shadow file only contains passwords hashes – not the passwords themselves. 
+In one sentence, explain why it is important to protect the hashed passwords ?
+
+response:
+Because an attack might crack the hash thru brute force as an example 
+
+B)
+Look online for information about the shadow file format. 
+Why does the format allow the password hashes for each user to be hashed with a different hash function?
+
+response:
+Because the password algorithms might be upgraded with stronger ones over time 
+
+
+readind the book 18.4.3 -> 
+
