@@ -1,4 +1,5 @@
 Problem 1: Storing passwords
+lab0 reading - https://61600-labs.csail.mit.edu/lab0.html
 
 NOTE:
     I am using chatgpt as my TA, like office hours in US unis, gpt is my feedback, I he hints explains, I think etc.
@@ -20,3 +21,15 @@ Because the password algorithms might be upgraded with stronger ones over time
 
 readind the book 18.4.3 -> 
 
+
+C)
+The computational cost is greatly increased as the number of hash iterations increases
+
+
+D) 
+I would set the d on medium count and the delay to exponential count but starting slow 
+to balance the actual delay from the has and the login delay
+
+
+E)
+The values of the variables might increase because in laptops the waiting time for login is naturally longer
