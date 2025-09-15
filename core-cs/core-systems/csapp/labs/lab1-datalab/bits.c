@@ -142,7 +142,7 @@ NOTES:
  *   Max ops: 14
  *   Rating: 1
  *  
- *  understanding:
+ *  UNDERSTANDING:
  * 
  *  ~ - bitwise not
  *  & - bitwise and 
@@ -174,10 +174,37 @@ NOTES:
  * 
  * in xor the result is 1 only in both bits are different 
  * 
- *           
+ *          
+ * XOR TABLE
+ * 
+ *  | x | y | x ^ y |
+    | - | - | ----- |
+    | 0 | 0 | 0     |
+    | 0 | 1 | 1     |
+    | 1 | 0 | 1     |
+    | 1 | 1 | 0     |
+
+    generalisation or XOR
+    (~x & y) | (x & ~y) = x XOR y
+
+ * the morgan's laws 
+ * 1) ~(A & B) = ~A | ~B
+ * 2) ~(A | B) = ~A & ~B
+ * 
+ * generalisation of OR
+ * ~(~A & ~B) = A | B
+ * 
+ * 
+ * 
+ * final formula 
+ * ~(~(~x & y) & ~(x & ~y)) = x XOR y
+ * 
+ * 
+ * ~(~x & y)
+ *  
  */
 int bitXor(int x, int y) {
-  return 2;
+  return ~(~(~x & y) & ~(x & ~y));
 }
 /* 
  * tmin - return minimum two's complement integer 
