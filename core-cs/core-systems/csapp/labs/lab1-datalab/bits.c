@@ -211,11 +211,24 @@ int bitXor(int x, int y) {
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 4
  *   Rating: 1
+ * 
+ *  understanding:
+ *   ~ bitwise not 
+ *   & and 
+ *   ^ xor 
+ *   ! logical not
+ *   | bitwise or 
+ *   >> shift 
+ * 
+ *  -4 -3 -2 -1 0 1 2 3
+ *   x = 3, 3 = 0011
+ *   x = 0, 0000, ~x = 1111, 
+ *  
+ * 
  */
 int tmin(void) {
-
-  return 2;
-
+  int a = 1;
+  return a << 31;
 }
 //2
 /*
