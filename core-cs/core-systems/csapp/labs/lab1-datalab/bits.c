@@ -198,9 +198,6 @@ NOTES:
  * 
  * final formula 
  * ~(~(~x & y) & ~(x & ~y)) = x XOR y
- * 
- * 
- * ~(~x & y)
  *  
  */
 int bitXor(int x, int y) {
@@ -232,14 +229,38 @@ int tmin(void) {
 }
 //2
 /*
- * isTmax - returns 1 if x is the maximum, two's complement number,
- *     and 0 otherwise 
+ * isTmax - returns 1 if x is the maximum, two's complement number, and 0 otherwise 
  *   Legal ops: ! ~ & ^ | +
  *   Max ops: 10
  *   Rating: 1
+ * 
+ * Observe that, 
+ * Tmax + 1 = Tmin, and ~Tmax = Tmin
+ * 
+ * This generalize to, 
+ * Tmax + 1 = ~Tmax, x + 1 = ~x
+ *
+ * Substitute the equality with XOR to fit the rules of the exercise, 
+ * (x + 1) ^ ~x = (x + 1 = ~x)
+ * 
+ * Negate to fit the rules of the exercise,
+ * !((x + 1) ^ ~x)
+ * 
+ * This works for Tmax and -1, because -1 + 1 = 0 and ~-1 = 0
+ * 
+ * Remove -1, which is 0 for -1 and 1 for Tmax
+ * !!(x + 1)
+ * 
+ * QED,
+ * !((x + 1) ^ ~x) & !!(x + 1) which is only true for Tmax 
+ * 
+ * Example,
+ * !!(-1 + 1) => !!(0) => 0
+ * !(0^~-1) => !(0000^1111) => !(1) => 0
+ * 0 & 0 => 0
  */
 int isTmax(int x) {
-  return 2;
+  return !((x + 1) ^ ~x) & !!(x + 1);
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
