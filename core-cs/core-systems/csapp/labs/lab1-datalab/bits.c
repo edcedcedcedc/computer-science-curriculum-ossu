@@ -312,9 +312,20 @@ int allOddBits(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 5
  *   Rating: 2
+ * 
+ *  understanding:
+ * 
+ *  how do I negate a number ? what should I do first ?
+ *  bit negate ?
+ *  1111~
+ *  0000+
+ *  0001
+ *  0001
+ * 
+ *  
  */
 int negate(int x) {
-  return 2;
+  return ~x + 1;
 }
 //3
 /* 
