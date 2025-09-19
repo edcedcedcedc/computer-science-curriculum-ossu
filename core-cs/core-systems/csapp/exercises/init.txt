@@ -1,0 +1,9 @@
+gcc yourfilename -Og -S mstore.s compile to get the assembly code 
+ -O stands for optimization -g for debugging 
+ -S stop the compilation at assembly 
+
+
+gcc -c 3.2.2.c -o 3.2.2 - compile but not link
+
+
+objdump -d filename - dissasembly 
