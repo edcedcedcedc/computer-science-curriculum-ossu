@@ -263,15 +263,48 @@ int isTmax(int x) {
   return !((x + 1) ^ ~x) & !!(x + 1);
 }
 /* 
- * allOddBits - return 1 if all odd-numbered bits in word set to 1
+ * allOddBits - return 1 if all odd-numbered bits in word are set to 1
  *   where bits are numbered from 0 (least significant) to 31 (most significant)
  *   Examples allOddBits(0xFFFFFFFD) = 0, allOddBits(0xAAAAAAAA) = 1
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 12
  *   Rating: 2
+ * 
+ *  understanding:
+ *  return 1 if all odd num bits in word are set to 1, otherwise 0
+ * 
+ *  01010101010101 => 1 
+ *  101010101010101 => 0
+ *  
+ *  how do I check only the odd bits ?
+ *  
+ *  I could use & because its true only for the bits I care about
+ *  0101 & 0101 = 0101
+ *  1111 & 0101 = 0101
+ * 
+ *  how the result would look like if all odd bits where 1 ?
+ * 
+ *  0101 & 0101 = 0101.... 
+ *  I need a source of truth to compare again 
+ *  the comparation operator is ^
+ * 
+ *  ! - 0 => 1, non-zero => 0, 1 => 0
+ * 
+ *  0101^0101 => 0000 => ! => 1
+ *  0101^1010 => 1010 => ! => 0
+ *  0101^1110 => 0001 => ! => 0
+ *  
+ * 
+ * 
+ * NOTE:
+ *   What I was trying to achive in this problem is to think as much as I could,
+ *   with the understanding I just observe the problem and think on the right questions,
+ *   this in my opinion develops a thinking framework that is needed in day to day life
+ *   or any job where you have to use logic
  */
 int allOddBits(int x) {
-  return 2;
+  int unsigned oddBitsMask = 0xAAAAAAAA;
+  return !((x & oddBitsMask)^oddBitsMask);
 }
 /* 
  * negate - return -x 
@@ -279,9 +312,20 @@ int allOddBits(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 5
  *   Rating: 2
+ * 
+ *  understanding:
+ * 
+ *  how do I negate a number ? what should I do first ?
+ *  bit negate ?
+ *  1111~
+ *  0000+
+ *  0001
+ *  0001
+ * 
+ *  
  */
 int negate(int x) {
-  return 2;
+  return ~x + 1;
 }
 //3
 /* 

@@ -28,7 +28,7 @@ def test_2a():
     if(isinstance(result, str)):
         result = result.encode("ascii")
 
-    target = "FIND ME ON GRADESCOPE"
+    target = "3a7bd3e2360a"
 
     if toy_hash(result).hex() != target:
         raise Exception(f"toy_hash(password) outputs {toy_hash(result).hex()}, not {target}")
