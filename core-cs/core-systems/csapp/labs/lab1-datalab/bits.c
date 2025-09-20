@@ -336,9 +336,40 @@ int negate(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 15
  *   Rating: 3
+ *  
+ *   understanding:
+ *   0x30 = 0011 0000
+ *   0x31 = 0011 0001
+ *   0x32 = 0011 0010
+ *   ...
+ *   0x39 = 0011 1001
+ *   
+ *   
+ *   0x30 in common 
+ *   upper = x >> 4
+ *   
+ *   0000 1111 == 0xF 
+ *   
+ *   x & 0xF - mask to get the lower nibble 
+ *   
+ *   x - 10 < 0 = valid
+ *   x - 10 >= 0 = invalid
+ *  
+ *   strategy:
+ *   shift top nibble down, compare with 0x3
+ *   extract lower nibble with a mask
+ *   use this to check if x <= 9
+ *   x - 10 < 0 = valid
+ *   x - 10 >= 0 = invalid
+ *   shift all the bits >> 31; if the result is negative it will be 1 else 0
+ *   
+ *   
  */
 int isAsciiDigit(int x) {
-  return 2;
+    int upperNibbleValidate = !((x >> 4) ^ 0x3);
+    int lowerNibble = x & 0xF;
+    int lowerNibbleValidateNormalize = ((lowerNibble + (~0xA + 1)) >> 31) & 1;
+    return upperNibbleValidate & lowerNibbleValidateNormalize;
 }
 /* 
  * conditional - same as x ? y : z 
