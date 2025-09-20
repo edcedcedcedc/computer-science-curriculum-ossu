@@ -1,0 +1,67 @@
+A set of easy exercises that cover all the concepts 
+for problem set 3 to get me back into context 
+and refresh (because I am a noob and cannot solve hard problems, this is Harvard)
+
+## **Simple Practice Problems – Stat 110 Concepts**
+
+### **1. Conditioning and Independence**
+
+1. You roll a fair 6-sided die. Let $X = 1$ if the roll is even, 0 otherwise. Let $Y = 1$ if the roll is greater than 3, 0 otherwise.
+   (a) Are $X$ and $Y$ independent?
+   (b) Let $Z = 1$ if the roll is 6, 0 otherwise. Are $X$ and $Y$ independent **given $Z$**?
+
+2. Let $X$ and $Y$ be independent fair coin flips. Let $Z = X \oplus Y$ (XOR).
+   Compute $P(X=0, Y=0 \mid Z=0)$ and compare it to $P(X=0 \mid Z=0) P(Y=0 \mid Z=0)$. What does this tell you about conditional independence?
+
+---
+
+### **2. Monty Hall Simplified**
+
+1. There are 3 doors. You pick Door 1. The car is equally likely behind any door. Monty always opens a door with a goat.
+   (a) If you **always switch**, what is the probability of winning?
+   (b) If Monty opens Door 2, what is the probability you win by switching?
+
+---
+
+### **3. Simpson’s Paradox**
+
+1. In a small class:
+
+   * Group A: 2 students, both fail.
+   * Group B: 3 students, 2 fail.
+     Compute $P(\text{fail} \mid A)$, $P(\text{fail} \mid B)$, and $P(\text{fail})$ overall. Could the overall probability be higher for Group A even if each subgroup is lower?
+
+---
+
+### **4. Gambler’s Ruin Simplified**
+
+1. A gambler flips a fair coin. They start with \$0 and stop if they reach \$2 or \$-1.
+   (a) Draw a simple tree for all possible outcomes.
+   (b) What is the probability they reach \$2 before \$-1?
+
+---
+
+### **5. Bernoulli and Binomial**
+
+1. Flip a fair coin 3 times. Let $X$ = number of heads.
+   (a) List all outcomes.
+   (b) Compute $P(X = 2)$.
+   (c) If you flip another fair coin $Y$ once, independent of $X$, what is the distribution of $X + Y$?
+
+2. Flip 2 coins. Conditional on exactly 1 head showing, list all possible sequences. Are they equally likely?
+
+---
+
+These problems are **very basic**, but they touch:
+
+* Conditional probability & independence
+* Monty Hall intuition
+* Simpson’s paradox concept
+* Simple gambler’s ruin tree
+* Binomial/Bernoulli probability
+
+---
+
+If you want, I can **make a step-by-step solution set** for these simple problems next, so you can check yourself as you work through them.
+
+Do you want me to do that?
