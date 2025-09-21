@@ -303,7 +303,7 @@ int isTmax(int x) {
  *   or any job where you have to use logic
  */
 int allOddBits(int x) {
-  int unsigned oddBitsMask = 0xAAAAAAAA;
+  int oddBitsMask = 0xAAAAAAAA;
   return !((x & oddBitsMask)^oddBitsMask);
 }
 /* 
@@ -377,9 +377,18 @@ int isAsciiDigit(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 16
  *   Rating: 3
+ * 
+ *   understanding:
+ *   by logic x has to be 1 or 0 
+ *   
+ *   strategy:
+ *   !!x
+ *   ~x + 1
+ *   
  */
 int conditional(int x, int y, int z) {
-  return 2;
+  int mask = ~(!!x) + 1;
+  return (mask & y) | (~mask & z);
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -387,9 +396,40 @@ int conditional(int x, int y, int z) {
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 24
  *   Rating: 3
+ *   
+ *   understanding:
+ *   if x <= y then y - x >= 0
+ *   if x >= y then y - x < 0
+ * 
+ * 
+ *    (-3)-(-2)-(-1)-0-1-2-3
+       -y        -x    x   y
+            <            < 
+ *    
+ * 
+ *   strategy:
+ *   Handle different signs first
+
+      If x < 0 and y >= 0, then x <= y → return 1
+      If x >= 0 and y < 0, then x <= y → return 0
+
+      Handle same signs
+      If x and y have the same sign, then y - x is safe (no overflow)
+      If y - x >= 0 → x <= y → return 1
+      If y - x < 0 → x > y → return 0
+      
+     
+      Combine the two cases with a bitwise OR
+
+
+  //TODO      
+ *   
+ * 
  */
 int isLessOrEqual(int x, int y) {
-  return 2;
+    return ((x >> 31) & 1 & !((y >> 31) & 1))   // x < 0, y > 0 then 1 otherwise 0
+           | (!((x >> 31) & 1 ^ (y >> 31) & 1)  // x,y same sign then 1, otherwise 0
+              & !(((y + (~x + 1)) >> 31) & 1)); // if y - x >= 0 then 1 otherwise 0
 }
 //4
 /* 
@@ -399,9 +439,16 @@ int isLessOrEqual(int x, int y) {
  *   Legal ops: ~ & ^ | + << >>
  *   Max ops: 12
  *   Rating: 4 
+ *   
+ *   ! 
+ *   x > 0 => 0
+ *   x < 0 => 0
+ *   x = 0 => 1 
+ * 
+ * 
  */
 int logicalNeg(int x) {
-  return 2;
+    return ((x | (~x + 1)) >> 31) + 1;
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
@@ -414,10 +461,34 @@ int logicalNeg(int x) {
  *  Legal ops: ! ~ & ^ | + << >>
  *  Max ops: 90
  *  Rating: 4
+ *  
+ *  understanding:
+ *  -5 -> 0101 -> 1010 + 1 -> 1011
+ *   0 -> 0000 -> 0000 + 1 -> 0001
+ *   
+ *   the core idea is that
+ *   the minimum number of bits that you need to represent a number is the sign bit + 1
+ *   the shift if using !! works like multiplication, e.g << 4 means 2^4
+ *  
  */
 int howManyBits(int x) {
-  return 0;
+    int b16, b8, b4, b2, b1, b0;
+    int sign = x >> 31;
+    x = x ^ sign;
+    b16 = !!(x >> 16) << 4; 
+    x = x >> b16;
+    b8 = !!(x >> 8) << 3;    
+    x = x >> b8;
+    b4 = !!(x >> 4) << 2;    
+    x = x >> b4;
+    b2 = !!(x >> 2) << 1;    
+    x = x >> b2;
+    b1 = !!(x >> 1);        
+    x = x >> b1;
+    b0 = x;                 
+    return b16 + b8 + b4 + b2 + b1 + b0 + 1; // +1 for sign bit
 }
+
 //float
 /* 
  * floatScale2 - Return bit-level equivalent of expression 2*f for

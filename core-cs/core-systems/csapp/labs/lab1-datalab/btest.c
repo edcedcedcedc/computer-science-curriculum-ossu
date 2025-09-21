@@ -13,7 +13,8 @@
  * 
  * Note: not 64-bit safe. Always compile with gcc -m32 option.
  */
-#define _POSIX_C_SOURCE 200809L
+#define _POSIX_C_SOURCE 200809L //I know I don't have any permission to change this file, 
+								//but only did this to be able to use the tests on my machine
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
