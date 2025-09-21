@@ -500,10 +500,34 @@ int howManyBits(int x) {
  *   Legal ops: Any integer/unsigned operations incl. ||, &&. also if, while
  *   Max ops: 30
  *   Rating: 4
+ * 
+ *   understanding:
+ *   float format sign(1bit 32) | exponent(8bits 31-23) | fraction(23bits 22-0)
+ *   special case, NaN or infinity exponent == 255 
+ *   normalized 1 <= exponent <= 254, doubling, increment by 1
+ *   denormalizaed shift fraction left by 1; if fraction overflows(becomes normalized) the exponent will become 1
+ *  
  */
 unsigned floatScale2(unsigned uf) {
-  return 2;
+    unsigned sign = uf & 0x80000000;      // extract sign bit 1000; top 1 bit
+    unsigned exp  = uf & 0x7F800000;      // extract exponent bits 0111 1111 1000; middle 8 bits
+    unsigned frac = uf & 0x007FFFFF;      // extract fraction bits 0111 1111 x 5; bottom 23 bits
+
+    if (!(exp^0x7F800000)) {
+      // NaN or Infinity
+        return uf;
+    } else if (!(exp^0)) {
+        // Denormalized
+        frac <<= 1;  // double the value by shifting fraction (denormalized) 
+                     //If this causes fraction to overflow, it will become normalized automatically
+        return sign | exp | frac;
+    } else {
+        //Normalized 
+        exp += 0x00800000; 
+        return sign | exp | frac;
+    }
 }
+
 /* 
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
  *   for floating point argument f.
