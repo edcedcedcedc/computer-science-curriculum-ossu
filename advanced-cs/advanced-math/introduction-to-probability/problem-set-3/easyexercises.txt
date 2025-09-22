@@ -60,8 +60,3 @@ These problems are **very basic**, but they touch:
 * Simple gambler’s ruin tree
 * Binomial/Bernoulli probability
 
----
-
-If you want, I can **make a step-by-step solution set** for these simple problems next, so you can check yourself as you work through them.
-
-Do you want me to do that?
