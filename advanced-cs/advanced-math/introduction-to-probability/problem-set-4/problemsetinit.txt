@@ -1,0 +1,107 @@
+# Stat 110 Easy – Combined Practice
+
+This file contains simplified versions of both **Strategic Practice** and **Homework** problems, designed for easy understanding and practice.
+
+---
+
+## **Part 1 – Distributions and Expected Values**
+
+### 1. Matching but never equal
+Give an example of two random variables X and Y that have the same distribution but X = Y never happens.
+
+### 2. Days of the week
+Let X be a random day of the week (Monday = 1, …, Sunday = 7). Let Y be the next day.  
+- Do X and Y have the same distribution?  
+- What is P(X < Y)?
+
+### 3. First head
+Flip a coin repeatedly until it lands Heads. Let X be the number of flips.  
+- If the coin is fair, what is P(X = 1), P(X = 2), P(X = 3)?  
+- Sketch a simple graph of the CDF for X.
+
+### 4. Expected value sum
+Let X take values 1, 2, 3,… with probabilities P(X = n) = 1/2^n. Compute E(X).
+
+### 5. Eggs and chicks (homework)
+You have 3 eggs. Each hatches with probability 1/2, and each chick survives with probability 1/2.  
+- How many chicks do you expect to hatch?  
+- How many survive?
+
+### 6. Stopping with a boy and girl (homework)
+A family keeps having children until they have at least 1 boy and 1 girl. Probability of boy or girl is 1/2 each.  
+- Expected number of children?
+
+---
+
+## **Part 2 – Indicator Variables & Linearity of Expectation**
+
+### 1. Birthday pairs
+In a group of 5 people, what is the expected number of pairs with the same birthday? (Assume 7 days in a week.)
+
+### 2. Random bags
+3 students each randomly get one candy bag from a total of 3 bags.  
+- Expected number of bags the first two students get in total?  
+- Expected number of students who get at least one bag?
+
+### 3. Empty boxes
+3 balls are placed randomly into 3 boxes. What is the expected number of empty boxes?
+
+### 4. Hash table (homework)
+3 people each randomly get a slot in a 3-slot hash table.  
+- Expected number of empty slots?  
+- Expected number of slots with exactly one person?
+
+---
+
+## **Part 3 – Simple Conditional / Combinatorial**
+
+### 1. First better candidate
+You interview 3 candidates C1, C2, C3 in random order. Let X be the index of the first candidate better than C1.  
+- List all possibilities and find E(X).
+
+### 2. Random balls in boxes (homework)
+Randomly, 3 distinguishable balls are placed into 3 distinguishable boxes.  
+- Find the expected number of empty boxes.
+
+### 3. Fisher exact test (simplified)
+Suppose 2 women and 2 men are tested for a disease. X = # of women with disease, Y = # of men with disease.  
+- If total diseased = 2, what is the probability X = 1 given X + Y = 2?
+
+---
+
+## **Part 4 – Sorting / Inversions**
+
+### 1. Inversions in a list
+Consider the list [2,1,3]. How many inversions are there?  
+- Expected number of inversions in all lists of 3 numbers?
+
+### 2. Bubble sort sweeps (small)
+Bubble sort [3,1,2]. How many comparisons are made?
+
+### 3. Algorithm expected comparisons (homework)
+Simplified: For 3 numbers in random order, what is the expected number of comparisons to sort with bubble sort?
+
+---
+
+## **Part 5 – Records / High Jumps**
+
+### 1. Records
+3 jumpers compete one at a time. A “record” means jumping higher than anyone before.  
+- Probability that 2nd jumper sets a record?  
+- Expected number of records among 3 jumpers?
+
+---
+
+## **Part 6 – CDF / Distribution**
+
+### 1. Converting CDF
+Let X be a r.v. with CDF F. Some countries use G(x) = P(X < x) instead.  
+- Show how to convert F to G.
+
+### 2. Chicks distribution
+Number of chicks that hatch = Binomial(n=3, p=1/2).  
+- Number that survive? Distribution?
+
+### 3. Simple Monty Hall / coin style (homework)
+Flip coin until heads. Distribution of number of flips? PMF? CDF?
+
