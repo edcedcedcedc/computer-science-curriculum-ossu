@@ -12,8 +12,7 @@
 4. [Resources](#resources)
 5. [Log by date](#log)
 6. [Current schedule](#schedule)
-7. [Current graph version of the progress](#graph)
-8. [Support](#support)
+7. [Support](#support)
 
 ## About
 I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#ossu) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
@@ -101,8 +100,8 @@ _Topics Covered_:
 `and more`
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Differential Calculus |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
-|Integral Calculus |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|22.03.25|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
+|Calculus 1A |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
+|Calculus 1B and C |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|22.03.25|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
 |Math for CS|![](https://geps.dev/progress/99)| 15.11.24 |22.02.25|06.08.25|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
 
 
@@ -723,25 +722,12 @@ and only then take a test, which implies that I don't truly understand everythin
 
 ## Schedule 
 
-
-**Monday:**  
-
-
-**Tuesday:**  
-- Introduction to Probability
-
-**Wednesday:**  
-
-
-**Thursday:**  
-- Introduction to Probability
-
-
-**Friday:**  
-
+**Monday - Friday:**  
+- 2-3 lectures per week, labs every 2-2.5 weeks, reading - introduction to computer systems
+- 2 lectures per week, labs every 1-2.2.5 weeks, reading - foundatiosn of computer security 
+- 2 lectures per week, homeworks 1-2 weeks, reading - introduction to probablity
 
 **Saturday:**  
-
 - Any other backlog task
 
 **Sunday:**  
@@ -751,14 +737,7 @@ and only then take a test, which implies that I don't truly understand everythin
 [Return to table of contents](#table-of-contents)
 
 
-## Graph
-![CS Roadmap](random/graph/dag090825.png)
-
-[Return to table of contents](#table-of-contents)
-
-
 ## Support 
-Currently, GSoC is my only source of support (and it hasn’t started yet). If you'd like to keep me caffeinated and coding — thank you ❤️.
 I still have about two years left to complete OSSU, and I'm working hard to become self-sufficient soon. Your support helps bridge that gap while I build skills, contribute to open source, and grow into a full-time software engineer.<br>
 [![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/androranogajec)
 
