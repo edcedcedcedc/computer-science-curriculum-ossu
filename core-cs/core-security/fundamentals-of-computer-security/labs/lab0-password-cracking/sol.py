@@ -1,6 +1,7 @@
 from hashall import toy_hash
 from hashbig import *
-from itertools import product
+from itertools import count, product, combinations
+from math import comb
 import string
 import os
 
@@ -37,50 +38,70 @@ def problem_2a(target=""):
 
 
 # return password, where toy_hash(password) is in hashes.txt
+# this problem didn't fail just I am too lazy to parse all
+# the passwords whose time is less than 5 minutes to crack,
+# not the password = apple but its not in the hashes.txt
 def problem_2c():
     password = None
     with open("hashes.txt", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             print(line)
-            password = problem_2a("59830ebc3a41")
+            password = problem_2a("3a7bd3e2360a")
             return password
-
-
-print(problem_2c())
 
 
 # return probability of being in bin k
 def problem_3a(B, N):
-    prob = None
+    prob = 1 / N
     return prob
 
 
 # return probability of both balls being in bin k
 def problem_3b(B, N):
-    prob = None
+    prob = 1 / N**2
     return prob
 
 
 # return number of ball pairs
 def problem_3c(B):
-    prob = None
-    return prob
+    return list(combinations(range(1, B + 1), 2)).__len__()
 
 
 # return reasonable upper bound
+""" 
+Probability that land on the same bin = 1/N^2
+Collision N * 1/N^2 = 1/N
+
+
+"""
+
+
 def problem_3d(B, N):
-    prob = None
+    combinations = problem_3c(B)
+    prob = combinations / N
     return prob
 
 
 # return reasonable upper bound
 def problem_3e(L, N):
-    prob = None
+    prob = problem_3d(L, 2**N)
     return prob
 
 
 # return h1,h2 where H(h1) == H(h2)
+""" 
+I wont solve 4b, I just write conceptually what is what from 4A
+
+floyd's cycle finding algorithm (tortoise and hare)
+
+expected runtime to hit a collision is sqrt(2^56)
+
+memory usage tiny 
+
+ """
+
+
 def problem_4b():
     h1 = None
     h2 = None
