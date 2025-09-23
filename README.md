@@ -157,7 +157,7 @@ _Topics Covered_:
 
 | Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
 :-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Introduction to Probability|![](https://geps.dev/progress/35)| 01.03.25 |1.07.25||[stat-110](./advanced-cs/advanced-math/introduction-to-probability/) |[projects]()|[Google Docs](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing)|
+|Introduction to Probability|![](https://geps.dev/progress/0)| 23.09.25 |31.12.25||[cs-109](./advanced-cs/advanced-math/probability-for-cs/) |[projects]()|[Google Docs(archive)](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing)[Google Docs(new)](https://docs.google.com/document/d/1E_K2eB0Qf177yfnsHEAVWvyI8lY60rFPpEd3vEJJXzE/edit?usp=sharing)|
 
 
 ### ELECTIVES
@@ -725,7 +725,7 @@ and only then take a test, which implies that I don't truly understand everythin
 **Monday - Friday:**  
 - 2-3 lectures per week, labs every 2-2.5 weeks, reading - introduction to computer systems
 - 2 lectures per week, labs every 1-2.2.5 weeks, reading - foundatiosn of computer security 
-- 2 lectures per week, homeworks 1-2 weeks, reading - introduction to probablity
+- 3 lectures per week, homeworks 1-2 weeks, reading - introduction to probablity
 
 **Saturday:**  
 - Any other backlog task
