@@ -1,3 +1,6 @@
 course website - https://web.stanford.edu/class/archive/cs/cs109/cs109.1232/
 supplimental material - https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/
+
+24/09/25
 problem sets arent available but I will generate myself problem sets based on topics, three each week
+I am too ..., problem sets are here -> https://web.stanford.edu/class/archive/cs/cs109/cs109.1178/

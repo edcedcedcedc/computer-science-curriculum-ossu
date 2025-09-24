@@ -1,1 +1,1 @@
-counting, combinatorics, probability, condititions and bayes 
+counting, combinatorics, probability
