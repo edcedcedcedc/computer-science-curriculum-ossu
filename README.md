@@ -1,218 +1,106 @@
 ![ci workflow](https://github.com/edcedcedcedc/computer-science-curriculum-ossu/actions/workflows/main.yml/badge.svg)
 
-## Table of Contents
-1. [About](#about)
-2. [Curriculum Overview](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md)
-3. Modules
-   - [Khan Academy](#khan-academy)
-   - [Intro CS](#intro-cs)
-   - [Core CS](#core-cs)
-   - [Advanced CS](#advanced-cs)
-   - [Electives](#electives)
-4. [Resources](#resources)
-5. [Log by date](#log)
-6. [Current schedule](#schedule)
-7. [Support](#support)
+Open Education in Computer Science from [Open Source Society University](https://github.com/ossu/computer-science) following [CS2013 guidelines](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
 
-## About
-I will be sharing the courses taken to track and document my progress. This is a comprehensive computer science curriculum using resources from [Open Source Society University](#ossu) which is aligned with the standards outlined in [CS2013 Curriculum Guidelines for Undergraduate Degree Programs in Computer Science](https://github.com/ossu/computer-science/blob/master/CURRICULAR_GUIDELINES.md).
-
-## Khan Academy
+---
 
 #### Prerequisites
+**Topics covered:** `high school geometry` `college algebra` `trigonometry` `precalculus`
 
-_Topics Covered_:
-`high school geometry`
-`college algebra`
-`trigonometry`
-`precalculus`
-| Course | Progress | Start Date | Planned End Date | Actual End Date | Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Algebra 1 |![Algebra 1](https://geps.dev/progress/100) | - |10.02.23|10.02.23|[alg1](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1BJkhLWKtQVTutCbBOL5Am8IlfLq9bDqoBrA2aGlQ7eo/edit?usp=sharing)|
-|Geometry |![HS Geometry](https://geps.dev/progress/94) | - |26.10.23|26.10.23|[geo](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1n7f1E6zxKXha6v5mLx7cQehJuKmo-on3UmyP_uOSCYI/edit?usp=sharing)|
-|Algebra 2 |![Algebra 2](https://geps.dev/progress/93) |- |15.01.24|15.01.24|[alg2](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1ma1xHGy0dGXNuQbXPrLDidT_F8d6hQ4QrPBRRmm-hyA/edit?usp=sharing)|
-|Trigonometry |![Trigonometry](https://geps.dev/progress/96) |-|04.02.24|04.02.24|[trig](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1n7f1E6zxKXha6v5mLx7cQehJuKmo-on3UmyP_uOSCYI/edit?usp=sharing)|
-|Precalculus |![Precalculus](https://geps.dev/progress/93) | 21.02.24 |11.04.24|08.04.24|[precalc](./prerequisites/) |-|[Google Docs](https://docs.google.com/document/d/1PSfIDMT3UEdDhIJkCUgGjDmI9NO2-VB8JhcVCIdnaJ8/edit?usp=sharing)|
+- [x] Algebra 1 (10.02.23 → 10.02.23) → [Proof](./prerequisites/) • [Notes](https://docs.google.com/document/d/1BJkhLWKtQVTutCbBOL5Am8IlfLq9bDqoBrA2aGlQ7eo/edit?usp=sharing)  
+- [x] Geometry (26.10.23 → 26.10.23) → [Proof](./prerequisites/) • [Notes](https://docs.google.com/document/d/1n7f1E6zxKXha6v5mLx7cQehJuKmo-on3UmyP_uOSCYI/edit?usp=sharing)  
+- [x] Algebra 2 (15.01.24 → 15.01.24) → [Proof](./prerequisites/) • [Notes](https://docs.google.com/document/d/1ma1xHGy0dGXNuQbXPrLDidT_F8d6hQ4QrPBRRmm-hyA/edit?usp=sharing)  
+- [x] Trigonometry (04.02.24 → 04.02.24) → [Proof](./prerequisites/) • [Notes](https://docs.google.com/document/d/1n7f1E6zxKXha6v5mLx7cQehJuKmo-on3UmyP_uOSCYI/edit?usp=sharing)  
+- [x] Precalculus (21.02.24 → 08.04.24) → [Proof](./prerequisites/) • [Notes](https://docs.google.com/document/d/1PSfIDMT3UEdDhIJkCUgGjDmI9NO2-VB8JhcVCIdnaJ8/edit?usp=sharing)  
 
-## OSSU
+#### Intro CS
 
-### INTRO CS
+**Topics covered:** `simple programs` `basic abstractions` `data structures` `algorithms` `imperative programming`
 
-#### Introduction to Programming and Computer Science
+- [x] Introduction to Programming (04.03.24 → 17.03.24)  
+  → [Proof](./intro-cs/intro-to-programming/cs50p/) • [Notes](https://docs.google.com/document/d/1W2IWr0ZsR0zi2xMu8_otMD-uPK5WGmOiPZjDeM9zeJU/edit?usp=sharing)  
+- [x] Introduction to Computer Science (22.03.24 → 02.07.24)  
+  → [Proof](./intro-cs/intro-to-computer-science/MIT-6.0001/) • [Notes](https://docs.google.com/document/d/1SEqocEuG1JfpeHpxPkkRKuUvD8_yLBg1HBKsEq8jwOE/edit?usp=sharing)  
 
-_Topics Covered_:
-`simple programs`
-`simple data structures`
-`computation`
-`imperative programming`
-`basic abstractions`
-`basic data structures and algorithms`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Introduction to Programming|![CS50P](https://geps.dev/progress/100) | 04.03.24 |08.04.24|17.03.24|[cs50p](./intro-cs/intro-to-programming/cs50p/) |-|[Google Docs](https://docs.google.com/document/d/1W2IWr0ZsR0zi2xMu8_otMD-uPK5WGmOiPZjDeM9zeJU/edit?usp=sharing)|
 
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Introduction to Computer Science |![MIT6.0001](https://geps.dev/progress/100) | 22.03.24 |25.05.24|02.07.24|[mit 6.0001](./intro-cs/intro-to-computer-science/MIT-6.0001/) |-|[Google Docs](https://docs.google.com/document/d/1SEqocEuG1JfpeHpxPkkRKuUvD8_yLBg1HBKsEq8jwOE/edit?usp=sharing)|
 
-### CORE CS
+#### Core CS
 
-#### Core programming
+##### Core programming
+**Topics covered:** `functional programming` `object-oriented design` `ML-family languages` `Lisp-family languages` `Ruby`
 
-**Topics covered**:
-`functional programming`
-`design for testing`
-`program requirements`
-`common design patterns`
-`unit testing`
-`object-oriented design`
-`static typing`
-`dynamic typing`
-`ML-family languages (via Standard ML)`
-`Lisp-family languages (via Racket, Scheme)`
-`Ruby`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Structure And Interpretation Of Computer Programs|![](https://geps.dev/progress/99) | 02.07.24 |17.10.24|10.12.24|[cs61a](./core-cs/core-programming/sicp/) |[projects](./core-cs/core-programming/sicp/projects)|[Google Docs](https://docs.google.com/document/d/1ge1JjM2ER7VkYoT3uk8Wp_-HZ2bAJwh-QjD7YnkYW6o/edit?usp=sharing)|
+- [x] Structure and Interpretation of Computer Programs (02.07.24 → 10.12.24)  
+  → [Proof](./core-cs/core-programming/sicp/) • [Projects](./core-cs/core-programming/sicp/projects) • [Notes](https://docs.google.com/document/d/1ge1JjM2ER7VkYoT3uk8Wp_-HZ2bAJwh-QjD7YnkYW6o/edit?usp=sharing)  
 
-#### Core theory 
+#### Core theory
+**Topics covered:** `stacks` `queues` `linked lists` `hash tables` `trees`
 
-**Topics covered**:
-`heap, stack, queue`
-`linked lists`
-`hash table`
-`trees`
-`etc`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Data Structures|![](https://geps.dev/progress/90) |10.12.24|10.03.25|08.06.2025|[cs61b](./core-cs/core-theory/data-structures/) |[projects](./core-cs/core-theory/data-structures/projects)|[Google Docs](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)|
+- [x] Data Structures (10.12.24 → 08.06.25)  
+  → [Proof](./core-cs/core-theory/data-structures/) • [Projects](./core-cs/core-theory/data-structures/projects) • [Notes](https://docs.google.com/document/d/1h--IlxzWrA8k8R8Ls-Ikoxhdb89BJmBbhq7kM195IwQ/edit?usp=sharing)  
 
 #### Core math
+**Topics covered:** `discrete math` `O-notation` `discrete probability` `statistics`
 
-**Topics covered**:
-`discrete mathematics`
-`mathematical proofs`
-`basic statistics`
-`O-notation`
-`discrete probability`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Calculus 1A |![](https://geps.dev/progress/95)| 15.04.24 |30.07.24|14.10.24|[mit-18-01-1x](./core-cs/core-math/differential-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
-|Calculus 1B and C |![](https://geps.dev/progress/80)| 14.10.24 |22.01.25|22.03.25|[khan-academy](./core-cs/core-math/integral-calc/) |-|[Google Docs](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)|
-|Math for CS|![](https://geps.dev/progress/99)| 15.11.24 |22.02.25|06.08.25|[math-for-cs](./core-cs/core-math/math-for-cs/) |-|[Google Docs](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)|
-
+- [x] Calculus 1A (15.04.24 → 14.10.24) 
+  → [Proof](./core-cs/core-math/differential-calc/) • [Notes](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)  
+- [x] Calculus 1B and 1C (14.10.24 → 22.03.25)
+  → [Proof](./core-cs/core-math/integral-calc/) • [Notes](https://docs.google.com/document/d/1FYjFgYpoVLQwJ2md586ooVq8QMzG37PVtqgQPQOuIDs/edit?usp=sharing)  
+- [x] Math for CS (15.11.24 → 06.08.25) 
+  → [Proof](./core-cs/core-math/math-for-cs/) • [Notes](https://docs.google.com/document/d/11hfZRsWbpXcznnR1YBaEDd_9QlX1nCK0m2taCPZZg7g/edit?usp=sharing)  
 
 #### Core systems
+**Topics covered:** `bits` `bytes` `memory` `C`
 
-**Topics covered**:
-`bits`
-`bytes`
-`memory`
-`C`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Introduction to Computer Systems |![](https://geps.dev/progress/0)| 09.08.25 |01.01.26|-|[csapp](./core-cs/core-systems/csapp/)|[labs](./core-cs/core-systems/csapp/labs)|[Google Docs](https://docs.google.com/document/d/18r7r6Z1z2QoiD8wXbQ21lLw4oSjcbSKKjRthHwBEvoo/edit?usp=sharing)|
+- [ ] Introduction to Computer Systems (09.08.25 → planned 01.01.26)  
+  → [Proof](./core-cs/core-systems/csapp/) • [Labs](./core-cs/core-systems/csapp/labs) • [Notes](https://docs.google.com/document/d/18r7r6Z1z2QoiD8wXbQ21lLw4oSjcbSKKjRthHwBEvoo/edit?usp=sharing)  
 
-#### Core security 
+#### Core security
+**Topics covered:** `authentication` `transport security` `platform security` `software security`
 
-**Topics covered**:
-`authentication`
-`transport security`
-`platform security`
-`software security`
-`human/end-user security.`
-
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Foundations of Computer Security |![](https://geps.dev/progress/0) |03.09.25|03.12.25||[cs61600](./core-cs/core-security/fundamentals-of-computer-security/) |[projects](./core-cs/core-security/fundamentals-of-computer-security/labs)|[Google Docs](https://docs.google.com/document/d/1pUK9NoM78XD8NCP2V_O2x0w1Oz9R2FfCtjFWNwVidJI/edit?usp=sharing)|
+- [ ] Foundations of Computer Security (03.09.25 → planned 03.12.25)  
+  → [Proof](./core-cs/core-security/fundamentals-of-computer-security/) • [Projects](./core-cs/core-security/fundamentals-of-computer-security/labs) • [Notes](https://docs.google.com/document/d/1pUK9NoM78XD8NCP2V_O2x0w1Oz9R2FfCtjFWNwVidJI/edit?usp=sharing)  
 
 #### CS Tools
+**Topics covered:** `shell scripting` `vim` `version control`
 
-**Topics covered**:
-`terminals and shell scripting`
-`vim`
-`command line environments`
-`version control`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|The Missing Semester |![](https://geps.dev/progress/100) | 22.06.24 |22.07.24|15.11.24|[mit-missing](./core-cs/core-tools/mit-missing) |-|[Google Docs](https://docs.google.com/document/d/1jrVr1e5MFEhYxtQ7pT5dFxz6ExrojlgzKy-8xUpES0c/edit?usp=sharing)|
+- [x] The Missing Semester (22.06.24 → 15.11.24)  
+  → [Proof](./core-cs/core-tools/mit-missing) • [Notes](https://docs.google.com/document/d/1jrVr1e5MFEhYxtQ7pT5dFxz6ExrojlgzKy-8xUpES0c/edit?usp=sharing)  
 
-### ADVANCED CS
+
+
+### Advanced CS
 
 #### Advanced math
+**Topics covered:** `vectors` `matrices` `linear independence` `dimensions`
 
-**Topics covered**:
-`vectors and vector space`
-`matrices`
-`linear independence`
-`dimensions`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Linear Algebra |![](https://geps.dev/progress/90)| 14.10.24 |22.01.25|27.02.25|[mit18.06sc](./advanced-cs/advanced-math/linear-algebra/) |[projects](./advanced-cs/advanced-math/linear-algebra/spinningCube)|[Google Docs](https://docs.google.com/document/d/1ieGaWKd6_c_jAStE7_Xhg6oUc5kr_CYZ34NqOsLDX_E/edit?usp=sharing)|
-
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Probability for Cs |![](https://geps.dev/progress/0)| 23.09.25 |31.12.25||[cs-109](./advanced-cs/advanced-math/probability-for-cs/) |[projects]()|[Google Docs(archive)](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing)[Google Docs(new)](https://docs.google.com/document/d/1E_K2eB0Qf177yfnsHEAVWvyI8lY60rFPpEd3vEJJXzE/edit?usp=sharing)|
+- [x] Linear Algebra (14.10.24 → 27.02.25)  
+  → [Proof](./advanced-cs/advanced-math/linear-algebra/) • [Projects](./advanced-cs/advanced-math/linear-algebra/spinningCube) • [Notes](https://docs.google.com/document/d/1ieGaWKd6_c_jAStE7_Xhg6oUc5kr_CYZ34NqOsLDX_E/edit?usp=sharing)  
+- [ ] Probability for CS (23.09.25 → planned 31.12.25)  
+  → [Proof](./advanced-cs/advanced-math/probability-for-cs/) • [Notes (archive)](https://docs.google.com/document/d/1xdIrMa2W9hERx3B4T_JcIlJTP8JhwLjJM8Cf6XFpNbk/edit?usp=sharing) • [Notes (new)](https://docs.google.com/document/d/1E_K2eB0Qf177yfnsHEAVWvyI8lY60rFPpEd3vEJJXzE/edit?usp=sharing)  
 
 
-### ELECTIVES
+### Electives
 
-#### Physics 
+**Topics covered:** `vectors` `motion` `Newton's laws`
 
-**Topics covered**:
-`vectors`
-`1d, 2d motion`
-`newton's laws`
-`and more`
-| Course | Progress | Start Date | Planned End Date |Actual End Date| Proof |Projects| Notes |
-:-- | :--: | :--: | :--: | :--:|:--:|:--:|:--:|
-|Fundamentals of Physics 1|![](https://geps.dev/progress/99)| 21.01.25 |21.04.25|-|[physics-200](./electives/fundamentals-of-physics-1) |-|[Google Docs](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)|
+- [x] Fundamentals of Physics I (21.01.25 → 30.05.25)  
+  → [Proof](./electives/fundamentals-of-physics-1) • [Notes](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)  
+
+---
 
 ## Log
+*(See `random/archive/log`)*
 
-### 20/03/2023
+---
 
-- Khan Academy High School Geometry in progress.
-- Topics:
-  - Rotating shapes
-  - Congruence
+## Ongoing 
+- Introduction to Computer Systems - 2–3 lectures per week, labs every 2–2.5 weeks, reading 
+- Foundations of Computer Security - 2 lectures per week, labs every 1–2.5 weeks, reading 
+- Probability for CS - 3 lectures per week, homework 1–2 weeks, reading  
 
-if needed you could read the missing interval of the logs in random/archive/log
-
-
-### 26/09/2025
-- Introduction to Computer Systems, lab 2 bomblab, phase 1 diffused 
-- Foundations of Computer Security, lab 2, I only did the warm up, merkle trees
-- Switched Introduction to Probability(stat110) to Probablity for Cs(cs109), problem set 1
-
-<br>
-
-## Resources
-- [Khan Academy](https://www.khanacademy.org)
-- [Open Source Society University](https://github.com/ossu/computer-science)
-
-
-## Schedule 
-
-**Monday - Friday:**  
-- 2-3 lectures per week, labs every 2-2.5 weeks, reading - introduction to computer systems
-- 2 lectures per week, labs every 1-2.2.5 weeks, reading - foundatiosn of computer security 
-- 3 lectures per week, homeworks 1-2 weeks, reading - introduction to probablity
-
-**Saturday:**  
-- Any other backlog task
-
-**Sunday:**  
-- Any other backlog task
-- Every 2-3 weeks take either a, probability/math for CS/calculus/linear algebra/physics dummy test
+---
 
 ## Support 
-Your support helps bridge that gap while I build skills, contribute to open source, and grow into a full-time software engineer.<br>
-[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/androranogajec)
+If you find this useful, you can buy me a coffee. <br>
 
-[Return to table of contents](#table-of-contents)
+[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/androranogajec)

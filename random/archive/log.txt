@@ -1,3 +1,7 @@
+### 20/03/2023
+- Khan Academy High School Geometry in progress.  
+  Topics: Rotating shapes, Congruence  
+
 ### 06/07/2023
 
 - Learned that triangle inner angles sum to 180 degrees.
@@ -518,3 +522,9 @@ and only then take a test, which implies that I don't truly understand everythin
 27/08/2025
 - Introduction to probability, still problem set 3
 - Csapp, reading in progress, lab1 soon
+
+
+26/09/2025
+- Introduction to Computer Systems: lab 2 (bomblab), phase 1 diffused  
+- Foundations of Computer Security: lab 2 warm-up (Merkle trees)  
+- Switched from Probability (Stat110) to Probability for CS (CS109), finished problem set 1  
