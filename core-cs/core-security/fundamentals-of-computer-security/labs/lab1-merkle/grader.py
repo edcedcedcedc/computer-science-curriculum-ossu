@@ -3,12 +3,13 @@ import attack
 import client
 import traceback
 
+
 def scenario_one():
     s = store.Store()
     c = client.Client(s)
 
-    k = b'hello'
-    v = b'world'
+    k = b"hello"
+    v = b"world"
     c.insert(k, v)
 
     a = attack.AttackOne(s)
@@ -22,6 +23,7 @@ def scenario_one():
 
     if r is None:
         raise Exception("attack lookup returns None")
+
 
 def scenario_two():
     s = store.Store()
@@ -45,6 +47,7 @@ def scenario_two():
         if r is None:
             raise Exception("fake key %s not found" % k)
 
+
 class EnforceOneSiblingLookupProof(attack.AttackThree):
     def lookup(self, key):
         pf = super().lookup(key)
@@ -52,24 +55,26 @@ class EnforceOneSiblingLookupProof(attack.AttackThree):
             raise Exception("expected one sibling in proof, got %d" % len(pf.siblings))
         return pf
 
+
 def scenario_three():
     s = store.Store()
     c = client.Client(s)
 
     for i in range(1000):
-        k = b'k%d' % i
-        v = b'v%d' % i
+        k = b"k%d" % i
+        v = b"v%d" % i
         c.insert(k, v)
 
     a = EnforceOneSiblingLookupProof(s)
     c._store = a
 
     for i in range(1000):
-        k = b'k%d' % i
-        v = b'v%d' % i
+        k = b"k%d" % i
+        v = b"v%d" % i
         r = c.lookup(k)
         if r is not None:
             raise Exception("key %s is still present, value %s" % (k, r))
+
 
 def scenario_four():
     s = store.Store()
@@ -77,8 +82,8 @@ def scenario_four():
     c = client.Client(a)
 
     for i in range(1000):
-        k = b'k%d' % i
-        v = b'v%d' % i
+        k = b"k%d" % i
+        v = b"v%d" % i
         c.insert(k, v)
 
     ak = a.attack_fake_key()
@@ -91,6 +96,7 @@ def scenario_four():
     if len(ak) + len(av) < 1000:
         raise Exception("fake key and value not long enough")
 
+
 checks = {
     "one": scenario_one,
     "two": scenario_two,
@@ -98,7 +104,7 @@ checks = {
     "four": scenario_four,
 }
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for n, f in checks.items():
         try:
             f()
