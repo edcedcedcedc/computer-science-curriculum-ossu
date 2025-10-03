@@ -86,6 +86,15 @@ Open Education in Computer Science from [Open Source Society University](https:/
 - [x] Fundamentals of Physics I (21.01.25 → 30.05.25)  
   → [Proof](./electives/fundamentals-of-physics-1) • [Notes](https://docs.google.com/document/d/1BGAQ1cP0Zwlo8SO5Iy_2JAIe07Z8h8OdzgHwNgVWnwA/edit?usp=sharing)  
 
+
+
+### Specialization
+
+**Topics covered:** `unreal engine` `gameplay programming`
+
+- [ ] Unreal Engine 4 C++ Ultimate Game Developer Course (03.10.25 → planned 01.01.26)  
+  → [Proof](./specialization/unreal-engine-4-the-ultimate-developer) [Project](./specialization/unreal-engine-4-the-ultimate-developer)• [Notes](https://docs.google.com/document/d/1MIjYhqsG5pFdOIyyN-r5OyKqoTTkxKNC_dEubC0alJo/edit?usp=sharing)  
+
 ---
 
 ## Log
@@ -97,7 +106,7 @@ Open Education in Computer Science from [Open Source Society University](https:/
 - Introduction to Computer Systems - 2–3 lectures per week, labs every 2–2.5 weeks, reading 
 - Foundations of Computer Security - 2 lectures per week, labs every 1–2.5 weeks, reading 
 - Probability for CS - 3 lectures per week, homework 1–2 weeks, reading  
-
+- Unreal Engine 4 Ultimate Game Developer
 ---
 
 ## Support 
