@@ -292,3 +292,54 @@ def the_duplicate_window(l: list[int], k: int) -> int:
 
 
 
+
+""" WARM UP - duplicate window// hash map """
+
+
+def dup_window_12102026(l: list[int], k: int) -> bool:
+    dct = dict()
+    for i in range(len(l)):
+        if l[i] in dct and abs(dct[l[i]] - l[i]) <= k:
+            return True 
+        dct[l[i]] = i 
+    return False 
+
+
+
+""" REVIEW - fixed size sliding window  """
+
+def subarray_average(l:list[int], k: int) -> float:
+    max_sum: float = sum(l[:k])
+    cur_sum: float = max_sum
+    for right in range(1,len(l)):
+        cur_sum += l[right] - l[right - k] 
+        if cur_sum > max_sum:
+            max_sum = cur_sum
+    return max_sum
+
+
+""" NEW MASTERY - linked links  """
+
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val 
+        self.next = next  
+
+def reverse(head: Node) -> Node: 
+    curr = head 
+    prev = None 
+    while(curr):
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node
+    return prev 
+
+tail = Node(3)
+node2 = Node(2, next=tail)
+head = Node(1, next=node2)
+print(reverse(head))
+
+
+
+    

@@ -288,3 +288,26 @@ def reverse_string__(s:str) -> str:
         acc.append(l[i])
     helper(0)
     return "".join(acc)
+
+
+
+""" NEW MASTERY - linked links  """
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val 
+        self.next = next  
+
+def reverse(head: Node) -> Node: 
+    curr = head 
+    prev = None 
+    while(curr):
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node
+    return prev 
+
+tail = Node(3)
+node2 = Node(2, next=tail)
+head = Node(1, next=node2)
+print(reverse(head))
