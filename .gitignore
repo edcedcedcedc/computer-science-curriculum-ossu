@@ -1,6 +1,7 @@
 **/__pycache__/
 **/.pytest_cache/
 *.pdf
+!/core-cs/core-theory/introduction-to-algorithms/assignments/ps2/**/*progress.pdf
 !/core-cs/core-systems/computer-networking/labs/**/*.pdf
 !/advanced-cs/advanced-systems/system-design/**/*.pdf
 !/core-cs/core-applications/introduction-to-databases/**/*.pdf
