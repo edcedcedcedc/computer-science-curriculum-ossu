@@ -311,3 +311,36 @@ tail = Node(3)
 node2 = Node(2, next=tail)
 head = Node(1, next=node2)
 print(reverse(head))
+
+#traverse a linked list and print it, version with list 
+def print_linked_list_151026_2(head:Node) -> str:
+    curr = head 
+    tail = None
+    buffer = list()
+    while(curr):
+        buffer.append(str(curr.val))
+        curr = curr.next
+    buffer.append(str(tail))
+    return "->".join(buffer)
+
+
+""" NEW MASTERY middle of the linked list // ahh okay I got it its fast slow pointer pattern
+1 -> 2 -> 3 -> 4 -> 5 -> None
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> None 
+slow
+fast       
+    slow
+        fast
+        slow  
+                   fast
+            slow
+                                                                     
+"""
+
+def middle_of_linked_list_101526(head: Node) -> Node: 
+    slow = head  
+    fast = head
+    while(fast and fast.next):
+        slow = slow.next 
+        fast = fast.next.next
+    return slow 

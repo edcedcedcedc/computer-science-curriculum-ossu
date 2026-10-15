@@ -338,8 +338,79 @@ def reverse(head: Node) -> Node:
 tail = Node(3)
 node2 = Node(2, next=tail)
 head = Node(1, next=node2)
-print(reverse(head))
 
 
 
-    
+
+
+""" WARM UP linked list reverse 151026"""
+
+
+class Node151026:
+    def __init__(self, val=0, next=None):
+        self.val = val 
+        self.next = next 
+
+"""
+head 
+1 -> 2 -> 3 - > None 
+    curr
+prev
+   next_node
+ """
+def reverse_linked_list_151026(head: Node151026) -> Node151026:
+    curr = head 
+    prev = None
+    while(curr):
+        next_node = curr.next
+        curr.next = prev
+        curr = next_node
+    return prev 
+
+
+""" REVIEW linked list traverse"""
+
+#version with print
+def print_linked_list_151026(head:Node151026) -> str:
+    curr = head 
+    tail = None
+    while(curr):
+        val = curr.val
+        print(val, "->", end="")
+        curr = curr.next
+    print(tail, "", end="")
+
+#version with list 
+def print_linked_list_151026_2(head:Node151026) -> str:
+    curr = head 
+    tail = None
+    buffer = list()
+    while(curr):
+        buffer.append(str(curr.val))
+        curr = curr.next
+    buffer.append(str(tail))
+    return "->".join(buffer)
+
+
+""" NEW MASTERY middle of the linked list // ahh okay I got it its fast slow pointer pattern
+1 -> 2 -> 3 -> 4 -> 5 -> None
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> None 
+slow
+fast       
+    slow
+        fast
+        slow  
+                   fast
+            slow
+                                                                     
+"""
+
+def middle_of_linked_list_101526(head: Node151026) -> Node151026: 
+    slow = head  
+    fast = head
+    while(fast and fast.next):
+        slow = slow.next 
+        fast = fast.next.next
+    return slow 
+
+
