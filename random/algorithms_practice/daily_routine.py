@@ -414,3 +414,131 @@ def middle_of_linked_list_101526(head: Node151026) -> Node151026:
     return slow 
 
 
+""" GLOBAL REVIEW """
+
+def binary_search_20_10_2026(l: list[int], k: int):
+    left = 0
+    right = len(l) - 1
+    while left <= right:
+        mid = left + (right - left) // 2
+        if(l[mid] == k):
+            return mid
+        elif (k < l[mid]):
+            right -= mid - 1
+            """ INCORRECT 
+                should be right = mid - 1 """
+        else:
+            left += mid + 1
+            """ INCORRECT 
+                should be left = mid + 1 """
+
+
+def two_sum_20_10_2026(l: list[int], t: int) -> list[int]:
+    hash_map = dict()
+    for i in range(len(l)):
+        c = l[i] - t 
+        """ INCORRECT it should 
+            a + c = t 
+            c = t - a  where a is l[i]""" 
+        if c in hash_map:
+            return (i, l[c])
+        """ INCORRECT it should
+            hash_map[c] """ 
+        hash_map[l[i]] = i
+    return None 
+
+def interval_between_min_max(l: list[int]) -> list[int]:
+    a = l.index(max(l))
+    b = l.index(min(l))
+    return l[min(a,b) - 1:max(a,b)]
+
+class Node_20_10_2026:
+    def __init__(self, val=0, next=None):
+        self.val = val 
+        self.next = next 
+
+def reverse_linked_list_20_10_2026(head: Node_20_10_2026) -> Node_20_10_2026:
+    curr = head 
+    prev = None 
+    while(curr):
+        next_val = curr.next
+        curr.next = prev
+        prev = next_val 
+        """ INCORRECT
+        prev = curr     shifts prev forward 
+        curr = next_val shifts curr forward"""
+    return prev 
+
+            
+def prefix_sum_20_10_2026(l: list[int]) -> list[int]:
+    prefix_sum = list()
+    prefix_sum.append(l[0])
+    for i in range(1,len(l)):
+        prefix_sum.append(prefix_sum[i - 1] + l[i])
+    """ INCORRECT 
+        return prefix_sum """
+
+def recursion_reverse_string_20_10_2026(s: str) -> str:
+    l = list(s)
+    buf = list()
+    def helper(i: int):
+        if i == len(l) - 1:
+            return l[i] #INCORRECT return 
+        helper(i + 1)
+        return buf.append(l[i]) #INCORRECT you do not return anything 
+    return "".join(helper(0)) #INCORRECT you join the buf
+
+    
+
+def running_state_20_10_2026(l: list[int]):
+    min_price = float('inf')
+    max_profit = float('-inf')
+    for i,v in enumerate(l):
+        if v < min_price:
+            min_price = v 
+        curr_profit = v - min_price
+        if curr_profit > max_profit:
+            max_profit = curr_profit
+    return max_profit  
+
+
+def monotonic_stack_20_10_2026(l: list[int]) -> list[int]:
+    stack = list()
+    output = [-1] * len(l)
+    for i in range(len(l)):
+        while len(stack) > 0 and l[i] > l[stack[i]]: 
+            """ INCORRECT l[stack[-1]] the top of the stack not i of the stack"""
+            popped_idx = stack.pop()
+            output[popped_idx] = l[i] 
+        stack.append(i)
+    return output
+
+def valid_palindrome_20_10_2026(s: str) -> bool:
+    l = list(s)
+    left = 0
+    right = len(l) - 1
+    while left <= right:
+        while not l[left].isalpha() and left <= right:
+            left += 1
+        while not l[right].isalpha() and left <= right:
+            right -= 1
+        if l[left] != l[right]:
+            return False 
+    """ INCORRECT 
+        left += 1
+        right -= 1 
+        I never advace the loop """
+    return True 
+ 
+
+def sliding_window_20_10_2026(l: list[int],k: int):
+    max_sum = sum(l[:k])
+    cur_sum = max_sum 
+    for i in range(k,len(l)):
+        cur_sum += l[i] - l[i - k]
+        if cur_sum > max_sum:
+            max_sum = cur_sum 
+    return max_sum 
+
+
+
